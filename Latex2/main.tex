@@ -1,0 +1,259 @@
+\documentclass[12pt]{article}
+\usepackage{Packages}
+
+\begin{document}
+
+Two-country small open economy NK DSGE model for Scotland and the Rest of the UK.
+
+\begin{enumerate}
+
+
+    \item Home country: Scotland
+    \item  Foreign country: RUK
+    \item  Scotland and RUK are small and open economies
+          \begin{enumerate}
+              \item They take world output, inflation, and consumption as given and cannot influence it
+          \end{enumerate}
+    \item Scotland and RUK are assumed to be symmetrical in market structure and preferences
+    \item Shocks in Scotland, RUK, and in the World Economy are assumed to be correlated
+    \item Sticky nominal prices: Calvo Fairy
+          \begin{enumerate}
+              \item Here, I would prefer to use Rotemburg as it is more intuitive and less popular than Calvo Fairy
+          \end{enumerate}
+    \item For simplicity:
+          \begin{enumerate}
+              \item No nontradeable goods
+              \item No trading costs
+              \item No possibility of international policy coordination
+              \item No cost-push shocks
+              \item No nominal wage rigidities
+              \item No international financial assets
+          \end{enumerate}
+
+\end{enumerate}
+
+\pagebreak
+
+\section{Households}
+\subsection*{Consumer's problem}
+A representative household wants to maximise the lifetime discounted utility:
+\begin{equation}
+    \E_0 \sum^{\infty}_{t=0} \left( \frac{C_t^{1-\sigma}}{1-\sigma} - \frac{N_t^{1+\varphi}}{1+\varphi} \right)
+\end{equation}
+Utility is is decreasingly increasing in consumption $C_t$ and decreasingly decreasing in hours worked $N_t$.
+
+$C_t$ is a composite consumption index defined by
+\begin{equation}
+    C_t = \left[ (1-\alpha)^\frac{1}{\eta} (C_{H,t})^{\frac{\eta-1}{\eta}} + \alpha^{\frac{1}{\eta}}(C_{F,t})^{\frac{\eta-1}{\eta}}\right]^{\frac{\eta}{\eta-1}}
+\end{equation}
+\begin{align}
+    C_{H,t} & = \left( \int_{0}^{1} {C_{H,t}(j)}^{\frac{\varepsilon-1}{\varepsilon}} \,dj  \right)^\frac{\varepsilon}{\varepsilon-1} & \text{ Index of consumption of home produced goods}                 \\
+    C_{i,t} & = \left( \int_{0}^{1} {C_{i,t}(j)}^{\frac{\varepsilon-1}{\varepsilon}} \,dj  \right)^\frac{\varepsilon}{\varepsilon-1} & \text{ Index of consumption of country \textit{i}'s produced goods} \\
+    C_{F,t} & = \left( \int_{0}^{1} {C_{i,t}}^{\frac{\gamma-1}{\gamma}} \,di  \right)^{\frac{\gamma}{\gamma-1}}                      & \text{ Index of consumption of imported goods}
+\end{align}
+
+Optimal allocation of each variety of goods:
+\begin{align}
+    C_{H,t}(j) & = \left( \frac{P_{H,t}(j)}{P_{H,t}}\right)^{-\varepsilon}C_{H,t}; & C_{i,t}(j) & = \left( \frac{P_{i,t}(j)}{P_{i,t}}\right)^{-\varepsilon}C_{i,t}; & C_{i,t} & = \left( \frac{P_{i,t}}{P_{F,t}}\right)^{-\gamma}C_{F,t}\label{eq:optimal_imported_consumption}
+\end{align}
+\begin{align}
+    P_{H,t} & = \left( \int_{0}^{1} P_{H,t}(j)^{1-\varepsilon} \,dj  \right)^{\frac{1}{1-\varepsilon}}                                  & \text{Domestic Price Index}                                \\
+    P_{i,t} & = \left( \int_{0}^{1} P_{i,t}(j)^{1-\varepsilon} \,dj  \right)^{\frac{1}{1-\varepsilon}}                                  & \text{Price Index of goods produced by country \textit{i}} \\
+    P_{F,t} & = \left( \int_{0}^{1} P_{i,t}^{1-\gamma} \,dj  \right)^{\frac{1}{1-\gamma}}         \label{eq:price_index_imported_goods} & \text{Price Index of Imported goods}
+\end{align}
+\begin{align}
+    \int_{0}^{1} & P_{H,t}(j)C_{H,t}(j) \,dj = P_{H,t}C_{H,t} & \int_{0}^{1} & P_{i,t}(j)C_{i,t}(j) \,dj = P_{i,t}C_{i,t}
+\end{align}
+Using (\ref{eq:optimal_imported_consumption}) and (\ref{eq:price_index_imported_goods}) implies
+\begin{equation}
+    \int_{0}^{1} P_{i,t}C_{i,t} = P_{F,t}C_{F,t}
+\end{equation}
+\begin{align}
+    C_{H,t} & = (1-\alpha) {\left(\frac{P_{H,t}}{P_t}\right)}^{-\eta} C_{t} & C_{F,t} & = \alpha {\left(\frac{P_{F,t}}{P_t}\right)}^{-\eta} C_{t}
+\end{align}
+\begin{align}
+    P_t = \left[ (1-\alpha) (P_{H,t})^{1-\eta} + \alpha (P_{F,t})^{1-\eta} \right]^{\frac{1}{1-\eta}} &  & \text{ Consumption Price Index}
+\end{align}
+A special case $\eta=1$:
+\begin{align}
+    P_t & = (P_{H,t})^{1-\alpha} \times (P_{F,t})^{\alpha} & C_t & = \frac{1}{(1-\alpha)^{(1-\alpha)}\alpha^\alpha}(C_{H,t})^{(1-\alpha)}(C_{F,t})^\alpha
+\end{align}
+Total consumption expenditures are:
+\begin{align}
+    P_{H,t}C_{H,t} + P_{F,t}C_{F,t} = P_t C_t
+\end{align}
+So the budget constraint is:
+\begin{align}
+    P_t C_t + \E_t [Q_{t,t+1}D_{t+1}] \leq D_t + W_t N_t + T_t
+\end{align}
+\begin{align}
+    \mathcal{L} & = \E_0 \sum^{\infty}_{t=0} \left( \frac{C_t^{1-\sigma}}{1-\sigma} - \frac{N_t^{1+\varphi}}{1+\varphi} \right)  \nonumber \\ &+ \lambda_t\left\{  D_t + W_t N_t + T_t - P_t C_t - \E_t [Q_{t,t+1}D_{t+1}] \right\}
+\end{align}
+\begin{align*}
+    \frac{\partial L}{\partial C_t}                                    & = \beta^t C_t^{-\sigma} - \lambda_t P_t = 0; \quad \Rightarrow \quad \beta^t C_t^{-\sigma} P_{t}^{-1} = \lambda_t  \\
+    \frac{\partial L}{\partial N_t}                                    & = -\beta^t N_t^{\varphi} + \lambda_t N_t = 0; \quad \Rightarrow \quad \beta^t N_t^{\varphi} W_{t}^{-1} = \lambda_t \\
+    \frac{\partial L}{\partial C_t} = \frac{\partial L}{\partial N_t}: & \beta^t C_t^{-\sigma} P_{t}^{-1} = \beta^t N_t^{\varphi} W_{t}^{-1}                                                \\
+    \Rightarrow                                                        & C_t^{-\sigma} P_{t}^{-1} = N_t^{\varphi} W_{t}^{-1}                                                                \\
+    \Rightarrow                                                        & C_t^{-\sigma} N_t^{-\varphi} =  W_{t}^{-1}     P_{t}
+\end{align*}
+\begin{align}
+    \Rightarrow &  & C_t^{\sigma} N_t^{\varphi} =  \frac{W_t}{P_t} \label{eq:intratemporal_optimality_condition} &  & \text{Intratemporal Optimality Condition}
+\end{align}
+\begin{align*}
+    \frac{\partial L}{\partial C_t}     & = \beta^t C_t^{-\sigma} P_{t}^{-1} = \lambda_t; \quad \Rightarrow \quad \E_t[\beta^{t+1} C_{t+1}^{-\sigma} P_{t+1}^{-1}] = \E_t[\lambda_{t+1}] \\
+    \frac{\partial L}{\partial D_{t+1}} & = -\lambda_t \E_t[Q_{t,t+1}] + \E_t[\lambda_{t+1}] = 0; \quad \Rightarrow \quad \E_t[Q_{t,t+1}] = \frac{\lambda_{t+1}}{\lambda_t}
+\end{align*}
+\begin{align*}
+    \E_t\left[\frac{\beta^t C_t^{-\sigma} P_{t}^{-1}}{\beta^{t+1} C_{t+1}^{-\sigma} P_{t+1}^{-1}}\right]                 & = \E_t\left[\frac{\lambda_t}{\lambda_{t+1}}\right] \\
+    \E_t\left[\frac{\beta^t C_t^{-\sigma} P_{t}^{-1}}{\beta^{t+1} C_{t+1}^{-\sigma} P_{t+1}^{-1}}\right]                 & = \E_t\left[\frac{1}{Q_{t,t+1}}\right]             \\
+    \E_t\left[\frac{1}{\beta} \left(\frac{C_t}{C_{t+1}}\right)^{-\sigma} \left(\frac{P_{t}}{ P_{t+1}}\right)^{-1}\right] & = \E_t\left[\frac{1}{Q_{t,t+1}}\right]
+\end{align*}
+\begin{align}
+    \beta\E_t\left[\left(\frac{C_{t+1}}{C_{t}}\right)^{-\sigma} \left(\frac{P_{t}}{ P_{t+1}}\right)\right]                 = Q_t &  & \text{Euler equation}
+\end{align}
+However, Gali uses a different approach to derive the Euler equation, which introduces Arrow securities:
+\begin{equation}
+    \frac{V_{t,t+1}}{P_t}C_{t}^{-\sigma} = \xi_{t,t+1} \beta C_{t+1}^{-\sigma} \frac{1}{P_{t+1}} \label{eq:introduces_arrow_securities}
+\end{equation}
+Where $V_{t,t+1}$ is an Arrow security and $\xi_{t,t+1}$ is the probability that the Arrow security will yield a payoff next period. Interpretation: LHS is paying for the security (expenses) in terms of consumption at $P_t$ prices. RHS is the payoff if the Arrow security yields a payoff. The consumer will only be willing to pay LHS if the payoff is at least as big on the RHS.
+Given that:
+\begin{equation}
+    Q_{t,t+1} = \frac{V_{t,t+1}}{\xi_{t,t+1}}
+\end{equation}
+\begin{align}
+    \frac{V_{t,t+1}}{P_t}C_{t}^{-\sigma} = \xi_{t,t+1} \beta C_{t+1}^{-\sigma} \frac{1}{P_{t+1}} \\
+    Q_{t,t+1} = \beta \left(\frac{C_{t+1}}{C_{t}}\right)^{-\sigma} \frac{P_t}{P_{t+1}}           \\
+    \E_t [Q_{t,t+1}] = \beta \E_t\left[\left(\frac{C_{t+1}}{C_{t}}\right)^{-\sigma} \frac{P_t}{P_{t+1}}\right]
+\end{align}
+\begin{align}
+    \beta\E_t\left[\left(\frac{C_{t+1}}{C_{t}}\right)^{-\sigma} \left(\frac{P_{t}}{ P_{t+1}}\right)\right] \label{eq:euler_equation}                = Q_t &  & \text{Euler equation}
+\end{align}
+Log-linearising (\ref{eq:intratemporal_optimality_condition}):
+\begin{align}
+    C_t^{\sigma} N_t^{\varphi} =  \frac{W_t}{P_t}; \quad \Rightarrow \quad w_t - p_t = \sigma c_t + \varphi n_t
+\end{align}
+Log-linearising (\ref{eq:euler_equation}):
+\begin{align}
+    \beta\E_t\left[\left(\frac{C_{t+1}}{C_{t}}\right)^{-\sigma} \left(\frac{P_{t}}{ P_{t+1}}\right)\right]                = Q_t \nonumber \\
+    \ln\beta - \E_t[\sigma c_{t+1}] + \sigma c_t + p_t - \E_t [p_{t+1}] = \ln Q_t                                              \nonumber  \\
+    \sigma c_t  = \ln Q_t - \ln \beta + \E_t[\sigma c_{t+1}] - p_t + \E_t [p_{t+1}]                                             \nonumber \\
+    c_t =  \E_t[c_{t+1}] - \frac{1}{\sigma}( -\ln Q_t - \rho - \E_t [\pi_{t+1}]   )                                             \nonumber \\
+    c_t =  \E_t[c_{t+1}] - \frac{1}{\sigma}( i_t  - \E_t [\pi_{t+1}] - \rho  )                                                            \\
+    \text{where $i_t = -\log Q_t$, $\rho = -\log \beta$, $\pi_t = p_t - p_{t-1}$} \nonumber
+\end{align}
+\begin{align}
+    S_{i,t} = \frac{P_{i,t}}{P_{H,t}}                                                                                                     &  & \text{Bilateral terms of trade}       \\
+    S_{t} =  \frac{P_{F,t}}{P_{H,t}} = \left(\int_{0}^{1} (S_{i,t} \, di)^{1-\gamma}\right)^{\frac{1}{1-\gamma}}                          &  & \text{Effective terms of trade}       \\
+    s_t = p_{F,t} - p_{H,t} = \left(\int_{0}^{1} s_{i,t} \, di \right)                                      \label{eq:terms_of_trade_log} &  & \text{(log) Effective terms of trade}
+\end{align}
+Recall that when $\eta = 1$, then CPI is $P_t = (P_{H,t})^{1-\alpha} \times (P_{F,t})^{\alpha}$, which can be log-linearised to:
+\begin{equation}
+    p_t = (1-\alpha)p_{H,t} + \alpha p_{F,t} = p_{H,t} + \alpha s_t \label{eq:domestic_price_plus_bilateral_terms_of_trade}
+\end{equation}
+Equations (\ref{eq:terms_of_trade_log}) and (\ref{eq:domestic_price_plus_bilateral_terms_of_trade}) hold when $\gamma=1$ and $\eta = 1$, respectively.
+\begin{align}
+    \pi_{H,t} = p_{H,t+1} - p_{H,t}         &  & \text{Domestic Inflation} \\
+    \pi_{t} = \pi_{H,t} + \alpha \Delta s_t &  & \text{CPI Inflation}
+\end{align}
+The gap between domestic inflation and CPI inflation is only due to percentage change in the terms of trade.
+\begin{align}
+    P_{i,t}(j) & = \mathcal{E}_{i,t}P_{i,t}^i(j)                                                                         &  & \text{Law of One Price (LOP)}              \\
+    P_{i,t}    & = \mathcal{E}_{i,t}P_{i,t}^i                                                                            &  & \text{Law of One Price (LOP)}              \\
+    p_{i,t}    & = e_{i,t}+p_{i,t}^i                                                                                     &  & \text{(Log) Law of One Price (LOP)}        \\
+    p_{F,t}    & = \int_{0}^{1}(e_{i,t}+p_{i,t}^i) \,di = e_t + p_t^{\star} \label{eq:log_price_index_of_imported_goods} &  & \text{(Log )Price index of Imported Goods}
+\end{align}
+Where $e_t$ is (Log) Effective Nominal Exchange Rate, $p_t^{\star}$ is the World Price Index.
+\begin{align}
+    s_t = p_{F,t} - p_{H,t} = e_t + p_t^{\star} - p_{H,t} \label{eq:terms_of_trade_with_world_price_index} &  & \text{Terms of trade but with the World Price Index}
+\end{align}
+\begin{align}
+    \mathcal{Q}_{i,t} & = \frac{\mathcal{E}_{i,t}P_{t}^i}{P_t}                                        &  & \text{Bilateral Exchange Rate}                                       \\
+    q_t               & = \int_{0}^{1} \log \left( \frac{\mathcal{E}_{i,t}P_{t}^i}{P_t} \right) \, di                                                                           \\
+                      & = \int_{0}^{1} (e_{i,t} + p_{i,t}^i - p_t) \, di                              &  &                                                                      \\
+                      & = e_t + p_t^{\star} - p_t                                                     &  & \text{using (\ref{eq:log_price_index_of_imported_goods})}            \\
+                      & = s_t + p_{H_t} - p_t                                                         &  & \text{using (\ref{eq:terms_of_trade_with_world_price_index})}        \\
+                      & = (1-\alpha)s_t                                                               &  & \text{using (\ref{eq:domestic_price_plus_bilateral_terms_of_trade})}
+\end{align}
+International Risk-Sharing
+Equation (\ref{eq:introduces_arrow_securities}) for country \textit{i} can be rewritten as:
+\begin{align}
+    \frac{V_{t,t+1}}{\mathcal{E}^i_tP^i_t}({C^{i}_{t}})^{-\sigma} = \xi_{t,t+1} \beta ({C^{i}_{t+1}})^{-\sigma} \frac{1}{\mathcal{E}^i_{t+1}P^{i}_{t+1}}
+\end{align}
+Given that:
+\begin{equation}
+    Q_{t,t+1} = \frac{V_{t,t+1}}{\xi_{t,t+1}}
+\end{equation}
+\begin{align}
+    \frac{V_{t,t+1}}{\mathcal{E}^i_tP^i_t}({C^{i}_{t}})^{-\sigma}                                                                                           & = \xi_{t,t+1} \beta ({C^{i}_{t+1}})^{-\sigma} \frac{1}{\mathcal{E}^i_{t+1}P^{i}_{t+1}}                                                                    \\
+    Q_{t,t+1}                                                                                                                                               & = \beta \left(\frac{C^i_{t+1}}{C^i_{t}}\right)^{-\sigma} \left(\frac{P^i_t}{P^i_{t+1}}\right) \left(\frac{\mathcal{E}^i_{t}}{\mathcal{E}^i_{t+1}} \right) \\
+    Q_{t,t+1}                                                                                                                                               & = \beta \left(\frac{C_{t+1}}{C_{t}}\right)^{-\sigma} \frac{P_t}{P_{t+1}}  \text{ using Equation (XX)}                                                     \\
+    \beta \left(\frac{C^i_{t+1}}{C^i_{t}}\right)^{-\sigma} \left(\frac{P^i_t}{P^i_{t+1}}\right) \left(\frac{\mathcal{E}^i_{t}}{\mathcal{E}^i_{t+1}} \right) & = \beta \left(\frac{C_{t+1}}{C_{t}}\right)^{-\sigma} \frac{P_t}{P_{t+1}}                                                                                  \\
+    \left(\frac{C^i_{t+1}}{C^i_{t}}\right)^{-\sigma} \left(\frac{P^i_t}{P^i_{t+1}}\right) \left(\frac{\mathcal{E}^i_{t}}{\mathcal{E}^i_{t+1}} \right)       & = \left(\frac{C_{t+1}}{C_{t}}\right)^{-\sigma} \frac{P_t}{P_{t+1}}                                                                                        \\
+    \left(\frac{C^i_{t}}{C^i_{t+1}}\right)^{\sigma} \left(\frac{P^i_t}{P^i_{t+1}}\right) \left(\frac{\mathcal{E}^i_{t}}{\mathcal{E}^i_{t+1}} \right)        & = \left(\frac{C_{t}}{C_{t+1}}\right)^{\sigma} \frac{P_t}{P_{t+1}}                                                                                         \\
+    {C^{i}_{t}}^{\sigma} P_t^i \mathcal{E}_t^i                                                                                                              & = C_t^{\sigma} P_t                                                                                                                                        \\
+    {C^{i}_{t}}^{\sigma}                                                                                                                                    & = C_t^{\sigma} \frac{1}{\mathcal{Q}_{i,t}}                                                                                                                \\
+    C_t = C^i_t \mathcal{Q}_{i,t}^{\frac{1}{\sigma}} \label{eq:domestic_consumption_and_real_exchange_rate}
+\end{align}
+Log-linearising (\ref{eq:domestic_consumption_and_real_exchange_rate}) yields:
+\begin{equation}
+    c_t = c_{t}^i + \frac{1}{\sigma}q_{i,t}
+\end{equation}
+Integrating both sides over \textit{i}:
+\begin{align}
+    c_t & = c_t^{\star} + \frac{1}{\sigma}q_t                                                                               &  &                                  \\
+        & = c_t^{\star} + \left(\frac{1-\alpha}{\sigma}\right)s_t \label{eq:link_between_consumption_and_world_consumption} &  & \text{using $q_t=(1-\alpha)s_t$}
+\end{align}
+$c_t^{\star}$ is the log world consumption. Equation (\ref{eq:link_between_consumption_and_world_consumption}) is the link between the domestic consumption and the world consumption.
+\section{Firms}
+\begin{align}
+    Y_t(j)   & = A_t N_t(j)                          \\
+    \log A_t & = \alpha_t                            \\
+    \alpha_t & = \rho_a \alpha_{t-1} + \varepsilon_t
+\end{align}
+\begin{align}
+    L             & =P_{t}(j)Y_{t}(j) - W_t(j)N_{t}(j) \\
+    \Rightarrow L & =P_{t}Y_{t} - W_tN_{t}             \\
+    \Rightarrow L & =P_{t}A_t N_t - W_tN_{t}           \\
+\end{align}
+\begin{align}
+    \frac{\partial L}{\partial N_t} & = P_t A_t - W_t = 0          &  & \Rightarrow W_t - P_tA_t = 0 \\
+    MC_t                            & = W_t - P_tA_t                                                 \\
+    mc_t                            & = w_t - p_t - a_t                                              \\
+    mc_t                            & = -\nu + w_t - p_t - a_t                                       \\
+    mc_t                            & = -\nu + w_t - p_{H,t} - a_t                                   \\
+\end{align}
+$\nu=-(\log (1-\tau))$, where $\tau$ is the employment subsidy, introduced later. $p_{H,t}$ because this is for domestic firms.
+
+Firms that get to reset their price, do it using the following problem:
+\begin{equation}
+    \bar{p_{H,t}} = \mu + (1-\beta \theta) \sum_{k=0}^{\infty} (\beta \theta)^{k} \E_t [mc_{t+k} + p_{H,t+k}]
+\end{equation}
+\begin{align}
+    \bar{p_{H,t}} &  & \text{Is the (log) new price}                  \\
+    \mu           &  & \text{Is the (log) markup in the steady state}
+\end{align}
+\section{Equilibrium}
+\begin{align}
+    Y_t(j) & = C_{H,t}(j) + \int_{0}^{1} C_{H,t}^i (j) \, di                                                                                                                                                                                                                                      \\
+           & =\left(\frac{P_{H,t}(j)}{P_{H,t}}^{-\varepsilon}\right) \left[ (1-\alpha) \left(\frac{P_{H,t}}{P_t} \right)^{-\eta} C_t + \alpha \int_{0}^{1} \left( \frac{P_{H_t}}{\mathcal{E}_{i,t}P_{F,t}^i}\right)^{-\gamma} \left(\frac{P_{F,t}^i}{P_t^i} \right)^{-\eta} C_{t}^i \, di \right]
+\end{align}
+Given that
+\begin{equation}
+    Y_t = \left( \int_{0}^{1} (Y_t(j))^{\frac{\varepsilon-1}{\varepsilon}}\right)^{\frac{\varepsilon}{\varepsilon-1}}
+\end{equation}
+\begin{align}
+    Y_t & = (1-\alpha) \left(\frac{P_{H,t}}{P_t} \right)^{-\eta} C_t + \alpha \int_{0}^{1} \left( \frac{P_{H_t}}{\mathcal{E}_{i,t}P_{F,t}^i}\right)^{-\gamma} \left(\frac{P_{F,t}^i}{P_t^i} \right)^{-\eta} C_{t}^i \, di \\
+        & = \left(\frac{P_{H,t}}{P_t}\right)^{-\eta}C_t \left[ (1-\alpha) + \alpha \int_{0}^{1} (S_t^i S_{i,t})^{\gamma - \eta} \mathcal{Q}_{i,t}^{\eta - \frac{1}{\sigma}} \, di \right]
+\end{align}
+Which can be log-linearised to:
+\begin{align}
+    y_t & = c_t + \alpha \gamma s_t + \alpha(\eta - \frac{1}{\sigma})q_t \\
+        & = c_t + \frac{\alpha w}{\sigma}s_t                             \\
+    w_t & = \sigma \gamma + (1-\alpha)(\sigma \eta - 1)
+\end{align}
+Assuming that country \textit{i} is symmetric:
+\begin{align}
+    y_t^i = c_t^i + \frac{\alpha w}{\sigma} s_t^i            &  &                          \\
+    \int_{0}^{1} y_t^i = \int_{0}^{1} c_t^i + 0 =c_t^{\star} &  & \text{World Consumption}
+\end{align}
+\end{document}

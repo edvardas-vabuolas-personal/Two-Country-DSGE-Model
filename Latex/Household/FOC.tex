@@ -1,0 +1,101 @@
+\subsection{Consumption FOCs}
+\begin{align}
+    0 = B_t + w_tL_t + R_{K_,t}K_t + \Pi_{H,t}+ \Pi_{N,t} + T_t - P_{C,t}C_{t} - P_{I,t}I_t - \E_t[\Upsilon_{t,t+1}B_{t+1}]
+\end{align}
+\begin{align}
+    \mathcal{L} & = \E_t \sum_{k=0}^{\infty} \beta^{k}
+    \left[
+    \frac{\varepsilon_{d, t+k}}{1-\sigma}\left(C_{j, t+k} -hC_{j,t+k-1} \right)^{1-\sigma} - \frac{\varepsilon_{l, t+k}}{1-\psi}L_{j, t+k}^{1+\psi}
+    \right]                                            \\ &+
+    \lambda \times (B_t + w_tL_t + R_{K_,t}K_t + \Pi_{H,t}+ \Pi_{N,t} + T_t - P_{C,t}C_{t} - P_{I,t}I_t - \E_t[\Upsilon_{t,t+1}B_{t+1}])
+\end{align}
+\begin{align}
+    \frac{\partial \mathcal{L}}{\partial B_{t+1}} & = -\lambda_tR_t^{-1} + \E[\lambda_{t+1}] = 0            \\
+    \Rightarrow                                   & \E \left[ \frac{\lambda_t}{\lambda_{t+1}} \right] = R_t
+\end{align}
+\begin{align}
+    \frac{\partial \mathcal{L}}{\partial C_t} & =                                                                                                                                                                                                                                                             \\
+    1.\                                       & \E_t[\beta^k (1-\sigma) \frac{\varepsilon_{d,t}}{1-\sigma}(C_{j,t} - hC_{j,t-1})^{-\sigma}-\lambda_t P_{c,t}] = 0                                                                                                                                             \\
+    \Rightarrow                               & \beta^k \E_t[ \varepsilon_{d,t}(C_{j,t} - hC_{j,t-1})^{-\sigma}] - \E[\lambda_t P_{c,t}]  =0                                                                                                                                                                  \\
+    \Rightarrow                               & \beta^{k+1} \E_t[ \varepsilon_{d,t+1}(C_{j,t+1} - hC_{j,t})^{-\sigma}] - \E[\lambda_{t+1} P_{c,t+1}]  =0                                                                                                                                                      \\
+    \frac{1.}{2.} =                           & \frac{\beta^k}{\beta^{k+1}}\E_t\left[ \frac{\varepsilon_{d,t}(C_{j,t} - hC_{j,t-1})^{-\sigma}}{\varepsilon_{d,t+1}(C_{j,t+1} - hC_{j,t})^{-\sigma}}\right] - \E_t\left[ \frac{\lambda_t }{\lambda_{t+1}}\right] \E\left[\frac{P_{c,t}}{P_{c,t+1}} \right] = 0 \\
+                                              & \frac{\beta^k}{\beta^{k+1}}\E_t\left[ \frac{\varepsilon_{d,t}(C_{j,t} - hC_{j,t-1})^{-\sigma}}{\varepsilon_{d,t+1}(C_{j,t+1} - hC_{j,t})^{-\sigma}}\right] - R_t \E\left[\frac{P_{c,t}}{P_{c,t+1}} \right] = 0                                                \\
+                                              & \frac{\beta^k}{\beta^{k+1}}\E_t\left[ \frac{\varepsilon_{d,t}(C_{j,t} - hC_{j,t-1})^{-\sigma}}{\varepsilon_{d,t+1}(C_{j,t+1} - hC_{j,t})^{-\sigma}}\right]  = R_t \E\left[\frac{P_{c,t}}{P_{c,t+1}} \right]                                                   \\
+                                              & \frac{1}{\beta}\E_t\left[ \frac{\varepsilon_{d,t}(C_{j,t} - hC_{j,t-1})^{-\sigma}}{\varepsilon_{d,t+1}(C_{j,t+1} - hC_{j,t})^{-\sigma}}\frac{P_{c,t+1}}{P_{c,t}}\right]  = R_t                                                                                \\
+                                              & \frac{1}{\beta R_t}\E_t\left[ \frac{\varepsilon_{d,t}(C_{j,t} - hC_{j,t-1})^{-\sigma}}{\varepsilon_{d,t+1}(C_{j,t+1} - hC_{j,t})^{-\sigma}}\frac{P_{c,t+1}}{P_{c,t}}\right]  = 1                                                                              \\
+                                              & \beta R_t\E_t\left[ \frac{\varepsilon_{d,t+1}}{\varepsilon_{d,t}}\left(\frac{C_{j,t+1} - hC_{j,t}}{C_{j,t} - hC_{j,t-1}}\right)^{-\sigma} \times \frac{P_{c,t}}{P_{c,t+1}}\right] = 1
+\end{align}
+
+Euler equation:
+\begin{align}
+    \beta R_t\E_t\left[ \frac{\varepsilon_{d,t+1}}{\varepsilon_{d,t}}\left(\frac{C_{j,t+1} - hC_{j,t}}{C_{j,t} - hC_{j,t-1}}\right)^{-\sigma} \times \frac{P_{c,t}}{P_{c,t+1}}\right] = 1
+\end{align}
+
+
+
+
+
+
+
+
+
+\pagebreak
+Consumption is made of tradable and nontradable goods
+\begin{align}
+    C_t=\frac{C_{T, t}^{\gamma_c} C_{N, t}^{1-\gamma_c}}{\gamma_c^{\gamma_c}\left(1-\gamma_c\right)^{1-\gamma_c}}
+\end{align}
+
+\begin{table}[ht]
+    \begin{tabular}{ll}
+        \textbf{Long name}                                 & \textbf{Expression} \\ \hline \hline
+        Consumption of tradable goods                      & $C_{T, t}$          \\
+        Consumption of nontradable goods                   & $C_{N, t}$          \\
+        Share of tradable goods consumption in a household & $\gamma_c$
+    \end{tabular}
+\end{table}
+
+Consuming a unit of final tradable good requires $\omega$ units of nontradable distribution services $Y_{D, t}$:
+\begin{align}
+    C_{T, t} = \min \left\{  C_{R, t}; \omega^{-1}Y_{D,t} \right\} \\
+    C_{R, t} = \frac{C_{H,t}^{\alpha}  C_{F,t}^{1-\alpha}}{\alpha^{\alpha} (1-\alpha)^{1-\alpha}}
+\end{align}
+
+\begin{table}[ht]
+    \begin{tabular}{ll}
+        \textbf{Long name}                                                     & \textbf{Expression} \\ \hline \hline
+        Bundle of home-made tradable goods consumed at Home                    & $C_{H, t}$          \\
+        Bundle of foreign-made tradable goods consumed at Home                 & $C_{F, t}$          \\
+        Share of home-made goods in the home-consumed basked of tradable goods & $\gamma_c$
+    \end{tabular}
+\end{table}
+
+\begin{align}
+    C_{N, t} & =\left[\left(\frac{1}{n}\right)^{\frac{1}{\phi_N}} \int_0^n C_t\left(z_N\right)^{\frac{\phi_N-1}{\phi_N}} d z_N\right]^{\frac{\phi_N}{\phi_N-1}}   \\
+    C_{H, t} & =\left[\left(\frac{1}{n}\right)^{\frac{1}{\phi_H}} \int_0^n C_t\left(z_H\right)^{\frac{\phi_H-1}{\phi_H}} d z_H\right]^{\frac{\phi_H}{\phi_H-1}}   \\
+    C_{F, t} & =\left[\left(\frac{1}{1-n}\right)^{\frac{1}{\phi_F}} \int_n^1 C_t\left(z_F\right)^{\frac{\phi_F-1}{\phi_F}} d z_F\right]^{\frac{\phi_F}{\phi_F-1}}
+\end{align}
+
+\begin{table}[ht]
+    \begin{tabular}{ll}
+        \textbf{Long name}                                         & \textbf{Expression} \\ \hline \hline
+        Elasticity of substitution for nontradable goods           & $\phi_{N}$          \\
+        Elasticity of substitution for home-made tradable goods    & $\phi_{H}$          \\
+        Elasticity of substitution for foreign-made tradable goods & $\phi_{F}$          \\
+    \end{tabular}
+\end{table}
+
+FOCs:
+\begin{align}
+     & C_t\left(z_N\right)=\frac{1}{n}\left(1-\gamma_c\right)\left(\frac{P_t\left(z_N\right)}{P_{N, t}}\right)^{-\phi_N}\left(\frac{P_{N, t}}{P_{C, t}}\right)^{-1} C_t                                          \\
+     & C_t\left(z_H\right)=\frac{1}{n} \gamma_c \alpha\left(\frac{P_t\left(z_H\right)}{P_{H, t}}\right)^{-\phi_H}\left(\frac{P_{H, t}}{P_{R, t}}\right)^{-1}\left(\frac{P_{T, t}}{P_{C, t}}\right)^{-1} C_t      \\
+     & C_t\left(z_F\right)=\frac{1}{1-n} \gamma_c(1-\alpha)\left(\frac{P_t\left(z_F\right)}{P_{F, t}}\right)^{-\phi_F}\left(\frac{P_{F, t}}{P_{R, t}}\right)^{-1}\left(\frac{P_{T, t}}{P_{C, t}}\right)^{-1} C_t
+\end{align}
+
+\begin{align}
+    P_{N, t} & =\left[\frac{1}{n} \int_0^n P_t\left(z_N\right)^{1-\phi_N} d z_N\right]^{\frac{1}{1-\phi_N}}   \\
+    P_{H, t} & =\left[\frac{1}{n} \int_0^n P_t\left(z_H\right)^{1-\phi_H} d z_H\right]^{\frac{1}{1-\phi_H}}   \\
+    P_{F, t} & =\left[\frac{1}{1-n} \int_n^1 P_t\left(z_F\right)^{1-\phi_F} d z_F\right]^{\frac{1}{1-\phi_F}} \\
+    P_{R, t} & =P_{H, t}^\alpha P_{F, t}^{1-\alpha}                                                           \\
+    P_{T, t} & =P_{R, t}+\omega P_{N, t}                                                                      \\
+    P_{C, t} & =P_{T, t}^{\gamma_c} P_{N, t}^{1-\gamma_c}
+\end{align}
