@@ -46,7 +46,6 @@ pi_h_ann    ${\pi_H^{ann}}$ (long_name='annualized domestic inflation rate')
 % Foreign Country
 y_gap_f       ${\tilde{y^f}}$   (long_name='output gap')
 pi_h_f        ${\pi^f_H}$       (long_name='domestic inflation')
-i_f           ${i^f}$           (long_name='nominal interest rate')
 y_nat_f       ${{y^f}^{n}}$       (long_name='natural output')
 r_nat_f       ${{r^f}^{n}}$       (long_name='natural interest rate')
 s_nat_f       ${{s^f}^{n}}$       (long_name='natural terms of trade')
@@ -145,11 +144,11 @@ eta     = 1;
 rho_z   = 0.5;
 
 % Foreign country
-betta_f   = 0.1;
+betta_f   = 0.99;
 siggma_f  = 1;
 varphi_f  = 5;
 alppha_f  = 1/4;
-epsilon_f = 9;
+epsilon_f = 6;
 theta_f   = 3/4;
 upsilon_f = 0.4;
 rho_nu_f  = 0.5;
@@ -212,7 +211,7 @@ y     = a + (1-alppha)*n;
 [name='Definition real interest rate']
 r_real= i - pi_h(+1);
 [name='Monetary policy shock, below eq. (39)']
-nu    = rho_nu*(0.5*nu_f(-1) + 0.5*nu(-1)) + eps_nu;
+nu    = rho_nu*nu(-1) + eps_nu;
 [name='TFP shock, top of p. 233']
 a     = rho_a*a(-1) + eps_a;
 [name='Preference shock, top of p. 227']
@@ -247,14 +246,15 @@ s     = er + p_star -  p_h ;
 [name='Definiion exchange rate growth']
 d_er=er-er(-1);
 
-i  = phi_pi*pi_h + phi_y*yhat + nu;
-i_f = phi_pi*pi_h_f + phi_y*yhat_f + nu;
+% i  = phi_pi*(pi_h(-1) + pi_h_f(-1)) + phi_y*(yhat(-1) + yhat_f(-1))+ 0.5*(nu + nu_f);
+i  = phi_pi*(pi_h(-1) + pi_h_f(-1)) + phi_y*(yhat(-1) + yhat_f(-1)) + 0.5*(pi_h(-1) - pi_h(-2)) + 0.5*(pi_h_f(-1) - pi_h_f(-2)) + 0.5*(yhat(-1) - yhat(-2)) + 0.5*(yhat_f(-1) - yhat_f(-2)) + 0.5*(nu + nu_f);
+
 
     % FOREIGN COUNTRY
 [name='FOREIGN New Keynesian Phillips Curve (eq. 37)']
 pi_h_f  = betta_f*pi_h_f(+1) + kappa_upsilon_f*y_gap_f;
 [name='FOREIGN Dynamic IS Curve (eq. 29)']
-y_gap_f = y_gap_f(+1) - 1/siggma_upsilon_f*(i_f-pi_h_f(+1)-r_nat_f);
+y_gap_f = y_gap_f(+1) - 1/siggma_upsilon_f*(i-pi_h_f(+1)-r_nat_f);
 [name='FOREIGN Natural output (eq. 35)']
 y_nat_f = Gamma_a_f*a_f + Gamma_z_f*z_f + Gamma_star_f*y_star;
 [name='FOREIGN Natural rate of interest (eq. 38)']
@@ -272,10 +272,10 @@ pi_f    = pi_h_f + upsilon_f*(s_f-s_f(-1));
 [name='FOREIGN Production function (eq. 32)']
 y_f     = a_f + (1-alppha_f)*n_f;
 [name='FOREIGN Definition real interest rate']
-r_real_f = i_f - pi_h_f(+1);
+r_real_f = i - pi_h_f(+1);
 % r_real_f = i - pi_h_f(+1);
 [name='FOREIGN Monetary policy shock, below eq. (39)']
-nu_f    = rho_nu_f*(0.5*nu_f(-1) + 0.5*nu(-1)) + eps_nu_f;
+nu_f    = rho_nu_f*nu_f(-1) + eps_nu_f;
 [name='FOREIGN TFP shock, top of p. 233']
 a_f     = rho_a_f*a_f(-1) + eps_a_f;
 [name='FOREIGN Preference shock, top of p. 227']
@@ -290,7 +290,7 @@ nx_f=y_f-c_f-upsilon_f*s_f;
 %y_star - y_star(-1) = rho_y_star*(y_star(-1) - y_star(-2)) + eps_y_star; %use growth rate rule for world output
 % y_star  =   0;
 [name='FOREIGN Annualized nominal interest rate']
-i_ann_f=4*i_f;
+i_ann_f=4*i;
 % i_ann_f=4*i;
 [name='FOREIGN Annualized real interest rate']
 r_real_ann_f=4*r_real_f;
