@@ -106,6 +106,20 @@ rho_y_star      ${\rho_{y^*}}$  (long_name='autocorrelation world output growth 
 rho_z           ${\rho_{z}}$    (long_name='autocorrelation preference shock')
 phi_pi          ${\phi_{\pi}}$  (long_name='inflation feedback Taylor Rule')
 phi_y           ${\phi_{y}}$    (long_name='output feedback Taylor Rule')
+siggma_f          ${\sigma}$      (long_name='inverse EIS')
+betta_f           ${\beta}$       (long_name='discount factor')
+varphi_f          ${\varphi}$     (long_name='inverse Frisch elasticity')
+alppha_f          ${\alpha}$      (long_name='capital share')
+epsilon_f         ${\epsilon}$    (long_name='demand elasticity')
+theta_f           ${\theta}$      (long_name='Calvo parameter')
+upsilon_f         ${\upsilon}$    (long_name='openness parameter')
+eta_f             ${\eta}$        (long_name='substitutability foreign/domestic goods')    
+rho_a_f           ${\rho_a}$      (long_name='autocorrelation technology shock')
+rho_nu_f          ${\rho_{\nu}}$  (long_name='autocorrelation monetary policy shock')
+rho_y_star_f      ${\rho_{y^*}}$  (long_name='autocorrelation world output growth shock')
+rho_z_f           ${\rho_{z}}$    (long_name='autocorrelation preference shock')
+phi_pi_f          ${\phi_{\pi}}$  (long_name='inflation feedback Taylor Rule')
+phi_y_f           ${\phi_{y}}$    (long_name='output feedback Taylor Rule')
 
 ;
 
@@ -129,7 +143,9 @@ phi_pi  = 1.5;
 phi_y   = 0.5/4;
 eta     = 1;
 rho_z   = 0.5;
-betta_f   = 0.99;
+
+% Foreign country
+betta_f   = 0.1;
 siggma_f  = 1;
 varphi_f  = 5;
 alppha_f  = 1/4;
@@ -144,17 +160,22 @@ phi_y_f   = 0.5/4;
 eta_f     = 1;
 rho_z_f   = 0.5;
 
-% Foreign country
-
-
 %----------------------------------------------------------------
 % First Order Conditions
 %----------------------------------------------------------------
 model(linear); 
-
-% Home country
-
 %Composite parameters
+#Omega_f    =(1-alppha_f)/(1-alppha_f+alppha_f*epsilon_f);        %p. 233
+#lambda_f   =(1-theta_f)*(1-betta_f*theta_f)/theta_f*Omega_f;       %p. 233
+#omega_f    = siggma_f*eta_f + (1-upsilon_f)*(siggma_f*eta_f-1);    %p. 235
+#Phi_f = 1 / (1+upsilon_f*(omega_f-1));                       %p. 235
+#siggma_upsilon_f = siggma_f*Phi_f;                           %p. 235
+#Gamma_a_f  = (1+varphi_f)/(siggma_upsilon_f*(1-alppha_f)+varphi_f+alppha_f);                                          %p. 238
+#Gamma_star_f  = - upsilon_f*(omega_f-1)*siggma_upsilon_f*(1-alppha_f)/(siggma_upsilon_f*(1-alppha_f)+varphi_f+alppha_f);    %p. 238
+#Gamma_z_f  = - upsilon_f*omega_f*Phi_f*(1-alppha_f)/(siggma_upsilon_f*(1-alppha_f)+varphi_f+alppha_f);                      %p. 238   
+#kappa_upsilon_f  = lambda_f*(siggma_upsilon_f+(varphi_f+alppha_f)/(1-alppha_f));                                      %p. 238 bottom
+#Phi_star_f=siggma_upsilon_f*(upsilon_f*(omega_f-1)+Gamma_star_f);                                                %p. 239
+#Phi_z_f=(1-upsilon_f)*Phi_f-siggma_upsilon_f*Gamma_z_f;                                                          %p. 239        
 #Omega    =(1-alppha)/(1-alppha+alppha*epsilon);        %p. 233
 #lambda   =(1-theta)*(1-betta*theta)/theta*Omega;       %p. 233
 #omega    = siggma*eta + (1-upsilon)*(siggma*eta-1);    %p. 235
@@ -166,21 +187,6 @@ model(linear);
 #kappa_upsilon  = lambda*(siggma_upsilon+(varphi+alppha)/(1-alppha));                                      %p. 238 bottom
 #Phi_star=siggma_upsilon*(upsilon*(omega-1)+Gamma_star);                                                %p. 239
 #Phi_z=(1-upsilon)*Phi-siggma_upsilon*Gamma_z;                                                          %p. 239        
-
-% Foreign country
-
-% %Composite parameters
-% #Omega_f    =(1-alppha_f)/(1-alppha_f+alppha_f*epsilon_f);        %p. 233
-% #lambda_f   =(1-theta_f)*(1-betta_f*theta_f)/theta_f*Omega_f;       %p. 233
-% #omega_f    = siggma_f*eta_f + (1-upsilon_f)*(siggma_f*eta_f-1);    %p. 235
-% #Phi_f = 1 / (1+upsilon_f*(omega_f-1));                       %p. 235
-% #siggma_upsilon_f = siggma_f*Phi_f;                           %p. 235
-% #Gamma_a_f  = (1+varphi_f)/(siggma_upsilon_f*(1-alppha_f)+varphi_f+alppha_f);                                          %p. 238
-% #Gamma_star_f  = - upsilon_f*(omega_f-1)*siggma_upsilon_f*(1-alppha_f)/(siggma_upsilon_f*(1-alppha_f)+varphi_f+alppha_f);    %p. 238
-% #Gamma_z_f  = - upsilon_f*omega_f*Phi_f*(1-alppha_f)/(siggma_upsilon_f*(1-alppha_f)+varphi_f+alppha_f);                      %p. 238   
-% #kappa_upsilon_f  = lambda_f*(siggma_upsilon_f+(varphi_f+alppha_f)/(1-alppha_f));                                      %p. 238 bottom
-% #Phi_star_f=siggma_upsilon_f*(upsilon_f*(omega_f-1)+Gamma_star_f);                                                %p. 239
-% #Phi_z_f=(1-upsilon_f)*Phi_f-siggma_upsilon_f*Gamma_z_f;                                                          %p. 239        
 
 % HOME COUNTRY
 [name='New Keynesian Phillips Curve (eq. 37)']
@@ -246,40 +252,40 @@ i_f = phi_pi*pi_h_f + phi_y*yhat_f + nu;
 
     % FOREIGN COUNTRY
 [name='FOREIGN New Keynesian Phillips Curve (eq. 37)']
-pi_h_f  = betta*pi_h_f(+1) + kappa_upsilon*y_gap_f;
+pi_h_f  = betta_f*pi_h_f(+1) + kappa_upsilon_f*y_gap_f;
 [name='FOREIGN Dynamic IS Curve (eq. 29)']
-y_gap_f = y_gap_f(+1) - 1/siggma_upsilon*(i_f-pi_h_f(+1)-r_nat_f);
+y_gap_f = y_gap_f(+1) - 1/siggma_upsilon_f*(i_f-pi_h_f(+1)-r_nat_f);
 [name='FOREIGN Natural output (eq. 35)']
-y_nat_f = Gamma_a*a_f + Gamma_z*z_f + Gamma_star*y_star;
+y_nat_f = Gamma_a_f*a_f + Gamma_z_f*z_f + Gamma_star_f*y_star;
 [name='FOREIGN Natural rate of interest (eq. 38)']
-r_nat_f = -siggma_upsilon*Gamma_a*(1-rho_a)*a_f + Phi_star*(y_star(+1)-y_star) + Phi_z*(1-rho_z)*z_f;
+r_nat_f = -siggma_upsilon_f*Gamma_a_f*(1-rho_a_f)*a_f + Phi_star_f*(y_star(+1)-y_star) + Phi_z_f*(1-rho_z_f)*z_f;
 [name='FOREIGN Natural terms of trade (below eq. (35))']
-s_nat_f = siggma_upsilon*(y_nat_f-y_star)-(1-upsilon)*Phi*z_f;
+s_nat_f = siggma_upsilon_f*(y_nat_f-y_star)-(1-upsilon_f)*Phi*z_f;
 [name='FOREIGN Terms of trade gap (middle p. 238)']
-s_gap_f = siggma_upsilon*y_gap_f;
+s_gap_f = siggma_upsilon_f*y_gap_f;
 [name='FOREIGN Output']
 y_gap_f = y_f - y_nat_f;
 [name='FOREIGN  Terms of trade, p. 238']
 s_gap_f = s_f - s_nat_f;
 [name='FOREIGN CPI inflation (13)']
-pi_f    = pi_h_f + upsilon*(s_f-s_f(-1));
+pi_f    = pi_h_f + upsilon_f*(s_f-s_f(-1));
 [name='FOREIGN Production function (eq. 32)']
-y_f     = a_f + (1-alppha)*n_f;
+y_f     = a_f + (1-alppha_f)*n_f;
 [name='FOREIGN Definition real interest rate']
 r_real_f = i_f - pi_h_f(+1);
 % r_real_f = i - pi_h_f(+1);
 [name='FOREIGN Monetary policy shock, below eq. (39)']
-nu_f    = rho_nu*(0.5*nu_f(-1) + 0.5*nu(-1)) + eps_nu_f;
+nu_f    = rho_nu_f*(0.5*nu_f(-1) + 0.5*nu(-1)) + eps_nu_f;
 [name='FOREIGN TFP shock, top of p. 233']
-a_f     = rho_a*a_f(-1) + eps_a_f;
+a_f     = rho_a_f*a_f(-1) + eps_a_f;
 [name='FOREIGN Preference shock, top of p. 227']
-z_f     = rho_z*z_f(-1) + eps_z_f;
+z_f     = rho_z_f*z_f(-1) + eps_z_f;
 [name='FOREIGN FOC wage, eq. (11)']
-w_f-p_f=siggma*c_f+varphi*n_f;
+w_f-p_f=siggma_f*c_f+varphi_f*n_f;
 [name='FOREIGN net exports, eq. (31)']
-nx_f=upsilon*(omega/siggma-1)*s_f-upsilon/siggma*z_f;
+nx_f=upsilon_f*(omega_f/siggma_f-1)*s_f-upsilon_f/siggma_f*z_f;
 [name='FOREIGN consumption determined by resource constraint, p. 236']
-nx_f=y_f-c_f-upsilon*s_f;
+nx_f=y_f-c_f-upsilon_f*s_f;
 % [name='FOREIGN World output growth shock']
 %y_star - y_star(-1) = rho_y_star*(y_star(-1) - y_star(-2)) + eps_y_star; %use growth rate rule for world output
 % y_star  =   0;
