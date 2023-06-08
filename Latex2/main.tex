@@ -174,8 +174,7 @@ Where $e_t$ is (Log) Effective Nominal Exchange Rate, $p_t^{\star}$ is the World
                       & = s_t + p_{H_t} - p_t                                                         &  & \text{using (\ref{eq:terms_of_trade_with_world_price_index})}        \\
                       & = (1-\alpha)s_t                                                               &  & \text{using (\ref{eq:domestic_price_plus_bilateral_terms_of_trade})}
 \end{align}
-International Risk-Sharing
-Equation (\ref{eq:introduces_arrow_securities}) for country \textit{i} can be rewritten as:
+International Risk-Sharing Equation (\ref{eq:introduces_arrow_securities}) for country \textit{i} can be rewritten as:
 \begin{align}
     \frac{V_{t,t+1}}{\mathcal{E}^i_tP^i_t}({C^{i}_{t}})^{-\sigma} = \xi_{t,t+1} \beta ({C^{i}_{t+1}})^{-\sigma} \frac{1}{\mathcal{E}^i_{t+1}P^{i}_{t+1}}
 \end{align}
@@ -184,17 +183,35 @@ Given that:
     Q_{t,t+1} = \frac{V_{t,t+1}}{\xi_{t,t+1}}
 \end{equation}
 \begin{align}
-    \frac{V_{t,t+1}}{\mathcal{E}^i_tP^i_t}({C^{i}_{t}})^{-\sigma}                                                                                           & = \xi_{t,t+1} \beta ({C^{i}_{t+1}})^{-\sigma} \frac{1}{\mathcal{E}^i_{t+1}P^{i}_{t+1}}                                                                    \\
-    Q_{t,t+1}                                                                                                                                               & = \beta \left(\frac{C^i_{t+1}}{C^i_{t}}\right)^{-\sigma} \left(\frac{P^i_t}{P^i_{t+1}}\right) \left(\frac{\mathcal{E}^i_{t}}{\mathcal{E}^i_{t+1}} \right) \\
-    Q_{t,t+1}                                                                                                                                               & = \beta \left(\frac{C_{t+1}}{C_{t}}\right)^{-\sigma} \frac{P_t}{P_{t+1}}  \text{ using Equation (XX)}                                                     \\
-    \beta \left(\frac{C^i_{t+1}}{C^i_{t}}\right)^{-\sigma} \left(\frac{P^i_t}{P^i_{t+1}}\right) \left(\frac{\mathcal{E}^i_{t}}{\mathcal{E}^i_{t+1}} \right) & = \beta \left(\frac{C_{t+1}}{C_{t}}\right)^{-\sigma} \frac{P_t}{P_{t+1}}                                                                                  \\
-    \left(\frac{C^i_{t+1}}{C^i_{t}}\right)^{-\sigma} \left(\frac{P^i_t}{P^i_{t+1}}\right) \left(\frac{\mathcal{E}^i_{t}}{\mathcal{E}^i_{t+1}} \right)       & = \left(\frac{C_{t+1}}{C_{t}}\right)^{-\sigma} \frac{P_t}{P_{t+1}}                                                                                        \\
-    \left(\frac{C^i_{t}}{C^i_{t+1}}\right)^{\sigma} \left(\frac{P^i_t}{P^i_{t+1}}\right) \left(\frac{\mathcal{E}^i_{t}}{\mathcal{E}^i_{t+1}} \right)        & = \left(\frac{C_{t}}{C_{t+1}}\right)^{\sigma} \frac{P_t}{P_{t+1}}                                                                                         \\
-    {C^{i}_{t}}^{\sigma} P_t^i \mathcal{E}_t^i                                                                                                              & = C_t^{\sigma} P_t                                                                                                                                        \\
-    {C^{i}_{t}}^{\sigma}                                                                                                                                    & = C_t^{\sigma} \frac{1}{\mathcal{Q}_{i,t}}                                                                                                                \\
-    C_t = C^i_t \mathcal{Q}_{i,t}^{\frac{1}{\sigma}} \label{eq:domestic_consumption_and_real_exchange_rate}
+    \frac{V_{t,t+1}}{\mathcal{E}^i_tP^i_t}({C^{i}_{t}})^{-\sigma}         & = \xi_{t,t+1} \beta ({C^{i}_{t+1}})^{-\sigma} \frac{1}{\mathcal{E}^i_{t+1}P^{i}_{t+1}}                                                                    \\
+    Q_{t,t+1}                                                             & = \beta \left(\frac{C^i_{t+1}}{C^i_{t}}\right)^{-\sigma} \left(\frac{P^i_t}{P^i_{t+1}}\right) \left(\frac{\mathcal{E}^i_{t}}{\mathcal{E}^i_{t+1}} \right) 
 \end{align}
-Log-linearising (\ref{eq:domestic_consumption_and_real_exchange_rate}) yields:
+Recall that:
+\begin{align}
+    \frac{\partial L}{\partial C_t} &= \beta^t C_t^{-\sigma} P_{t}^{-1} = \lambda_t \nonumber\\
+    \frac{\partial L}{\partial D_{t+1}} & = -\lambda_t \E_t[Q_{t,t+1}] = -\E_t[\lambda_{t+1}] \nonumber\\
+    &=-\beta^t C_t^{-\sigma} P_{t}^{-1} \E_t[Q_{t,t+1}] = -\E_t[\lambda_{t+1}] \label{eq:derivative_c_t_home_country}
+\end{align}
+Which is symmetrical for country \textit{i}:
+\begin{align}
+    \frac{\partial L^i}{\partial C_t^i} &= \beta^t {(C^i_t)}^{-\sigma} (\mathcal{E}_{i,t}P^i_{t})^{-1} = \lambda^i_t \nonumber\\
+    \frac{\partial L^i}{\partial D_{t+1}^i} & = -\lambda^i_t \E_t[Q_{t,t+1}] = -\E_t[\lambda^i_{t+1}] \nonumber\\
+    &=-\beta^t {(C^i_t)}^{-\sigma} (\mathcal{E}_{i,t}P^i_{t})^{-1} \E_t[Q_{t,t+1}] = -\E_t[\lambda^i_{t+1}] \label{eq:derivative_c_t_i_country}
+\end{align}
+\begin{align*}
+    \frac{\text{(\ref{eq:derivative_c_t_home_country})}}{\text{(\ref{eq:derivative_c_t_i_country})}}: \frac{-\beta^t C_t^{-\sigma} P_{t}^{-1} \E_t[Q_{t,t+1}]}{-\beta^t {(C^i_t)}^{-\sigma} (\mathcal{E}_{i,t}P^i_{t})^{-1} \E_t[Q_{t,t+1}]} &= \frac{-\E_t[\lambda_{t+1}]}{-\E_t[\lambda^i_{t+1}]}
+\end{align*} 
+\begin{align*}   
+    C_t^{-\sigma}{(C^i_t)}^{\sigma} \frac{\mathcal{E}_{i,t}P^i_{t}}{P_t} &= 1 \\
+    C_t^{-\sigma}{(C^i_t)}^{\sigma} \mathcal{Q}_{i,t} &= 1 \\
+    C_t^{-\sigma}{(C^i_t)}^{\sigma}  &= \frac{1}{\mathcal{Q}_{i,t}} \\
+    C_t^{-\sigma}  &= \frac{1}{\mathcal{Q}_{i,t}}{(C^i_t)}^{-\sigma} \\
+    C_t^{\sigma}  &= \mathcal{Q}_{i,t}{(C^i_t)}^{\sigma}
+\end{align*}
+\begin{equation}\label{eq:consumption_international_risk_sharing}
+    \Rightarrow C_t  = {C^i_t}\mathcal{Q}_{i,t}^{\frac{1}{\sigma}}
+\end{equation}
+Log-linearising (\ref{eq:consumption_international_risk_sharing}) yields:
 \begin{equation}
     c_t = c_{t}^i + \frac{1}{\sigma}q_{i,t}
 \end{equation}
@@ -264,6 +281,40 @@ Using equations (), (), ():
     y_t                   & = y_t^{\star} + \frac{1-\alpha + \alpha w}{\sigma}s_t                    \\
     y_t                   & = y_t^{\star} + \frac{1+ \alpha(w-1)}{\sigma}s_t                         \\
     \sigma_\alpha         & = \frac{1+ \alpha(w-1)}{\sigma}                                          \\
-    \Rightarrow \quad y_t & =y^{\star}_t + \frac{1}{\sigma_\alpha}s_t
+    \Rightarrow \quad y_t & =y^{\star}_t + \frac{1}{\sigma_\alpha}s_t \label{eq:output_as_world_output_plus_trade}
 \end{align}
+\begin{landscape}
+Combining Euler equation () and (\ref{eq:output_as_world_output_plus_trade}) gives:
+\begin{align*}
+    c_t &=  \E_t[c_{t+1}] - \frac{1}{\sigma}( i_t  - \E_t [\pi_{t+1}] - \rho  ) \\
+    y_t - \frac{\alpha w}{\sigma}s_t &= \E_t\left[y_{t-1} - \frac{\alpha w}{\sigma}s_{t+1} \right]- \frac{1}{\sigma}( i_t  - \E_t [\pi_{t+1}] - \rho  ) \\
+    y_t &= \E_t\left[y_{t-1}\right] - \frac{\alpha w}{\sigma}\E_t[(s_{t+1}-s_t)]- \frac{1}{\sigma}( i_t  - \E_t [\pi_{t+1}] - \rho  ) \\
+    &= \E_t\left[y_{t-1}\right] - \frac{\alpha w}{\sigma}\E_t[\Delta s_{t+1}]- \frac{1}{\sigma}( i_t  - \E_t [\pi_{t+1}] - \rho  ) \\
+    &= \E_t\left[y_{t-1}\right] - \frac{\alpha w}{\sigma}\E_t[\Delta s_{t+1}]- \frac{1}{\sigma}( i_t  - \E_t [\pi_{H,t+1}] - \alpha \E_t[\Delta s_{t+1}] - \rho  ) \\
+    &= \E_t\left[y_{t-1}\right] - \frac{\alpha w}{\sigma}\E_t[\Delta s_{t+1}] + \frac{\alpha}{\sigma} \E_t[\Delta s_{t+1}] - \frac{1}{\sigma}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \\
+    &= \E_t\left[y_{t-1}\right] - \frac{\alpha w+\alpha}{\sigma}\E_t[\Delta s_{t+1}] - \frac{1}{\sigma}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \\
+    &= \E_t\left[y_{t-1}\right] + \frac{\alpha - \alpha w}{\sigma}\E_t[\Delta s_{t+1}] - \frac{1}{\sigma}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \\
+    &= \E_t\left[y_{t-1}\right] + \frac{-\alpha (-1+w)}{\sigma}\E_t[\Delta s_{t+1}] - \frac{1}{\sigma}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \\
+    &= \E_t\left[y_{t-1}\right] - \frac{\alpha(w-1)}{\sigma}\E_t[\Delta s_{t+1}] - \frac{1}{\sigma}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \\
+    &= \E_t\left[y_{t-1}\right] - \frac{\alpha \Theta}{\sigma}\E_t[\Delta s_{t+1}] - \frac{1}{\sigma}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \\
+    \E_t[\Delta s_{t+1}] &= \sigma_\alpha \E_t[\Delta y_{t+1} - \Delta y_{t+1}^{\star}] \quad \text{from Equation(): } \\
+    &= \E_t\left[y_{t-1}\right] - \frac{\alpha \Theta}{\sigma}\sigma_\alpha \E_t[\Delta y_{t+1} - \Delta y_{t+1}^{\star}] - \frac{1}{\sigma}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \\
+    &= \E_t\left[y_{t-1}\right] - \frac{\alpha \Theta}{1+\alpha \Theta} \E_t[\Delta y_{t+1} - \Delta y_{t+1}^{\star}] - \frac{1}{\sigma}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \\
+    &= \E_t\left[y_{t-1}\right] - \frac{\alpha \Theta}{1+\alpha \Theta} \E_t[\Delta y_{t+1}] + \frac{\alpha \Theta}{1+\alpha \Theta}\E_t[\Delta y_{t+1}^{\star}] - \frac{1}{\sigma}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \\
+    &= \E_t\left[y_{t-1}\right] - \frac{\alpha \Theta}{1+\alpha \Theta} \E_t[\Delta y_{t+1}] + \frac{\alpha \Theta}{1+\alpha \Theta}\E_t[\Delta y_{t+1}^{\star}] - \frac{1}{(1+\alpha \Theta)\sigma_\alpha}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \\
+\end{align*}  
+\begin{align}  
+    (1+\alpha \Theta)y_t&= (1+\alpha \Theta)\E_t\left[y_{t-1}\right] - \alpha \Theta \E_t[\Delta y_{t+1}] + \alpha \Theta\E_t[\Delta y_{t+1}^{\star}] - \frac{1}{\sigma_\alpha}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \nonumber\\
+    (1+\alpha \Theta)\E_t\left[y_t - y_{t-1}\right]&=  - \alpha \Theta \E_t[\Delta y_{t+1}] + \alpha \Theta\E_t[\Delta y_{t+1}^{\star}] - \frac{1}{\sigma_\alpha}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \nonumber\\
+    -(1+\alpha \Theta)\E_t\left[y_{t-1} - y_t \right]&=  - \alpha \Theta \E_t[\Delta y_{t+1}] + \alpha \Theta\E_t[\Delta y_{t+1}^{\star}] - \frac{1}{\sigma_\alpha}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \nonumber\\
+    (1+\alpha \Theta)\E_t\left[\Delta y_{t+1}\right]&=  \alpha \Theta \E_t[\Delta y_{t+1}] - \alpha \Theta\E_t[\Delta y_{t+1}^{\star}] + \frac{1}{\sigma_\alpha}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \nonumber\\
+    (1+\alpha \Theta)\E_t\left[\Delta y_{t+1}\right] - \alpha \Theta \E_t[\Delta y_{t+1}]&= - \alpha \Theta\E_t[\Delta y_{t+1}^{\star}] + \frac{1}{\sigma_\alpha}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \nonumber\\
+    \E_t\left[\Delta y_{t+1}\right] +\alpha \Theta\E_t\left[\Delta y_{t+1}\right] - \alpha \Theta \E_t[\Delta y_{t+1}]&= - \alpha \Theta\E_t[\Delta y_{t+1}^{\star}] + \frac{1}{\sigma_\alpha}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \nonumber\\
+    \E_t\left[\Delta y_{t+1}\right] &= - \alpha \Theta\E_t[\Delta y_{t+1}^{\star}] + \frac{1}{\sigma_\alpha}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \nonumber\\
+    \E_t\left[y_{t+1}-y_t\right] &= - \alpha \Theta\E_t[\Delta y_{t+1}^{\star}] + \frac{1}{\sigma_\alpha}( i_t  - \E_t [\pi_{H,t+1}] - \rho  )\nonumber\\
+    -y_t &= -\E_t\left[y_{t+1}\right]- \alpha \Theta\E_t[\Delta y_{t+1}^{\star}] + \frac{1}{\sigma_\alpha}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \nonumber\\
+    \Rightarrow y_t &= \E_t\left[y_{t+1}\right]- \frac{1}{\sigma_\alpha}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) + \alpha \Theta\E_t[\Delta y_{t+1}^{\star}] \\
+\end{align}
+\end{landscape}
+test
 \end{document}
