@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1686171123 "/Users/edvardasvabuolas/Documents/University/Dissertation/Latex2/main.tex" "main.pdf" "main" 1686171123 0
-  "/Users/edvardasvabuolas/Documents/University/Dissertation/Latex2/main.tex" 1686171121 24670 b2f65e633633748c61e355f92d8f6efa ""
+["pdflatex"] 1686317289 "/Users/edvardasvabuolas/Documents/University/Dissertation/Latex2/main.tex" "main.pdf" "main" 1686317289 0
+  "/Users/edvardasvabuolas/Documents/University/Dissertation/Latex2/main.tex" 1686317288 25725 ee95a0b003d046ad261ab7a6a9a45385 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -31,6 +31,7 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1248133631 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1248133631 32362 179c33bbf43f19adbb3825bb4e36e57a ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1248133631 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
@@ -147,8 +148,9 @@
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1686149237 7883462 5fc4e405034948f17e53a1e5c9053c4c ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   "Packages.sty" 1686158600 586 78e2b78ab691cce6c2efd809ba68871b ""
-  "main.aux" 1686171123 1086 e83685ecafe460b957baba12ef871d3f "pdflatex"
-  "main.tex" 1686171121 24670 b2f65e633633748c61e355f92d8f6efa ""
+  "main.aux" 1686317289 1086 e63bbad1fc7581fb3e05d65bab867760 "pdflatex"
+  "main.tex" 1686317288 25725 ee95a0b003d046ad261ab7a6a9a45385 ""
+  "uoe_logo.png" 1686316242 20326 1cb2a3031b2bfffe2295b1170a85379a ""
   (generated)
   "main.aux"
   "main.log"

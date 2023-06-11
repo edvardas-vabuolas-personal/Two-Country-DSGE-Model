@@ -2,7 +2,35 @@
 \usepackage{Packages}
 
 \begin{document}
-
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+        \LARGE
+        \textbf{Economic Heterogeneity in a Small Open Economy Framework}
+ 
+        \vspace{0.5cm}
+        A Two-Country DSGE Model for Scotland and the Rest of the UK
+             
+        \vspace{1.5cm}
+ 
+        \textbf{B204335}
+ 
+        \vfill
+             
+        A dissertation presented for the degree of\\
+        MSc Economics (Econometrics) 
+             
+        \vspace{0.8cm}
+      
+        \includegraphics[width=0.4\textwidth]{uoe_logo.png}
+             
+        School of Economics\\
+        University of Edinburgh\\
+        United Kingdom\\
+        The 15th of August, 2023
+             
+    \end{center}
+ \end{titlepage}
 Two-country small open economy NK DSGE model for Scotland and the Rest of the UK.
 
 \begin{enumerate}
@@ -316,5 +344,11 @@ Combining Euler equation () and (\ref{eq:output_as_world_output_plus_trade}) giv
     \Rightarrow y_t &= \E_t\left[y_{t+1}\right]- \frac{1}{\sigma_\alpha}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) + \alpha \Theta\E_t[\Delta y_{t+1}^{\star}] \\
 \end{align}
 \end{landscape}
-test
+\begin{align}
+    \pi_{avg, t} = 0.0816 \pi^{scot}_{H,t} + 0.9184 \pi^{ruk}_{H,t} \\
+    \tilde{y}_{avg, t} = 0.0816 \tilde{y}_{scot, t} + 0.9184 \tilde{y}_{ruk, t}
+\end{align}
+\begin{equation}
+    i_t = \rho_{\pi}\pi_{avg, t-1} + \rho_{\tilde y}\tilde{y}_{avg, t-1} + \Delta  \pi_{avg, t-1} + \Delta \tilde{y}_{avg, t-1} + \nu_t
+\end{equation}
 \end{document}
