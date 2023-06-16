@@ -1,10 +1,10 @@
 \ProvidesPackage{Packages}
 \usepackage{graphicx}
 \usepackage[a4paper,
-            left=1in,
+            left=1.25in,
             right=1in,
-            top=1in,
-            bottom=1in]{geometry}
+            top=1.5in,
+            bottom=1.5in]{geometry}
 \usepackage{xcolor}
 \usepackage{import}
 \usepackage{setspace}
@@ -13,7 +13,12 @@
 \usepackage{tikz}
 \usepackage{xfrac}
 \usepackage[makeroom]{cancel}
-% \usepackage[maxnames=1,style=authoryear,sorting=nyt,natbib,backend=biber, url=false]{biblatex}
+\usepackage[style=authoryear,sorting=nyt,natbib,backend=biber, url=false]{biblatex}
+\DefineBibliographyStrings{english}{%
+  page             = {},
+  pages            = {},
+} 
+\renewcommand{\postnotedelim}{\addcolon}
 % \addbibresource{DissertationDSGE.bib}
 \usepackage{tabularx}
 \usepackage{pdflscape}

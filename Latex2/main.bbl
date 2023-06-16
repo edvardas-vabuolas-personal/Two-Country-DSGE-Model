@@ -1,0 +1,163 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global}
+    \entry{gali_2005_monetary}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=2eb29b2de0e8395a3a59f8899cfbdebc}{%
+           family={Gali},
+           familyi={G\bibinitperiod},
+           given={Jordi},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0207c503b83d36a8520adffe1ebb671e}{%
+           family={Monacelli},
+           familyi={M\bibinitperiod},
+           given={Tommaso},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{71df3b3355cbaace9940c55225e7a2b8}
+      \strng{fullhash}{71df3b3355cbaace9940c55225e7a2b8}
+      \strng{bibnamehash}{71df3b3355cbaace9940c55225e7a2b8}
+      \strng{authorbibnamehash}{71df3b3355cbaace9940c55225e7a2b8}
+      \strng{authornamehash}{71df3b3355cbaace9940c55225e7a2b8}
+      \strng{authorfullhash}{71df3b3355cbaace9940c55225e7a2b8}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Review of Economic Studies}
+      \field{month}{07}
+      \field{title}{Monetary Policy and Exchange Rate Volatility in a Small Open Economy}
+      \field{volume}{72}
+      \field{year}{2005}
+      \field{pages}{707\bibrangedash 734}
+      \range{pages}{28}
+      \verb{doi}
+      \verb 10.1111/j.1467-937x.2005.00349.x
+      \endverb
+    \endentry
+    \entry{jordigal_2015_monetary}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=9f86081942834923a86a56e2f4d2a7cd}{%
+           family={Galí},
+           familyi={G\bibinitperiod},
+           given={Jordi},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Princeton University Press}%
+      }
+      \strng{namehash}{9f86081942834923a86a56e2f4d2a7cd}
+      \strng{fullhash}{9f86081942834923a86a56e2f4d2a7cd}
+      \strng{bibnamehash}{9f86081942834923a86a56e2f4d2a7cd}
+      \strng{authorbibnamehash}{9f86081942834923a86a56e2f4d2a7cd}
+      \strng{authornamehash}{9f86081942834923a86a56e2f4d2a7cd}
+      \strng{authorfullhash}{9f86081942834923a86a56e2f4d2a7cd}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Monetary policy, inflation, and the business cycle : an introduction to the new Keynesian framework and its applications}
+      \field{year}{2015}
+    \endentry
+    \entry{kolasa_2009_structural}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4f31efd614c53750306e03c5e9bbabfa}{%
+           family={Kolasa},
+           familyi={K\bibinitperiod},
+           given={Marcin},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4f31efd614c53750306e03c5e9bbabfa}
+      \strng{fullhash}{4f31efd614c53750306e03c5e9bbabfa}
+      \strng{bibnamehash}{4f31efd614c53750306e03c5e9bbabfa}
+      \strng{authorbibnamehash}{4f31efd614c53750306e03c5e9bbabfa}
+      \strng{authornamehash}{4f31efd614c53750306e03c5e9bbabfa}
+      \strng{authorfullhash}{4f31efd614c53750306e03c5e9bbabfa}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Economic Modelling}
+      \field{month}{11}
+      \field{title}{Structural heterogeneity or asymmetric shocks? Poland and the euro area through the lens of a two-country DSGE model}
+      \field{urlday}{1}
+      \field{urlmonth}{3}
+      \field{urlyear}{2020}
+      \field{volume}{26}
+      \field{year}{2009}
+      \field{urldateera}{ce}
+      \field{pages}{1245\bibrangedash 1269}
+      \range{pages}{25}
+      \verb{doi}
+      \verb 10.1016/j.econmod.2009.06.001
+      \endverb
+    \endentry
+    \entry{ricci_2019_essays}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4a1781dceb9aa0c362a5fbaed5d57103}{%
+           family={Ricci},
+           familyi={R\bibinitperiod},
+           given={Mattia},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{organization}{1}{%
+        {theses.gla.ac.uk}%
+      }
+      \strng{namehash}{4a1781dceb9aa0c362a5fbaed5d57103}
+      \strng{fullhash}{4a1781dceb9aa0c362a5fbaed5d57103}
+      \strng{bibnamehash}{4a1781dceb9aa0c362a5fbaed5d57103}
+      \strng{authorbibnamehash}{4a1781dceb9aa0c362a5fbaed5d57103}
+      \strng{authornamehash}{4a1781dceb9aa0c362a5fbaed5d57103}
+      \strng{authorfullhash}{4a1781dceb9aa0c362a5fbaed5d57103}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Essays in macroeconomics and fiscal policy}
+      \field{urlday}{14}
+      \field{urlmonth}{6}
+      \field{urlyear}{2023}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://theses.gla.ac.uk/73043/
+      \endverb
+      \verb{url}
+      \verb https://theses.gla.ac.uk/73043/
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

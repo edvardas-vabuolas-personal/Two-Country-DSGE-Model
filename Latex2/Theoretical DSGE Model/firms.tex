@@ -1,0 +1,28 @@
+\subsection{Firms}
+\begin{align}
+    Y_t(j)   & = A_t N_t(j)                          \\
+    \log A_t & = \alpha_t                            \\
+    \alpha_t & = \rho_a \alpha_{t-1} + \varepsilon_t
+\end{align}
+\begin{align}
+    L             & =P_{t}(j)Y_{t}(j) - W_t(j)N_{t}(j) \\
+    \Rightarrow L & =P_{t}Y_{t} - W_tN_{t}             \\
+    \Rightarrow L & =P_{t}A_t N_t - W_tN_{t}           \\
+\end{align}
+\begin{align}
+    \frac{\partial L}{\partial N_t} & = P_t A_t - W_t = 0          &  & \Rightarrow W_t - P_tA_t = 0 \\
+    MC_t                            & = W_t - P_tA_t                                                 \\
+    mc_t                            & = w_t - p_t - a_t                                              \\
+    mc_t                            & = -\nu + w_t - p_t - a_t                                       \\
+    mc_t                            & = -\nu + w_t - p_{H,t} - a_t                                   \\
+\end{align}
+$\nu=-(\log (1-\tau))$, where $\tau$ is the employment subsidy, introduced later. $p_{H,t}$ because this is for domestic firms.
+
+Firms that get to reset their price, do it using the following problem:
+\begin{equation}
+    \bar{p_{H,t}} = \mu + (1-\beta \theta) \sum_{k=0}^{\infty} (\beta \theta)^{k} \E_t [mc_{t+k} + p_{H,t+k}]
+\end{equation}
+\begin{align}
+    \bar{p_{H,t}} &  & \text{Is the (log) new price}                  \\
+    \mu           &  & \text{Is the (log) markup in the steady state}
+\end{align}

@@ -1,0 +1,1 @@
+texcount -inc -html -relaxed main.tex > wordcount.html
