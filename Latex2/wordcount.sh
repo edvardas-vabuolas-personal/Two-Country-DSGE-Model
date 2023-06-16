@@ -1,1 +1,1 @@
-texcount -inc -html -relaxed main.tex > wordcount.html
+texcount -inc -relaxed -dir=. main.tex > wordcount.txt

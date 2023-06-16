@@ -4,17 +4,17 @@ INPUT /usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt
 INPUT /Users/edvardasvabuolas/Documents/University/Dissertation/Latex2/main.tex
 OUTPUT main.log
-INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/report.cls
-INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/report.cls
-INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/report.cls
-INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/report.cls
-INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/report.cls
-INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/report.cls
-INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/report.cls
-INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/report.cls
-INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/report.cls
-INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/report.cls
-INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/report.cls
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/size12.clo
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/size12.clo
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/size12.clo
@@ -797,28 +797,37 @@ INPUT main.bbl
 INPUT ./main.bbl
 INPUT ./main.bbl
 INPUT main.bbl
-INPUT ./title_page/title_page.tex
-INPUT ./title_page/title_page.tex
-INPUT ./title_page/title_page.tex
-INPUT ./title_page/title_page.tex
+INPUT ./Title Page/title_page.tex
+INPUT ./Title Page/title_page.tex
+INPUT ./Title Page/title_page.tex
+INPUT ./Title Page/title_page.tex
+INPUT ./Title Page/title_page.tex
+INPUT ./Title Page/title_page.tex
+INPUT ./Title Page/title_page.tex
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT ./title_page/uoe_logo.png
-INPUT ./title_page/uoe_logo.png
-INPUT ./title_page/uoe_logo.png
-INPUT ./title_page/uoe_logo.png
+INPUT ./Title Page/uoe_logo.png
+INPUT ./Title Page/uoe_logo.png
+INPUT ./Title Page/uoe_logo.png
+INPUT ./Title Page/uoe_logo.png
 OUTPUT main.pdf
-INPUT ./title_page/uoe_logo.png
+INPUT ./Title Page/uoe_logo.png
 INPUT /usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT ./model.tex
+INPUT ./model.tex
+INPUT ./model.tex
 INPUT ././model.tex
+INPUT ./model.tex
 INPUT ./model.tex
 INPUT ././model.tex
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
 INPUT ./structure.tex
+INPUT ./structure.tex
+INPUT ./structure.tex
 INPUT ././structure.tex
+INPUT ./structure.tex
 INPUT ./structure.tex
 INPUT ././structure.tex
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
@@ -847,16 +856,40 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm1
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT ./Theoretical DSGE model/model.tex
-INPUT ./Theoretical DSGE model/model.tex
-INPUT ./Theoretical DSGE model/model.tex
-INPUT ./Theoretical DSGE model/model.tex
-INPUT ./Theoretical DSGE model/households.tex
-INPUT ./Theoretical DSGE model/households.tex
-INPUT ./Theoretical DSGE model/households.tex
-INPUT ./Theoretical DSGE model/households.tex
+INPUT ./Introduction/introduction.tex
+INPUT ./Introduction/introduction.tex
+INPUT ./Introduction/introduction.tex
+INPUT ./Introduction/introduction.tex
+INPUT ./Introduction/introduction.tex
+INPUT ./Introduction/introduction.tex
+INPUT ./Introduction/introduction.tex
+INPUT ./Introduction/literature_review.tex
+INPUT ./Introduction/literature_review.tex
+INPUT ./Introduction/literature_review.tex
+INPUT ./Introduction/literature_review.tex
+INPUT ./Introduction/literature_review.tex
+INPUT ./Introduction/literature_review.tex
+INPUT ./Introduction/literature_review.tex
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/omscmr.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/omscmr.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/omscmr.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/omscmr.fd
+INPUT ./Theoretical DSGE model/model.tex
+INPUT ./Theoretical DSGE model/model.tex
+INPUT ./Theoretical DSGE model/model.tex
+INPUT ./Theoretical DSGE model/model.tex
+INPUT ./Theoretical DSGE model/model.tex
+INPUT ./Theoretical DSGE model/model.tex
+INPUT ./Theoretical DSGE model/model.tex
+INPUT ./Theoretical DSGE model/households.tex
+INPUT ./Theoretical DSGE model/households.tex
+INPUT ./Theoretical DSGE model/households.tex
+INPUT ./Theoretical DSGE model/households.tex
+INPUT ./Theoretical DSGE model/households.tex
+INPUT ./Theoretical DSGE model/households.tex
+INPUT ./Theoretical DSGE model/households.tex
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
@@ -865,6 +898,7 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT ./Graphs/sigma_varphi.tex
 INPUT ./Graphs/sigma_varphi.tex
 INPUT ./Graphs/sigma_varphi.tex
@@ -875,19 +909,21 @@ INPUT ./Theoretical DSGE model/firms.tex
 INPUT ./Theoretical DSGE model/firms.tex
 INPUT ./Theoretical DSGE model/firms.tex
 INPUT ./Theoretical DSGE model/firms.tex
+INPUT ./Theoretical DSGE model/firms.tex
+INPUT ./Theoretical DSGE model/firms.tex
+INPUT ./Theoretical DSGE model/firms.tex
 INPUT ./Theoretical DSGE model/equilibrium.tex
 INPUT ./Theoretical DSGE model/equilibrium.tex
 INPUT ./Theoretical DSGE model/equilibrium.tex
 INPUT ./Theoretical DSGE model/equilibrium.tex
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
+INPUT ./Theoretical DSGE model/equilibrium.tex
+INPUT ./Theoretical DSGE model/equilibrium.tex
+INPUT ./Theoretical DSGE model/equilibrium.tex
 INPUT main.aux
 INPUT main.run.xml
 OUTPUT main.run.xml
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
@@ -902,5 +938,4 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
