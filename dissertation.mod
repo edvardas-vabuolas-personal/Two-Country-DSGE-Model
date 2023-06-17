@@ -13,7 +13,7 @@ var
 % Home country
 y_gap       ${\tilde{y}}$   (long_name='output gap')
 pi_h        ${\pi_H}$       (long_name='domestic inflation')
-i           ${i}$           (long_name='nominal interest rate')
+interest           ${i}$           (long_name='nominal interest rate')
 y_nat       ${y^{n}}$       (long_name='natural output')
 r_nat       ${r^{n}}$       (long_name='natural interest rate')
 s_nat       ${s^{n}}$       (long_name='natural terms of trade')
@@ -30,26 +30,27 @@ yhat        ${\hat y}$      (long_name='output deviation from steady state')
 p_h         ${p_H}$         (long_name='domestic price level')
 p           ${p}$           (long_name='CPI')
 er          ${e}$           (long_name='Nominal exchange rate')
-d_er        ${\Delta e}$    (long_name='Nominal exchange rate growth')
+% d_er        ${\Delta e}$    (long_name='Nominal exchange rate growth')
 y_star      ${y^*}$         (long_name='world output')
 a           ${a}$           (long_name='AR(1) technology shock process')
 nu          ${\nu}$         (long_name='AR(1) monetary policy shock process')
 z           ${z}$           (long_name='AR(1) preference shock process')
-r_real_ann  ${r^{r,ann}}$   (long_name='annualized real interest rate')
-i_ann       ${i^{ann}}$     (long_name='annualized nominal interest rate')
-r_nat_ann   ${r^{nat,ann}}$ (long_name='annualized natural interest rate')
-pi_ann      ${\pi^{ann}}$   (long_name='annualized CPI inflation rate')
-pi_h_ann    ${\pi_H^{ann}}$ (long_name='annualized domestic inflation rate')
+GDP
+
+y_obs
+c_obs
+w_obs
+pi_obs
 
 % Foreign Country
 y_gap_f       ${\tilde{y^f}}$   (long_name='output gap')
 pi_h_f        ${\pi^f_H}$       (long_name='domestic inflation')
 y_nat_f       ${{y^f}^{n}}$       (long_name='natural output')
 r_nat_f       ${{r^f}^{n}}$       (long_name='natural interest rate')
-s_nat_f       ${{s^f}^{n}}$       (long_name='natural terms of trade')
+% s_nat_f       ${{s^f}^{n}}$       (long_name='natural terms of trade')
 y_f           ${y^f}$           (long_name='output')
-s_gap_f       ${\tilde{s^f}}$   (long_name='terms of trade gap')
-s_f           ${s^f}$           (long_name='terms of trade')
+% s_gap_f       ${\tilde{s^f}}$   (long_name='terms of trade gap')
+% s_f           ${s^f}$           (long_name='terms of trade')
 pi_f          ${\pi^f}$         (long_name='CPI inflation')
 n_f           ${n^f}$           (long_name='employment')
 r_real_f      ${r^r}$         (long_name='real interest rate')   
@@ -59,20 +60,18 @@ c_f           ${c^f}$           (long_name='consumption')
 yhat_f        ${\hat y^f}$      (long_name='output deviation from steady state')
 p_h_f         ${p^f_H}$         (long_name='domestic price level')
 p_f           ${p^f}$           (long_name='CPI')
-er_f          ${e^f}$           (long_name='Nominal exchange rate')
-d_er_f        ${\Delta e^f}$    (long_name='Nominal exchange rate growth')
+% er_f          ${e^f}$           (long_name='Nominal exchange rate')
+% d_er_f        ${\Delta e^f}$    (long_name='Nominal exchange rate growth')
 a_f           ${a^f}$           (long_name='AR(1) technology shock process')
 z_f           ${z^f}$           (long_name='AR(1) preference shock process')
-r_real_ann_f  ${r^{f,r,ann}}$   (long_name='annualized real interest rate')
-i_ann_f       ${i^{f,ann}}$     (long_name='annualized nominal interest rate')
-r_nat_ann_f   ${r^{f,nat,ann}}$ (long_name='annualized natural interest rate')
-pi_ann_f      ${\pi^{f,ann}}$   (long_name='annualized CPI inflation rate')
-pi_h_ann_f    ${\pi_H^{f,ann}}$ (long_name='annualized domestic inflation rate')
-i_f
+GDP_f
+% interest_f
 
-% Aggregate variables
-p_avg $p^{tot}$ (long_name='UK Average Domestic Inflation (Home + Foreign)')
-yhat_avg $\hat{y}^{tot}$ (long_name='UK Average Output Gap (Home + Foreign)')
+y_obs_ruk
+c_obs_ruk
+w_obs_ruk
+pi_obs_ruk
+
 
 ;
 
@@ -119,6 +118,8 @@ eta_f             ${\eta}$        (long_name='substitutability foreign/domestic 
 rho_a_f           ${\rho_a}$      (long_name='autocorrelation technology shock')
 rho_y_star_f      ${\rho_{y^*}}$  (long_name='autocorrelation world output growth shock')
 rho_z_f           ${\rho_{z}}$    (long_name='autocorrelation preference shock')
+pop
+rho_i
 ;
 
 %----------------------------------------------------------------
@@ -128,32 +129,36 @@ rho_z_f           ${\rho_{z}}$    (long_name='autocorrelation preference shock')
 % Home country
 
 betta   = 0.99;
-siggma  = 1;
-varphi  = 5;
-alppha  = 1/4;
-epsilon = 6;
+siggma  = 0.2;
+varphi  = 10;
+alppha  = 1/5;
+epsilon = 14;
 theta   = 3/4;
 upsilon = 0.6;
 rho_nu  = 0.9;
 rho_a   = 0.9;
 rho_y_star  = 0.9;
-phi_pi  = 1.5;
-phi_y   = 0.5/4;
 eta     = 1;
-% rho_z   = 0.5;
+rho_z   = 0.5;
+
 
 % Foreign country
 betta_f   = 0.99;
-siggma_f  = 1;
+siggma_f  = 1.4;
 varphi_f  = 4;
-alppha_f  = 1/3;
-epsilon_f = 11;
-theta_f   = 2/4;
-upsilon_f = 0.6;
-rho_a_f   = 0.9;
-rho_y_star_f  = 0;
+alppha_f  = 0.4;
+epsilon_f = 6;
+theta_f   = 3/4;
+upsilon_f = 0.1;
+rho_a_f   = 0.6;
+rho_y_star_f  = 0.6;
 eta_f     = 1;
-rho_z_f   = 0.5;
+rho_z_f   = 0.3;
+
+pop = 0.085;
+rho_i = 0.5;
+phi_pi  = 300;
+phi_y   = 200;
 
 %----------------------------------------------------------------
 % First Order Conditions
@@ -192,7 +197,7 @@ model(linear);
 [name='New Keynesian Phillips Curve (eq. 37)']
 pi_h  = betta*pi_h(+1) + kappa_upsilon*y_gap;
 [name='Dynamic IS Curve (eq. 29)']
-y_gap = y_gap(+1) - 1/siggma_upsilon*(i-pi_h(+1)-r_nat);
+y_gap = y_gap(+1) - 1/siggma_upsilon*(interest-pi_h(+1)-r_nat);
 [name='Natural output (eq. 35)']
 y_nat = Gamma_a*a + Gamma_z*z + Gamma_star*y_star;
 [name='Natural rate of interest (eq. 38)']
@@ -210,8 +215,7 @@ pi    = pi_h + upsilon*(s-s(-1));
 [name='Production function (eq. 32)']
 y     = a + (1-alppha)*n;
 [name='Definition real interest rate']
-r_real= i - pi_h(+1);
-% r_real= i - pi_h(+1);
+r_real= interest - pi_h(+1);
 [name='TFP shock, top of p. 233']
 a     = rho_a*a(-1) + eps_a;
 [name='Preference shock, top of p. 227']
@@ -222,16 +226,6 @@ w-p=siggma*c+varphi*n;
 nx=upsilon*(omega/siggma-1)*s-upsilon/siggma*z;
 [name='consumption determined by resource constraint, p. 236']
 nx=y-c-upsilon*s;
-[name='Annualized nominal interest rate']
-i_ann=4*i;
-[name='Annualized real interest rate']
-r_real_ann=4*r_real;
-[name=' Annualized natural interest rate']
-r_nat_ann=4*r_nat;
-[name='Annualized CPI inflation']
-pi_ann=4*pi;
-[name='Annualized domestic inflation']
-pi_h_ann=4*pi_h;
 [name='Output deviation from steady state']
 yhat=y-steady_state(y);
 [name='Domestic price level, p. 229']
@@ -239,36 +233,37 @@ p_h   = p_h(-1) + pi_h;
 [name='CPI definition']
 p     = p(-1) + pi;
 [name='Nominal exchange rate']
-s     = er + p_h ;
-% s     = er + p_star -  p_h ;
+s     = er + p_star - p_h ;
 [name='Definiion exchange rate growth']
-d_er=er-er(-1);
+% er=1;
+% er=0;
+GDP = yhat + yhat_f;
 
 % FOREIGN COUNTRY
 [name='FOREIGN New Keynesian Phillips Curve (eq. 37)']
 pi_h_f  = betta_f*pi_h_f(+1) + kappa_upsilon_f*y_gap_f;
 [name='FOREIGN Dynamic IS Curve (eq. 29)']
-y_gap_f = y_gap_f(+1) - 1/siggma_upsilon_f*(i_f-pi_h_f(+1)-r_nat_f);
-% y_gap_f = y_gap_f(+1) - 1/siggma_upsilon_f*(i-pi_h_f(+1)-r_nat_f);
+y_gap_f = y_gap_f(+1) - 1/siggma_upsilon_f*(interest-pi_h_f(+1)-r_nat_f);
+% y_gap_f = y_gap_f(+1) - 1/siggma_upsilon_f*(interest_f-pi_h_f(+1)-r_nat_f);
 [name='FOREIGN Natural output (eq. 35)']
 y_nat_f = Gamma_a_f*a_f + Gamma_z_f*z_f + Gamma_star_f*y_star;
 [name='FOREIGN Natural rate of interest (eq. 38)']
 r_nat_f = -siggma_upsilon_f*Gamma_a_f*(1-rho_a_f)*a_f + Phi_star_f*(y_star(+1)-y_star) + Phi_z_f*(1-rho_z_f)*z_f;
-[name='FOREIGN Natural terms of trade (below eq. (35))']
-s_nat_f = siggma_upsilon_f*(y_nat_f-y_star)-(1-upsilon_f)*Phi*z_f;
-[name='FOREIGN Terms of trade gap (middle p. 238)']
-s_gap_f = siggma_upsilon_f*y_gap_f;
+% [name='FOREIGN Natural terms of trade (below eq. (35))']
+% s_nat_f = siggma_upsilon_f*(y_nat_f-y_star)-(1-upsilon_f)*Phi*z_f;
+% [name='FOREIGN Terms of trade gap (middle p. 238)']
+% s_gap_f = siggma_upsilon_f*y_gap_f;
 [name='FOREIGN Output']
 y_gap_f = y_f - y_nat_f;
-[name='FOREIGN  Terms of trade, p. 238']
-s_gap_f = s_f - s_nat_f;
+% [name='FOREIGN  Terms of trade, p. 238']
+% s_gap_f = s_f - s_nat_f;
 [name='FOREIGN CPI inflation (13)']
-pi_f    = pi_h_f + upsilon_f*(s_f-s_f(-1));
+pi_f    = pi_h_f + upsilon_f*(s-s(-1));
 [name='FOREIGN Production function (eq. 32)']
 y_f     = a_f + (1-alppha_f)*n_f;
 [name='FOREIGN Definition real interest rate']
-r_real_f = i_f - pi_h_f(+1);
-% r_real_f = i - pi_h_f(+1);
+r_real_f = interest - pi_h_f(+1);
+% r_real_f = interest_f - pi_h_f(+1);
 [name='FOREIGN TFP shock, top of p. 233']
 a_f     = rho_a_f*a_f(-1) + eps_a_f;
 [name='FOREIGN Preference shock, top of p. 227']
@@ -276,72 +271,89 @@ z_f     = rho_z_f*z_f(-1) + eps_z_f;
 [name='FOREIGN FOC wage, eq. (11)']
 w_f-p_f=siggma_f*c_f+varphi_f*n_f;
 [name='FOREIGN net exports, eq. (31)']
-nx_f=upsilon_f*(omega_f/siggma_f-1)*s_f-upsilon_f/siggma_f*z_f;
+nx_f=upsilon_f*(omega_f/siggma_f-1)*s-upsilon_f/siggma_f*z_f;
 [name='FOREIGN consumption determined by resource constraint, p. 236']
-nx_f=y_f-c_f-upsilon_f*s_f;
-[name='FOREIGN Annualized nominal interest rate']
-i_ann_f=4*i_f;
-% i_ann_f=4*i;
-[name='FOREIGN Annualized real interest rate']
-r_real_ann_f=4*r_real_f;
-[name='FOREIGN  Annualized natural interest rate']
-r_nat_ann_f=4*r_nat_f;
-[name='FOREIGN Annualized CPI inflation']
-pi_ann_f=4*pi_f;
-[name='FOREIGN Annualized domestic inflation']
-pi_h_ann_f=4*pi_h_f;
+nx_f=y_f-c_f-upsilon_f*s;
 [name='FOREIGN Output deviation from steady state']
 yhat_f=y_f-steady_state(y_f);
 [name='FOREIGN Domestic price level, p. 229']
 p_h_f   = p_h_f(-1) + pi_h_f;
 [name='FOREIGN CPI definition']
 p_f     = p_f(-1) + pi_f;
-[name='FOREIGN Nominal exchange rate']
-s_f     = er_f + p_star - p_h_f ;
-[name='FOREIGN Definiion exchange rate growth']
-d_er_f=er_f-er_f(-1);
+% [name='FOREIGN Nominal exchange rate']
+% s_f     = er_f + p_star - p_h_f ;
+% [name='FOREIGN Definiion exchange rate growth']
+% d_er_f=er_f-er_f(-1);
+% er_f=0;
+GDP_f = yhat + yhat_f;
 
-% i  = phi_pi*(pi_h) + phi_y*(yhat) + 3*phi_y*(yhat(-1)) + phi_pi*(pi_h_f) + phi_y*(yhat_f) + 3*phi_y*(yhat_f(-1)) + nu;
-% i_f  = i;
-i  = 0.85*i(-1) + (1-0.85)*phi_pi*(pi_h) + (1-0.85)*phi_y*(yhat) + nu;
-i_f = 0.85*i_f(-1) + (1-0.85)*phi_pi*(pi_h_f) + (1-0.85)*phi_pi*(yhat_f) + nu;
+% interest  = 0.85*interest(-1) + (1-0.85)*phi_pi*(pi_h) + (1-0.85)*phi_y*(yhat) + nu;
+% interest_f = 0.85*i_f(-1) + (1-0.85)*phi_pi*(pi_h_f) + (1-0.85)*phi_pi*(yhat_f) + nu;
+% interest = 0.77*interest(-1) + (1-0.77)*phi_pi*(0.085*pi + (1-0.085)*pi_f) + (1-0.77)*phi_y*(0.085*(y - y(-1)) + (1-0.085)*(y_f - y_f(-1))) + nu;
+% interest = phi_pi*(pop*pi_h + (1-pop)*pi_h_f) + phi_y*(pop*GDP + (1-pop)*GDP_f) + nu;
+interest = rho_i*interest(-1) + (1-rho_i)*(phi_pi*(pop*pi + (1-pop)*pi_f) + phi_y*(pop*(GDP - GDP(-1)) + (1-pop)*(GDP_f - GDP_f(-1)))) + nu;
+% interest = rho_i*interest(-1) + (1-rho_i)*phi_pi*(pop*pi_h + (1-pop)*pi_h_f) + (1-rho_i)*phi_y*(pop*(GDP - GDP(-1)) + (1-pop)*(GDP_f - GDP_f(-1))) + nu;
+% interest = rho_i*interest(-1) + (1-rho_i)*phi_pi*(pop*pi_h + (1-pop)*pi_h_f) + (1-rho_i)*phi_y*(pop*(GDP - GDP(-1)) + (1-pop)*(GDP_f - GDP_f(-1))) + nu;
 
 [name='Monetary policy shock, below eq. (39)']
 nu    = rho_nu*nu(-1) + eps_nu;
 [name='World output growth shock']
-y_star - y_star(-1) = rho_y_star*(y_star(-1) - y_star(-2)) + eps_y_star; %use growth rate rule for world output
+% y_star - y_star(-1) = rho_y_star*(y_star(-1) - y_star(-2)) + eps_y_star; %use growth rate rule for world output
+y_star = 0;
 
+% Estimation
+y_obs = y - y(-1);
+c_obs = c - c(-1);
+w_obs = w - w(-1);
+pi_obs = pi;
+y_obs_ruk = y_f - y_f(-1);
+c_obs_ruk = c_f - c_f(-1);
+w_obs_ruk = w_f - w_f(-1);
+pi_obs_ruk = pi_f;
 end;
 
 %----------------------------------------------------------------
 %  define shock variances
 %---------------------------------------------------------------
 shocks;
-    var eps_nu = 0.25^2;
-    % var eps_a = 0.25^2; //1 standard deviation shock of 25 basis points, i.e. 1 percentage point annualized
-    % var eps_a_f = 0.25^2; //1 standard deviation shock of 25 basis points, i.e. 1 percentage point annualized
-    % var eps_y_star = 1; //1 standard deviation shock of 25 basis points, i.e. 1 percentage point annualized
+% var eps_a = 0.25^2;
+% var eps_a_f = 0.25^2;
+
+% var eps_z = 0.25^2;
+% var eps_z_f = 0.25^2;
+
+var eps_nu = 0.25^2;
+% var eps_y_star = 0.25^2;
+% var p_star = 0.25^2;
 end;
 
-estimated_params;
-rho_z,beta_pdf,0.5,0.2;
-end;
+% estimated_params;
 
-varobs c;
+% % Home country
+% rho_a, beta_pdf, 0.7, 0.1;
+% rho_y_star, beta_pdf, 0.7, 0.1;
+% rho_z,beta_pdf,0.7,0.1;
 
-% estimated_params_init(use_calibration);
-%     rho_z, 0.5;
+% % Foreign country
+% rho_a_f, beta_pdf, 0.7, 0.1;
+% rho_y_star_f, beta_pdf, 0.7, 0.1;
+% rho_z_f,beta_pdf,0.7,0.1;
+
+% rho_nu, beta_pdf, 0.7, 0.1;
 % end;
 
-estimation(datafile=scot_consumption, mh_replic=20000, mh_nblocks=1, smoother, diffuse_filter);
+% varobs y_obs c_obs w_obs y_obs_ruk c_obs_ruk pi_obs_ruk;
+
+% estimation(datafile=DynareData, mh_replic=20000, mh_nblocks=1, smoother, diffuse_filter);
 
 %----------------------------------------------------------------
 %  steady states: all 0 due to linear model
 %---------------------------------------------------------------
-steady;
+% resid(1);
+% steady;
 check;
 
 %----------------------------------------------------------------
 % generate IRFs, replicates Figures 8.1, p. 243
 %----------------------------------------------------------------
-stoch_simul(order = 1,irf=20) c r_real r_real_f yhat yhat_f pi_h pi_h_f s s_f;
+stoch_simul(order = 1,irf=20) c r_real r_real_f yhat yhat_f pi_h pi_h_f s;

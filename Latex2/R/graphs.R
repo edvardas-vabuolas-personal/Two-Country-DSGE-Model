@@ -14,7 +14,7 @@ df_v[1:50, 'x'] <- x
 
 for (sigma in 1:length(sigmas)) {
   for (c in 1:length(x)) {
-    df[c, paste0("$\\sigma = ", sigmas[sigma], "$")] <- (c**(1-sigmas[sigma]))/(1-sigmas[sigma])
+    df[c, paste0("$\\sigma = \\varphi = ", sigmas[sigma], "$")] <- (c**(1-sigmas[sigma]))/(1-sigmas[sigma])
   }
 }
 
@@ -28,23 +28,21 @@ df2 <- melt(df, id='x')
 df2_v <- melt(df_v, id='x')
 
 c_sigma <- ggplot(df2) + 
-  aes(x=x, y=value, colour=variable) + 
-  geom_line() + 
+  aes(x=x, y=value) + 
+  geom_line(aes(linetype=variable), lwd=1) + 
   theme_bw() +
-  theme(legend.position = "top", legend.key.size = unit(0.5, 'line'), axis.ticks.y = element_blank(), axis.text.y = element_blank()) +
-  labs(color="") +
+  theme(legend.key.size = unit(1, 'cm'), legend.position = "top", axis.ticks.y = element_blank(), axis.text.y = element_blank()) +
   scale_x_continuous(name="Consumption $C$") +
   scale_y_continuous(name="Utility $\\mathcal{U}$")
 
 n_varphi <- ggplot(df2_v) + 
-  aes(x=x, y=value, colour=variable) + 
-  geom_line() + 
+  aes(x=x, y=value) + 
+  geom_line(aes(linetype=variable), lwd=1) + 
   theme_bw() +
-  theme(legend.position = "top", legend.key.size = unit(0.5, 'line'), axis.ticks.y = element_blank(), axis.text.y = element_blank()) +
-  labs(color=element_blank()) +
+  theme(legend.position = "top", axis.ticks.y = element_blank(), axis.text.y = element_blank()) +
   scale_x_continuous(name="No. of Hours $N$") +
   scale_y_continuous(name="Utility $\\mathcal{U}$")
 
 tikz('~/Documents/University/Dissertation/Latex2/Graphs/sigma_varphi.tex', width = 6, height = 3)
-ggarrange(c_sigma, NULL, n_varphi, nrow=1, ncol=3, widths=c(0.5,0.1,0.5))
+ggarrange(c_sigma, n_varphi, common.legend=TRUE, nrow=1, ncol=2)
 dev.off()

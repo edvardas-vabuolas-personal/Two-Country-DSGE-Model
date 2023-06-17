@@ -1,19 +1,165 @@
 File: main.tex
 Encoding: ascii
-Words in text: 27
-Words in headers: 8
+Sum count: 9
+Words in text: 0
+Words in headers: 9
 Words outside text (captions, etc.): 0
-Number of headers: 6
+Number of headers: 7
 Number of floats/tables/figures: 0
 Number of math inlines: 0
 Number of math displayed: 0
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
-  6+0+0 (0/0/0/0) _top_
-  5+1+0 (1/0/0/0) Section: Introduction
-  16+3+0 (1/0/0/0) Section: Theoretical DSGE model
+  0+1+0 (1/0/0/0) Section: Introduction
+  0+3+0 (1/0/0/0) Section: Theoretical DSGE model
+  0+1+0 (1/0/0/0) Section: Application} \label{application
   0+1+0 (1/0/0/0) Section: Results
   0+1+0 (1/0/0/0) Section: Conclusion
   0+1+0 (1/0/0/0) Section: Bibliography
   0+1+0 (1/0/0/0) Section: Appendix
+
+Included file: ././Title Page/title_page.tex
+Encoding: ascii
+Sum count: 0
+Words in text: 0
+Words in headers: 0
+Words outside text (captions, etc.): 0
+Number of headers: 0
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+Included file: ././model.tex
+Encoding: ascii
+Sum count: 110
+Words in text: 99
+Words in headers: 11
+Words outside text (captions, etc.): 0
+Number of headers: 1
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+Included file: ././structure.tex
+Encoding: ascii
+Sum count: 70
+Words in text: 64
+Words in headers: 6
+Words outside text (captions, etc.): 0
+Number of headers: 1
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+Included file: ././Introduction/introduction.tex
+Encoding: ascii
+Sum count: 0
+Words in text: 0
+Words in headers: 0
+Words outside text (captions, etc.): 0
+Number of headers: 0
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+Included file: ././Introduction/literature_review.tex
+Encoding: ascii
+Sum count: 498
+Words in text: 496
+Words in headers: 2
+Words outside text (captions, etc.): 0
+Number of headers: 1
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+Included file: ././Theoretical DSGE model/model.tex
+Encoding: ascii
+Sum count: 158
+Words in text: 155
+Words in headers: 0
+Words outside text (captions, etc.): 0
+Number of headers: 0
+Number of floats/tables/figures: 0
+Number of math inlines: 3
+Number of math displayed: 0
+
+Included file: ././Theoretical DSGE model/households.tex
+Encoding: ascii
+Sum count: 668
+Words in text: 557
+Words in headers: 1
+Words outside text (captions, etc.): 33
+Number of headers: 1
+Number of floats/tables/figures: 0
+Number of math inlines: 36
+Number of math displayed: 41
+
+Included file: ././Theoretical DSGE model/firms.tex
+Encoding: ascii
+Sum count: 35
+Words in text: 26
+Words in headers: 1
+Words outside text (captions, etc.): 0
+Number of headers: 1
+Number of floats/tables/figures: 0
+Number of math inlines: 3
+Number of math displayed: 5
+
+Included file: ././Theoretical DSGE model/equilibrium.tex
+Encoding: ascii
+Sum count: 31
+Words in text: 20
+Words in headers: 1
+Words outside text (captions, etc.): 0
+Number of headers: 1
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 10
+
+Included file: ././final_wordcount.txt
+Encoding: ascii
+Sum count: 1
+Words in text: 1
+Words in headers: 0
+Words outside text (captions, etc.): 0
+Number of headers: 0
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+Included file: ././Graphs/sigma_varphi.tex
+Encoding: ascii
+Sum count: 0
+Words in text: 0
+Words in headers: 0
+Words outside text (captions, etc.): 0
+Number of headers: 0
+Number of floats/tables/figures: 1
+Number of math inlines: 0
+Number of math displayed: 0
+
+Sum of files: main.tex
+File(s) total: main.tex
+Sum count: 1580
+Words in text: 1418
+Words in headers: 31
+Words outside text (captions, etc.): 33
+Number of headers: 13
+Number of floats/tables/figures: 1
+Number of math inlines: 42
+Number of math displayed: 56
+Files: 12
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  0+9+0 (7/0/0/0) File: main.tex
+  99+11+0 (1/0/0/0) Included file: ././model.tex
+  64+6+0 (1/0/0/0) Included file: ././structure.tex
+  496+2+0 (1/0/0/0) Included file: ././Introduction/literature_review.tex
+  155+0+0 (0/0/3/0) Included file: ././Theoretical DSGE model/model.tex
+  557+1+33 (1/0/36/41) Included file: ././Theoretical DSGE model/households.tex
+  26+1+0 (1/0/3/5) Included file: ././Theoretical DSGE model/firms.tex
+  20+1+0 (1/0/0/10) Included file: ././Theoretical DSGE model/equilibrium.tex
+  1+0+0 (0/0/0/0) Included file: ././final_wordcount.txt
+  0+0+0 (0/1/0/0) Included file: ././Graphs/sigma_varphi.tex
 

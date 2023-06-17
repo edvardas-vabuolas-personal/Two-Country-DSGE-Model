@@ -19,6 +19,42 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
+    \entry{blanchard_2000_what}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1bb42bb45a1078c2d2b1486908ad0699}{%
+           family={Blanchard},
+           familyi={B\bibinitperiod},
+           given={O.},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{1bb42bb45a1078c2d2b1486908ad0699}
+      \strng{fullhash}{1bb42bb45a1078c2d2b1486908ad0699}
+      \strng{bibnamehash}{1bb42bb45a1078c2d2b1486908ad0699}
+      \strng{authorbibnamehash}{1bb42bb45a1078c2d2b1486908ad0699}
+      \strng{authornamehash}{1bb42bb45a1078c2d2b1486908ad0699}
+      \strng{authorfullhash}{1bb42bb45a1078c2d2b1486908ad0699}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Quarterly Journal of Economics}
+      \field{month}{11}
+      \field{title}{What Do We Know about Macroeconomics that Fisher and Wicksell Did Not?}
+      \field{urlday}{15}
+      \field{urlmonth}{9}
+      \field{urlyear}{2020}
+      \field{volume}{115}
+      \field{year}{2000}
+      \field{urldateera}{ce}
+      \field{pages}{1375\bibrangedash 1409}
+      \range{pages}{35}
+      \verb{doi}
+      \verb 10.1162/003355300554999
+      \endverb
+    \endentry
     \entry{boe_2023_monetary}{misc}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=3fc010120f11a7511fa2735cee752093}{%
@@ -194,6 +230,80 @@
       \range{pages}{25}
       \verb{doi}
       \verb 10.1016/j.econmod.2009.06.001
+      \endverb
+    \endentry
+    \entry{kydland_1982_time}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=6be288a40283930f05891739c0e64875}{%
+           family={Kydland},
+           familyi={K\bibinitperiod},
+           given={Finn\bibnamedelima E.},
+           giveni={F\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7c33f6de320158f1138eff5e1820c068}{%
+           family={Prescott},
+           familyi={P\bibinitperiod},
+           given={Edward\bibnamedelima C.},
+           giveni={E\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a69584e80e3cd6b809886168c045c1ac}
+      \strng{fullhash}{a69584e80e3cd6b809886168c045c1ac}
+      \strng{bibnamehash}{a69584e80e3cd6b809886168c045c1ac}
+      \strng{authorbibnamehash}{a69584e80e3cd6b809886168c045c1ac}
+      \strng{authornamehash}{a69584e80e3cd6b809886168c045c1ac}
+      \strng{authorfullhash}{a69584e80e3cd6b809886168c045c1ac}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Econometrica}
+      \field{month}{11}
+      \field{title}{Time to Build and Aggregate Fluctuations}
+      \field{volume}{50}
+      \field{year}{1982}
+      \field{pages}{1345}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.2307/1913386
+      \endverb
+    \endentry
+    \entry{prescott_1986_theory}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=7c33f6de320158f1138eff5e1820c068}{%
+           family={Prescott},
+           familyi={P\bibinitperiod},
+           given={Edward\bibnamedelima C.},
+           giveni={E\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7c33f6de320158f1138eff5e1820c068}
+      \strng{fullhash}{7c33f6de320158f1138eff5e1820c068}
+      \strng{bibnamehash}{7c33f6de320158f1138eff5e1820c068}
+      \strng{authorbibnamehash}{7c33f6de320158f1138eff5e1820c068}
+      \strng{authornamehash}{7c33f6de320158f1138eff5e1820c068}
+      \strng{authorfullhash}{7c33f6de320158f1138eff5e1820c068}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Carnegie-Rochester Conference Series on Public Policy}
+      \field{month}{09}
+      \field{title}{Theory ahead of business-cycle measurement}
+      \field{urlday}{24}
+      \field{urlmonth}{11}
+      \field{urlyear}{2019}
+      \field{volume}{25}
+      \field{year}{1986}
+      \field{urldateera}{ce}
+      \field{pages}{11\bibrangedash 44}
+      \range{pages}{34}
+      \verb{doi}
+      \verb 10.1016/0167-2231(86)90035-7
       \endverb
     \endentry
     \entry{ricci_2019_essays}{misc}{}

@@ -1,25 +1,26 @@
 \documentclass[12pt]{article}
 \usepackage{Packages}
-\addbibresource{./DissertationDSGE.bib}
+%TC:fileinclude \import dir,file
+\addbibresource{DissertationDSGE.bib}
 \begin{document}
-\import{./Title Page/}{title_page}
-\import{.}{model}
+\import{./Title Page/}{title_page.tex}
+\import{.}{model.tex}
 \pagebreak
-\import{.}{structure}
+\import{.}{structure.tex}
 \pagebreak
 \section{Introduction}
-\import{./Introduction}{introduction}
-\import{./Introduction}{literature_review}
+\import{./Introduction}{introduction.tex}
+\import{./Introduction}{literature_review.tex}
 
 \section{Theoretical DSGE model}
-\import{./Theoretical DSGE model}{model}
-\import{./Theoretical DSGE model}{households}
-\import{./Theoretical DSGE model}{firms}
-\import{./Theoretical DSGE model}{equilibrium}
-% \section{Application} \label{application}
+\import{./Theoretical DSGE model}{model.tex}
+\import{./Theoretical DSGE model}{households.tex}
+\import{./Theoretical DSGE model}{firms.tex}
+\import{./Theoretical DSGE model}{equilibrium.tex}
+\section{Application} \label{application}
 \section{Results}
 \section{Conclusion}
 \section{Bibliography}
-% \printbibliography
+\printbibliography
 \section{Appendix}
 \end{document}
