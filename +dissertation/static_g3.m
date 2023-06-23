@@ -18,6 +18,6 @@ function g3 = static_g3(T, y, x, params, T_flag)
 if T_flag
     T = dissertation.static_g3_tt(T, y, x, params);
 end
-g3 = sparse([],[],[],49,117649);
+g3 = sparse([],[],[],58,195112);
 
 end

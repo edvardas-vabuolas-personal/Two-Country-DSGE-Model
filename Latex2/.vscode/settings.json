@@ -9,5 +9,7 @@
     "**/*.run.*": true,
     "**/*.synctex.*": true,
     "**/*.bbl": true,
-}
+},
+"latex-workshop.message.badbox.show": false,
+"latex-workshop.message.error.show": false
 }
