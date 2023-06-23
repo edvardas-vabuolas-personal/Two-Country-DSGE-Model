@@ -6,4 +6,5 @@ function ds = dynamic_set_auxiliary_series(ds, params)
 %           from model file (.mod)
 
 ds.AUX_ENDO_LAG_19_1=ds.y_star(-1);
+ds.AUX_EXO_LAG_135_0=ds.interest_f;
 end
