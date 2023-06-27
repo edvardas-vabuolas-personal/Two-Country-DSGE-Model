@@ -1,11 +1,34 @@
-% monetary_union: 1 - Price passthrough and unified monetary authority; 0 - Standard NK Phillips Curves and Dynamic IS curves, 2 interest rates
+% monetary_union: 0 - Standard NK Phillips Curves and Dynamic IS curves, 2 interest rates; 1 - Price passthrough and unified monetary authority
 @#define monetary_union = 1
+
+@#define scenario = 3
+
 % no_of_govs: 1 - One government budget constraint; 2 - Two government budget constraints
-@#define no_of_govs = 2
 % tax_mode: 0 - Lump-Sum; 1 - Distortionary taxes (labour tax)
-@#define tax_mode = 1
+
+@#if scenario == 1
+    @#define no_of_govs = 2
+    @#define tax_mode = 0
+@#else
+    @#if scenario == 2
+        @#define no_of_govs = 1
+        @#define tax_mode = 0
+    @#else
+        @#if scenario == 3
+            @#define no_of_govs = 2
+            @#define tax_mode = 1
+        @#else
+            @#if scenario == 4
+                @#define no_of_govs = 1
+                @#define tax_mode = 1
+            @#endif
+        @#endif
+    @#endif
+@#endif
+
+
 % mcmc: 0 - do not estimate (use pre-defined parameters); 1 - estimate (use calibrated parameters)
-@#define mcmc = 1
+@#define mcmc = 0
 % shock_type: 1 - monetary; 2 - fiscal
 @#define shock_type = 2
 
@@ -34,6 +57,7 @@ d_er        ${\Delta e}$    (long_name='Nominal exchange rate growth')
 y_star      ${y^*}$         (long_name='world output')
 a           ${a}$           (long_name='AR(1) technology shock process')
 z           ${z}$           (long_name='AR(1) preference shock process')
+wp          ${wp}$           (long_name='Real Wage')
 
 % Foreign Country
 y_gap_f       ${\tilde{y^f}}$   (long_name='output gap')
@@ -57,30 +81,27 @@ er_f          ${e^f}$           (long_name='Nominal exchange rate')
 d_er_f        ${\Delta e^f}$    (long_name='Nominal exchange rate growth')
 a_f           ${a^f}$           (long_name='AR(1) technology shock process')
 z_f           ${z^f}$           (long_name='AR(1) preference shock process')
+wp_f          ${wp^f}$           (long_name='Real Wage')
+
 
 % Fiscal Policy
-@#if tax_mode == 1
-    @#if no_of_govs == 2
-        g           ${g}$           (long_name='Government Spending')
-        tr           ${TR}$           (long_name='Tax Revenue')    
-        g_f           ${g^f}$           (long_name='Government Spending')
-        tr_f           ${TR^f}$           (long_name='Tax Revenue')    
+@#if no_of_govs == 2
+    g           ${g}$           (long_name='Government Spending')
+    tr           ${TR}$           (long_name='Tax Revenue')    
+    g_f           ${g^f}$           (long_name='Government Spending')
+    tr_f           ${TR^f}$           (long_name='Tax Revenue')  
+    b
+    b_f  
+    @#if tax_mode == 1
         tau           ${\tau_l}$           (long_name='Labour Tax (Scotland)')
         tau_f           ${\tau^f_l}$           (long_name='Labour Tax (rUK)')
-    @#else
-        g_uk           ${g}$           (long_name='Government Spending (UK)')
-        tr_uk           ${TR}$           (long_name='Tax Revenue (UK)')    
-        tau_uk           ${\tau^{UK}_l}$           (long_name='Labour Tax (UK)')
-    @#endif
+    @#endif    
 @#else
-    @#if no_of_govs == 2
-        g           ${g}$           (long_name='Government Spending')
-        tr           ${TR}$           (long_name='Tax Revenue')    
-        g_f           ${g^f}$           (long_name='Government Spending')
-        tr_f           ${TR^f}$           (long_name='Tax Revenue')    
-    @#else
-        g_uk           ${g}$           (long_name='Government Spending (UK)')
-        tr_uk           ${TR}$           (long_name='Tax Revenue (UK)')    
+    g_uk           ${g}$           (long_name='Government Spending (UK)')
+    tr_uk           ${TR}$           (long_name='Tax Revenue (UK)')
+    @#if tax_mode == 1
+        tau_uk           ${\tau^{uk}}$           (long_name='Labour Tax (UK)')
+        b_uk
     @#endif
 @#endif
 
@@ -188,12 +209,30 @@ rho_z_f           ${\rho_{z}}$    (long_name='autocorrelation preference shock')
 @#if no_of_govs == 2
     rho_g           ${\rho_g}$    (long_name='AR(1) coefficient for Government spending (Scotland)')
     rho_g_f           ${\rho_g}$    (long_name='AR(1) coefficient for Government spending (rUK)')
+    WN_T_SS          ${\frac{WN}{T}}$    (long_name='Pre-tax income/tax revenue ratio')
+    WN_T_SS_f          ${\frac{W^fN^f}{T^f}}$    (long_name='Pre-tax income/tax revenue ratio')
+    phi_b
+    phi_b_f
+    phi_g
+    phi_g_f
+    B_Y_SS
+    TR_Y_SS
+    B_Y_SS_f
+    TR_Y_SS_f
+    tau_ss           ${\tilde{\tau}}$    (long_name='Average labour tax rate (Scotland)')
+    tau_ss_f           ${\tilde{\tau}}^f$    (long_name='Average labour tax rate (rUK)')
     @#if tax_mode == 1
         tau_ss           ${\tilde{\tau}}$    (long_name='Average labour tax rate (Scotland)')
         tau_ss_f           ${\tilde{\tau}}^f$    (long_name='Average labour tax rate (rUK)')
     @#endif
 @#else
     rho_g_uk           ${\rho_g}$    (long_name='AR(1) coefficient for Government spending (UK)')
+    WN_T_SS          ${\frac{WN}{T}}$    (long_name='Pre-tax income/tax revenue ratio')
+    WN_T_SS_f          ${\frac{W^fN^f}{T^f}}$    (long_name='Pre-tax income/tax revenue ratio')
+    phi_b_uk
+    phi_g_uk
+    B_Y_SS_UK
+    TR_Y_SS_UK
     @#if tax_mode == 1
         tau_ss_uk           ${\tilde{\tau}}$    (long_name='Average labour tax rate (UK)')
     @#endif
@@ -266,14 +305,32 @@ phi_y   = 0.5/4;
 @#if no_of_govs == 2
     rho_g = 0.5;
     rho_g_f = rho_g;
+    WN_T_SS = 0.18;
+    WN_T_SS_f = WN_T_SS + 0.02;
+    phi_b = 0.5;
+    phi_g = 0.5;
+    phi_b_f = phi_b;
+    phi_g_f = phi_g;
+    B_Y_SS = 0.8;
+    B_Y_SS_f = B_Y_SS;
+    TR_Y_SS = 0.335;
+    TR_Y_SS_f = TR_Y_SS;
+    tau_ss = 0.15;
+    tau_ss_f = tau_ss + 0.05;
     @#if tax_mode == 1
         tau_ss = 0.15;
-        tau_ss_f = tau_ss;
+        tau_ss_f = tau_ss + 0.05;
     @#endif
 @#else
+    WN_T_SS = 0.18;
+    WN_T_SS_f = WN_T_SS;
     rho_g_uk = 0.5;
+    phi_b_uk = 0.5;
+    phi_g_uk = 0.5;
+    B_Y_SS_UK = 0.8;
+    TR_Y_SS_UK = 0.335;
     @#if tax_mode == 1
-        tau_ss_uk = 0.15;
+        tau_ss_uk = 0.20;
     @#endif
 @#endif
 
@@ -363,6 +420,9 @@ s     = er + p_star - p_h ;
 [name='Definiion exchange rate growth']
 d_er=er-er(-1);
 
+[name='Real Wage']
+wp = w - p;
+
 % FOREIGN COUNTRY
 [name='FOREIGN New Keynesian Phillips Curve (eq. 37)']
 @#if monetary_union == 1
@@ -414,8 +474,11 @@ p_h_f   = p_h_f(-1) + pi_h_f;
 p_f     = p_f(-1) + pi_f;
 [name='FOREIGN Nominal exchange rate']
 s_f     = er_f + p_star - p_h_f ;
-[name='FOREIGN Definiion exchange rate growth']
+[name='FOREIGN Definition exchange rate growth']
 d_er_f=er_f-er_f(-1);
+
+[name='FOREIGN Real Wage']
+wp_f = w_f - p_f;
 
 % Monetary Policy
 @#if monetary_union == 1
@@ -441,11 +504,11 @@ y_star - y_star(-1) = rho_y_star*(y_star(-1) - y_star(-2)) + eps_y_star;
 @#if no_of_govs == 2
     [name='FOC wage, eq. (11)']
     @#if tax_mode == 1 
-        w-p - (1/(1-tau_ss))*tau=siggma*c+varphi*n;
-        w_f-p_f - (1/(1-tau_ss_f))*tau_f=siggma_f*c_f+varphi_f*n_f;
+        siggma*c + varphi*n = wp - (1/(1-tau_ss))*tau;
+        siggma*c_f + varphi*n_f = wp_f - (1/(1-tau_ss_f))*tau_f;
     @#else
-        w-p=siggma*c+varphi*n;
-        w_f-p_f=siggma_f*c_f+varphi_f*n_f;
+        wp = siggma*c+varphi*n;
+        wp_f=siggma_f*c_f+varphi_f*n_f;
     @#endif
 
     [name='Net exports, eq. (31)']
@@ -458,22 +521,24 @@ y_star - y_star(-1) = rho_y_star*(y_star(-1) - y_star(-2)) + eps_y_star;
 
     [name='Tax Revenue']
     @#if tax_mode == 1
-        tr = tau + w + n;
-        tr_f = tau_f + w_f + n_f;
+        tr = tau_ss*WN_T_SS*(tau + wp + n);
+        tr_f = tau_ss_f*WN_T_SS_f*(tau_f + wp_f + n_f);
     @#endif
-    tr = p_h + g;
-    tr_f = p_h_f + g_f;
+    TR_Y_SS*tr = phi_g*tau_ss*(p_f - g) + B_Y_SS*phi_b*b;
+    TR_Y_SS_f*tr_f = phi_g_f*tau_ss_f*(p_f - g_f) + B_Y_SS_f*phi_b_f*b_f;
+    betta * B_Y_SS * (b-interest_uk) = B_Y_SS*(1-phi_b)*b(-1) + tau_ss*(1-phi_g)*(p(-1) + g(-1));
+    betta_f * B_Y_SS_f * (b_f-interest_uk) = B_Y_SS_f*(1-phi_b_f)*b_f(-1) + tau_ss_f*(1-phi_g_f)*(p_f(-1) + g_f(-1));
     [name='Government spending']
     g = rho_g*g(-1) + eps_g;
     g_f = rho_g_f*g_f(-1) + eps_g_f;
 @#else
 [name='FOC wage, eq. (11)']
     @#if tax_mode == 1 
-        w-p - (1/(1-tau_ss_uk))*tau_uk=siggma*c+varphi*n;
-        w_f-p_f - (1/(1-tau_ss_uk))*tau_uk=siggma_f*c_f+varphi_f*n_f;
+        siggma*c + varphi*n = wp - (1/(1-tau_ss_uk))*tau_uk;
+        siggma_f*c_f + varphi*n_f = wp_f - (1/(1-tau_ss_uk))*tau_uk;
     @#else
-        w-p=siggma*c+varphi*n;
-        w_f-p_f=siggma_f*c_f+varphi_f*n_f;
+        wp=siggma*c+varphi*n;
+        wp_f=siggma_f*c_f+varphi_f*n_f;
     @#endif
 
     [name='Net exports, eq. (31)']
@@ -484,11 +549,12 @@ y_star - y_star(-1) = rho_y_star*(y_star(-1) - y_star(-2)) + eps_y_star;
     nx=y-c-pop*g_uk-upsilon*s;
     nx_f=y_f-c_f-(1-pop)*g_uk-upsilon_f*s_f;
 
-    [name='Tax Revenue']
+    [name='Tax Revenue ABC']
     @#if tax_mode == 1
-        tr_uk = tau_uk + w + n + tau_uk + w_f + n_f;
+        tr_uk = tau_ss_uk*WN_T_SS*pop*(tau_uk+wp+n) + tau_ss_uk*WN_T_SS_f*(1-pop)*(tau_uk+wp_f+n_f);
     @#endif
-    tr_uk = pop*p_h + g_uk + (1-pop)*p_h_f + g_uk;
+    TR_Y_SS_UK*tr_uk = phi_g_uk*tau_ss_uk*(p_f - g_uk) + B_Y_SS_UK*phi_b_uk*b_uk;
+    betta_f * B_Y_SS_UK * (b_uk-interest_uk) = B_Y_SS_UK*(1-phi_b_uk)*b_uk(-1) + tau_ss_uk*(1-phi_g_uk)*(p_f(-1) + g_uk(-1));
     [name='Government spending']
     g_uk = rho_g_uk*g_uk(-1) + eps_g_uk;
 @#endif
@@ -504,7 +570,7 @@ y_star - y_star(-1) = rho_y_star*(y_star(-1) - y_star(-2)) + eps_y_star;
     c_obs_ruk = c_f - c_f(-1) + c_obs_ruk_me;
     w_obs_ruk = w_f - w_f(-1) + w_obs_ruk_me;
     pi_obs_ruk = pi_f + pi_obs_ruk_me;
-    i_obs = interest_f - interest_f(-1) + i_obs_me;
+    i_obs = interest_uk - interest_uk(-1) + i_obs_me;
 @#endif
 end;
 
@@ -523,7 +589,7 @@ shocks;
 @#if shock_type == 2
     @#if no_of_govs == 2
         var eps_g = 0.25^2;
-        var eps_g_f = 0.25^2;
+        % var eps_g_f = 0.25^2;
     @#else
         var eps_g_uk = 0.25^2;
     @#endif
@@ -586,32 +652,16 @@ resid(1);
 steady;
 check;
 
-@#if no_of_govs == 2
-    @#if tax_mode == 1 
-        @#if monetary_union == 1
-            stoch_simul(nocorr, nofunctions, nomoments) g tr tau c y w n interest_uk r_real pi pi_h g_f tr_f tau_f c_f w_f n_f;
-        @#else
-            stoch_simul(nocorr, nofunctions, nomoments) g tr tau c y w n interest r_real pi pi_h;
-        @#endif
-    @#else
-        @#if monetary_union == 1
-            stoch_simul(nocorr, nofunctions, nomoments) g tr c y w n interest_uk r_real pi pi_h c_f w_f n_f; 
-        @#else
-            stoch_simul(nocorr, nofunctions, nomoments) g tr c y w n interest interest_f r_real pi pi_h c_f w_f n_f;
-        @#endif
-    @#endif
+@#if scenario == 1
+    stoch_simul(nocorr, nofunctions, nomoments) b b_f g g_f tr tr_f c c_f y y_f wp wp_f n n_f pi pi_f;
 @#else
-    @#if tax_mode == 1
-        @#if monetary_union == 1
-            stoch_simul(nocorr, nofunctions, nomoments) g_uk tr_uk tau_uk c y w n interest_uk r_real pi pi_h c_f w_f n_f; 
-        @#else
-            stoch_simul(nocorr, nofunctions, nomoments) g_uk tr_uk tau_uk c y w n interest interest_f r_real pi pi_h c_f w_f n_f; 
-        @#endif
+    @#if scenario == 2
+        stoch_simul(nocorr, nofunctions, nomoments) g_uk tr_uk c c_f y y_f wp wp_f n n_f pi pi_f;
     @#else
-        @#if monetary_union == 1
-            stoch_simul(nocorr, nofunctions, nomoments) g_uk tr_uk c y w n interest_uk r_real pi pi_h c_f w_f n_f; 
+        @#if scenario == 3
+            stoch_simul(nocorr, nofunctions, nomoments) b r_real b_f g g_f tr tr_f tau tau_f c c_f y y_f w wp_f n n_f pi pi_f;
         @#else
-            stoch_simul(nocorr, nofunctions, nomoments) g_uk tr_uk c y w n interest interest_f r_real pi pi_h c_f w_f n_f; 
+            stoch_simul(nocorr, nofunctions, nomoments) b_uk interest_uk r_real_f g_uk tr_uk tau_uk c c_f y y_f wp wp_f n n_f pi pi_f;
         @#endif
     @#endif
 @#endif

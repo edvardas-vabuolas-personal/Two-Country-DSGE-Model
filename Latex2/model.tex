@@ -70,3 +70,142 @@ Weights are given by:
     \varpi = \frac{1}{T}\sum\limits_{t=1998Q1}^{T=2007Q4}\text{Scotland's import from rUK} \\
     \varpi^* = \frac{1}{T}\sum\limits_{t=1998Q1}^{T=2007Q4}\text{rUK's import from Scotland}
 \end{align*}
+
+\pagebreak
+``No. of governments'': Number of governments that can issue bonds and accrue debt to fund public services. In all scenarios, government spending is assumed to be an AR(1) exogenous process.
+\begin{enumerate}
+    \item Scenario 1
+    \begin{enumerate}
+        \item No. of governments: 1
+        \item Public expenses funded by (wasteful) \underline{lump-sum tax}
+    \end{enumerate}
+    \item Scenario 2
+    \begin{enumerate}
+        \item No. of governments: 2
+        \item Public expenses funded by (wasteful) \underline{lump-sum tax}
+    \end{enumerate}
+    \item Scenario 3
+    \begin{enumerate}
+        \item No. of governments: 1
+        \item Public expenses funded by (distortionary) \underline{income tax}
+    \end{enumerate}
+    \item Scenario 4
+    \begin{enumerate}
+        \item No. of governments: 2
+        \item Public expenses funded by (distortionary) \underline{income tax}
+    \end{enumerate}
+\end{enumerate}
+\pagebreak
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|c}
+        \makecell{
+            S HBC \\
+            rUK HBC \\
+            S GBC \\
+            rUK GBC \\
+            S TR \\
+            rUK TR \\
+            S RC \\
+            rUK RC \\
+        } & 
+        \makecell{
+            Household (Scotland) budget constraint \\
+            Household (rUK) budget constraint \\
+            Government (Holyrood) budget constraint \\
+            Government (Westminister) budget constraint \\
+            Government (Holyrood) tax revenue \\
+            Government (Westminister) tax revenue \\
+            Resource (Scotland) constraint \\
+            Resource (rUK) constraint \\
+        }
+    \end{tabular}
+\end{table}
+\begin{align}
+    &\max\limits_{C_t, N_t, B_t/B^*_t} \E_t \left\{\sum^{\infty}_{t=0} \  \mathcal{U}(C_t, N_t)\right\} \\
+&s.t. \nonumber
+\end{align}
+\renewcommand{\arraystretch}{8}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{l|l c}
+    \makecell{Scenario 1 \\ (G: 2, $\tau_n: 0$)} &  \makecell{S HBC: \\ rUK HBC: \\ S GBC: \\ rUK GBC: \\ S TR: \\ rUK TR: \\ S RC: \\ rUK RC:} & 
+        \makecell{
+            $P_t C_t + \E_t [{R^{-1}_{t+1}}B_{t+1}] = B_t + W_t N_t + T_t$ \\
+            $P^*_t C^*_t + \E_t [{R^{*-1}_{t+1}}B^*_{t+1}] = B^*_t + W^*_t N^*_t + T^*_t$ \\
+            $\E_t [{R^{-1}_{t+1}}B_{t+1}] + T_t = P_tG_t + B_t$\\
+            $\E_t [{R^{*-1}_{t+1}}B^*_{t+1}] + T^*_t = P^*_tG^*_t + B^*_t$ \\
+            $T_t = G_t$ \\
+            $T^*_t = G^*_t$ \\
+            $Y_t = C_t + G_t$ \\
+            $Y^*_t = C^*_t + G^*_t$
+        }  \\ 
+    \makecell{Scenario 2 \\ (G: 1, $\tau_n: 0$)} &  \makecell{S HBC: \\ rUK HBC: \\ S GBC: \\ rUK GBC: \\ S TR: \\ rUK TR: \\ S RC: \\ rUK RC:} & 
+        \makecell{
+            $P_t C_t + \E_t [{R^{*-1}_{t+1}}B^*_{t+1}] = B^*_t + W_t N_t + \varpi T^*_t$ \\
+            $P^*_t C^*_t + \E_t [{R^{*-1}_{t+1}}B^*_{t+1}] = B^*_t + W^*_t N^*_t + (1-\varpi)T^*_t$ \\
+            N/A\\
+            $\E_t [{R^{*-1}_{t+1}}B^*_{t+1}] + T^*_t = P^*_tG^*_t + B^*_t$\\
+            N/A \\
+            $T^*_t = P^*_tG^*_t$ \\
+            $Y_t = C_t + \varpi G^*_t$ \\
+            $Y^*_t = C^*_t + (1-\varpi) G^*_t$
+        }   \\ 
+    \makecell{Scenario 3 \\ (G: 2, $\tau_n: 1$)} &  \makecell{S HBC: \\ rUK HBC: \\ S GBC: \\ rUK GBC: \\ S TR: \\ rUK TR: \\ S RC: \\ rUK RC:} & 
+    \makecell{
+        $P_t C_t + \E_t [{R^{-1}_{t+1}}B_{t+1}] = B_t + (1-\tau_n)W_t N_t + T_t$ \\
+        $P^*_t C^*_t + \E_t [{R^{*-1}_{t+1}}B^*_{t+1}] = B^*_t + (1-\tau_n)W^*_t N^*_t + T^*_t$ \\
+        $\E_t [{R^{-1}_{t+1}}B_{t+1}] + T_t = P_tG_t + B_t$\\ 
+        $\E_t [{R^{*-1}_{t+1}}B^*_{t+1}] + T^*_t = P^*_tG^*_t + B^*_t$\\ 
+        $T_t = \tau_n W_t N_t$ \\
+        $T^*_t = \tau_n W^*_t N^*_t$ \\
+        $Y_t = C_t + G_t$ \\
+        $Y^*_t = C^*_t + G^*_t$
+    }  \\
+    \makecell{Scenario 4 \\ (G: 1, $\tau_n: 1$)} &  \makecell{S HBC: \\ rUK HBC: \\ S GBC: \\ rUK GBC: \\ S TR: \\ rUK TR: \\ S RC: \\ rUK RC:} & 
+    \makecell{
+        $P_t C_t + \E_t [{R^{*-1}_{t+1}}B^*_{t+1}] = B^*_t + (1-\tau_n)W_t N_t + \varpi T_t$ \\
+        $P^*_t C^*_t + \E_t [{R^{*-1}_{t+1}}B^*_{t+1}] = B^*_t + (1-\tau_n)W^*_t N^*_t + (1-\varpi)T^*_t$ \\
+        N/A \\
+        $\E_t [{R^{*-1}_{t+1}}B^*_{t+1}] + T^*_t = P^*_tG^*_t + B^*_t$\\ 
+        N/A \\
+        $T^*_t = \varpi\tau_n W_t N_t + (1-\varpi)\tau_n W^*_t N^*_t$ \\
+        $Y_t = C_t + \varpi G^*_t$ \\
+        $Y^*_t = C^*_t + (1-\varpi) G^*_t$
+    }  
+    \end{tabular}
+    \end{table}
+\pagebreak
+\tiny
+\begin{align}
+    T^*_t &= \varpi\tau_t W_t N_t + (1-\varpi)\tau_t W^*_t N^*_t \\
+    T^* &= \varpi\tau W N + (1-\varpi)\tau W^* N^* \label{eq:tr_ss} \quad \text{(Steady state)}\\
+    &\text{Using Uhlig's (1999) method, $X_tY_t \approx XY\mathbf{e}^{\tilde{X}_t + \tilde{Y}_t}$: }\\
+    T\mathbf{e}^{\tilde{T}^*_t} &= \varpi \tau W N \mathbf{e}^{\tilde{\tau}_t+\tilde{W}_t+\tilde{N}_t} + (1-\varpi) \tau W^* N^* \mathbf{e}^{\tilde{\tau}_t+\tilde{W}^*_t+\tilde{N}^*_T} \\
+    &\text{Using $\mathbf{e}^{\tilde{X}_t} \approx 1 + {\tilde{X}_t}$: }\\
+    T^* (1 + {\tilde{T}^*_t}) &= \varpi \tau W N (1 + {\tilde{\tau}_t+\tilde{W}_t+\tilde{N}_t}) + (1-\varpi) \tau W^* N^* (1 + {\tilde{\tau}_t+\tilde{W}^*_t+\tilde{N}^*_T}) \\
+    &\text{Subtract (\ref{eq:tr_ss}): } \\
+    T^* (1 + {\tilde{T}^*_t}) - T^* &= \varpi \tau W N (1 + {\tilde{\tau}_t+\tilde{W}_t+\tilde{N}_t}) - \varpi\tau W N + (1-\varpi) \tau W^* N^* (1 + {\tilde{\tau}_t+\tilde{W}^*_t+\tilde{N}^*_T}) - (1-\varpi)\tau W^* N^* \\
+    T^*[(1 + {\tilde{T}^*_t}) - 1] &= \varpi \tau W N [(1 + {\tilde{\tau}_t+\tilde{W}_t+\tilde{N}_t}) - 1] + (1-\varpi) \tau W^* N^* [(1 + {\tilde{\tau}_t+\tilde{W}^*_t+\tilde{N}^*_T}) - 1] \\
+    T^*\tilde{T}^*_t &= \varpi \tau W N (\tilde{\tau}_t + \tilde{W}_t + \tilde{N}_t) + (1-\varpi) \tau W^* N^* (\tilde{\tau}_t+\tilde{W}^*_t+\tilde{N}^*_T) \\
+    &\text{Divide by $T^*$}: \\
+    \tilde{T}^*_t &= \frac{\tau W N}{T^*}\times \varpi (\tilde{\tau}_t + \tilde{W}_t + \tilde{N}_t) + \frac{\tau W^* N^*}{T^*} \times (1-\varpi) (\tilde{\tau}_t+\tilde{W}^*_t+\tilde{N}^*_t)
+\end{align}
+
+\begin{align}
+    C_t^\sigma N_t^\varphi &= \frac{W_t}{P_t}(1-\tau_t) \\
+    C_t^\sigma N_t^\varphi &= \frac{W_t}{P_t} - \frac{W_t}{P_t}\tau_t \\
+    C^\sigma N^\varphi &= \frac{W}{P} - \frac{W}{P}\tau \label{eq:real_wage_ss} \quad \text{(Steady state)}\\
+    &\text{Using Uhlig's (1999) method, $X_tY_t \approx XY\mathbf{e}^{\tilde{X}_t + \tilde{Y}_t}$: }\\
+    C^\sigma N^\varphi\mathbf{e}^{\sigma c_t + \varphi n_t} &= \frac{W}{P}\mathbf{e}^{w_t - p_t} - \frac{W}{P}\tau \mathbf{e}^{w_t - p_t + \tilde{\tau}_t}\\
+    &\text{Using $\mathbf{e}^{\tilde{X}_t} \approx 1 + {\tilde{X}_t}$: }\\
+    C^\sigma N^\varphi({1+\sigma c_t + \varphi n_t}) &= \frac{W}{P}({1+ w_t - p_t}) - \frac{W}{P}\tau ({1+ w_t - p_t + \tilde{\tau}_t})\\
+    &\text{Subtract (\ref{eq:real_wage_ss}): } \\
+    C^\sigma N^\varphi({\sigma c_t + \varphi n_t}) &= \frac{W}{P}({w_t - p_t}) - \frac{W}{P}\tau ({w_t - p_t + \tilde{\tau}_t})\\
+    C^\sigma N^\varphi({\sigma c_t + \varphi n_t}) &= \frac{W}{P}\left[({w_t - p_t}) - \tau ({w_t - p_t + \tilde{\tau}_t})\right]\\
+    C^\sigma N^\varphi({\sigma c_t + \varphi n_t}) &= \frac{W}{P}\left[({w_t - p_t}) - \tau ({w_t - p_t}) - \tau\tilde{\tau}_t\right]\\
+    C^\sigma N^\varphi({\sigma c_t + \varphi n_t}) &= \frac{W}{P}\left[(1-\tau)({w_t - p_t}) - \tau\tilde{\tau}_t\right]\\
+    C^\sigma N^\varphi \frac{P}{W} ({\sigma c_t + \varphi n_t})  &= \left[(1-\tau)({w_t - p_t}) - \tau\tilde{\tau}_t\right]\\
+    (1-\tau)({\sigma c_t + \varphi n_t})  &= \left[(1-\tau)({w_t - p_t}) - \tau\tilde{\tau}_t\right]\\
+    {\sigma c_t + \varphi n_t}  &= {w_t - p_t} - \frac{\tau}{1-\tau}\tilde{\tau}_t\\
+\end{align}
