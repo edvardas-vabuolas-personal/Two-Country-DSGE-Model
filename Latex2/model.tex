@@ -209,3 +209,204 @@ Weights are given by:
     (1-\tau)({\sigma c_t + \varphi n_t})  &= \left[(1-\tau)({w_t - p_t}) - \tau\tilde{\tau}_t\right]\\
     {\sigma c_t + \varphi n_t}  &= {w_t - p_t} - \frac{\tau}{1-\tau}\tilde{\tau}_t\\
 \end{align}
+\pagebreak
+
+\begin{align}
+    y_t &= a_t + (1-\alpha)n_t\\
+    n_t &= \frac{1}{1-\alpha}(y_t - a_t)\\
+    \varpi &= \sigma \eta + (1-\nu)(\sigma \eta - 1)\\
+    \sigma c_t + \varphi n_t &= w_t - p_t - \frac{1}{1-\tau}\tau_t\\
+    y_t &= (1-\nu)c_t + \nu_t(2-\nu)\eta s_t + \nu y_t^*\\
+    c_t &= y_t^* + \frac{1}{\sigma}z_t + \frac{1-\nu}{\sigma}s_t\\
+    \implies c_t &= y_t - \nu s_t \left( (2-\nu)\eta + \frac{1-\nu}{\sigma}\right) + \frac{\nu}{\sigma}z_t
+\end{align}
+\begin{align}
+    \mu_t &= -(\sigma c_t + \varphi n_t + \frac{1}{1-\tau}\tau_t) - \nu s_t + a_t - \alpha n_t\\
+    &= -\sigma c_t - \varphi n_t - \frac{1}{1-\tau}\tau_t - \nu s_t + a_t - \alpha n_t\\
+    &= -\sigma c_t - \frac{1}{1-\tau}\tau_t - \nu s_t + a_t - n_t(\varphi + \alpha)\\
+\end{align}
+\begin{align}
+    -n_t(\varphi + \alpha) = -\frac{1}{1-\alpha}(y_t - a_t)(\varphi + \alpha)\\
+    -n_t(\varphi + \alpha) = -\frac{\varphi + \alpha}{1-\alpha}(y_t - a_t)\\
+    -n_t(\varphi + \alpha) = -\frac{\varphi + \alpha}{1-\alpha}y_t + \frac{\varphi + \alpha}{1-\alpha}a_t\\
+\end{align}
+\begin{align}
+   \mu_t &= -\sigma c_t - \frac{1}{1-\tau}\tau_t - \nu s_t + a_t -\frac{\varphi + \alpha}{1-\alpha}y_t + \frac{\varphi + \alpha}{1-\alpha}a_t\\
+   \mu_t &= -\sigma c_t - \frac{1}{1-\tau}\tau_t - \nu s_t + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t -\frac{\varphi + \alpha}{1-\alpha}y_t \\
+   \mu_t &= -\sigma \left(y_t - \nu s_t \left( (2-\nu)\eta + \frac{1-\nu}{\sigma}\right) + \frac{\nu}{\sigma}z_t\right) - \frac{1}{1-\tau}\tau_t - \nu s_t + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t -\frac{\varphi + \alpha}{1-\alpha}y_t \\
+   \mu_t &= -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y_t + \sigma \nu s_t \left( (2-\nu)\eta + \frac{1-\nu}{\sigma}\right) - \nu z_t- \frac{1}{1-\tau}\tau_t - \nu s_t + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t \\
+   \mu_t &= -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y_t + \nu s_t \left(\sigma  \left( (2-\nu)\eta + \frac{1-\nu}{\sigma}\right)- 1 \right) - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t\\
+   \mu_t &= -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y_t + \nu s_t \left( (2-\nu)\sigma \eta + {1-\nu}\right)- 1 - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t\\
+   \mu_t &= -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y_t + \nu s_t \left( (2-\nu)\sigma \eta -\nu\right) - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t\\
+   \mu_t &= -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y_t + \nu s_t \left( 2\sigma \eta-\nu\sigma \eta -\nu\right) - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t\\
+   \mu_t &= -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y_t + \nu (\varpi - 1) s_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t
+\end{align}
+
+\begin{align}
+    \pi_{H,t} &= \beta \E \{\pi_{H,t+1}\} + \lambda \hat{\mu}_t \implies \pi_{H,t} = \beta \E \{\pi_{H,t+1}\} - \lambda \mu_t \\
+    \pi_{H,t} &= \beta \E \{\pi_{H,t+1}\} + \lambda \left(\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y_t - \nu (\varpi - 1) s_t + \frac{1}{1-\tau}\tau_t  - \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t + \nu z_t\right) \\
+    \pi_{H,t} &= \beta \E \{\pi_{H,t+1}\} + \kappa y_t + \lambda \left(- \nu (\varpi - 1) s_t + \frac{1}{1-\tau}\tau_t  - \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t + \nu z_t\right) \\
+    \pi_{H,t} &= \beta \E \{\pi_{H,t+1}\} + \kappa y_t - \lambda \nu (\varpi - 1) s_t + \lambda\frac{1}{1-\tau}\tau_t  - \lambda\left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t + \lambda\nu z_t \\
+\end{align}
+\pagebreak
+% \begin{align*}
+%     \mu_t = -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t + \nu (\varpi - 1) s^n_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t\\
+%     \mu_t - \left( \nu (\varpi - 1) s^n_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t \right) = -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
+%     \nu (\varpi - 1) s^n_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
+%     \nu (\varpi - 1) s^n_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
+%     \nu (\varpi - 1) (\sigma_\nu(y^n_t - y^*_t) - (1-\nu)\Phi z_t) - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
+%     (- 1 + 1 + \nu (\varpi - 1)) (\sigma_\nu(y^n_t - y^*_t) - (1-\nu)\Phi z_t) - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
+%     (- 1 + \Phi^{-1}) (\sigma_\nu(y^n_t - y^*_t) - (1-\nu)\Phi z_t) - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
+%     (- 1 + \Phi^{-1}) (\sigma_\nu y^n_t - \sigma_\nu y^*_t - (1-\nu)\Phi z_t) - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
+%     (- 1 + \Phi^{-1})\sigma_\nu y^n_t +(1 - \Phi^{-1}) \sigma_\nu y^*_t + (1 - \Phi^{-1}) (1-\nu)\Phi z_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
+%     (- 1 + \Phi^{-1})\sigma \Phi y^n_t +(1 - \Phi^{-1}) \sigma_\nu y^*_t + (1 - \Phi^{-1}) (1-\nu)\Phi z_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
+%     -\sigma \Phi y^n_t + \sigma y^n_t +(1 - \Phi^{-1}) \sigma_\nu y^*_t + (1 - \Phi^{-1}) (1-\nu)\Phi z_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
+%     (1 - \Phi)\sigma y^n_t +(1 - \Phi^{-1}) \sigma_\nu y^*_t + (1 - \Phi^{-1}) (1-\nu)\Phi z_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
+%     (1 - \Phi^{-1}) \sigma_\nu y^*_t + (1 - \Phi^{-1}) (1-\nu)\Phi z_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t - (1 - \Phi)\sigma y^n_t\\
+%     (1 - \Phi^{-1}) \sigma_\nu y^*_t + (1 - \Phi^{-1}) (1-\nu)\Phi z_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t = \left(\frac{\sigma(1-\alpha) + \varphi + \alpha-(1-\Phi)\sigma(1-\alpha)}{1-\alpha}\right)y^n_t\\
+%     (1 - \Phi^{-1}) \sigma_\nu y^*_t + (1 - \Phi^{-1}) (1-\nu)\Phi z_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t = \left(\frac{\sigma(1-\alpha) + \varphi + \alpha-(\sigma(1-\alpha)-\sigma\Phi(1-\alpha))}{1-\alpha}\right)y^n_t\\
+%     (1 - \Phi^{-1}) \sigma_\nu y^*_t + (1 - \Phi^{-1}) (1-\nu)\Phi z_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t = \left(\frac{-\sigma_\nu(1-\alpha) + \varphi + \alpha}{1-\alpha}\right)y^n_t\\
+%     \left(\frac{-\sigma_\nu(1-\alpha) + \varphi + \alpha}{1-\alpha}\right)^{-1}\left((1 - \Phi^{-1}) \sigma_\nu y^*_t + (1 - \Phi^{-1}) (1-\nu)\Phi z_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t \right)= y^n_t\\
+%     \Gamma_* y^*_t + \left(\frac{-\sigma_\nu(1-\alpha) + \varphi + \alpha}{1-\alpha}\right)^{-1}\left((1 - \Phi^{-1}) (1-\nu)\Phi z_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t \right)= y^n_t\\
+%     \Gamma_* y^*_t + \left(\frac{-\sigma_\nu(1-\alpha) + \varphi + \alpha}{1-\alpha}\right)^{-1}\left(\nu \varpi \Phi z_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t -\mu_t \right)= y^n_t\\
+%     \Gamma_* y^*_t + \Gamma_z z_t + \Gamma_a a_t + \left(\frac{-\sigma_\nu(1-\alpha) + \varphi + \alpha}{1-\alpha}\right)^{-1}\left(- \frac{1}{1-\tau}\tau_t -\mu_t \right)= y^n_t\\
+%     \Gamma_* y^*_t + \Gamma_z z_t + \Gamma_a a_t + \left(\frac{-\sigma_\nu(1-\alpha) + \varphi + \alpha}{1-\alpha}\right)^{-1}\left(- \frac{1}{1-\tau}\tau_t \right)= y^n_t\\
+%     \Gamma_* y^*_t + \Gamma_z z_t + \Gamma_a a_t + \Gamma_\tau \tau_t = y^n_t
+% \end{align*}
+\begin{align*}
+    \mu_t = -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t + \nu (\varpi - 1) s^n_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t\\
+    \mu_t - \left( \nu (\varpi - 1) s^n_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t \right) = -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
+    \nu (\varpi - 1) s^n_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
+    \nu (\varpi - 1) s^n_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
+    \nu (\varpi - 1) (\sigma_\nu(y^n_t - y^*_t) - (1-\nu)\Phi z_t - \frac{G}{Y} \sigma_\nu g_t) - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
+    (- 1 + 1 + \nu (\varpi - 1)) (\sigma_\nu(y^n_t - y^*_t) - (1-\nu)\Phi z_t - \frac{G}{Y} \sigma_\nu g_t) - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
+    (- 1 + \Phi^{-1}) (\sigma_\nu(y^n_t - y^*_t) - (1-\nu)\Phi z_t- \frac{G}{Y} \sigma_\nu g_t) - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
+    (- 1 + \Phi^{-1}) (\sigma_\nu y^n_t - \sigma_\nu y^*_t - (1-\nu)\Phi z_t- \frac{G}{Y} \sigma_\nu g_t) - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
+    (- 1 + \Phi^{-1})\sigma_\nu y^n_t +(1 - \Phi^{-1}) \sigma_\nu y^*_t + (1 - \Phi^{-1}) (1-\nu)\Phi z_t + (1 - \Phi^{-1}) \frac{G}{Y} \sigma_\nu g_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
+    (- 1 + \Phi^{-1})\sigma \Phi y^n_t +(1 - \Phi^{-1}) \sigma_\nu y^*_t + (1 - \Phi^{-1}) (1-\nu)\Phi z_t + (1 - \Phi^{-1}) \frac{G}{Y} \sigma_\nu g_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
+    -\sigma \Phi y^n_t + \sigma y^n_t +(1 - \Phi^{-1}) \sigma_\nu y^*_t + (1 - \Phi^{-1}) (1-\nu)\Phi z_t + (1 - \Phi^{-1}) \frac{G}{Y} \sigma_\nu g_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
+    (1 - \Phi)\sigma y^n_t +(1 - \Phi^{-1}) \sigma_\nu y^*_t + (1 - \Phi^{-1}) (1-\nu)\Phi z_t + (1 - \Phi^{-1}) \frac{G}{Y} \sigma_\nu g_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
+    (1 - \Phi^{-1}) \sigma_\nu y^*_t + (1 - \Phi^{-1}) (1-\nu)\Phi z_t + (1 - \Phi^{-1}) \frac{G}{Y} \sigma_\nu g_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t - (1 - \Phi)\sigma y^n_t\\
+    (1 - \Phi^{-1}) \sigma_\nu y^*_t + (1 - \Phi^{-1}) (1-\nu)\Phi z_t + (1 - \Phi^{-1}) \frac{G}{Y} \sigma_\nu g_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t = \left(\frac{\sigma(1-\alpha) + \varphi + \alpha-(1-\Phi)\sigma(1-\alpha)}{1-\alpha}\right)y^n_t\\
+    (1 - \Phi^{-1}) \sigma_\nu y^*_t + (1 - \Phi^{-1}) (1-\nu)\Phi z_t + (1 - \Phi^{-1}) \frac{G}{Y} \sigma_\nu g_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t = \left(\frac{\sigma(1-\alpha) + \varphi + \alpha-(\sigma(1-\alpha)-\sigma\Phi(1-\alpha))}{1-\alpha}\right)y^n_t\\
+    (1 - \Phi^{-1}) \sigma_\nu y^*_t + (1 - \Phi^{-1}) (1-\nu)\Phi z_t + (1 - \Phi^{-1}) \frac{G}{Y} \sigma_\nu g_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t = \left(\frac{-\sigma_\nu(1-\alpha) + \varphi + \alpha}{1-\alpha}\right)y^n_t\\
+    \left(\frac{-\sigma_\nu(1-\alpha) + \varphi + \alpha}{1-\alpha}\right)^{-1}\left((1 - \Phi^{-1}) \sigma_\nu y^*_t + (1 - \Phi^{-1}) (1-\nu)\Phi z_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t \right)= y^n_t\\
+    \Gamma_* y^*_t + \left(\frac{-\sigma_\nu(1-\alpha) + \varphi + \alpha}{1-\alpha}\right)^{-1}\left((1 - \Phi^{-1}) (1-\nu)\Phi z_t + (1 - \Phi^{-1}) \frac{G}{Y} \sigma_\nu g_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \nu z_t -\mu_t \right)= y^n_t\\
+    \Gamma_* y^*_t + \left(\frac{-\sigma_\nu(1-\alpha) + \varphi + \alpha}{1-\alpha}\right)^{-1}\left(\nu \varpi \Phi z_t + (1 - \Phi^{-1}) \frac{G}{Y} \sigma_\nu g_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t -\mu_t \right)= y^n_t\\
+    \Gamma_* y^*_t + \Gamma_z z_t + \Gamma_a a_t + \left(\frac{-\sigma_\nu(1-\alpha) + \varphi + \alpha}{1-\alpha}\right)^{-1}\left((1 - \Phi^{-1}) \frac{G}{Y} \sigma_\nu g_t - \frac{1}{1-\tau}\tau_t -\mu_t \right)= y^n_t\\
+    \Gamma_* y^*_t + \Gamma_z z_t + \Gamma_a a_t + \Gamma_g g_t + \left(\frac{-\sigma_\nu(1-\alpha) + \varphi + \alpha}{1-\alpha}\right)^{-1}\left(- \frac{1}{1-\tau}\tau_t \right)= y^n_t\\
+    \Gamma_* y^*_t + \Gamma_z z_t + \Gamma_a a_t + \Gamma_g g_t + \Gamma_\tau \tau_t = y^n_t
+\end{align*}
+% s_t &= \sigma_\nu(y_t - y^*_t) - (1-\nu)\Phi z_t - \frac{G}{Y} \sigma_\nu g_t\\
+\begin{align}
+    y^n_t &= \Gamma_* y^*_t + \Gamma_z z_t + \Gamma_a a_t + \Gamma_\tau \tau_t \\
+    \Gamma_* &= -\frac{\nu(\varpi - 1)\sigma_\nu(1-\alpha)}{\sigma_\nu (1-\alpha) + \varphi + \alpha} \\
+    \Gamma_z &= -\frac{\nu \varpi \Phi (1-\alpha)}{\sigma_\nu (1-\alpha) + \varphi + \alpha} \\
+    \Gamma_a &= \frac{1+\varpi}{\sigma_\nu (1-\alpha) + \varphi + \alpha} \\
+    \Gamma_g &= -\frac{\nu(\varpi - 1)\sigma_\nu(1-\alpha)}{\sigma_\nu (1-\alpha) + \varphi + \alpha} \times \frac{G}{Y}\\
+    \Gamma_\tau &= \frac{(1-\tau)(1-\alpha)}{\sigma_\nu (1-\alpha) + \varphi + \alpha}
+\end{align}
+\pagebreak
+\begin{align}
+    c_t &= \E\{ c_{t+1}\} - \frac{1}{\sigma}(i_t - \E \{ \pi_{t+1}\} - \rho) + \frac{1}{\sigma}(1-\rho_z)z_t\\
+    \pi_t &= \pi_{H,t} + \nu \Delta s_t\\
+    \implies c_t &= \E\{ c_{t+1}\} - \frac{1}{\sigma}(i_t - \E \{ \pi_{H,t+1}\} - \rho) + \frac{\nu}{\sigma}\E \{ \Delta s_{t+1} \} + \frac{1}{\sigma}(1-\rho_z)z_t\\
+    c_t &= y_t^* + \frac{1}{\sigma}z_t + \left(\frac{1-\nu}{\sigma}\right)s_t
+\end{align}
+\begin{align}
+    Y_{t}(i) &= C(i)_t + X(i)_{t} + G(i)_t \\
+&=\left(\frac{P_{H,t}(i)}{P_{H,t}}\right)^{-\epsilon}\left[ (1-\nu)\left(\frac{P_{H,t}}{P_t}\right)^{-\eta}C_t + \nu \mathcal{S}_t^{\eta}Y_t^* + G_t\right]
+\end{align}
+Given that
+\begin{equation}
+    Y_t = \left( \int_{0}^{1} (Y_t(i))^{\frac{\varepsilon-1}{\varepsilon}}\right)^{\frac{\varepsilon}{\varepsilon-1}}
+\end{equation}
+\begin{align}
+    Y_t &= (1-\nu)\left(\frac{P_{H,t}}{P_t}\right)^{-\eta}C_t + \nu \mathcal{S}_t^{\eta}Y_t^* + G_t\\
+    Y \mathbf{e}^{y_t} &= (1-\nu)\left(\frac{P}{P_{H}}\right)^{\eta}C \mathbf{e}^{-\eta p_{H,t} + \eta p_t + c_t}+ \nu S^{\eta} Y^* \mathbf{e}^{\eta s_t + y^*_t} + G \mathbf{e}^{g_t}\\
+    Y ({1+y_t}) &= (1-\nu)\left(\frac{P}{P_{H}}\right)^{\eta}C ({1 -\eta p_{H,t} + \eta p_t + c_t})+ \nu S^{\eta} Y^* ({1 + \eta s_t + y^*_t}) + G ({1+ g_t})\\
+    Y y_t &= (1-\nu)\left(\frac{P}{P_{H}}\right)^{\eta}C ({-\eta p_{H,t} + \eta p_t + c_t})+ \nu S^{\eta} Y^* ({\eta s_t + y^*_t}) + G g_t\\
+    &\text{Using $P/P_H = \mathcal{\nu S}$, $\mathcal{S} = 1$, and $C=Y^*$}:\\
+    y_t &= (1-\nu)({-\eta p_{H,t} + \eta p_t + c_t})+ \nu ({\eta s_t + y^*_t}) + \frac{G}{Y} g_t\\
+    &\text{Using $p_t - p_{H,t} = \nu s_t$}:\\
+    y_t &= (1-\nu)({\eta \nu s_t + c_t})+ \nu ({\eta s_t + y^*_t}) + \frac{G}{Y} g_t\\
+    y_t &= (1-\nu)c_t + (1-\nu) \eta \nu s_t + \nu {\eta s_t} + \nu y^*_t + \frac{G}{Y} g_t\\
+    y_t &= (1-\nu)c_t + \nu (2-\nu)\eta s_t + \nu y^*_t + \frac{G}{Y} g_t\\
+\end{align}
+\pagebreak
+\begin{align}
+    c_t & = y^*_t + \frac{1}{\sigma}z_t + \frac{1-\nu}{\sigma}s_t\\
+    y_t &= (1-\nu)c_t + \nu (2-\nu)\eta s_t + \nu y^*_t + \frac{G}{Y} g_t\\
+    \implies y_t &= (1-\nu)\left( y^*_t + \frac{1}{\sigma}z_t + \frac{1-\nu}{\sigma}s_t \right) + \nu (2-\nu)\eta s_t + \nu y^*_t + \frac{G}{Y} g_t\\
+    y_t &= (1-\nu)y^*_t + \frac{1-\nu}{\sigma}z_t + (1-\nu)\frac{1-\nu}{\sigma}s_t + \nu (2-\nu)\eta s_t + \nu y^*_t + \frac{G}{Y} g_t\\
+    y_t &= y^*_t + \frac{1-\nu}{\sigma}z_t + (1-\nu)\frac{1-\nu}{\sigma}s_t + \nu (2-\nu)\eta s_t + \frac{G}{Y} g_t\\
+    y_t &= y^*_t + \frac{1-\nu}{\sigma}z_t + \left((1-\nu)\frac{1-\nu}{\sigma} + \nu (2-\nu)\eta \right) s_t + \frac{G}{Y} g_t\\
+    \left((1-\nu)\frac{1-\nu}{\sigma} + \nu (2-\nu)\eta \right) s_t &= y_t - y^*_t - \frac{1-\nu}{\sigma}z_t - \frac{G}{Y} g_t\\
+    \left(\frac{(1-\nu)(1-\nu) + \sigma\nu (2-\nu)\eta}{\sigma} \right) s_t &= y_t - y^*_t - \frac{1-\nu}{\sigma}z_t - \frac{G}{Y} g_t\\
+    \left(\frac{1 -2\nu + \nu^2 + \sigma\nu (2-\nu)\eta}{\sigma} \right) s_t &= y_t - y^*_t - \frac{1-\nu}{\sigma}z_t - \frac{G}{Y} g_t\\
+    \left(\frac{1 - \nu (2-\nu) + \sigma\nu (2-\nu)\eta}{\sigma} \right) s_t &= y_t - y^*_t - \frac{1-\nu}{\sigma}z_t - \frac{G}{Y} g_t\\
+    \left(\frac{1 - \nu (2-\nu)(1-\sigma \eta)}{\sigma} \right) s_t &= y_t - y^*_t - \frac{1-\nu}{\sigma}z_t - \frac{G}{Y} g_t\\
+    \left(\frac{1 + \nu (2-\nu)(\sigma \eta - 1)}{\sigma} \right) s_t &= y_t - y^*_t - \frac{1-\nu}{\sigma}z_t - \frac{G}{Y} g_t\\
+    \left(\frac{1 + \nu (2\sigma \eta-\nu\sigma \eta -2 + \nu)}{\sigma} \right) s_t &= y_t - y^*_t - \frac{1-\nu}{\sigma}z_t - \frac{G}{Y} g_t\\
+    \left(\frac{1 + \nu (\varpi - 1)}{\sigma} \right) s_t &= y_t - y^*_t - \frac{1-\nu}{\sigma}z_t - \frac{G}{Y} g_t\\
+    \sigma^{-1} \Phi^{-1} s_t &= y_t - y^*_t - \frac{1-\nu}{\sigma}z_t - \frac{G}{Y} g_t\\
+    s_t &= \sigma \Phi(y_t - y^*_t) - (1-\nu)\Phi z_t - \frac{G}{Y} \sigma \Phi g_t\\
+    s_t &= \sigma_\nu(y_t - y^*_t) - (1-\nu)\Phi z_t - \frac{G}{Y} \sigma_\nu g_t\\
+\end{align}
+\begin{align}
+    \Phi &= \frac{1}{1 + \nu (\varpi - 1)}\\
+    \varpi &=  \sigma \eta + (1-\nu)(\sigma \eta - 1) = 2\sigma \eta-\nu\sigma \eta -1 + \nu\\
+    \sigma_\nu &= \sigma \Phi
+\end{align}
+\pagebreak
+\begin{align}
+    y_t &= (1-\nu)c_t + \nu(2-\nu)\eta s_t + \nu y_t^* + G_Y g_t\\
+    \implies c_t &= (1-\nu)^{-1}(y_t - \nu(2-\nu)\eta s_t - \nu y_t^* - G_Y g_t)\\
+    c_t &= \E \{ c_{t+1}\} - \frac{1}{\sigma}(i_t - \E \{ \pi_{t+1}\} - \rho) + \frac{\nu}{\sigma}\E \{ \Delta s_{t+1} \} + \frac{1}{\sigma}(1-\rho_z)z_t \\
+    s_t &= \sigma_\nu(y_t - y^*_t) - (1-\nu)\Phi z_t - \frac{G}{Y} \sigma_\nu g_t\\
+\end{align}
+\begin{align*}
+    0 &= \E \{ \Delta c_{t+1}\} - \frac{1}{\sigma}(i_t - \E \{ \pi_{H,+1}\} - \rho) + \frac{\nu}{\sigma}\E \{ \Delta s_{t+1} \} + \frac{1}{\sigma}(1-\rho_z)z_t \\
+    0  &= \E \{ \Delta y_{t+1}\}  - \nu(2-\nu)\eta \E \{\Delta s_{t+1} \} - \nu \E \{\Delta y_{t+1}^* \} -G_Y \Delta g_{t+1} - \frac{1-\nu}{\sigma}(i_t - \E \{ \pi_{H,+1}\} - \rho) + \frac{(1-\nu)\nu}{\sigma}\E \{ \Delta s_{t+1} \} + \frac{1-\nu}{\sigma}(1-\rho_z)z_t \\
+    0  &= \E \{ \Delta y_{t+1}\}  + \left(\frac{(1-\nu)\nu}{\sigma} - \nu(2-\nu)\eta\right) \E \{\Delta s_{t+1} \} - \nu \E \{\Delta y_{t+1}^* \} -G_Y \Delta g_{t+1} - \frac{1-\nu}{\sigma}(i_t - \E \{ \pi_{H,+1}\} - \rho)  + \frac{1-\nu}{\sigma}(1-\rho_z)z_t \\
+    0  &= \E \{ \Delta y_{t+1}\}  - \left(\frac{\nu \varpi}{\sigma}\right) \E \{\Delta s_{t+1} \} - \nu \E \{\Delta y_{t+1}^* \} -G_Y \Delta g_{t+1} - \frac{1-\nu}{\sigma}(i_t - \E \{ \pi_{H,+1}\} - \rho)  + \frac{1-\nu}{\sigma}(1-\rho_z)z_t \\
+    0  &= \E \{ \Delta y_{t+1}\}  - \left(\frac{\nu \varpi}{\sigma}\right) \E \left( \sigma_\nu(\Delta y_{t+1} - \Delta y^*_{t+1}) - (1-\nu)\Phi (\Delta z_{t+1}) - G_Y \sigma_\nu \Delta g_{t+1} \right) - \nu \E \{\Delta y_{t+1}^* \} - \frac{1-\nu}{\sigma}(i_t - \E \{ \pi_{H,+1}\} - \rho)  + \frac{1-\nu}{\sigma}(1-\rho_z)z_t \\
+    0  &= \E \{ \Delta y_{t+1}\} -\nu \varpi \Phi \Delta y_{t+1} + \nu \varpi \Phi \Delta y^*_{t+1} - \nu \E \{\Delta y_{t+1}^* \} + \frac{1-\nu}{\sigma}(1-\rho_z)z_t + \nu \varpi \Phi \frac{1-\nu}{\sigma} (\rho_z - 1)z_t + \nu \varpi\Phi G_Y \Delta g_{t+1} -G_Y \Delta g_{t+1} - \frac{1-\nu}{\sigma}(i_t - \E \{ \pi_{H,+1}\} - \rho)\\
+    0  &= \Phi^{-1} \E \{ \Delta y_{t+1}\} -\nu \varpi \Delta y_{t+1} + \nu \varpi \Delta y^*_{t+1} - \nu \Phi^{-1} \E \{\Delta y_{t+1}^* \} \\
+        &  +\Phi^{-1} \frac{1-\nu}{\sigma}(1-\rho_z)z_t + \nu \varpi \frac{1-\nu}{\sigma} (\rho_z - 1)z_t + \nu \varpi G_Y \Delta g_{t+1} -G_Y \Delta g_{t+1}\\
+        &- \frac{1-\nu}{\sigma_\nu}(i_t - \E \{ \pi_{H,+1}\} - \rho)\\
+    0  &= (\Phi^{-1} -\nu \varpi) \Delta y_{t+1} + \nu (\varpi - \Phi^{-1})\E \{\Delta y_{t+1}^* \} \\
+        &  -(\Phi^{-1} -\nu \varpi)\frac{1-\nu}{\sigma} (\rho_z - 1)z_t + (\nu \varpi  - 1) G_Y \Delta g_{t+1}\\
+        &- \frac{1-\nu}{\sigma_\nu}(i_t - \E \{ \pi_{H,+1}\} - \rho)\\
+    0  &= \Delta y_{t+1} + \frac{\nu (\varpi - \Phi^{-1})}{\Phi^{-1} -\nu \varpi}\E \{\Delta y_{t+1}^* \} \\
+        &  -\frac{1-\nu}{\sigma} (\rho_z - 1)z_t + \frac{(\nu \varpi  - 1)}{\Phi^{-1} -\nu \varpi} G_Y \Delta g_{t+1}\\
+        &- \frac{1-\nu}{\Phi^{-1} -\nu \varpi}\frac{1}{\sigma_\nu}(i_t - \E \{ \pi_{H,+1}\} - \rho)\\
+    y_t  &= y_{t+1}  -\frac{1-\nu}{\sigma} (\rho_z - 1)z_t \\
+        & + \frac{(\nu \varpi  - 1)}{\Phi^{-1} -\nu \varpi} G_Y \Delta g_{t+1} + \frac{\nu (\varpi - \Phi^{-1})}{\Phi^{-1} -\nu \varpi}\E \{\Delta y_{t+1}^* \} - \frac{1-\nu}{\Phi^{-1} -\nu \varpi}\frac{1}{\sigma_\nu}(i_t - \E \{ \pi_{H,+1}\} - \rho) \\
+    y_t  &= y_{t+1}  -\frac{1-\nu}{\sigma} (\rho_z - 1)z_t - \frac{1-\nu}{1-\nu}\frac{1}{\sigma_\nu}(i_t - \E \{ \pi_{H,+1}\} - \rho) + \frac{(1-\nu)(\nu \varpi - \nu)}{1 - \nu}\E \{\Delta y_{t+1}^* \} + \frac{\nu \varpi  - 1}{1-\nu} G_Y \Delta g_{t+1}\\
+    y_t  &= y_{t+1} - \frac{1}{\sigma_\nu}(i_t - \E \{ \pi_{H,+1}\} - \rho) + \nu (\varpi - 1)\E \{\Delta y_{t+1}^* \}  + \frac{1-\nu}{\sigma} (1-\rho_z)z_t + \frac{\nu \varpi  - 1}{1-\nu} G_Y \Delta g_{t+1}
+\end{align*}
+\begin{align}
+    y^n_t  &= y^n_{t+1} - \frac{1}{\sigma_\nu}(r^n_t - \rho) + \nu (\varpi - 1)\E \{\Delta y_{t+1}^* \}  + \frac{1-\nu}{\sigma} (1-\rho_z)z_t + \frac{\nu \varpi  - 1}{1-\nu} G_Y \Delta g_{t+1}\\
+    0  &= \Delta y^n_{t+1} - \frac{1}{\sigma_\nu}(r^n_t - \rho) + \nu (\varpi - 1)\E \{\Delta y_{t+1}^* \}  + \frac{1-\nu}{\sigma} (1-\rho_z)z_t + \frac{\nu \varpi  - 1}{1-\nu} G_Y \Delta g_{t+1}\\
+    0  &= \sigma_\nu \Delta y^n_{t+1} - (r^n_t - \rho) + \sigma_\nu \nu (\varpi - 1)\E \{\Delta y_{t+1}^* \}  + \Phi (1-\nu)(1-\rho_z)z_t + \sigma_\nu \frac{\nu \varpi  - 1}{1-\nu} G_Y \Delta g_{t+1}\\
+    r^n_t  &= \sigma_\nu \Delta y^n_{t+1} + \rho + \sigma_\nu \nu (\varpi - 1)\E \{\Delta y_{t+1}^* \}  + \Phi (1-\nu)(1-\rho_z)z_t + \sigma_\nu \frac{\nu \varpi  - 1}{1-\nu} G_Y \Delta g_{t+1}\\
+\end{align}
+\begin{align}
+    0 &= \sigma_\nu \Delta y_{t+1} - (i_t - \E \{ \pi_{H,+1}\}) + \rho + \sigma_\nu \nu (\varpi - 1)\E \{\Delta y_{t+1}^* \}  + \Phi(1-\nu) (1-\rho_z)z_t + \sigma_\nu \frac{\nu \varpi  - 1}{1-\nu} G_Y \Delta g_{t+1} \\
+    & - (\sigma_\nu \Delta y^n_{t+1} - (r^n_t - \rho) + \sigma_\nu \nu (\varpi - 1)\E \{\Delta y_{t+1}^* \}  + \Phi (1-\nu)(1-\rho_z)z_t + \sigma_\nu \frac{\nu \varpi  - 1}{1-\nu} G_Y \Delta g_{t+1})\\
+    0 &= \sigma_\nu \Delta \tilde{y}_{t+1} - (i_t - \E \{ \pi_{H,+1}\} - r^n_t)\\
+    \tilde{y}_t &= \tilde{y}_{t+1} - \frac{1}{\sigma_\nu}(i_t - \E \{ \pi_{H,+1}\} - r^n_t) \quad \text{Dynamic IS Curve}\\
+\end{align}
+\pagebreak
+\begin{align}
+    r^n_t  &= \sigma_\nu \Delta y^n_{t+1} + \rho + \sigma_\nu \nu (\varpi - 1)\E \{\Delta y_{t+1}^* \}  + \Phi (1-\nu)(1-\rho_z)z_t + \sigma_\nu \frac{\nu \varpi  - 1}{1-\nu} G_Y \Delta g_{t+1}\\
+    \sigma_\nu \Delta y^n_{t+1} &= \sigma_\nu(\Gamma_* \Delta y^*_{t+1} + \Gamma_z \Delta z_{t+1} + \Gamma_a \Delta a_{t+1} + \Gamma_g \Delta g_{t+1} + \Gamma_\tau \Delta \tau_{t+1})\\
+    y^*_t&: \sigma_\nu \Gamma_* \Delta y^*_{t+1} + \sigma_\nu \nu(\varpi-1)\Delta y^*_{t+1} = \sigma_\nu(\Gamma_* + \nu(\varpi-1))\Delta y^*_{t+1} = \Psi_* y^*_{t+1}\\
+    z_t&: \sigma_\nu \Gamma_z \Delta z_{t+1} + \Phi (1-\rho_z)z_t = \sigma_\nu \Gamma_z (\rho_z - 1)z_t + \Phi (1-\nu)(1-\rho_z)z_t\\
+    &= \sigma_\nu \Gamma_z (\rho_z - 1)z_t + \Phi (1-\nu)(1-\rho_z)z_t = (\Phi (1-\nu) - \sigma_\nu \Gamma_z)(1-\rho_z)z_t = \Psi_z (1-\rho_z) z_t\\
+    a_t&: \sigma_\nu \Gamma_a \Delta a_{t+1} = \sigma_\nu \Gamma_a (\rho_a - 1)a_t = - \sigma_\nu \Gamma_a (1 - \rho_a)a_t\\
+    g_t&: \sigma_\nu \Gamma_g G_Y \Delta g_{t+1} + \sigma_\nu \frac{\nu \varpi  - 1}{1-\nu} G_Y \Delta g_{t+1} = \left( \sigma_\nu \left(\Gamma_g + \frac{\nu \varpi  - 1}{1-\nu} \right) \right)G_Y \Delta g_{t+1} = -\Psi_g G_Y (1-\rho_g)g_t \\
+    \tau_t&: \sigma_\nu \Gamma_\tau \Delta \tau_{t+1}\\
+    r^n_t  &= \rho + \Psi_* y^*_{t+1} + \Psi_z (1-\rho_z) z_t - \sigma_\nu \Gamma_a (1 - \rho_a)a_t -\Psi_g G_Y (1-\rho_g)g_t + \sigma_\nu \Gamma_\tau \Delta \tau_{t+1}
+\end{align}
