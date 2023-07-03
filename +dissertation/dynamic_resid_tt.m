@@ -25,16 +25,16 @@ T(2) = params(1)*T(1);
 T(3) = (1+params(3))/(params(4)+params(3)+(1-params(4))*T(2));
 T(4) = (1-params(4))*T(2)*(-params(7))*(params(1)*params(8)+(1-params(7))*(params(1)*params(8)-1)-1)/(params(4)+params(3)+(1-params(4))*T(2));
 T(5) = (1-params(4))*T(1)*(params(1)*params(8)+(1-params(7))*(params(1)*params(8)-1))*(-params(7))/(params(4)+params(3)+(1-params(4))*T(2));
-T(6) = (1-params(4))*(1-params(36))/(params(4)+params(3)+(1-params(4))*T(2));
-T(7) = (1-params(4))/(1-params(4)+params(4)*params(5))*(1-params(6))*(1-params(6)*params(2))/params(6)*((params(4)+params(3))/(1-params(4))+T(2));
-T(8) = 1/(1+params(19)*(params(13)*params(20)+(1-params(19))*(params(13)*params(20)-1)-1));
-T(9) = params(13)*T(8);
-T(10) = (1+params(15))/(params(16)+params(15)+(1-params(16))*T(9));
-T(11) = (1-params(16))*T(9)*(-params(19))*(params(13)*params(20)+(1-params(19))*(params(13)*params(20)-1)-1)/(params(16)+params(15)+(1-params(16))*T(9));
-T(12) = (1-params(16))*T(8)*(params(13)*params(20)+(1-params(19))*(params(13)*params(20)-1))*(-params(19))/(params(16)+params(15)+(1-params(16))*T(9));
-T(13) = (1-params(16))*(1-params(37))/(params(16)+params(15)+(1-params(16))*T(9));
-T(14) = (1-params(16))/(1-params(16)+params(16)*params(17))*(1-params(18))*(1-params(18)*params(14))/params(18)*((params(16)+params(15))/(1-params(16))+T(9));
-T(15) = (1-params(24))*params(36)*T(2)*(params(36)*T(4)+(params(7)*(params(1)*params(8)+(1-params(7))*(params(1)*params(8)-1))-1)/(1-params(7)));
-T(16) = (1-params(25))*params(37)*T(9)*(T(11)+(params(19)*(params(13)*params(20)+(1-params(19))*(params(13)*params(20)-1))-1)/(1-params(19)));
+T(6) = (1-params(6))*(1-params(6)*params(2))/((1-params(4))/(1-params(4)+params(4)*params(5))*params(6))*((params(4)+params(3))/(1-params(4))+T(2));
+T(7) = 1/(1+params(19)*(params(13)*params(20)+(1-params(19))*(params(13)*params(20)-1)-1));
+T(8) = params(13)*T(7);
+T(9) = (1+params(15))/(params(16)+params(15)+(1-params(16))*T(8));
+T(10) = (1-params(16))*T(8)*(-params(19))*(params(13)*params(20)+(1-params(19))*(params(13)*params(20)-1)-1)/(params(16)+params(15)+(1-params(16))*T(8));
+T(11) = (1-params(16))*T(7)*(params(13)*params(20)+(1-params(19))*(params(13)*params(20)-1))*(-params(19))/(params(16)+params(15)+(1-params(16))*T(8));
+T(12) = (1-params(18))*(1-params(18)*params(14))/((1-params(16))/(1-params(16)+params(16)*params(17))*params(18))*((params(16)+params(15))/(1-params(16))+T(8));
+T(13) = (1-params(4))*(1-params(37))/(params(4)+params(3)+(1-params(4))*T(2));
+T(14) = (1-params(16))*(1-params(38))/(params(16)+params(15)+(1-params(16))*T(8));
+T(15) = (1-params(25))*params(37)*T(2)*(T(4)+(params(7)*(params(1)*params(8)+(1-params(7))*(params(1)*params(8)-1))-1)/(1-params(7)));
+T(16) = (1-params(26))*params(38)*T(8)*(T(10)+(params(19)*(params(13)*params(20)+(1-params(19))*(params(13)*params(20)-1))-1)/(1-params(19)));
 
 end

@@ -1,13 +1,14 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1688212423 -1
+["biber main"] 1688225563 "main.bcf" "main.bbl" "main" 1688225611 0
   "./DissertationDSGE.bib" 1686949460 4479 c98594d863b4f30bcda63b955582ee9e ""
-  "main.bcf" 1688212422 109717 7f4fe4176a5f4728282c8b05f9fc4930 "pdflatex"
+  "main.bcf" 1688225611 109717 7f4fe4176a5f4728282c8b05f9fc4930 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1688212419 "/Users/edvardasvabuolas/Documents/University/Dissertation/Latex2/main.tex" "main.pdf" "main" 1688212423 0
-  "./model.tex" 1688212416 37554 9a5695dadd5750d24bb198284982429f ""
+["pdflatex"] 1688225609 "/Users/edvardasvabuolas/Documents/University/Dissertation/Latex2/main.tex" "main.pdf" "main" 1688225611 0
+  "./model.tex" 1688225607 29660 ce21e4d5f542407786a4a146569e2a8e ""
+  "./scenarios.tex" 1688223098 4441 8fcf8814a56e781a4a5dbd4c04808e4d ""
   "./structure.tex" 1686997298 1127 bd0e6815ac9768e43404f62e2ee55929 ""
   "/Users/edvardasvabuolas/Documents/University/Dissertation/Latex2/main.tex" 1687623190 1070 ed87464b06ea73a5b24d74d13a2c0067 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
@@ -156,6 +157,7 @@
   "/usr/local/texlive/2023/texmf-dist/tex/latex/biblatex/cbx/authoryear.cbx" 1566680006 3976 2d46354b304f9bc8fda915fe9215de04 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/biblatex/lbx/english.lbx" 1643926307 39965 48ce9ce3350aba9457f1020b1deba5cf ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/cancel/cancel.sty" 1388445839 7592 dd751af313a16a0308545d5bfd7aaaa2 ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/dashbox/dashbox.sty" 1137110041 5179 d00d3ec621aa883320a0a2d298a03157 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1579991033 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1601931149 46845 3b58f70c6e861a13d927bff09d35ecbc ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/float/float.sty" 1137110151 6749 16d2656a1984957e674b149555f1ea1d ""
@@ -220,7 +222,7 @@
   "Graphs/timeline.tex" 1686985732 1167 e25b88d2ddc5512a839d8cd10d5c7292 ""
   "Introduction/introduction.tex" 1686921052 0 d41d8cd98f00b204e9800998ecf8427e ""
   "Introduction/literature_review.tex" 1687011809 4227 0e41dafa916b6aa7cfb1d0c970002699 ""
-  "Packages.sty" 1687624879 755 f0f23ad2f253ecc80afb17a0cd4dd34d ""
+  "Packages.sty" 1688225493 823 7a9b69db523518591728ee4e32b0cb93 ""
   "Theoretical DSGE model/equilibrium.tex" 1686763409 7519 37a0e4fae5c52073dc7081aa9761e11e ""
   "Theoretical DSGE model/firms.tex" 1686761858 1468 de333cdf0520e3a94b617edf9fe6551c ""
   "Theoretical DSGE model/households.tex" 1686929765 17863 efb08663991230948189f1855fc1ad25 ""
@@ -229,11 +231,12 @@
   "Title Page/uoe_logo.png" 1686316242 20326 1cb2a3031b2bfffe2295b1170a85379a ""
   "detailed_wordcount.txt" 1687000854 981 538dee98c3685dd410e933463c913717 ""
   "final_wordcount.txt" 1687000854 4 8303a79b1e19a194f1875981be5bdb6f ""
-  "main.aux" 1688212422 6035 27277f1d73c5c0a1dfb5f4a0208556cb "pdflatex"
-  "main.bbl" 1688056795 13436 631fe316789606adb8385a3d543393c3 "biber main"
-  "main.run.xml" 1688212422 2351 e48ac35430ef4eb0fe9dd6f256db4588 "pdflatex"
+  "main.aux" 1688225611 6006 1f9550c1145e95b4e48ba64b2246303e "pdflatex"
+  "main.bbl" 1688225566 13436 631fe316789606adb8385a3d543393c3 "biber main"
+  "main.run.xml" 1688225611 2351 e48ac35430ef4eb0fe9dd6f256db4588 "pdflatex"
   "main.tex" 1687623190 1070 ed87464b06ea73a5b24d74d13a2c0067 ""
-  "model.tex" 1688212416 37554 9a5695dadd5750d24bb198284982429f ""
+  "model.tex" 1688225607 29660 ce21e4d5f542407786a4a146569e2a8e ""
+  "scenarios.tex" 1688223098 4441 8fcf8814a56e781a4a5dbd4c04808e4d ""
   "structure.tex" 1686997298 1127 bd0e6815ac9768e43404f62e2ee55929 ""
   (generated)
   "main.aux"
