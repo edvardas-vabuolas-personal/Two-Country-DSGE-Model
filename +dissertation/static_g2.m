@@ -18,6 +18,6 @@ function g2 = static_g2(T, y, x, params, T_flag)
 if T_flag
     T = dissertation.static_g2_tt(T, y, x, params);
 end
-g2 = sparse([],[],[],58,3364);
+g2 = sparse([],[],[],59,3481);
 
 end

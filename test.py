@@ -1,9 +1,9 @@
 text_set = """
-    TR_Y_SS * tr = phi_g * tau_ss * (p_f - g) + B_Y_SS * phi_b * b;
+    s_nat = siggma_upsilon * (y_nat - y_star) - (1 - upsilon) * Phi * z - tau_ss * siggma_upsilon * g;
 """
 
 text_set_two = """
-    TR_Y_SS_f * tr_f = phi_g_f * tau_ss_f * (p_f - g_f) + B_Y_SS_f * phi_b_f * b_f;
+    s_nat_f = siggma_upsilon_f * (y_nat_f - y_star_f) - (1 - upsilon_f) * Phi * z_f - tau_ss_f * siggma_upsilon_f * g_f;
 """
 
 text_set = text_set.replace(" ","").replace("\t","")

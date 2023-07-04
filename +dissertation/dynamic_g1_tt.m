@@ -18,7 +18,7 @@ function T = dynamic_g1_tt(T, y, x, params, steady_state, it_)
 %   T           [#temp variables by 1]       double  vector of temporary terms
 %
 
-assert(length(T) >= 16);
+assert(length(T) >= 14);
 
 T = dissertation.dynamic_resid_tt(T, y, x, params, steady_state, it_);
 

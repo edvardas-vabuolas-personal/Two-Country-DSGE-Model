@@ -1,26 +1,26 @@
 % monetary_union: 0 - Standard NK Phillips Curves and Dynamic IS curves, 2 interest rates; 1 - Price passthrough and unified monetary authority
 @#define monetary_union = 1
 
-@#define scenario = 3
+@#define scenario = 1
 
 % no_of_govs: 1 - One government budget constraint; 2 - Two government budget constraints
-% tax_mode: 0 - Lump-Sum; 1 - Distortionary taxes (labour tax)
+% labour_tax: 0 - Lump-Sum; 1 - Distortionary taxes (labour tax)
 
 @#if scenario == 1
     @#define no_of_govs = 2
-    @#define tax_mode = 0
+    @#define labour_tax = 0
 @#else
     @#if scenario == 2
         @#define no_of_govs = 1
-        @#define tax_mode = 0
+        @#define labour_tax = 0
     @#else
         @#if scenario == 3
             @#define no_of_govs = 2
-            @#define tax_mode = 1
+            @#define labour_tax = 1
         @#else
             @#if scenario == 4
                 @#define no_of_govs = 1
-                @#define tax_mode = 1
+                @#define labour_tax = 1
             @#endif
         @#endif
     @#endif
@@ -85,6 +85,7 @@ a_f           ${a^f}$           (long_name='AR(1) technology shock process')
 z_f           ${z^f}$           (long_name='AR(1) preference shock process')
 wp_f          ${wp^f}$           (long_name='Real Wage')
 
+pi_uk
 
 % Fiscal Policy
 @#if no_of_govs == 2
@@ -96,7 +97,7 @@ wp_f          ${wp^f}$           (long_name='Real Wage')
     b_f
     debt
     debt_f
-    @#if tax_mode == 1
+    @#if labour_tax == 1
         tau           ${\tau_l}$           (long_name='Labour Tax (Scotland)')
         tau_f           ${\tau^f_l}$           (long_name='Labour Tax (rUK)')
     @#endif    
@@ -105,20 +106,23 @@ wp_f          ${wp^f}$           (long_name='Real Wage')
     tr_uk           ${TR}$           (long_name='Tax Revenue (UK)')
     b_uk
     debt_uk
-    @#if tax_mode == 1
+    @#if labour_tax == 1
+        tr
+        tr_f
         tau_uk           ${\tau^{uk}}$           (long_name='Labour Tax (UK)')
     @#endif
 @#endif
 
+interest    ${i}$           (long_name='Interest Rate (Scotland)')
+interest_f    ${i^f}$           (long_name='Interest Rate (rUK)')
+interest_uk    ${i^f}$           (long_name='Interest Rate (UK)')
+
 % Monetary Policy
 @#if monetary_union == 1
     nu_uk          ${\nu}$         (long_name='AR(1) monetary policy shock process')
-    interest_uk    ${i^f}$           (long_name='Interest Rate (UK)')
 @#else
     nu          ${\nu}$         (long_name='AR(1) monetary policy shock process')    
     nu_f          ${\nu}$         (long_name='AR(1) monetary policy shock process')    
-    interest    ${i}$           (long_name='Interest Rate (Scotland)')
-    interest_f    ${i^f}$           (long_name='Interest Rate (rUK)')
 @#endif
 
 % Estimation
@@ -137,7 +141,11 @@ wp_f          ${wp^f}$           (long_name='Real Wage')
 
 ;
 
-predetermined_variables b b_f debt;
+@#if no_of_govs == 2
+    predetermined_variables b b_f;
+@#else
+    predetermined_variables b_uk;
+@#endif
 
 varexo 
 
@@ -213,34 +221,31 @@ rho_y_star_f      ${\rho_{y^*}}$  (long_name='autocorrelation world output growt
 rho_z_f           ${\rho_{z}}$    (long_name='autocorrelation preference shock')
 
 % Fiscal Policy
+B_Y_SS
+TR_Y_SS
+B_Y_SS_f
+TR_Y_SS_f
+WN_T_SS          ${\frac{WN}{T}}$    (long_name='Pre-tax income/tax revenue ratio')
+WN_T_SS_f          ${\frac{W^fN^f}{T^f}}$    (long_name='Pre-tax income/tax revenue ratio')
+G_Y_SS
+G_Y_SS_f
+
 @#if no_of_govs == 2
     rho_g           ${\rho_g}$    (long_name='AR(1) coefficient for Government spending (Scotland)')
     rho_g_f           ${\rho_g}$    (long_name='AR(1) coefficient for Government spending (rUK)')
-    WN_T_SS          ${\frac{WN}{T}}$    (long_name='Pre-tax income/tax revenue ratio')
-    WN_T_SS_f          ${\frac{W^fN^f}{T^f}}$    (long_name='Pre-tax income/tax revenue ratio')
     phi_b
     phi_b_f
     phi_g
     phi_g_f
-    B_Y_SS
-    TR_Y_SS
-    B_Y_SS_f
-    TR_Y_SS_f
-    tau_ss           ${\tilde{\tau}}$    (long_name='Average labour tax rate (Scotland)')
-    tau_ss_f           ${\tilde{\tau}}^f$    (long_name='Average labour tax rate (rUK)')
-    @#if tax_mode == 1
+    @#if labour_tax == 1
         tau_ss           ${\tilde{\tau}}$    (long_name='Average labour tax rate (Scotland)')
         tau_ss_f           ${\tilde{\tau}}^f$    (long_name='Average labour tax rate (rUK)')
     @#endif
 @#else
     rho_g_uk           ${\rho_g}$    (long_name='AR(1) coefficient for Government spending (UK)')
-    WN_T_SS          ${\frac{WN}{T}}$    (long_name='Pre-tax income/tax revenue ratio')
-    WN_T_SS_f          ${\frac{W^fN^f}{T^f}}$    (long_name='Pre-tax income/tax revenue ratio')
     phi_b_uk
     phi_g_uk
-    B_Y_SS_UK
-    TR_Y_SS_UK
-    @#if tax_mode == 1
+    @#if labour_tax == 1
         tau_ss_uk           ${\tilde{\tau}}$    (long_name='Average labour tax rate (UK)')
     @#endif
 @#endif
@@ -254,14 +259,6 @@ phi_pi_f          ${\phi_{\pi}}$  (long_name='inflation feedback Taylor Rule')
 phi_y_f           ${\phi_{y}}$    (long_name='output feedback Taylor Rule')
 rho_i_f           ${\rho_i}$    (long_name='AR(1) coefficient for Taylor Rule')
 
-% Monetary Policy (unified monetary authority)
-@#if monetary_union == 1
-    % Non-policy block parameters
-    chi_pi           ${\chi_{\pi}}$    (long_name='rUK inflation impact on Scotland inflation parameter')
-    chi_y           ${\rho_i}$    (long_name='rUK ouput gap impact on Scotland output gap parameter')
-    chi_pi_ruk           ${\rho_i}$    (long_name='Scotland inflation impact on rUK inflation parameter')
-    chi_y_ruk           ${\rho_i}$    (long_name='Scotland output gap impact on rUK output gap parameter')
-@#endif
 ;
 
 %----------------------------------------------------------------
@@ -276,8 +273,8 @@ varphi  = 6;
 alppha  = 1/4;
 epsilon = 6;
 theta   = 3/4;
-upsilon = 0;
-rho_a   = 0.9;
+upsilon = 0.6;
+rho_a   = 0.8;
 rho_y_star  = 0;
 eta     = 1;
 rho_z   = 0.5;
@@ -298,7 +295,7 @@ rho_z_f   = rho_z;
 pop = 0.08629;
 
 % Monetary Policy
-rho_nu  = 0.3;
+rho_nu  = 0.5;
 rho_i = 0.9;
 phi_pi  = 1.5;
 phi_y   = 0.5/4;
@@ -308,42 +305,37 @@ rho_i_f = rho_i;
 phi_pi_f  = phi_pi;
 phi_y_f   = phi_y;
 
-@#if monetary_union == 1
-    % Non-policy block parameters
-    chi_pi = pop;
-    chi_y = pop;
-    chi_pi_ruk = (1-pop);
-    chi_y_ruk = (1-pop);
-@#endif
-
 % Fiscal Policy
 WN_T_SS = 0.2;
 WN_T_SS_f = WN_T_SS;
+
+B_Y_SS = 3.4;
+B_Y_SS_f = B_Y_SS;
+
+TR_Y_SS = 0.4;
+TR_Y_SS_f = TR_Y_SS;
+
+G_Y_SS = 0.25;
+G_Y_SS_f = G_Y_SS;
 
 @#if no_of_govs == 2
     rho_g = 0.966;
     rho_g_f = rho_g;
 
-    phi_b = 0.25;
+    phi_b = 0.01;
     phi_g = 0.09;
     phi_b_f = phi_b;
     phi_g_f = phi_g;
 
-    B_Y_SS = 3.4;
-    B_Y_SS_f = B_Y_SS;
-
-    TR_Y_SS = 0.4;
-    TR_Y_SS_f = TR_Y_SS;
-
-    tau_ss = 0.25;
-    tau_ss_f = tau_ss + 0.05;
+    @#if labour_tax == 1
+        tau_ss = 0.25;
+        tau_ss_f = tau_ss;
+    @#endif
 @#else
     rho_g_uk = 0.966;
     phi_b_uk = 0.25;
     phi_g_uk = 0.09;
-    B_Y_SS_UK = 3.4;
-    TR_Y_SS_UK = 0.4;
-    @#if tax_mode == 1
+    @#if labour_tax == 1
         tau_ss_uk = 0.25;
     @#endif
 @#endif
@@ -380,187 +372,177 @@ model(linear);
 #Phi_z_f = (1 - upsilon_f) * Phi_f - siggma_upsilon_f * Gamma_z_f;
 #Phi_g_f = siggma_upsilon_f * (Gamma_g_f + (upsilon_f * omega_f - 1) / (1 - upsilon_f));   
 
-@#if no_of_govs == 2
-    #Gamma_tau = (1 - tau_ss) * (1 - alppha) / (siggma_upsilon * (1 - alppha) + varphi + alppha);
-    #Gamma_tau_f = (1 - tau_ss_f) * (1 - alppha_f) / (siggma_upsilon_f * (1 - alppha_f) + varphi_f + alppha_f);
-@#else
-    #Gamma_tau = (1 - tau_ss_uk) * (1 - alppha) / (siggma_upsilon * (1 - alppha) + varphi + alppha);
-    #Gamma_tau_f = (1 - tau_ss_uk) * (1 - alppha_f) / (siggma_upsilon_f * (1 - alppha_f) + varphi_f + alppha_f);
+@#if labour_tax == 1
+    @#if no_of_govs == 2
+        #Gamma_tau = (1 - tau_ss) * (1 - alppha) / (siggma_upsilon * (1 - alppha) + varphi + alppha);
+        #Gamma_tau_f = (1 - tau_ss_f) * (1 - alppha_f) / (siggma_upsilon_f * (1 - alppha_f) + varphi_f + alppha_f);
+    @#else
+        #Gamma_tau = (1 - tau_ss_uk) * (1 - alppha) / (siggma_upsilon * (1 - alppha) + varphi + alppha);
+        #Gamma_tau_f = (1 - tau_ss_uk) * (1 - alppha_f) / (siggma_upsilon_f * (1 - alppha_f) + varphi_f + alppha_f);
+    @#endif
 @#endif
 
-
-% HOME COUNTRY
-[name='New Keynesian Phillips Curve (eq. 37)']
-@#if monetary_union == 1
-    pi_h = betta * pi_h(+1) + kappa_upsilon * y_gap;
-    pi_h_f = betta_f * pi_h_f(+1) + kappa_upsilon_f * y_gap_f;
-    /* pi_h = chi_pi * betta * pi_h(+1) + (1 - chi_pi) * betta * pi_h_f(+1) + kappa_upsilon * y_gap; */
-    /* pi_h_f = chi_pi_ruk * betta_f * pi_h_f(+1) + (1 - chi_pi_ruk) * pi_h(+1) + kappa_upsilon_f * y_gap_f; */
-@#else
-    pi_h = betta * pi_h(+1) + kappa_upsilon * y_gap;
-    pi_h_f = betta_f * pi_h_f(+1) + kappa_upsilon_f * y_gap_f;
-@#endif
-
-[name='Dynamic IS Curve (eq. 29)']
-@#if monetary_union == 1
-    y_gap = y_gap(+1) - 1 / siggma_upsilon * (interest_uk - pi_h(+1) - r_nat);
-    y_gap_f = y_gap_f(+1) - 1 / siggma_upsilon_f * (interest_uk - pi_h_f(+1) - r_nat_f);
-    /* y_gap = chi_y * y_gap(+1) + (1 - chi_y) * y_gap_f(+1) - 1/siggma_upsilon * (interest_uk - (chi_pi * pi_h(+1) + (1 - chi_pi) * pi_h_f(+1)) - r_nat); */
-    /* y_gap_f = chi_y_ruk * y_gap_f(+1) + (1 - chi_y_ruk) * y_gap(+1) - 1/siggma_upsilon_f * (interest_uk - (chi_pi_ruk * pi_h_f(+1) + (1 - chi_pi_ruk) * pi_h(+1)) - r_nat_f); */
-@#else
-    y_gap = y_gap(+1) - 1/siggma_upsilon * (interest - pi_h(+1) - r_nat);
-    y_gap_f = y_gap_f(+1) - 1/siggma_upsilon_f * (interest_f - pi_h_f(+1) - r_nat_f);
-@#endif
-
-[name='Definition real interest rate']
-@#if monetary_union == 1
-    r_real = interest_uk - pi_h(+1);
-    r_real_f = interest_uk - pi_h_f(+1);
-@#else
-    r_real = interest - pi_h(+1);
-    r_real_f = interest_f - pi_h_f(+1);
-@#endif
-
-[name='Natural output']
-@#if no_of_govs == 2
-    y_nat = Gamma_a * a + Gamma_z * z + Gamma_star * y_star + Gamma_g * tau_ss * g + Gamma_tau * tau;
-    y_nat_f = Gamma_a_f * a_f + Gamma_z_f * z_f + Gamma_star_f * y_star + Gamma_g_f * tau_ss_f * g_f + Gamma_tau_f * tau_f;
-@#else
-    y_nat = Gamma_a * a + Gamma_z * z + Gamma_star * y_star + Gamma_g * tau_ss_uk * g_uk + Gamma_tau * tau_uk;
-    y_nat_f = Gamma_a_f * a_f + Gamma_z_f * z_f + Gamma_star_f * y_star + Gamma_g_f * tau_ss_uk * g_uk + Gamma_tau_f * tau_uk;
-@#endif
-
-[name='Natural rate of interest (eq. 38)']
-@#if no_of_govs == 2
-    r_nat = -siggma_upsilon * Gamma_a * (1 - rho_a) * a + Phi_star * (y_star(+1) - y_star) + Phi_z * (1 - rho_z) * z - Phi_g * tau_ss * (1 - rho_g) * g + siggma_upsilon * Gamma_tau * (tau(+1) - tau);
-    r_nat_f = -siggma_upsilon_f * Gamma_a_f * (1 - rho_a_f) * a_f + Phi_star_f * (y_star(+1) - y_star) + Phi_z_f * (1 - rho_z_f) * z_f - Phi_g_f * tau_ss_f * (1 - rho_g_f) * g_f + siggma_upsilon_f * Gamma_tau_f * (tau_f(+1) - tau_f);
-@#else
-    r_nat = -siggma_upsilon * Gamma_a * (1 - rho_a) * a + Phi_star * (y_star(+1) - y_star) + Phi_z * (1 - rho_z) * z - Phi_g * tau_ss_uk * (1 - rho_g_uk) * g_uk + siggma_upsilon * Gamma_tau * (tau_uk(+1) - tau_uk);
-    r_nat_f = -siggma_upsilon_f * Gamma_a_f * (1 - rho_a_f) * a_f + Phi_star_f * (y_star(+1) - y_star) + Phi_z_f * (1 - rho_z_f) * z_f - Phi_g_f * tau_ss_uk * (1 - rho_g_uk) * g_uk + siggma_upsilon_f * Gamma_tau_f * (tau_uk(+1) - tau_uk);
-@#endif
-
-[name='Natural terms of trade (below eq. (35))']
-@#if no_of_govs == 2
-    /* Check if it's '+ tau_ss' or a '- tau_ss' */
-    /* s_nat = siggma_upsilon * (y_nat - y_star) - (1 - upsilon) * Phi * z + tau_ss * siggma_upsilon * g; */
-    s_nat = siggma_upsilon * (y_nat - y_star) - (1 - upsilon) * Phi * z + tau_ss * siggma_upsilon * g;
-    s_nat_f = siggma_upsilon_f * (y_nat_f - y_star) - (1 - upsilon_f) * Phi * z_f + tau_ss_f * siggma_upsilon_f * g_f;
-@#else
-    s_nat = siggma_upsilon * (y_nat - y_star) - (1 - upsilon) * Phi * z - tau_ss_uk * siggma_upsilon * g_uk;
-    s_nat_f = siggma_upsilon_f * (y_nat_f - y_star) - (1 - upsilon_f) * Phi * z_f - tau_ss_uk * siggma_upsilon_f * g_uk;
-@#endif
-
-% Monetary Policy
 @#if monetary_union == 0
     [name='Taylor Rule']
     interest = rho_i * interest(-1) + (1 - rho_i) * (phi_pi * pi_h + phi_y * yhat) + nu;
     interest_f = rho_i_f * interest_f(-1) + (1 - rho_i_f) * (phi_pi_f * pi_h_f + phi_y_f * yhat_f) + nu_f;
 
-    [name='Monetary policy shock, below eq. (39)']
+    [name='Monetary policy shock']
     nu = rho_nu * nu(-1) + eps_nu;
     nu_f = rho_nu_f * nu_f(-1) + eps_nu_f;
 
 @#else
     [name='Taylor Rule']
-    interest_uk = rho_i * interest_uk(-1) + (1 - rho_i) * (phi_pi * ((1 - pop) * pi_h_f + pop * pi_h) + phi_y * ((1 - pop) * yhat_f + pop * yhat)) + nu_uk;
-    /* interest_uk = rho_i * interest_uk(-1) + (1 - rho_i) * (phi_pi * ((1 - pop) * pi_h_f + pop * pi_h) + phi_y * ((1 - pop) * yhat_f + pop * yhat)) + nu_uk; */
+    interest = rho_i * interest(-1) + (1 - rho_i) * (phi_pi * pi_h + phi_y * yhat) + nu_uk;
+    interest_f = rho_i * interest_f(-1) + (1 - rho_i) * (phi_pi * pi_h_f + phi_y * yhat_f) + nu_uk;
 
-    [name='Monetary policy shock, below eq. (39)']
+    [name='Monetary policy shock']
     nu_uk = rho_nu * nu_uk(-1) + eps_nu_uk;
+@#endif
+
+interest_uk = pop * interest + (1 - pop) * interest_f;
+
+[name='New Keynesian Phillips Curve']
+pi_h = betta * pi_h(+1) + kappa_upsilon * y_gap;
+pi_h_f = betta_f * pi_h_f(+1) + kappa_upsilon_f * y_gap_f;
+
+[name='Dynamic IS Curve']
+y_gap = y_gap(+1) - 1 / siggma_upsilon * (interest - pi_h(+1) - r_nat);
+y_gap_f = y_gap_f(+1) - 1 / siggma_upsilon_f * (interest_f - pi_h_f(+1) - r_nat_f);
+
+[name='Definition real interest rate']
+r_real = interest - pi_h(+1);
+r_real_f = interest_f - pi_h_f(+1);
+
+@#if labour_tax == 1
+    [name='Natural output']
+    @#if no_of_govs == 2
+        y_nat = Gamma_a * a + Gamma_z * z + Gamma_star * y_star + Gamma_g * G_Y_SS * g + Gamma_tau * tau;
+        y_nat_f = Gamma_a_f * a_f + Gamma_z_f * z_f + Gamma_star_f * y_star + Gamma_g_f * G_Y_SS_f * g_f + Gamma_tau_f * tau_f;
+    @#else
+        y_nat = Gamma_a * a + Gamma_z * z + Gamma_star * y_star + Gamma_g * G_Y_SS * g_uk + Gamma_tau * tau_uk;
+        y_nat_f = Gamma_a_f * a_f + Gamma_z_f * z_f + Gamma_star_f * y_star + Gamma_g_f * G_Y_SS_f * g_uk + Gamma_tau_f * tau_uk;
+    @#endif
+@#else
+    [name='Natural output']
+    @#if no_of_govs == 2
+        y_nat = Gamma_a * a + Gamma_z * z + Gamma_star * y_star + Gamma_g * G_Y_SS * g;
+        y_nat_f = Gamma_a_f * a_f + Gamma_z_f * z_f + Gamma_star_f * y_star + Gamma_g_f * G_Y_SS_f * g_f;
+    @#else
+        y_nat = Gamma_a * a + Gamma_z * z + Gamma_star * y_star + Gamma_g * G_Y_SS * g_uk;
+        y_nat_f = Gamma_a_f * a_f + Gamma_z_f * z_f + Gamma_star_f * y_star + Gamma_g_f * G_Y_SS_f * g_uk;
+    @#endif
+@#endif
+
+@#if labour_tax == 1
+    [name='Natural rate of interest']
+    @#if no_of_govs == 2
+        r_nat = -siggma_upsilon * Gamma_a * (1 - rho_a) * a + Phi_star * (y_star(+1) - y_star) + Phi_z * (1 - rho_z) * z - Phi_g * G_Y_SS * (1 - rho_g) * g + siggma_upsilon * Gamma_tau * (tau(+1) - tau);
+        r_nat_f = -siggma_upsilon_f * Gamma_a_f * (1 - rho_a_f) * a_f + Phi_star_f * (y_star(+1) - y_star) + Phi_z_f * (1 - rho_z_f) * z_f - Phi_g_f * G_Y_SS_f * (1 - rho_g_f) * g_f + siggma_upsilon_f * Gamma_tau_f * (tau_f(+1) - tau_f);
+    @#else
+        r_nat = -siggma_upsilon * Gamma_a * (1 - rho_a) * a + Phi_star * (y_star(+1) - y_star) + Phi_z * (1 - rho_z) * z - Phi_g * G_Y_SS * (1 - rho_g_uk) * g_uk + siggma_upsilon * Gamma_tau * (tau_uk(+1) - tau_uk);
+        r_nat_f = -siggma_upsilon_f * Gamma_a_f * (1 - rho_a_f) * a_f + Phi_star_f * (y_star(+1) - y_star) + Phi_z_f * (1 - rho_z_f) * z_f - Phi_g_f * G_Y_SS_f * (1 - rho_g_uk) * g_uk + siggma_upsilon_f * Gamma_tau_f * (tau_uk(+1) - tau_uk);
+    @#endif
+@#else
+    [name='Natural rate of interest']
+    @#if no_of_govs == 2
+        r_nat = -siggma_upsilon * Gamma_a * (1 - rho_a) * a + Phi_star * (y_star(+1) - y_star) + Phi_z * (1 - rho_z) * z - Phi_g * G_Y_SS * (1 - rho_g) * g;
+        r_nat_f = -siggma_upsilon_f * Gamma_a_f * (1 - rho_a_f) * a_f + Phi_star_f * (y_star(+1) - y_star) + Phi_z_f * (1 - rho_z_f) * z_f - Phi_g_f * G_Y_SS_f * (1 - rho_g_f) * g_f;
+    @#else
+        r_nat = -siggma_upsilon * Gamma_a * (1 - rho_a) * a + Phi_star * (y_star(+1) - y_star) + Phi_z * (1 - rho_z) * z - Phi_g * G_Y_SS * (1 - rho_g_uk) * g_uk;
+        r_nat_f = -siggma_upsilon_f * Gamma_a_f * (1 - rho_a_f) * a_f + Phi_star_f * (y_star(+1) - y_star) + Phi_z_f * (1 - rho_z_f) * z_f - Phi_g_f * G_Y_SS_f * (1 - rho_g_uk) * g_uk;
+    @#endif
+@#endif
+
+[name='Natural terms of trade']
+@#if no_of_govs == 2
+    s_nat = siggma_upsilon * (y_nat - y_star) - (1 - upsilon) * Phi * z - G_Y_SS * siggma_upsilon * g;
+    s_nat_f = siggma_upsilon_f * (y_nat_f - y_star) - (1 - upsilon_f) * Phi * z_f - G_Y_SS_f * siggma_upsilon_f * g_f;
+@#else
+    s_nat = siggma_upsilon * (y_nat - y_star) - (1 - upsilon) * Phi * z - G_Y_SS * siggma_upsilon * g_uk;
+    s_nat_f = siggma_upsilon_f * (y_nat_f - y_star) - (1 - upsilon_f) * Phi * z_f - G_Y_SS_f * siggma_upsilon_f * g_uk;
 @#endif
 
 [name='World output growth shock']
 y_star - y_star(-1) = rho_y_star * (y_star(-1) - y_star(-2)) + eps_y_star;
-/* y_star = 0; */
 
-% Fiscal Policy
-@#if no_of_govs == 2
-
-    [name='FOC wage']
-    @#if tax_mode == 1
+/* ###### FISCAL POLICY BLOCK ###### */
+@#if labour_tax == 1
+    @#if no_of_govs == 2
+        [name='FOC wage']
         siggma * c + varphi * n = wp - (tau_ss / (1 - tau_ss)) * tau;
         siggma_f * c_f + varphi_f * n_f = wp_f - (tau_ss_f / (1 - tau_ss_f)) * tau_f;
     @#else
-        wp = siggma * c + varphi * n;
-        wp_f = siggma_f * c_f + varphi_f * n_f;
+        [name='FOC wage']
+        siggma * c + varphi * n = wp - (tau_ss_uk / (1 - tau_ss_uk)) * tau_uk;
+        siggma_f * c_f + varphi_f * n_f = wp_f - (tau_ss_uk / (1 - tau_ss_uk)) * tau_uk;
     @#endif
+@#else
+    wp = siggma * c + varphi * n;
+    wp_f = siggma_f * c_f + varphi_f * n_f;
+@#endif
 
-    [name='Consumption determined by resource constraint, p. 236']
+@#if no_of_govs == 2
+    [name='Consumption determined by resource constraint']
     nx = y - c - g - upsilon * s;
     nx_f = y_f - c_f - g_f - upsilon_f * s_f;
+@#else
+    [name='Consumption determined by resource constraint']
+    1/pop * nx = y - c - g_uk - upsilon * s;
+    1/(1-pop) * nx_f = y_f - c_f - g_uk - upsilon_f * s_f;
+@#endif
 
-    [name='Tax Revenue']
-    @#if tax_mode == 1
+@#if labour_tax == 1
+    @#if no_of_govs == 2
+        [name='Tax Revenue']
         tr = tau + wp + n;
         tr_f = tau_f + wp_f + n_f;
-    @#endif
-
-    [name='Debt Stabilising']
-    tr - p = phi_g * tau_ss * g + phi_b * (b - p);
-    tr_f - p_f = phi_g_f * tau_ss_f * g_f +  phi_b_f * (b_f - p_f);
-
-    [name='Bonds determined by budget constraint']
-    @#if monetary_union == 1
-        betta * (b(+1) - p - interest_uk(+1))  = (1 - phi_b) * (b - p) + tau_ss*(1 - phi_g) * g;
-        betta_f * (b_f(+1) - p_f - interest_uk(+1)) =  (1 - phi_b_f) * (b_f - p_f) + tau_ss_f * (1 - phi_g_f) * g_f;
     @#else
-        betta * (b(+1) - p_h - interest(+1))  = (1 - phi_b) * (b - p_h) + tau_ss*(1 - phi_g) * g;
-        betta_f * (b_f(+1) - p_h_f - interest_f(+1)) =  (1 - phi_b_f) * (b_f - p_h_f) + tau_ss_f * (1 - phi_g_f) * g_f;
-        /* betta * (b - p - interest)  = (1 - phi_b) * (b(-1) - p(-1)) + tau_ss*(1 - phi_g) * g(-1);
-        betta_f * (b_f - p_f - interest_f) =  (1 - phi_b_f) * (b_f(-1) - p_f(-1)) + tau_ss_f * (1 - phi_g_f) * g_f(-1); */
+        [name='Tax Revenue']
+        tr = tau_uk + wp + n;
+        tr_f = tau_uk + wp_f + n_f;
+        tr_uk = pop * tr + (1 - pop) * tr_f;
     @#endif
+@#endif
 
+@#if no_of_govs == 2
+    [name='Debt Stabilising']
+    tr - p_h = phi_g * G_Y_SS * g + phi_b * (b - p_h);
+    tr_f - p_h_f = phi_g_f * G_Y_SS_f * g_f +  phi_b_f * (b_f - p_h_f);
+@#else
+    [name='Debt Stabilising']
+    tr_uk - pi_uk = phi_g_uk * (pop * G_Y_SS + (1 - pop) * G_Y_SS_f) * g_uk + phi_b_uk * (b_uk - pi_uk);
+@#endif
+
+@#if no_of_govs == 2
+    [name='Bonds determined by budget constraint']
+    betta * (b(+1) - p_h - interest(+1))  = (1 - phi_b) * (b - p_h) + G_Y_SS*(1 - phi_g) * g;
+    betta_f * (b_f(+1) - p_h_f - interest_f(+1)) =  (1 - phi_b_f) * (b_f - p_h_f) + G_Y_SS_f * (1 - phi_g_f) * g_f;
+@#else
+    [name='Bonds determined by budget constraint']
+    betta_f * (b_uk(+1) - pi_uk - interest_f(+1)) = (1 - phi_b_uk) * (b_uk - pi_uk) + (pop * G_Y_SS + (1 - pop) * G_Y_SS_f) * (1 - phi_g_uk) * g_uk;
+@#endif
+
+@#if no_of_govs == 2
     [name='Government spending']
     g = rho_g * g(-1) + eps_g;
     g_f = rho_g_f * g_f(-1) + eps_g_f;
+@#else
+    [name='Government spending']
+    g_uk = rho_g_uk * g_uk(-1) + eps_g_uk;
+@#endif
 
+@#if no_of_govs == 2
     [name='Debt']
     g - tr = debt;
     g_f - tr_f = debt_f;
-
 @#else
-
-    [name='FOC wage']
-    @#if tax_mode == 1
-        siggma * c + varphi * n = wp - (tau_ss_uk / (1 - tau_ss_uk)) * tau_uk;
-        siggma_f * c_f + varphi_f * n_f = wp_f - (tau_ss_uk / (1 - tau_ss_uk)) * tau_uk;
-    @#else
-        wp = siggma * c + varphi * n;
-        wp_f = siggma_f * c_f + varphi_f * n_f;
-    @#endif
-
-    [name='Consumption determined by resource constraint']
-    nx = y - c - pop * g_uk - upsilon * s;
-    nx_f = y_f - c_f - (1 - pop) * g_uk - upsilon_f * s_f;
-    /* y = c + pop*g_uk; */
-    /* y_f = c_f + (1-pop)*g_uk; */
-
-    @#if tax_mode == 1
-        [name='Tax Revenue']
-        tr_uk = tau_ss_uk * WN_T_SS * (tau_uk + wp + n) + tau_ss_uk * WN_T_SS_f * (tau_uk + wp_f + n_f);
-        /* tr_uk = pop * (tau_uk + wp + n) + (1 - pop) * (tau_uk + wp_f + n_f); */
-    @#endif
-
-    [name='Debt Stabilising']
-    tr_uk - (pop * p + (1 - pop) * p_f) = phi_g_uk * tau_ss_uk * g_uk + phi_b_uk * (b_uk - (pop * p + (1 - pop) * p_f));
-
-    [name='Bonds determined by budget constraint']
-    @#if monetary_union == 1
-        betta_f * (b_uk - (pop * p + (1 - pop) * p_f) - interest_uk) = (1 - phi_b_uk) * (b_uk(-1) - (pop * p(-1) + (1 - pop) * p_f(-1))) + tau_ss_uk * (1 - phi_g_uk) * g_uk(-1);
-        /* betta_f * (b_uk(+1) - (pop * p + (1 - pop) * p_f) - interest_uk) = (1 - phi_b_uk) * (b_uk - (pop * p + (1 - pop) * p_f)) + tau_ss_uk * (1 - phi_g_uk) * g_uk; */
-    @#else
-        betta_f * (b_uk(+1) - (pop * p + (1 - pop) * p_f) - (pop * interest + (1 - pop) * interest_f)) = (1 - phi_b_uk) * (b_uk(-1) - (pop * p + (1 - pop) * p_f)) + tau_ss_uk * (1 - phi_g_uk) * g_uk(-1);
-    @#endif
-
-    [name='Government spending']
-    g_uk = rho_g_uk * g_uk(-1) + eps_g_uk;
-
     [name='Debt']
     g_uk - tr_uk = debt_uk;
-
 @#endif
+/* ###### END FISCAL POLICY BLOCK ###### */
 
-% Definitions
+/* ###### DEFINITIONS ###### */
 [name='Terms of trade gap']
 s_gap = siggma_upsilon * y_gap;
 s_gap_f = siggma_upsilon_f * y_gap_f;
@@ -569,11 +551,11 @@ s_gap_f = siggma_upsilon_f * y_gap_f;
 y_gap = y - y_nat;
 y_gap_f = y_f - y_nat_f;
 
-[name='Terms of trade, p. 238']
+[name='Terms of trade']
 s_gap = s - s_nat;
 s_gap_f = s_f - s_nat_f;
 
-[name='Net exports, eq. (31)']
+[name='Net exports']
 nx = upsilon * (omega / siggma - 1) * s - upsilon / siggma * z;
 nx_f = upsilon_f * (omega_f / siggma_f - 1) * s_f - upsilon_f / siggma_f * z_f;
 
@@ -581,15 +563,15 @@ nx_f = upsilon_f * (omega_f / siggma_f - 1) * s_f - upsilon_f / siggma_f * z_f;
 pi = pi_h + upsilon * (s - s(-1));
 pi_f = pi_h_f + upsilon_f * (s_f - s_f(-1));
 
-[name='Production function (eq. 32)']
+[name='Production function']
 y = a + (1 - alppha) * n;
 y_f = a_f + (1 - alppha_f) * n_f;
 
-[name='TFP shock, top of p. 233']
+[name='TFP shock']
 a = rho_a * a(-1) + eps_a;
 a_f = rho_a_f * a_f(-1) + eps_a_f;
 
-[name='Preference shock, top of p. 227']
+[name='Preference shock']
 z = rho_z * z(-1) + eps_z;
 z_f = rho_z_f * z_f(-1) + eps_z_f;
 
@@ -597,7 +579,7 @@ z_f = rho_z_f * z_f(-1) + eps_z_f;
 yhat = y - steady_state(y);
 yhat_f = y_f - steady_state(y_f);
 
-[name='Domestic price level, p. 229']
+[name='Domestic price level']
 p_h = p_h(-1) + pi_h;
 p_h_f = p_h_f(-1) + pi_h_f;
 
@@ -613,11 +595,16 @@ s_f = er_f + p_star - p_h_f;
 d_er = er - er(-1);
 d_er_f = er_f - er_f(-1);
 
-[name='Definition Real Wage']
-wp = w - p;
-wp_f = w_f - p_f;
+[name='Inflation in the UK']
+pi_uk = pop * p_h + (1 - pop) * p_h_f;
 
-% Estimation
+[name='Definition Real Wage']
+wp = w - p_h;
+wp_f = w_f - p_h_f;
+
+/* ###### DEFINITIONS END ###### */
+
+/* ###### ESTIMATION ###### */
 @#if mcmc == 1
     y_obs = y - y(-1) + y_obs_me;
     c_obs = c - c(-1) + c_obs_me;
@@ -629,6 +616,7 @@ wp_f = w_f - p_f;
     pi_obs_ruk = pi_f + pi_obs_ruk_me;
     /* i_obs = interest_uk - interest_uk(-1) + i_obs_me; */
 @#endif
+/* ###### ESTIMATION END ###### */
 
 end;
 
@@ -646,8 +634,8 @@ var eps_y_star = 0.25^2;
 var p_star = 0.25^2; */
 @#if shock_type == 2
     @#if no_of_govs == 2
-        var eps_g = 1;
-        var eps_g_f = 1;
+        var eps_g = 0.25;
+        var eps_g_f = 0.25;
     @#else
         var eps_g_uk = 0.25^2;
     @#endif
@@ -682,12 +670,6 @@ end;
     % rho_a_f, beta_pdf, 0.5, 0.2;
     % rho_y_star_f, beta_pdf, 0.7, 0.1;
     % rho_z_f,beta_pdf,0.7,0.1;
-    /* chi_pi, beta_pdf, pop, 0.03*2.5; */
-    /* chi_y, beta_pdf, pop, 0.03*2.5; */
-    % chi_pi_ruk, normal_pdf, (1-pop), 0.1;
-    % chi_y_ruk, normal_pdf, (1-pop), 0.1;
-    /* chi_pi_ruk, beta_pdf, (1-pop), 0.03*2.5; */
-    /* chi_y_ruk, beta_pdf, (1-pop), 0.03*2.5; */
     phi_pi, normal_pdf, 1.5, 0.1;
     phi_y, normal_pdf, 0.5/4, 0.1;
     phi_b, normal_pdf, 0.5, 0.2;
@@ -713,65 +695,81 @@ steady;
 check;
 
 @#if scenario == 1
-    stoch_simul(nocorr, nofunctions, nomoments) c c_f c_d y_d w w_f w_d;
-    % stoch_simul(nocorr, nofunctions, nomoments) b b_f g g_f tr tr_f c c_f y y_f wp wp_f n n_f pi pi_f;
+    @#if shock_type == 1
+        stoch_simul(irf=201) interest interest_f interest_uk r_real r_real_f s s_f s_nat s_nat_f debt debt_f b b_f g g_f tr tr_f c c_f y y_f wp wp_f n n_f p_h p_h_f pi_h pi_h_f;
+    @#else
+        stoch_simul(irf=200) interest interest_f interest_uk s s_f s_nat s_nat_f debt debt_f b b_f g g_f tr tr_f c c_f y y_f wp wp_f n n_f p_h p_h_f pi_h pi_h_f;
+    @#endif
 @#else
     @#if scenario == 2
-        stoch_simul(nocorr, nofunctions, nomoments) g_uk tr_uk c c_f y y_f wp wp_f n n_f pi pi_f;
+        @#if shock_type == 1
+            stoch_simul(irf=201) interest interest_f interest_uk s s_f s_nat s_nat_f debt_uk b_uk g_uk tr_uk c c_f y y_f wp wp_f n n_f p_h p_h_f pi_h pi_h_f;
+        @#else
+            stoch_simul(irf=200) interest interest_f interest_uk s s_f s_nat s_nat_f debt_uk b_uk g_uk tr_uk c c_f y y_f wp wp_f n n_f p_h p_h_f pi_h pi_h_f;
+        @#endif
     @#else
         @#if scenario == 3
-            stoch_simul(nocorr, nofunctions, nomoments, irf=200) debt debt_f b b_f g g_f tr tr_f tau tau_f c c_f y y_f wp wp_f n n_f pi pi_f;
-            @#if enable_forloop == 1
-                options_.nomoments=0;
-                options_.nofunctions=1;
-                options_.nograph=1;
-                options_.verbosity=0;
-                options_.noprint=1;
-                options_.TeX=0;
-                phi_b_grid = [0:0.01:1];
-                phi_g_grid = [0:0.01:1];
-                
-                m_debt = zeros(0,0);
-                m_b = zeros(0,0);
-                m_r_real = zeros(0,0);
-                m_g = zeros(0,0);
-                m_tr = zeros(0,0);
-                m_tau = zeros(0,0);
-                m_c = zeros(0,0);
-                m_y = zeros(0,0);
-                m_wp = zeros(0,0);
-                m_n = zeros(0,0);
-                for ii = 1:length(phi_b_grid)
-                    for jj = 1:length(phi_g_grid)
-                        set_param_value('phi_b',phi_b_grid(ii))
-                        set_param_value('phi_g',phi_g_grid(jj))
-                        set_dynare_seed('default');
-                        [info, oo_, options_] = stoch_simul(M_, options_, oo_, var_list_);
-                        m_debt(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) oo_.irfs.debt_eps_g];
-                        m_b(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) oo_.irfs.b_eps_g];
-                        m_r_real(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) oo_.irfs.r_real_eps_g];
-                        m_g(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) oo_.irfs.g_eps_g];
-                        m_tr(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) oo_.irfs.tr_eps_g];
-                        m_tau(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) oo_.irfs.tau_eps_g];
-                        m_c(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) oo_.irfs.c_eps_g];
-                        m_y(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) oo_.irfs.y_eps_g];
-                        m_wp(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) oo_.irfs.wp_eps_g];
-                        m_n(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) oo_.irfs.n_eps_g];
-                    end
-                end
-                writematrix(m_debt, './sim_output/debt.csv');
-                writematrix(m_b, './sim_output/b.csv');
-                writematrix(m_r_real, './sim_output/r_real.csv');
-                writematrix(m_g, './sim_output/g.csv');
-                writematrix(m_tr, './sim_output/tr.csv');
-                writematrix(m_tau, './sim_output/tau.csv');
-                writematrix(m_c, './sim_output/c.csv');
-                writematrix(m_y, './sim_output/y.csv');
-                writematrix(m_wp, './sim_output/wp.csv');
-                writematrix(m_n, './sim_output/n.csv');
+            @#if shock_type == 1
+                stoch_simul(irf=201) interest interest_f interest_uk s s_f s_nat s_nat_f debt debt_f b b_f g g_f tr tr_f tau tau_f c c_f y y_f wp wp_f n n_f p_h p_h_f pi_h pi_h_f;
+            @#else
+                stoch_simul(irf=200) interest interest_f interest_uk s s_f s_nat s_nat_f debt debt_f b b_f g g_f tr tr_f tau tau_f c c_f y y_f wp wp_f n n_f p_h p_h_f pi_h pi_h_f;
             @#endif
         @#else
-            stoch_simul(nocorr, nofunctions, nomoments, irf=200) s s_f interest_uk debt_uk b_uk tr_uk tau_uk c c_f y y_f wp wp_f n n_f pi pi_f;
+            @#if shock_type == 1
+                stoch_simul(irf=201) interest interest_f interest_uk s s_f s_nat s_nat_f debt_uk b_uk g_uk tr_uk tau_uk c c_f y y_f wp wp_f n n_f p_h p_h_f pi_h pi_h_f;
+            @#else
+                stoch_simul(irf=200) interest interest_f interest_uk s s_f s_nat s_nat_f debt_uk b_uk g_uk tr_uk tau_uk c c_f y y_f wp wp_f n n_f p_h p_h_f pi_h pi_h_f;
+            @#endif
         @#endif
     @#endif
+@#endif
+
+@#if enable_forloop == 1
+    options_.nomoments=0;
+    options_.nofunctions=1;
+    options_.nograph=1;
+    options_.verbosity=0;
+    options_.noprint=1;
+    options_.TeX=0;
+    phi_b_grid = [0:0.01:1];
+    phi_g_grid = [0:0.01:1];
+
+    m_debt = zeros(0,0);
+    m_b = zeros(0,0);
+    m_r_real = zeros(0,0);
+    m_g = zeros(0,0);
+    m_tr = zeros(0,0);
+    m_tau = zeros(0,0);
+    m_c = zeros(0,0);
+    m_y = zeros(0,0);
+    m_wp = zeros(0,0);
+    m_n = zeros(0,0);
+    for ii = 1:length(phi_b_grid)
+        for jj = 1:length(phi_g_grid)
+            set_param_value('phi_b',phi_b_grid(ii))
+            set_param_value('phi_g',phi_g_grid(jj))
+            set_dynare_seed('default');
+            [info, oo_, options_] = stoch_simul(M_, options_, oo_, var_list_);
+            m_debt(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) oo_.irfs.debt_eps_g];
+            m_b(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) oo_.irfs.b_eps_g];
+            m_r_real(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) oo_.irfs.r_real_eps_g];
+            m_g(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) oo_.irfs.g_eps_g];
+            m_tr(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) oo_.irfs.tr_eps_g];
+            m_tau(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) oo_.irfs.tau_eps_g];
+            m_c(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) oo_.irfs.c_eps_g];
+            m_y(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) oo_.irfs.y_eps_g];
+            m_wp(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) oo_.irfs.wp_eps_g];
+            m_n(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) oo_.irfs.n_eps_g];
+        end
+    end
+    writematrix(m_debt, './sim_output/debt.csv');
+    writematrix(m_b, './sim_output/b.csv');
+    writematrix(m_r_real, './sim_output/r_real.csv');
+    writematrix(m_g, './sim_output/g.csv');
+    writematrix(m_tr, './sim_output/tr.csv');
+    writematrix(m_tau, './sim_output/tau.csv');
+    writematrix(m_c, './sim_output/c.csv');
+    writematrix(m_y, './sim_output/y.csv');
+    writematrix(m_wp, './sim_output/wp.csv');
+    writematrix(m_n, './sim_output/n.csv');
 @#endif
