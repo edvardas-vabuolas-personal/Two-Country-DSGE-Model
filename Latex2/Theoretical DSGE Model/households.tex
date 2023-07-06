@@ -68,11 +68,38 @@ Equations (\ref{eq:demand_function_for_domestic_goods}) and (\ref{eq:demand_func
 \begin{align}
     P_{H,t}C_{H,t} + P_{F,t}C_{F,t} = P_t C_t
 \end{align}
-Which greatly simplifies the household's budget constraint\footnote{}:
+Which greatly simplifies the household's budget constraint:
 \begin{equation}
     P_t C_t + \E_t \left[ R^{-1}_{t+1} B_{t+1} \right] \leq B_t + W_t N_t
 \end{equation}
-Note that this budget constraint will vary depending on the policy question. The four policy questions will be introduced in the next section.
+Note that the budget constraint (as well as many other expressions introduced later) will vary depending on what policy scenario is considered. For instance, the household's budget constraints under each scenario is given below:
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{2}
+    \begin{tabular}{l|l|c}
+    \makecell{Scen. 1 \\ G: 2, $\tau: 0$} & \makecell{Scot. \\ rUK } & 
+        \makecell{
+            $P_t C_t + \E_t [{R^{-1}_{t+1}}B_{t+1}] = B_t + W_t N_t + T_t$ \\
+            $P^*_t C^*_t + \E_t [{R^{*-1}_{t+1}}B^*_{t+1}] = B^*_t + W^*_t N^*_t + T^*_t$
+        }  \\ 
+    \makecell{Scen. 2 \\ G: 1, $\tau: 0$} & \makecell{Scot. \\ rUK } & 
+        \makecell{
+            $P_t C_t + \E_t [{R^{UK-1}_{t+1}}B^{UK}_{t+1}] = B^{UK}_t + W_t N_t + \varpi T^{UK}_t$ \\
+            $P^*_t C^*_t + \E_t [{R^{UK-1}_{t+1}}B^{UK}_{t+1}] = B^{UK}_t + W^*_t N^*_t + (1-\varpi)T^{UK}_t$
+        }   \\ 
+    \makecell{Scen. 3 \\ G: 2, $\tau: 1$} & \makecell{Scot. \\ rUK } & 
+    \makecell{
+        $P_t C_t + \E_t [{R^{-1}_{t+1}}B_{t+1}] = B_t + (1-\tau_t)W_t N_t + T_t$ \\
+        $P^*_t C^*_t + \E_t [{R^{*-1}_{t+1}}B^*_{t+1}] = B^*_t + (1-\tau^*_t)W^*_t N^*_t + T^*_t$ 
+    }  \\
+    \makecell{Scen. 4 \\ G: 1, $\tau: 1$} & \makecell{Scot. \\ rUK } & 
+    \makecell{
+        $P_t C_t + \E_t [{R^{UK-1}_{t+1}}B^{UK}_{t+1}] = B^{UK}_t + (1-\tau^{UK}_t)W_t N_t + \varpi T^{UK}_t$ \\
+        $P^*_t C^*_t + \E_t [{R^{UK-1}_{t+1}}B^{UK}_{t+1}] = B^{UK}_t + (1-\tau^{UK}_t)W^*_t N^*_t + (1-\varpi)T^{UK}_t$
+    }  
+    \end{tabular}
+\end{table}
+Here, $\varpi$ denotes the Scotland's share of population in the United Kingdom. $T_t$ denotes lump-sum transfers (subsidies or taxes), while $\tau_t$ denotes an income or labour tax rate. In the first column, G indicates the number of governments that can issue bonds (borrow) and set the labour tax rate. In the same column, $\tau$ indicates whether the government spending is funded by a labour tax.
 
 What follows is the derivation of the intratemporal and intertemporal optimality conditions for the policy scenario 3, i.e. when households face a labour tax:
 \begin{align}
@@ -183,32 +210,3 @@ If we assume that there had been no shocks in the country's $i$ preferences ($Z^
 $c_t^{\star}$ is the log world consumption and the last Equation (\ref{eq:link_between_consumption_and_world_output}) follows by assuming that world consumption is equal to world output, i.e., there is no world government spending, or national government spending in any country $i$ is infinitesimally small.
 
 The next two parts will discuss government spending and firms, respectively. The final part will provide equilibrium (market clearing) conditions.
-
-From here onwards, the expressions will vary depending on what policy scenario is considered. For instance, the household's budget constraints under each scenario is given below:
-\begin{table}[H]
-    \centering
-    \renewcommand{\arraystretch}{2}
-    \begin{tabular}{l|l|c}
-    \makecell{Scen. 1 \\ G: 2, $\tau: 0$} & \makecell{Scot. \\ rUK } & 
-        \makecell{
-            $P_t C_t + \E_t [{R^{-1}_{t+1}}B_{t+1}] = B_t + W_t N_t + T_t$ \\
-            $P^*_t C^*_t + \E_t [{R^{*-1}_{t+1}}B^*_{t+1}] = B^*_t + W^*_t N^*_t + T^*_t$
-        }  \\ 
-    \makecell{Scen. 2 \\ G: 1, $\tau: 0$} & \makecell{Scot. \\ rUK } & 
-        \makecell{
-            $P_t C_t + \E_t [{R^{UK-1}_{t+1}}B^{UK}_{t+1}] = B^{UK}_t + W_t N_t + \varpi T^{UK}_t$ \\
-            $P^*_t C^*_t + \E_t [{R^{UK-1}_{t+1}}B^{UK}_{t+1}] = B^{UK}_t + W^*_t N^*_t + (1-\varpi)T^{UK}_t$
-        }   \\ 
-    \makecell{Scen. 3 \\ G: 2, $\tau: 1$} & \makecell{Scot. \\ rUK } & 
-    \makecell{
-        $P_t C_t + \E_t [{R^{-1}_{t+1}}B_{t+1}] = B_t + (1-\tau_t)W_t N_t + T_t$ \\
-        $P^*_t C^*_t + \E_t [{R^{*-1}_{t+1}}B^*_{t+1}] = B^*_t + (1-\tau^*_t)W^*_t N^*_t + T^*_t$ 
-    }  \\
-    \makecell{Scen. 4 \\ G: 1, $\tau: 1$} & \makecell{Scot. \\ rUK } & 
-    \makecell{
-        $P_t C_t + \E_t [{R^{UK-1}_{t+1}}B^{UK}_{t+1}] = B^{UK}_t + (1-\tau^{UK}_t)W_t N_t + \varpi T^{UK}_t$ \\
-        $P^*_t C^*_t + \E_t [{R^{UK-1}_{t+1}}B^{UK}_{t+1}] = B^{UK}_t + (1-\tau^{UK}_t)W^*_t N^*_t + (1-\varpi)T^{UK}_t$
-    }  
-    \end{tabular}
-\end{table}
-Here, $\varpi$ denotes the Scotland's share of population in the United Kingdom. $T_t$ denotes lump-sum transfers (subsidies or taxes), while $\tau_t$ denotes an income or labour tax rate. In the first column, G indicates the number of governments that can issue bonds (borrow) and set the labour tax rate. In the same column, $\tau$ indicates whether the government spending is funded by a labour tax.
