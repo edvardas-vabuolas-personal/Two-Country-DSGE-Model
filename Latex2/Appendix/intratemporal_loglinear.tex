@@ -1,0 +1,17 @@
+\begin{align}
+    C_t^\sigma N_t^\varphi &= \frac{W_t}{P_t}(1-\tau_t) \\
+    C_t^\sigma N_t^\varphi &= \frac{W_t}{P_t} - \frac{W_t}{P_t}\tau_t \\
+    C^\sigma N^\varphi &= \frac{W}{P} - \frac{W}{P}\tau \label{eq:real_wage_ss} \quad \text{(Steady state)}\\
+    &\text{Using Uhlig's (1999) method, $X_tY_t \approx XY\mathbf{e}^{\tilde{X}_t + \tilde{Y}_t}$}\\
+    C^\sigma N^\varphi\mathbf{e}^{\sigma c_t + \varphi n_t} &= \frac{W}{P}\mathbf{e}^{w_t - p_t} - \frac{W}{P}\tau \mathbf{e}^{w_t - p_t - \tilde{\tau}_t}\\
+    &\text{Using $\mathbf{e}^{\tilde{X}_t} \approx 1 + {\tilde{X}_t}$: }\\
+    C^\sigma N^\varphi({1+\sigma c_t + \varphi n_t}) &= \frac{W}{P}({1+ w_t - p_t}) - \frac{W}{P}\tau ({1+ w_t - p_t - \tilde{\tau}_t})\\
+    &\text{Subtract (\ref{eq:real_wage_ss}): } \\
+    C^\sigma N^\varphi({\sigma c_t + \varphi n_t}) &= \frac{W}{P}({w_t - p_t}) - \frac{W}{P}\tau ({w_t - p_t - \tilde{\tau}_t})\\
+    C^\sigma N^\varphi({\sigma c_t + \varphi n_t}) &= \frac{W}{P}\left[({w_t - p_t}) - \tau ({w_t - p_t - \tilde{\tau}_t})\right]\\
+    C^\sigma N^\varphi({\sigma c_t + \varphi n_t}) &= \frac{W}{P}\left[({w_t - p_t}) - \tau ({w_t - p_t}) - \tau \tilde{\tau}_t\right]\\
+    C^\sigma N^\varphi({\sigma c_t + \varphi n_t}) &= \frac{W}{P}\left[(1-\tau)({w_t - p_t}) - \tau \tilde{\tau}_t\right]\\
+    C^\sigma N^\varphi \frac{P}{W} ({\sigma c_t + \varphi n_t})  &= \left[(1-\tau)({w_t - p_t}) - \tau \tilde{\tau}_t\right]\\
+    (1-\tau)({\sigma c_t + \varphi n_t})  &= \left[(1-\tau)({w_t - p_t}) - \tau \tilde{\tau}_t\right]  \label{eq:intratemporal_loglinear_final_step} \\
+    {\sigma c_t + \varphi n_t}  &= {w_t - p_t} - \frac{\tau}{1-\tau}\tilde{\tau}_t
+\end{align}

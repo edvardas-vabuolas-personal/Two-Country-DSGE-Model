@@ -1,193 +1,214 @@
 \subsection{Households}
-This model assumes that there is infinitely many households in the economy represented by a unit interval. All households are assumed to be be symmetric, i.e. have the same preferences and behave identically. Below, we consider a representative household that wants to maximise their lifetime utility:
+This model assumes that there is infinitely many households in the economy represented by a unit interval. All households are assumed to be be symmetric, i.e. have the same preferences and behave identically. Below, we consider a representative household that wants to maximise their lifetime utility, represented by Equation (\ref{eq:lifetime_utility}):
 \begin{align}
-    \E_t &\left\{\sum^{\infty}_{t=0} \ \mathcal{U}(C_t,C_{t-1}, N_t, \varepsilon_{Z,t})\right\} \\
-    \mathcal{U}(C_t, C_{t-1} N_t, \varepsilon_{Z,t}) &= \left( \frac{(C_t-hC_{t-1})^{1-\sigma}}{1-\sigma} - \varepsilon_{N,t}\frac{N_t^{1+\varphi}}{1+\varphi} \right)\varepsilon_{Z,t} \label{eq:utility_function}
+    \E_t &\left\{\sum^{\infty}_{t=0} \ \beta^t \ \mathcal{U}(C_t, N_t, Z_t)\right\} \label{eq:lifetime_utility}\\
+    \mathcal{U}(C_t, N_t, Z_t) &= 
+    \begin{cases}
+        \left( \frac{C_t^{1-\sigma}}{1-\sigma} - \frac{N_t^{1+\varphi}}{1+\varphi} \right)Z_t & \text{if $\sigma \geq 0$ and $\sigma \ne 1$}\\
+        \left( \log(C_t) - \frac{N_t^{1+\varphi}}{1+\varphi} \right)Z_t & \text{if $\sigma = 1$}
+    \end{cases}
+    \label{eq:utility_function}
 \end{align}
-The household's utility depends on consumption $C_t$ and hours worked $N_t$. As seen from the utility function (Equation (\ref{eq:utility_function})), the model assumes the household's utility to be (decreasingly) increasing in consumption $C_t$ and (increasingly) decreasing in hours worked $N_t$. $\beta \in (0,1)$ is the discount factor, which can be thought of as an opportunity cost or an impatience rate, i.e. a unit of consumption $C$ today will be worth $\beta * C > C$ tomorrow. Using parameter $h$, we also take into account household's habit formation in terms of consumption, which is found to improve model's fit to empirial macroeconomic data \textcolor{red}{(?, 20??)}. We also introduce a preference shifter $\varepsilon_{Z,t}$ \parencite[225]{jordigal_2015_monetary}, as well as a shock to the number of hours worked $\varepsilon_{N,t}$ \footnote{While these specific shocks are not relevant to the research question, they help prevent stochastic singularity \textcolor{red}{Pfeifer, 2021} and allows parameter estimation with a greater number of macroeconomic data series, see Section \ref{application}. } \parencite[]{kolasa_2009_structural}. The shocks are assumed to follow autoregressive process of order 1:
-\begin{align}
-    \log (\varepsilon_{Z,t}) &= \rho_z \log (\varepsilon_{Z,t-1}) + \epsilon^z_{t} \\
-    \log (\varepsilon_{N,t}) &= \rho_n \log (\varepsilon_{N,t-1}) + \epsilon^n_{t}
-\end{align}
-The parameters $\sigma \geq 0$ and $\varphi \geq 0$ determine the curvature of the utility of consumption and disutility of labour, respectively (Gali, 2015: 20). Finally, $\E_t \{*\}$ is the expectational operator, conditional on all information available at period $t$.
+The household's utility depends on consumption $C_t$ and hours worked $N_t$. As seen from the utility function (Equation (\ref{eq:utility_function})), the model assumes the household's utility to be (decreasingly) increasing in consumption $C_t$ and (increasingly) decreasing in hours worked $N_t$. $\beta \in (0,1)$ is the discount factor, which can be thought of as an opportunity cost or an impatience rate, i.e. a unit of consumption $C$ today will be worth $\beta * C < C$ tomorrow. We also introduce a preference shifter $Z_t$ \parencite[225]{jordigal_2015_monetary} \footnote{While this specific shock is not relevant to the research question, it helps prevent stochastic singularity \textcolor{red}{Pfeifer, 2021} and allows parameter estimation with a greater number of macroeconomic data series, see Section \ref{application}. }. The shock is assumed to follow an autoregressive process of order 1:
+\begin{equation}
+    \log (Z_t) = \rho_z \log (Z_{t-1}) + \epsilon^z_{t}
+\end{equation}
+The parameter $\sigma \geq 0$ is the relative risk aversion coefficient and $\varphi \geq 0$ is the labour disutility parameter. Together, they determine the curvature of the utility of consumption and disutility of labour, respectively. Finally, $\E_t\left[*\right]$ is the expectational operator, conditional on all information available at period $t$ (Gali, 2015: 20).
 \import{./Graphs}{sigma_varphi.tex}
 To allow goods differentiation between domestic and foreign, the model assumes that $C_t$ is a composite consumption index defined by:
 \begin{equation}
-    C_t = \left[ (1-\nu)^\frac{1}{\eta} (C_{H,t})^{\frac{\eta-1}{\eta}} + \nu^{\frac{1}{\eta}}(C_{F,t})^{\frac{\eta-1}{\eta}}\right]^{\frac{\eta}{\eta-1}}
+    C_t = 
+    \begin{cases}
+        \left[ (1-\upsilon)^\frac{1}{\eta} (C_{H,t})^{\frac{\eta-1}{\eta}} + \upsilon^{\frac{1}{\eta}}(C_{F,t})^{\frac{\eta-1}{\eta}}\right]^{\frac{\eta}{\eta-1}} & \text{if $\eta > 0$ and $\eta \ne 1$} \\
+        \frac{1}{(1-\upsilon)^{(1-\upsilon)}\upsilon^\upsilon}(C_{H,t})^{(1-\upsilon)}(C_{F,t})^\upsilon & \text{if $\eta = 1$}
+    \end{cases}
 \end{equation}
-Where $C_{H,t}$ and $C_{F,t}$ are indices of consumption of home produced and imported goods, respectively. The parameter $\nu \in [0,1]$ reflects economy's openness for trading, while $\eta$ denotes household's willingness to substitute domestic good with a foreign good. Our economy is assumed to be open for trading with the rest of the world (ROW), which itself is made of a continuum of infinitely many small economies $i$ represented by a unit interval. Therefore, $C_{F,t}$ is a sum of indices of the quantity of goods imported from all countries $i$. In a similar fashion, if we denote $j$ as a single variety of goods from a continuum of goods represented by a unit interval, we can express each consumption index as follows: 
+Where $C_{H,t}$ and $C_{F,t}$ are indices of consumption of home produced and imported goods, respectively. The parameter $\upsilon \in [0,1]$ reflects economy's openness for trading, while $\eta > 0$ denotes household's willingness to substitute a domestic good with a foreign good, often referred to as `home bias'. When $\eta = 1$, then the share of domestic and foreign consumption is determined by the country's willingness to trade. In an extreme case, $\upsilon = 0$ would imply that the economy is an autarky, while $\upsilon = 1$ would suggest that our households consume foreign goods only. Our economy is assumed to be small, in the sense that it takes the world output, consumption, and prices as given, and cannot influence them. This is a common assumption for the UK (\textbf{refs}) and even more so for Scotland. The world economy is assumed to be made of a continuum of infinitely many small economies $i$ represented by a unit interval. Therefore, $C_{F,t}$ is a sum of indices of the quantity of goods imported from all countries $i$. In a similar fashion, if we denote $j$ as a single variety of goods from a continuum of goods represented by a unit interval, we can express each consumption index as follows: 
 \begin{align*}
     C_{H,t} & = \left( \int_{0}^{1} {C_{H,t}(j)}^{\frac{\varepsilon-1}{\varepsilon}} \,dj  \right)^\frac{\varepsilon}{\varepsilon-1} & \text{ Index of consumption of home produced goods}                 \\
     C_{i,t} & = \left( \int_{0}^{1} {C_{i,t}(j)}^{\frac{\varepsilon-1}{\varepsilon}} \,dj  \right)^\frac{\varepsilon}{\varepsilon-1} & \text{ Index of consumption of country \textit{i}'s produced goods} \\
     C_{F,t} & = \left( \int_{0}^{1} {C_{i,t}}^{\frac{\gamma-1}{\gamma}} \,di  \right)^{\frac{\gamma}{\gamma-1}}                      & \text{ Index of consumption of imported goods}
 \end{align*}
 Notice that all three indices take the form of \textit{Constant Elasticity Substitution} (\textit{CES}) form, with parameters $\varepsilon$ (without subscripts) and $\gamma$ representing the degree of substitutability between varieties of goods and countries, respectively.
-Optimal allocation of each variety of goods:
+% TODO: Derive these allocations
+The following expresions note optimal allocation of each individual good (see Appendix A1 for derivation):
 \begin{align}
     C_{H,t}(j) & = \left( \frac{P_{H,t}(j)}{P_{H,t}}\right)^{-\varepsilon}C_{H,t}; & C_{i,t}(j) & = \left( \frac{P_{i,t}(j)}{P_{i,t}}\right)^{-\varepsilon}C_{i,t}; & C_{i,t} & = \left( \frac{P_{i,t}}{P_{F,t}}\right)^{-\gamma}C_{F,t}\label{eq:optimal_imported_consumption}
 \end{align}
-\begin{align}
-    P_{H,t} & = \left( \int_{0}^{1} P_{H,t}(j)^{1-\varepsilon} \,dj  \right)^{\frac{1}{1-\varepsilon}}                                  & \text{Domestic Price Index}                                \\
-    P_{i,t} & = \left( \int_{0}^{1} P_{i,t}(j)^{1-\varepsilon} \,dj  \right)^{\frac{1}{1-\varepsilon}}                                  & \text{Price Index of goods produced by country \textit{i}} \\
-    P_{F,t} & = \left( \int_{0}^{1} P_{i,t}^{1-\gamma} \,dj  \right)^{\frac{1}{1-\gamma}}         \label{eq:price_index_imported_goods} & \text{Price Index of Imported goods}
-\end{align}
-\begin{align}
-    \int_{0}^{1} & P_{H,t}(j)C_{H,t}(j) \,dj = P_{H,t}C_{H,t} & \int_{0}^{1} & P_{i,t}(j)C_{i,t}(j) \,dj = P_{i,t}C_{i,t}
-\end{align}
-Using (\ref{eq:optimal_imported_consumption}) and (\ref{eq:price_index_imported_goods}) implies
+where:
+\begin{flalign}
+    P_{H,t} & = \left( \int_{0}^{1} P_{H,t}(j)^{1-\varepsilon} \,dj  \right)^{\frac{1}{1-\varepsilon}}             \hfill  \label{eq:domestic_price_index}                    & \text{Domestic Price Index}                                \\
+    P_{i,t} & = \left( \int_{0}^{1} P_{i,t}(j)^{1-\varepsilon} \,dj  \right)^{\frac{1}{1-\varepsilon}}              \hfill                     & \text{Price Index of goods produced by country \textit{i}} \\
+    P_{F,t} & = \left( \int_{0}^{1} P_{i,t}^{1-\gamma} \,dj  \right)^{\frac{1}{1-\gamma}}   \hfill       \label{eq:price_index_imported_goods} & \text{Price Index of Imported goods}
+\end{flalign}
+Intuitively, if $P_{H,t}(j) >  P_{H,t}$, then that good is demanded less relative to an \textit{average} good. To see this, note that $P_{H,t}(j)/P_{H,t} > 1$ when $P_{H,t}(j) >  P_{H,t}$, and given that the term is to the power of a negative constant, the entire term decreases.
+
+The representative household's choice of consumption and labour must satisfy the following budget constraint:
 \begin{equation}
-    \int_{0}^{1} P_{i,t}C_{i,t} = P_{F,t}C_{F,t}
+    \underbrace{\int_{0}^{1} P_{H,t}(j)C_{H,t}(j) \,dj + \int_{0}^{1} \int_{0}^{1} P_{i,t}(j)C_{i,t}(j) \,dj\,di + \E_t \left[ R^{-1}_{t+1} B_{t+1} \right]}_{Expenses} \leq \underbrace{\vphantom{\int_{0}^{1}} B_t + W_t N_t}_{Income}
 \end{equation}
+where $R_t$ is the gross nominal interest rate, $B_t$ denotes bonds, $W_t$ and $N_t$ stand for nominal wage and hours worked, respectively. For intuition, the LHS of the budget constraint implies that the representative household needs to choose the quantity of good $j$ produced domestically and in every country $i$, as well as the number of bonds at the expected nominal interest rate in period $t+1$. The RHS implies that the only two sources of income are nominal payoffs from bonds and gross pay, which later will be different from the same as net pay. The expenses cannot exceed income.
+
+Taking the three price indices (\ref{eq:domestic_price_index})-(\ref{eq:price_index_imported_goods}), and plugging them into their respective demand functions (\ref{eq:optimal_imported_consumption}), yields:
 \begin{align}
-    C_{H,t} & = (1-\alpha) {\left(\frac{P_{H,t}}{P_t}\right)}^{-\eta} C_{t} & C_{F,t} & = \alpha {\left(\frac{P_{F,t}}{P_t}\right)}^{-\eta} C_{t}
+    \int_{0}^{1} & P_{H,t}(j)C_{H,t}(j) \,dj = P_{H,t}C_{H,t} \label{eq:domestic_consumption}\\
+    \int_{0}^{1} & P_{i,t}(j)C_{i,t}(j) \,dj = P_{i,t}C_{i,t} \\
+    \int_{0}^{1} & P_{i,t}C_{i,t} = P_{F,t}C_{F,t} \label{eq:foreign_consumption}
 \end{align}
+The following definitions are given:
 \begin{align}
-    P_t = \left[ (1-\alpha) (P_{H,t})^{1-\eta} + \alpha (P_{F,t})^{1-\eta} \right]^{\frac{1}{1-\eta}} &  & \text{ Consumption Price Index}
+    C_{H,t} & = (1-\upsilon) {\left(\frac{P_{H,t}}{P_t}\right)}^{-\eta} C_{t} \label{eq:demand_function_for_domestic_goods} & \\
+    C_{F,t} & = \upsilon {\left(\frac{P_{F,t}}{P_t}\right)}^{-\eta} C_{t} \label{eq:demand_function_for_foreign_goods} & \\
+    P_t &= \begin{cases}
+        \left[ (1-\upsilon) (P_{H,t})^{1-\eta} + \upsilon (P_{F,t})^{1-\eta} \right]^{\frac{1}{1-\eta}} \label{eq:consumption_price_index} & \text{if $\eta > 0$ and $\eta \ne 1$}\\
+        (P_{H,t})^{1-\upsilon} \times (P_{F,t})^{\upsilon} & \text{if $\eta = 1$}
+    \end{cases}
 \end{align}
-A special case $\eta=1$:
-\begin{align}
-    P_t & = (P_{H,t})^{1-\alpha} \times (P_{F,t})^{\alpha} & C_t & = \frac{1}{(1-\alpha)^{(1-\alpha)}\alpha^\alpha}(C_{H,t})^{(1-\alpha)}(C_{F,t})^\alpha
-\end{align}
-Total consumption expenditures are:
+Equations (\ref{eq:demand_function_for_domestic_goods}) and (\ref{eq:demand_function_for_foreign_goods}) are demand functions for domestic and foreign goods, respectively. Equation (\ref{eq:consumption_price_index}) is the Consumption Price Index (CPI). In the case when there is no home bias ($\eta = 1$), the log aggregate price level in the consumption is just a weighted sum of the two price indices, where weights are given by trade openness parameter $\upsilon$. Using (\ref{eq:domestic_consumption}) and (\ref{eq:foreign_consumption}), we can define the total consumption expenditures as:
 \begin{align}
     P_{H,t}C_{H,t} + P_{F,t}C_{F,t} = P_t C_t
 \end{align}
-So the budget constraint is:
-\begin{align}
-    P_t C_t + \E_t [Q_{t,t+1}D_{t+1}] \leq D_t + W_t N_t + T_t
-\end{align}
-\begin{align}
-    \mathcal{L} & = \E_0 \sum^{\infty}_{t=0} \left( \frac{C_t^{1-\sigma}}{1-\sigma} - \frac{N_t^{1+\varphi}}{1+\varphi} \right)  \nonumber \\ &+ \lambda_t\left\{  D_t + W_t N_t + T_t - P_t C_t - \E_t [Q_{t,t+1}D_{t+1}] \right\}
-\end{align}
-\begin{align*}
-    \frac{\partial L}{\partial C_t}                                    & = \beta^t C_t^{-\sigma} - \lambda_t P_t = 0; \quad \Rightarrow \quad \beta^t C_t^{-\sigma} P_{t}^{-1} = \lambda_t  \\
-    \frac{\partial L}{\partial N_t}                                    & = -\beta^t N_t^{\varphi} + \lambda_t N_t = 0; \quad \Rightarrow \quad \beta^t N_t^{\varphi} W_{t}^{-1} = \lambda_t \\
-    \frac{\partial L}{\partial C_t} = \frac{\partial L}{\partial N_t}: & \beta^t C_t^{-\sigma} P_{t}^{-1} = \beta^t N_t^{\varphi} W_{t}^{-1}                                                \\
-    \Rightarrow                                                        & C_t^{-\sigma} P_{t}^{-1} = N_t^{\varphi} W_{t}^{-1}                                                                \\
-    \Rightarrow                                                        & C_t^{-\sigma} N_t^{-\varphi} =  W_{t}^{-1}     P_{t}
-\end{align*}
-\begin{align}
-    \Rightarrow &  & C_t^{\sigma} N_t^{\varphi} =  \frac{W_t}{P_t} \label{eq:intratemporal_optimality_condition} &  & \text{Intratemporal Optimality Condition}
-\end{align}
-\begin{align*}
-    \frac{\partial L}{\partial C_t}     & = \beta^t C_t^{-\sigma} P_{t}^{-1} = \lambda_t; \quad \Rightarrow \quad \E_t[\beta^{t+1} C_{t+1}^{-\sigma} P_{t+1}^{-1}] = \E_t[\lambda_{t+1}] \\
-    \frac{\partial L}{\partial D_{t+1}} & = -\lambda_t \E_t[Q_{t,t+1}] + \E_t[\lambda_{t+1}] = 0; \quad \Rightarrow \quad \E_t[Q_{t,t+1}] = \frac{\lambda_{t+1}}{\lambda_t}
-\end{align*}
-\begin{align*}
-    \E_t\left[\frac{\beta^t C_t^{-\sigma} P_{t}^{-1}}{\beta^{t+1} C_{t+1}^{-\sigma} P_{t+1}^{-1}}\right]                 & = \E_t\left[\frac{\lambda_t}{\lambda_{t+1}}\right] \\
-    \E_t\left[\frac{\beta^t C_t^{-\sigma} P_{t}^{-1}}{\beta^{t+1} C_{t+1}^{-\sigma} P_{t+1}^{-1}}\right]                 & = \E_t\left[\frac{1}{Q_{t,t+1}}\right]             \\
-    \E_t\left[\frac{1}{\beta} \left(\frac{C_t}{C_{t+1}}\right)^{-\sigma} \left(\frac{P_{t}}{ P_{t+1}}\right)^{-1}\right] & = \E_t\left[\frac{1}{Q_{t,t+1}}\right]
-\end{align*}
-\begin{align}
-    \beta\E_t\left[\left(\frac{C_{t+1}}{C_{t}}\right)^{-\sigma} \left(\frac{P_{t}}{ P_{t+1}}\right)\right]                 = Q_t &  & \text{Euler equation}
-\end{align}
-However, Gali uses a different approach to derive the Euler equation, which introduces Arrow securities:
+Which greatly simplifies the household's budget constraint\footnote{}:
 \begin{equation}
-    \frac{V_{t,t+1}}{P_t}C_{t}^{-\sigma} = \xi_{t,t+1} \beta C_{t+1}^{-\sigma} \frac{1}{P_{t+1}} \label{eq:introduces_arrow_securities}
+    P_t C_t + \E_t \left[ R^{-1}_{t+1} B_{t+1} \right] \leq B_t + W_t N_t
 \end{equation}
-Where $V_{t,t+1}$ is an Arrow security and $\xi_{t,t+1}$ is the probability that the Arrow security will yield a payoff next period. Interpretation: LHS is paying for the security (expenses) in terms of consumption at $P_t$ prices. RHS is the payoff if the Arrow security yields a payoff. The consumer will only be willing to pay LHS if the payoff is at least as big on the RHS.
-Given that:
-\begin{equation}
-    Q_{t,t+1} = \frac{V_{t,t+1}}{\xi_{t,t+1}}
-\end{equation}
+Note that this budget constraint will vary depending on the policy question. The four policy questions will be introduced in the next section.
+
+What follows is the derivation of the intratemporal and intertemporal optimality conditions for the policy scenario 3, i.e. when households face a labour tax:
 \begin{align}
-    \frac{V_{t,t+1}}{P_t}C_{t}^{-\sigma} = \xi_{t,t+1} \beta C_{t+1}^{-\sigma} \frac{1}{P_{t+1}} \\
-    Q_{t,t+1} = \beta \left(\frac{C_{t+1}}{C_{t}}\right)^{-\sigma} \frac{P_t}{P_{t+1}}           \\
-    \E_t [Q_{t,t+1}] = \beta \E_t\left[\left(\frac{C_{t+1}}{C_{t}}\right)^{-\sigma} \frac{P_t}{P_{t+1}}\right]
+    \mathcal{L} & = \E_0 \sum^{\infty}_{t=0} \beta^t \left( \frac{C_t^{1-\sigma}}{1-\sigma} - \frac{N_t^{1+\varphi}}{1+\varphi} \right)Z_t  \nonumber \\ &+ \lambda_t\left\{  B_t + (1-\tau_t) W_t N_t + T_t - P_t C_t - \E_t \left[R^{-1}_{t+1}B_{t+1} \right] \right\}\\
+    \frac{\partial \mathcal{L}}{\partial C_t}                                    & = \beta^t C_t^{-\sigma}Z_t - \lambda_t P_t = 0; \quad \Rightarrow \quad \beta^t C_t^{-\sigma}Z_t P_{t}^{-1} = \lambda_t \label{eq:foc_c} \\
+    \frac{\partial \mathcal{L}}{\partial N_t}                                    & = -\beta^t N_t^{\varphi}Z_t + \lambda_t (1-\tau_t) W_t = 0; \quad \Rightarrow \quad \beta^t N_t^{\varphi} Z_t ((1-\tau_t)W_{t})^{-1} = \lambda_t \label{eq:foc_n} \\
+    \frac{\partial \mathcal{L}}{\partial B_{t+1}} & = -\lambda_t \E_t \left[ R^{-1}_{t+1}  \right] + \E_t[\lambda_{t+1}] = 0; \quad \Rightarrow \quad \E_t[R^{-1}_{t+1}] = \E_t \left[\frac{\lambda_{t+1}}{\lambda_t}\right] \label{eq:foc_b}
 \end{align}
+Equating and rearranging Equations (\ref{eq:foc_c}) and (\ref{eq:foc_n}) yields \textit{intratemporal optimality condition}:
+\begin{align*}
+    \Rightarrow &  & C_t^{\sigma} N_t^{\varphi} &=  \frac{W_t}{P_t}(1-\tau_t) \label{eq:intratemporal_optimality_condition} &  \text{Scenario 3} \\
+    & & C_t^{\sigma} N_t^{\varphi} &=  \frac{W_t}{P_t}(1-\tau^{UK}_t) & \text{Scenario 4} \\
+    & & C_t^{\sigma} N_t^{\varphi} &=  \frac{W_t}{P_t} & \text{Scenarios 1 \& 2}
+\end{align*}
+The condition implies that the marginal utility of consumption and leisure is equal to the net real wage. As mentioned before, in the case of labour tax absence, the net real wage is equal to the gross real wage. The log-linearisation of Equation (\ref{eq:intratemporal_optimality_condition}) around a steady state yields:
 \begin{align}
-    \beta\E_t\left[\left(\frac{C_{t+1}}{C_{t}}\right)^{-\sigma} \left(\frac{P_{t}}{ P_{t+1}}\right)\right] \label{eq:euler_equation}                = Q_t &  & \text{Euler equation}
+    C_t^\sigma N_t^\varphi &= \frac{W_t}{P_t}(1-\tau_t) = \frac{W_t}{P_t} - \frac{W_t}{P_t}\tau_t \nonumber\\
+    \vdots & \quad \text{(see Appendix \ref{eq:real_wage_ss} - \ref{eq:intratemporal_loglinear_final_step})}\nonumber\\
+    (1-\tau)({\sigma c_t + \varphi n_t})  &= \left[(1-\tau)({w_t - p_t}) - \tau \tilde{\tau}_t\right]\nonumber\\
+    {\sigma c_t + \varphi n_t}  &= {w_t - p_t} - \frac{\tau}{1-\tau}\tilde{\tau}_t
 \end{align}
-Log-linearising (\ref{eq:intratemporal_optimality_condition}):
+Where $\tau$ and $\tilde{\tau}_t$ denote steady state labour tax rate and deviation from the steady state, respectively. As it is common in the literature, we denote natural logs of corresponding variables in lowercase letters, i.e. $x_t = \ln(X_t)$, and use tildes to denote deviations from the steady state. While loglinearising, we widely make use of Uhlig's (1999) proposed methods for multivariate equations with additive terms, i.e., $X_tY_t \approx XY\mathbf{e}^{\tilde{X}_t + \tilde{Y}_t}$, $X_t + Y_t \approx X\mathbf{e}^{\tilde{X}_t} + Y\mathbf{e}^{\tilde{Y}_t}$ and $\mathbf{e}^{\tilde{X}_t} \approx (1 + \tilde{X}_t)$. 
+
+Iterating Equation (\ref{eq:foc_c}) one period forward, yields:
+\begin{align*}
+    \frac{\partial L}{\partial C_t}     &= \beta^t C_t^{-\sigma}Z_t P_{t}^{-1} = \lambda_t; \quad &\Rightarrow \quad \E_t[\beta^{t+1} C_{t+1}^{-\sigma}Z_{t+1} P_{t+1}^{-1}] = \E_t[\lambda_{t+1}]
+\end{align*}
+Dividing one by the other and rearranging yields \textit{intertemporal optimality condition}:
 \begin{align}
-    C_t^{\sigma} N_t^{\varphi} =  \frac{W_t}{P_t}; \quad \Rightarrow \quad w_t - p_t = \sigma c_t + \varphi n_t
+    \E_t\left[\frac{\beta^t C_t^{-\sigma}Z_t P_{t}^{-1}}{\beta^{t+1} C_{t+1}^{-\sigma}Z_{t+1} P_{t+1}^{-1}}\right]                 & = \E_t\left[\frac{\lambda_t}{\lambda_{t+1}}\right] \nonumber\\
+    \beta^{t-(t+1)}\E_t\left[\frac{C_t^{-\sigma}Z_t P_{t}^{-1}}{C_{t+1}^{-\sigma}Z_{t+1} P_{t+1}^{-1}}\right]                 & = \E_t\left[\frac{1}{R_{t+1}}\right] \label{eq:euler_eq_derivation_bonds}\\
+    &\vdots \quad \text{(see Appendix A.xx - A.xx)}\nonumber\\
+    \beta\E_t\left[\left(\frac{C_{t+1}}{C_{t}}\right)^{-\sigma} \left(\frac{Z_{t+1}}{Z_t}\right) \left(\frac{P_{t}}{ P_{t+1}}\right)\right]                 &= \E_t \left[\frac{1}{R_{t+1}}\right] \label{eq:euler_equation}
 \end{align}
+where Equation (\ref{eq:euler_eq_derivation_bonds}) used Equation (\ref{eq:foc_b}). $\E_t [ R^{-1}_{t+1}]$ is the gross return on a risk-free one-period discount bond or a stochastic discount factor. More generally, Equation (\ref{eq:euler_equation}) is the Euler equation, and it determines the consumption path of a lifetime utility-maximising representative household. To state it in more intuitive terms, households choose consumption ``today'' and ``tomorrow'' and take all other terms as given. According to the equation, they choose consumption in the two periods in such a way so that the marginal utility ``today'' would be equal to the marginal consumption tomorrow while taking into account that saving consumption ``today'', will result in $R_t > 1$ consumption ``tomorrow''. Note that \textcite{jordigal_2015_monetary} uses a different approach to derive the Euler equation, which introduces Arrow securities. As it adds little value to our research question, this dissertation only provides a step-by-step derivation and interpretation in Appendix A for an interested reader. Also note, that \textcite{jordigal_2015_monetary} uses $Q_t = \E_t [ \frac{1}{R_{t+1}}]$ to denote the stochastic discount factor and $D_t$ to denote bonds or ``portfolio'' as they call it.
+
 Log-linearising (\ref{eq:euler_equation}):
 \begin{align}
-    \beta\E_t\left[\left(\frac{C_{t+1}}{C_{t}}\right)^{-\sigma} \left(\frac{P_{t}}{ P_{t+1}}\right)\right]                = Q_t \nonumber \\
-    \ln\beta - \E_t[\sigma c_{t+1}] + \sigma c_t + p_t - \E_t [p_{t+1}] = \ln Q_t                                              \nonumber  \\
-    \sigma c_t  = \ln Q_t - \ln \beta + \E_t[\sigma c_{t+1}] - p_t + \E_t [p_{t+1}]                                             \nonumber \\
-    c_t =  \E_t[c_{t+1}] - \frac{1}{\sigma}( -\ln Q_t - \rho - \E_t [\pi_{t+1}]   )                                             \nonumber \\
-    c_t =  \E_t[c_{t+1}] - \frac{1}{\sigma}( i_t  - \E_t [\pi_{t+1}] - \rho  )                                                            \\
-    \text{where $i_t = -\log Q_t$, $\rho = -\log \beta$, $\pi_t = p_t - p_{t-1}$} \nonumber
+    \beta\E_t\left[\left(\frac{C_{t+1}}{C_{t}}\right)^{-\sigma} \left(\frac{P_{t}}{ P_{t+1}}\right)\right]                = \E_t \left[ \frac{1}{R_{t+1}} \right] \nonumber \\
+    \ln\beta - \E_t[\sigma c_{t+1}] + \sigma c_t + p_t - \E_t [p_{t+1}] &= -\ln R_{t+1}                                              \nonumber  \\
+    \sigma c_t  = -\ln R_{t+1} - \ln \beta + \E_t[\sigma c_{t+1}] - p_t + \E_t [p_{t+1}]                                             \nonumber \\
+    c_t =  \E_t[c_{t+1}] - \frac{1}{\sigma}( \ln R_{t+1} - \rho - \E_t [\pi_{t+1}]   )                                             \nonumber \\
+    c_t =  \E_t[c_{t+1}] - \frac{1}{\sigma}( i_t  - \E_t [\pi_{t+1}] - \rho  )                                                            
 \end{align}
+where $i_t = \ln R_{t+1}$ is the nominal interest rate, $\rho = -\log \beta$ is the log discount rate, and $\pi_t = p_t - p_{t-1}$ is the CPI inflation. The loglinearised Euler equation makes it clearer to see, that consumption ``today'' is increasing in expected inflation ``tomorrow'', while the opposite is true for the nominal interest rate. The effect is scaled by $\sigma^{-1}$ parameter.
+
+Furthermore, OECD (2023) defines terms of trade as a ratio of import and export price indices, which in this model is denoted as $S_t$:
 \begin{align}
-    S_{i,t} = \frac{P_{i,t}}{P_{H,t}}                                                                                                     &  & \text{Bilateral terms of trade}       \\
-    S_{t} =  \frac{P_{F,t}}{P_{H,t}} = \left(\int_{0}^{1} (S_{i,t} \, di)^{1-\gamma}\right)^{\frac{1}{1-\gamma}}                          &  & \text{Effective terms of trade}       \\
-    s_t = p_{F,t} - p_{H,t} = \left(\int_{0}^{1} s_{i,t} \, di \right)                                      \label{eq:terms_of_trade_log} &  & \text{(log) Effective terms of trade}
+    S_{i,t} &= \frac{P_{i,t}}{P_{H,t}}                       \label{eq:bilateral_terms_of_trade}                                                                                    \\
+    S_{t} &=  \frac{P_{F,t}}{P_{H,t}} = \left(\int_{0}^{1} (S_{i,t} \, di)^{1-\gamma}\right)^{\frac{1}{1-\gamma}}            \label{eq:effective_terms_of_trade}              
 \end{align}
-Recall that when $\eta = 1$, then CPI is $P_t = (P_{H,t})^{1-\alpha} \times (P_{F,t})^{\alpha}$, which can be log-linearised to:
+where Equation (\ref{eq:bilateral_terms_of_trade}) marks \textit{bilateral} terms of trade with a country $i$, while Equation (\ref{eq:effective_terms_of_trade}) is for \textit{effective} terms of trade, i.e. terms of trade with all countries in the unit interval defined earlier. The latter can be loglinearised to yield:
+\begin{align}
+    s_t = p_{F,t} - p_{H,t} = \left(\int_{0}^{1} s_{i,t} \, di \right)                                      \label{eq:terms_of_trade_log} 
+\end{align}
+Recall that when $\eta = 1$, then CPI is $P_t = (P_{H,t})^{1-\upsilon} \times (P_{F,t})^{\upsilon}$. Using the previous definition (\ref{eq:terms_of_trade_log}) and loglinearised CPI, the price level can be expressed as a sum of domestic price level and terms of trade (see Appendix A.xx-A.xx):
 \begin{equation}
-    p_t = (1-\alpha)p_{H,t} + \alpha p_{F,t} = p_{H,t} + \alpha s_t \label{eq:domestic_price_plus_bilateral_terms_of_trade}
+    p_t = (1-\upsilon)p_{H,t} + \upsilon p_{F,t} = p_{H,t} + \upsilon s_t \label{eq:domestic_price_plus_bilateral_terms_of_trade}
 \end{equation}
-Equations (\ref{eq:terms_of_trade_log}) and (\ref{eq:domestic_price_plus_bilateral_terms_of_trade}) hold when $\gamma=1$ and $\eta = 1$, respectively.
+Note that Equations (\ref{eq:terms_of_trade_log}) and (\ref{eq:domestic_price_plus_bilateral_terms_of_trade}) hold \textit{exactly} when $\gamma=1$ and $\eta = 1$. Similarly, knowing that inflation as a difference of log prices in two consecutive periods, we can extend the previous definition to yield:
 \begin{align}
     \pi_{H,t} = p_{H,t+1} - p_{H,t}         &  & \text{Domestic Inflation} \\
-    \pi_{t} = \pi_{H,t} + \alpha \Delta s_t &  & \text{CPI Inflation}
+    \pi_{t} = \pi_{H,t} + \upsilon \Delta s_t &  & \text{CPI Inflation}
 \end{align}
-The gap between domestic inflation and CPI inflation is only due to percentage change in the terms of trade.
+The gap between domestic inflation and CPI inflation is due to percentage change in the terms of trade and degree of openness. In the case of an autarky ($\upsilon = 0$), even if imported goods were much more expensive ($P_{F,t} \gg P_{H,t}$), domestic inflation will be equal to CPI inflation because the country simply does not trade.
+
+Furthermore, we assume that the Law of One Price (LOP) holds for all goods $j$. That is, the price of a single good in country $i$ is equal to the price of the same good in country $-i$ times the nominal exchange rate. It implies, that there are no opportunities for arbitrage.
 \begin{align}
     P_{i,t}(j) & = \mathcal{E}_{i,t}P_{i,t}^i(j)                                                                         &  & \text{Law of One Price (LOP)}              \\
-    P_{i,t}    & = \mathcal{E}_{i,t}P_{i,t}^i                                                                            &  & \text{Law of One Price (LOP)}              \\
+    P_{i,t}    & = \mathcal{E}_{i,t}P_{i,t}^i                                                                            &  & \text{Law of One Price (LOP)}              
+\end{align}
+where $\mathcal{E}_{i,t}$ is the nominal exchange rate between the home currency and the country's $i$ currency, and the second equation is derived by integrating both sides with respect to $j$. Even though we do not model currencies explicitly, it is useful to think about $\mathcal{E}_{i,t}$ as the price of one unit of currency in terms of another currency, i.e. the home currency. The two equations can be loglinearised to yield:
+\begin{align}
     p_{i,t}    & = e_{i,t}+p_{i,t}^i                                                                                     &  & \text{(Log) Law of One Price (LOP)}        \\
     p_{F,t}    & = \int_{0}^{1}(e_{i,t}+p_{i,t}^i) \,di = e_t + p_t^{\star} \label{eq:log_price_index_of_imported_goods} &  & \text{(Log )Price index of Imported Goods}
 \end{align}
-Where $e_t$ is (Log) Effective Nominal Exchange Rate, $p_t^{\star}$ is the World Price Index.
+Where $e_t$ is (Log) Effective Nominal Exchange Rate, $p_t^{\star}$ is the World Price Index. This allows us to redefine log effective terms of trade in terms of the nominal exchange rate, domestic price, and the world price index:
 \begin{align}
-    s_t = p_{F,t} - p_{H,t} = e_t + p_t^{\star} - p_{H,t} \label{eq:terms_of_trade_with_world_price_index} &  & \text{Terms of trade but with the World Price Index}
+    s_t = p_{F,t} - p_{H,t} = e_t + p_t^{\star} - p_{H,t} \label{eq:terms_of_trade_with_world_price_index}
 \end{align}
+In contrast, \textit{real} exchange rate between two countries is the ratio between their CPI and home CPI, expressed in home currency:
 \begin{align}
-    \mathcal{Q}_{i,t} & = \frac{\mathcal{E}_{i,t}P_{t}^i}{P_t}                                        &  & \text{Bilateral Exchange Rate}                                       \\
+    \mathcal{Q}_{i,t} & = \frac{\mathcal{E}_{i,t}P_{t}^i}{P_t}                                        &  & \text{Bilateral Exchange Rate}                                       
+\end{align}
+Integrating both sides with respect to $i$ and using previous definitions yields:
+\begin{align}
     q_t               & = \int_{0}^{1} \log \left( \frac{\mathcal{E}_{i,t}P_{t}^i}{P_t} \right) \, di                                                                           \\
-                      & = \int_{0}^{1} (e_{i,t} + p_{i,t}^i - p_t) \, di                              &  &                                                                      \\
-                      & = e_t + p_t^{\star} - p_t                                                     &  & \text{using (\ref{eq:log_price_index_of_imported_goods})}            \\
-                      & = s_t + p_{H_t} - p_t                                                         &  & \text{using (\ref{eq:terms_of_trade_with_world_price_index})}        \\
-                      & = (1-\alpha)s_t                                                               &  & \text{using (\ref{eq:domestic_price_plus_bilateral_terms_of_trade})}
+    & = \int_{0}^{1} (e_{i,t} + p_{i,t}^i - p_t) \, di                              &  &                                                                      \\
+    & = e_t + p_t^{\star} - p_t                                                     &  & \text{using (\ref{eq:log_price_index_of_imported_goods})}            \\
+    & = s_t + p_{H_t} - p_t                                                         &  & \text{using (\ref{eq:terms_of_trade_with_world_price_index})}        \\
+    & = (1-\upsilon)s_t                                                               &  & \text{using (\ref{eq:domestic_price_plus_bilateral_terms_of_trade})}
 \end{align}
-International Risk-Sharing Equation (\ref{eq:introduces_arrow_securities}) for country \textit{i} can be rewritten as:
+Finally, if we assume that all countries $i$ have symmetrical preferences and their households maximise lifetime-utility in the same manner that our home country's do, then maximising the Lagrangian function for country $i$, will yield:
 \begin{align}
-    \frac{V_{t,t+1}}{\mathcal{E}^i_tP^i_t}({C^{i}_{t}})^{-\sigma} = \xi_{t,t+1} \beta ({C^{i}_{t+1}})^{-\sigma} \frac{1}{\mathcal{E}^i_{t+1}P^{i}_{t+1}}
+    \frac{\partial L^i}{\partial C_t^i} &= \beta^t {(C^i_t)}^{-\sigma} Z^i_t(\mathcal{E}_{i,t}P^i_{t})^{-1} = \lambda^i_t \nonumber\\
+    \frac{\partial L^i}{\partial D_{t+1}^i} & = -\lambda^i_t \E_t[R^{-1}_{t,t+1}] = -\E_t[\lambda^i_{t+1}] \nonumber\\
+    \vdots & \quad \text{(see Appendix A.xx - A.xx)} \\
+    C_t  &= {C^i_t} {Z^i_t}^{\frac{1}{\sigma}} \mathcal{Q}_{i,t}^{\frac{1}{\sigma}} \label{eq:consumption_international_risk_sharing}
 \end{align}
-Given that:
-\begin{equation}
-    Q_{t,t+1} = \frac{V_{t,t+1}}{\xi_{t,t+1}}
-\end{equation}
+If we assume that there had been no shocks in the country's $i$ preferences ($Z^i_t = 1$), then Equation (\ref{eq:consumption_international_risk_sharing}) states that consumption in the home country is equal to the consumption in the country $i$, while taking into account bilateral real exchange rate. This can be generalised to derive a relationship between home consumption and world consumption by log linearising (for simplicity) and integrating both sides with respect to $i$:
 \begin{align}
-    \frac{V_{t,t+1}}{\mathcal{E}^i_tP^i_t}({C^{i}_{t}})^{-\sigma}         & = \xi_{t,t+1} \beta ({C^{i}_{t+1}})^{-\sigma} \frac{1}{\mathcal{E}^i_{t+1}P^{i}_{t+1}}                                                                    \\
-    Q_{t,t+1}                                                             & = \beta \left(\frac{C^i_{t+1}}{C^i_{t}}\right)^{-\sigma} \left(\frac{P^i_t}{P^i_{t+1}}\right) \left(\frac{\mathcal{E}^i_{t}}{\mathcal{E}^i_{t+1}} \right) 
+    c_t &= c_{t}^i + \frac{1}{\sigma}z_{i,t} + \frac{1}{\sigma}q_{i,t} \\
+    \int_{0}^{1} c_t \, di & = \int_{0}^{1} \left( c_t^{\star} + \frac{1}{\sigma}z_{i,t} + \frac{1}{\sigma} q_{i,t}\right) \, di \\
+    \vdots & \quad \text{(see Appendix A.xx - A.xx)} \\
+    c_t & = c_t^{\star} + \frac{1}{\sigma}z_t + \left(\frac{1-\upsilon}{\sigma}\right)s_t \label{eq:link_between_consumption_and_world_consumption} &  & \text{using $q_t=(1-\upsilon)s_t$} \\
+    & = y_t^{\star} + \frac{1}{\sigma}z_t + \left(\frac{1-\upsilon}{\sigma}\right)s_t \label{eq:link_between_consumption_and_world_output} &  & \text{using $c^{\star}_t=y^{\star}_t$} 
 \end{align}
-Recall that:
-\begin{align}
-    \frac{\partial L}{\partial C_t} &= \beta^t C_t^{-\sigma} P_{t}^{-1} = \lambda_t \nonumber\\
-    \frac{\partial L}{\partial D_{t+1}} & = -\lambda_t \E_t[Q_{t,t+1}] = -\E_t[\lambda_{t+1}] \nonumber\\
-    &=-\beta^t C_t^{-\sigma} P_{t}^{-1} \E_t[Q_{t,t+1}] = -\E_t[\lambda_{t+1}] \label{eq:derivative_c_t_home_country}
-\end{align}
-Which is symmetrical for country \textit{i}:
-\begin{align}
-    \frac{\partial L^i}{\partial C_t^i} &= \beta^t {(C^i_t)}^{-\sigma} (\mathcal{E}_{i,t}P^i_{t})^{-1} = \lambda^i_t \nonumber\\
-    \frac{\partial L^i}{\partial D_{t+1}^i} & = -\lambda^i_t \E_t[Q_{t,t+1}] = -\E_t[\lambda^i_{t+1}] \nonumber\\
-    &=-\beta^t {(C^i_t)}^{-\sigma} (\mathcal{E}_{i,t}P^i_{t})^{-1} \E_t[Q_{t,t+1}] = -\E_t[\lambda^i_{t+1}] \label{eq:derivative_c_t_i_country}
-\end{align}
-\begin{align*}
-    \frac{\text{(\ref{eq:derivative_c_t_home_country})}}{\text{(\ref{eq:derivative_c_t_i_country})}}: \frac{-\beta^t C_t^{-\sigma} P_{t}^{-1} \E_t[Q_{t,t+1}]}{-\beta^t {(C^i_t)}^{-\sigma} (\mathcal{E}_{i,t}P^i_{t})^{-1} \E_t[Q_{t,t+1}]} &= \frac{-\E_t[\lambda_{t+1}]}{-\E_t[\lambda^i_{t+1}]}
-\end{align*} 
-\begin{align*}   
-    C_t^{-\sigma}{(C^i_t)}^{\sigma} \frac{\mathcal{E}_{i,t}P^i_{t}}{P_t} &= 1 \\
-    C_t^{-\sigma}{(C^i_t)}^{\sigma} \mathcal{Q}_{i,t} &= 1 \\
-    C_t^{-\sigma}{(C^i_t)}^{\sigma}  &= \frac{1}{\mathcal{Q}_{i,t}} \\
-    C_t^{-\sigma}  &= \frac{1}{\mathcal{Q}_{i,t}}{(C^i_t)}^{-\sigma} \\
-    C_t^{\sigma}  &= \mathcal{Q}_{i,t}{(C^i_t)}^{\sigma}
-\end{align*}
-\begin{equation}\label{eq:consumption_international_risk_sharing}
-    \Rightarrow C_t  = {C^i_t}\mathcal{Q}_{i,t}^{\frac{1}{\sigma}}
-\end{equation}
-Log-linearising (\ref{eq:consumption_international_risk_sharing}) yields:
-\begin{equation}
-    c_t = c_{t}^i + \frac{1}{\sigma}q_{i,t}
-\end{equation}
-Integrating both sides over \textit{i}:
-\begin{align}
-    c_t & = c_t^{\star} + \frac{1}{\sigma}q_t                                                                               &  &                                  \\
-        & = c_t^{\star} + \left(\frac{1-\alpha}{\sigma}\right)s_t \label{eq:link_between_consumption_and_world_consumption} &  & \text{using $q_t=(1-\alpha)s_t$}
-\end{align}
-$c_t^{\star}$ is the log world consumption. Equation (\ref{eq:link_between_consumption_and_world_consumption}) is the link between the domestic consumption and the world consumption.
+$c_t^{\star}$ is the log world consumption and the last Equation (\ref{eq:link_between_consumption_and_world_output}) follows by assuming that world consumption is equal to world output, i.e., there is no world government spending, or national government spending in any country $i$ is infinitesimally small.
+
+The next two parts will discuss government spending and firms, respectively. The final part will provide equilibrium (market clearing) conditions.
+
+From here onwards, the expressions will vary depending on what policy scenario is considered. For instance, the household's budget constraints under each scenario is given below:
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{2}
+    \begin{tabular}{l|l|c}
+    \makecell{Scen. 1 \\ G: 2, $\tau: 0$} & \makecell{Scot. \\ rUK } & 
+        \makecell{
+            $P_t C_t + \E_t [{R^{-1}_{t+1}}B_{t+1}] = B_t + W_t N_t + T_t$ \\
+            $P^*_t C^*_t + \E_t [{R^{*-1}_{t+1}}B^*_{t+1}] = B^*_t + W^*_t N^*_t + T^*_t$
+        }  \\ 
+    \makecell{Scen. 2 \\ G: 1, $\tau: 0$} & \makecell{Scot. \\ rUK } & 
+        \makecell{
+            $P_t C_t + \E_t [{R^{UK-1}_{t+1}}B^{UK}_{t+1}] = B^{UK}_t + W_t N_t + \varpi T^{UK}_t$ \\
+            $P^*_t C^*_t + \E_t [{R^{UK-1}_{t+1}}B^{UK}_{t+1}] = B^{UK}_t + W^*_t N^*_t + (1-\varpi)T^{UK}_t$
+        }   \\ 
+    \makecell{Scen. 3 \\ G: 2, $\tau: 1$} & \makecell{Scot. \\ rUK } & 
+    \makecell{
+        $P_t C_t + \E_t [{R^{-1}_{t+1}}B_{t+1}] = B_t + (1-\tau_t)W_t N_t + T_t$ \\
+        $P^*_t C^*_t + \E_t [{R^{*-1}_{t+1}}B^*_{t+1}] = B^*_t + (1-\tau^*_t)W^*_t N^*_t + T^*_t$ 
+    }  \\
+    \makecell{Scen. 4 \\ G: 1, $\tau: 1$} & \makecell{Scot. \\ rUK } & 
+    \makecell{
+        $P_t C_t + \E_t [{R^{UK-1}_{t+1}}B^{UK}_{t+1}] = B^{UK}_t + (1-\tau^{UK}_t)W_t N_t + \varpi T^{UK}_t$ \\
+        $P^*_t C^*_t + \E_t [{R^{UK-1}_{t+1}}B^{UK}_{t+1}] = B^{UK}_t + (1-\tau^{UK}_t)W^*_t N^*_t + (1-\varpi)T^{UK}_t$
+    }  
+    \end{tabular}
+\end{table}
+Here, $\varpi$ denotes the Scotland's share of population in the United Kingdom. $T_t$ denotes lump-sum transfers (subsidies or taxes), while $\tau_t$ denotes an income or labour tax rate. In the first column, G indicates the number of governments that can issue bonds (borrow) and set the labour tax rate. In the same column, $\tau$ indicates whether the government spending is funded by a labour tax.

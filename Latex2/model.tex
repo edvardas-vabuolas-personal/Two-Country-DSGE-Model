@@ -1,80 +1,33 @@
 \section*{Two-country DSGE model for Scotland and the rest of the UK}
 
-My model. Closely follows \textcite{jordigal_2015_monetary} and \textcite{gali_2005_monetary}
+Closely follows \textcite{jordigal_2015_monetary} and \textcite{gali_2005_monetary}
 \begin{enumerate}
-    \item Home country: \textit{Scotland}
-    \item  Foreign country: \textit{rUK}
+    \item Home country: Scotland (notation - $X$)
+    \item Foreign country: rUK (notation - $X^*$)
+    \item Notation for UK-wide variables - $X^{UK}$
     \item  Scotland and rUK are SOEs
           \begin{enumerate}
               \item They trade, take world output, inflation, and consumption as given and cannot influence it
           \end{enumerate}
     \item Calvo staggered prices, no capital/investment
     \item Scotland and RUK are assumed to be symmetrical in market structure and preferences
-    \item Monetary Union: rUK sets the interest rate based on a weighted inflation and weighted deviation from the steady state;
-    \item Trade linkage: output gap in Scotland ``today" heavily depends on the expected output gap in rUK ``tomorrow"
-    \item Significant price pass-through: inflation in Scotland ``today'' heavily depends on the expected inflation in rUK ``tomorrow''; also nominal exchange rate equal to zero
+    \item Monetary Union: There is a population-weighted UK-wide interest rate in place, and all four nations within the UK purchase government-issued bonds at this rate
+    \begin{enumerate}
+        \item We also consider counterfactual scenarios, i.e. where both Holyrood and Westminister can issue bonds at country-specific interest rate
+    \end{enumerate}
+    \item The government spending can be financed via a lump-sum tax, a labour (income) tax, and borrowing.
+    \item We consider 4 scenarios:
+    \begin{enumerate}
+        \item Two governments funded by lump-sum tax, \underline{two} of which can issue bonds
+        \item Two governments funded by lump-sum tax, \underline{one} of which can issue bonds
+        \item Two governments funded by an income tax, \underline{two} of which can issue bonds
+        \item Two governments funded by an income tax, \underline{one} of which can issue bonds
+    \end{enumerate}
 \end{enumerate}
-
-\textcite{ricci_2019_essays} two-country DSGE model for Scotland and the rest of the UK
-\begin{enumerate}
-    \item Home country: \textit{Scotland}
-    \item  Foreign country: \textit{rUK}
-    \item Two governments: Westminister \& Holyrood
-    \item Barnett formula
-    \item Oil sector
-    \item Calvo staggered prices and wages, considers capital and investment
-    \item Does not consider migration (they say it would make the model too complicated)
-    \item They assume that Scotland and rUK jointly are a small open economy, whereas I model both economies as SOE
-\end{enumerate}
-\pagebreak
-Key equations. Non-asterisk terms refer to Scotland, and asterisk terms refer to the rest of the UK. \\
-
-NK Phillips Curves:
-\begin{align*}
-    \pi_t &= \chi_{\pi}\E_t\{ \pi_{t+1} \} + (1-\chi_{\pi})\E_t\{ \pi^*_{t+1} \} + \kappa \tilde{y}_t \\
-    \pi^*_t &= \chi^*_{\pi}\E_t\{ \pi^*_{t+1} \} + (1-\chi^*_{\pi})\E_t\{ \pi_{t+1} \} + \kappa^* \tilde{y}^*_t
-\end{align*}
-
-Dynamic IS Curves:
-\begin{align*}
-    \tilde{y}_t &= \chi_{y}\E_t \{ \tilde{y}_{t+1} \} + (1-\chi_{y}) \E_t \{ \tilde{y}^*_{t+1} \} - {\sigma}^{-1}(i^*_t-(\chi_{\pi}\E_t\{ \pi_{t+1} \} + (1-\chi_{\pi})\E_t\{ \pi^*_{t+1} \}) - i_t^{nat}) \\
-    \tilde{y}^*_t &= \chi^*_{y}\E_t \{ \tilde{y}^*_{t+1} \} + (1-\chi^*_{y}) \E_t \{ \tilde{y}_{t+1} \} - {\sigma^*}^{-1}(i^*_t-(\chi^*_{\pi}\E_t\{ \pi^*_{t+1} \} + (1-\chi^*_{\pi})\E_t\{ \pi_{t+1} \}) - i_t^{*nat})
-\end{align*}
-
-Monetary Policy Rule
-\begin{align*}
-    i^*_t &= \rho_i i^*_{t-1} + (1-\rho_i)(\phi_{\pi}(\varpi\pi_t + (1-\varpi)\pi^*_t) + \phi_{y}(\varpi \tilde{y}_t + (1-\varpi)\tilde{y}^*_t)) + \epsilon_{i,t}
-\end{align*}
-
-Estimated parameters
-\begin{align*}
-    \chi_{\pi} \sim \text{Beta}(\varpi, 0.03) && \chi^*_{\pi} \sim \text{Beta}((1-\varpi), 0.03)\\
-    \chi_{y} \sim \text{Beta}(\varpi, 0.03) && \chi^*_{y} \sim \text{Beta}((1-\varpi), 0.03)
-\end{align*}
-
-Weights are given by:
-\begin{equation*}
-    \varpi = \frac{\sum_{t=1998Q1}^{2007Q4} \{\text{Population aged 14-65 in Scotland}\}_t}{\sum_{t=1998Q1}^{2007Q4} \{\text{Population aged 14-65 in the UK}\}_t} = 0.0862
-\end{equation*}
-
-\textbf{OR}
-
-Estimated parameters
-\begin{align*}
-    \chi_{\pi} \sim \text{Beta}(\varpi, 0.03) && \chi^*_{\pi} \sim \text{Beta}(\varpi^*, 0.03)\\
-    \chi_{y} \sim \text{Beta}(\varpi, 0.03) && \chi^*_{y} \sim \text{Beta}(\varpi^*, 0.03)
-\end{align*}
-
-Weights are given by:
-\begin{align*}
-    \varpi = \frac{1}{T}\sum\limits_{t=1998Q1}^{T=2007Q4}\text{Scotland's import from rUK} \\
-    \varpi^* = \frac{1}{T}\sum\limits_{t=1998Q1}^{T=2007Q4}\text{rUK's import from Scotland}
-\end{align*}
 
 \pagebreak
 \import{.}{scenarios.tex}
 \pagebreak
-\tiny
 \subsection*{Tax Revenue}
 \begin{align*}
     T^*_t &= \varpi\tau_t W_t N_t + (1-\varpi)\tau_t W^*_t N^*_t \\
@@ -92,25 +45,6 @@ Weights are given by:
 \begin{equation}
     \dboxed{\tilde{T}^*_t = \tau\frac{ W N}{T^*}\times \varpi (\tilde{\tau}_t + \tilde{W}_t + \tilde{N}_t) + \tau \frac{ W^* N^*}{T^*} \times (1-\varpi) (\tilde{\tau}_t+\tilde{W}^*_t+\tilde{N}^*_t)}
 \end{equation}
-
-\begin{align}
-    C_t^\sigma N_t^\varphi &= \frac{W_t}{P_t}(1-\tau_t) \\
-    C_t^\sigma N_t^\varphi &= \frac{W_t}{P_t} - \frac{W_t}{P_t}\tau_t \\
-    C^\sigma N^\varphi &= \frac{W}{P} - \frac{W}{P}\tau \label{eq:real_wage_ss} \quad \text{(Steady state)}\\
-    &\text{Using Uhlig's (1999) method, $X_tY_t \approx XY\mathbf{e}^{\tilde{X}_t + \tilde{Y}_t}$, }\\
-    &\text{...and since $\tau_t$ is tax rate (percentage), we do not need to take logs of it: }\\
-    C^\sigma N^\varphi\mathbf{e}^{\sigma c_t + \varphi n_t} &= \frac{W}{P}\mathbf{e}^{w_t - p_t} - \frac{W}{P}\tau \mathbf{e}^{w_t - p_t} - \tilde{\tau}_t\\
-    &\text{Using $\mathbf{e}^{\tilde{X}_t} \approx 1 + {\tilde{X}_t}$: }\\
-    C^\sigma N^\varphi({1+\sigma c_t + \varphi n_t}) &= \frac{W}{P}({1+ w_t - p_t}) - \frac{W}{P}\tau ({1+ w_t - p_t}) - \tilde{\tau}_t\\
-    &\text{Subtract (\ref{eq:real_wage_ss}): } \\
-    C^\sigma N^\varphi({\sigma c_t + \varphi n_t}) &= \frac{W}{P}({w_t - p_t}) - \frac{W}{P}\tau ({w_t - p_t }) - \tilde{\tau}_t\\
-    C^\sigma N^\varphi({\sigma c_t + \varphi n_t}) &= \frac{W}{P}\left[({w_t - p_t}) - \tau ({w_t - p_t}) - \tilde{\tau}_t\right]\\
-    C^\sigma N^\varphi({\sigma c_t + \varphi n_t}) &= \frac{W}{P}\left[(1-\tau)({w_t - p_t}) - \tilde{\tau}_t\right]\\
-    C^\sigma N^\varphi \frac{P}{W} ({\sigma c_t + \varphi n_t})  &= \left[(1-\tau)({w_t - p_t}) - \tilde{\tau}_t\right]\\
-    (1-\tau)({\sigma c_t + \varphi n_t})  &= \left[(1-\tau)({w_t - p_t}) - \tilde{\tau}_t\right]\\
-    {\sigma c_t + \varphi n_t}  &= {w_t - p_t} - \frac{1}{1-\tau}\tilde{\tau}_t\\
-\end{align}
-\pagebreak
 
 \begin{align}
     y_t &= a_t + (1-\alpha)n_t\\

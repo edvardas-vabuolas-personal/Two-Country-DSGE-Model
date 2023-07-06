@@ -1,27 +1,72 @@
-``No. of governments'': Number of governments that can issue bonds and accrue debt to fund public services. In all scenarios, government spending is assumed to be an AR(1) exogenous process.
-\begin{enumerate}
-    \item Scenario 1
-    \begin{enumerate}
-        \item No. of governments: 1
-        \item Public expenses funded by (wasteful) \underline{lump-sum tax}
-    \end{enumerate}
-    \item Scenario 2
-    \begin{enumerate}
-        \item No. of governments: 2
-        \item Public expenses funded by (wasteful) \underline{lump-sum tax}
-    \end{enumerate}
-    \item Scenario 3
-    \begin{enumerate}
-        \item No. of governments: 1
-        \item Public expenses funded by (distortionary) \underline{income tax}
-    \end{enumerate}
-    \item Scenario 4
-    \begin{enumerate}
-        \item No. of governments: 2
-        \item Public expenses funded by (distortionary) \underline{income tax}
-    \end{enumerate}
-\end{enumerate}
-\pagebreak
+\newgeometry{left=0.5cm,bottom=1cm,right=0.5cm,top=1cm}
+
+\renewcommand{\arraystretch}{10}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{l|l c}
+    \makecell{Scenario 1 \\ (G: 2, $\tau: 0$)} &  \makecell{S HBC: \\ rUK HBC: \\ S GBC: \\ rUK GBC: \\ S TR: \\ rUK TR: \\ S Debt s.:\\ rUK Debt s.:\\ S Bonds: \\ rUK Bonds: \\ S RC: \\ rUK RC:} & 
+        \makecell{
+            $P_t C_t + \E_t [{R^{-1}_{t+1}}B_{t+1}] = B_t + W_t N_t + T_t$ \\
+            $P^*_t C^*_t + \E_t [{R^{*-1}_{t+1}}B^*_{t+1}] = B^*_t + W^*_t N^*_t + T^*_t$ \\
+            $\E_t [{R^{-1}_{t+1}}B_{t+1}] + T_t = P_tG_t + B_t$\\
+            $\E_t [{R^{*-1}_{t+1}}B^*_{t+1}] + T^*_t = P^*_tG^*_t + B^*_t$ \\
+            $T_t = P_tG_t$ \\
+            $T^*_t = P_tG^*_t$ \\
+            $T_t / P_t = \phi^*_g G_Y g_t + \phi^*_b(B_t / P_t); \quad G_Y = 0$\\
+            $T^*_t / P^*_t = \phi^*_g G^*_Y g^*_t + \phi^*_b(B^*_t / P^*_t); \quad G_Y = 0$\\
+            $(B_{t+1} / P_t) / R_{t+1} = (1-\phi_g) G_Y g_t + (1-\phi_b)(B_t / P_t); \quad G_Y = 0$\\
+            $(B^*_{t+1} / P^*_t) / R^*_{t+1} = (1-\phi^*_g) G^*_Y g^*_t + (1-\phi^*_b)(B^*_t / P^*_t); \quad G^*_Y = 0$\\
+            $Y_t = C_t + G_t + X_t$ \\
+            $Y^*_t = C^*_t + G^*_t + X^*_t$
+        }  \\ 
+    \makecell{Scenario 2 \\ (G: 1, $\tau: 0$)} &  \makecell{S HBC: \\ rUK HBC: \\ S GBC: \\ rUK GBC: \\ S TR: \\ rUK TR:\\ S Debt s.:\\ rUK Debt s.:\\ S Bonds: \\ rUK Bonds: \\ S RC: \\ rUK RC:} & 
+        \makecell{
+            $P_t C_t + \E_t [{R^{UK-1}_{t+1}}B^{UK}_{t+1}] = B^{UK}_t + W_t N_t + \varpi T^{UK}_t$ \\
+            $P^*_t C^*_t + \E_t [{R^{UK-1}_{t+1}}B^{UK}_{t+1}] = B^{UK}_t + W^*_t N^*_t + (1-\varpi)T^{UK}_t$ \\
+            N/A\\
+            $\E_t [{R^{UK-1}_{t+1}}B^{UK}_{t+1}] + T^{UK}_t = P^{UK}_tG^{UK}_t + B^{UK}_t$\\
+            N/A \\
+            $T^{UK}_t = P^{UK}_tG^{UK}_t$ \\
+            N/A\\
+            $T^{UK}_t / P^{UK}_t = \phi^{UK}_g G^{UK}_Y g^{UK}_t + \phi^{UK}_b(B^{UK}_{t+1} / P^{UK}_t); \quad G^{UK}_Y = 0$\\
+            N/A\\
+            $(B^{UK}_t / P^{UK}_t) / R^{UK}_{t+1} = (1-\phi^{UK}_g) G^{UK}_Y g^{UK}_t + (1-\phi^{UK}_b)(B^{UK}_t / P^{UK}_t); \quad G^{UK}_Y = 0$\\
+            $Y_t = C_t + \varpi G^{UK}_t + X_t$ \\
+            $Y^*_t = C^*_t + (1-\varpi) G^{UK}_t + X^*_t$
+        }   \\ 
+    \makecell{Scenario 3 \\ (G: 2, $\tau: 1$)} &  \makecell{S HBC: \\ rUK HBC: \\ S GBC: \\ rUK GBC: \\ S TR: \\ rUK TR: \\ S Debt s.:\\ rUK Debt s.:\\ S Bonds: \\ rUK Bonds: \\ S RC: \\ rUK RC:} & 
+    \makecell{
+        $P_t C_t + \E_t [{R^{-1}_{t+1}}B_{t+1}] = B_t + (1-\tau_t)W_t N_t + T_t$ \\
+        $P^*_t C^*_t + \E_t [{R^{*-1}_{t+1}}B^*_{t+1}] = B^*_t + (1-\tau^*_t)W^*_t N^*_t + T^*_t$ \\
+        $\E_t [{R^{-1}_{t+1}}B_{t+1}] + T_t = P_tG_t + B_t$\\ 
+        $\E_t [{R^{*-1}_{t+1}}B^*_{t+1}] + T^*_t = P^*_tG^*_t + B^*_t$\\ 
+        $T_t = \tau_t W_t N_t$ \\
+        $T^*_t = \tau^*_t W^*_t N^*_t$ \\
+        $T_t / P_t = \phi^*_g G_Y g_t + \phi^*_b(B_t / P_t); \quad G_Y = \tau$\\
+        $T^*_t / P^*_t = \phi^*_g G^*_Y g^*_t + \phi^*_b(B^*_t / P^*_t); \quad G_Y = \tau^*$\\
+        $(B_{t+1} / P_t) / R_{t+1} = (1-\phi_g) G_Y g_t + (1-\phi_b)(B_t / P_t); \quad G_Y = \tau$\\
+        $(B^*_{t+1} / P^*_t) / R^*_{t+1} = (1-\phi^*_g) G^*_Y g^*_t + (1-\phi^*_b)(B^*_t / P^*_t); \quad G^*_Y = \tau^*$\\
+        $Y_t = C_t + G_t + X_t$ \\
+        $Y^*_t = C^*_t + G^*_t + X^*_t$
+    }  \\
+    \makecell{Scenario 4 \\ (G: 1, $\tau: 1$)} &  \makecell{S HBC: \\ rUK HBC: \\ S GBC: \\ rUK GBC: \\ S TR: \\ rUK TR: \\ S Debt s.:\\ rUK Debt s.:\\ S Bonds: \\ rUK Bonds: \\ S RC: \\ rUK RC:} & 
+    \makecell{
+        $P_t C_t + \E_t [{R^{UK-1}_{t+1}}B^{UK}_{t+1}] = B^{UK}_t + (1-\tau^{UK}_t)W_t N_t + \varpi T^{UK}_t$ \\
+        $P^*_t C^*_t + \E_t [{R^{UK-1}_{t+1}}B^{UK}_{t+1}] = B^{UK}_t + (1-\tau^{UK}_t)W^*_t N^*_t + (1-\varpi)T^{UK}_t$ \\
+        N/A \\
+        $\E_t [{R^{UK-1}_{t+1}}B^{UK}_{t+1}] + T^{UK}_t = P^{UK}_tG^{UK}_t + B^{UK}_t$\\ 
+        N/A \\
+        $T^{UK}_t = \varpi\tau^{UK}_t W_t N_t + (1-\varpi)\tau^{UK}_t W^*_t N^*_t$ \\
+        N/A\\
+        $T^{UK}_t / P^{UK}_t = \phi^{UK}_g G^{UK}_Y g^{UK}_t + \phi^{UK}_b(B^{UK}_t / P^{UK}_t); \quad G^{UK}_Y = \tau^{UK}$\\
+        N/A\\
+        $(B^{UK}_{t+1} / P^{UK}_t) / R^{UK}_{t+1} = (1-\phi^{UK}_g) G^{UK}_Y g^{UK}_t + (1-\phi^{UK}_b)(B^{UK}_t / P^{UK}_t); \quad G^{UK}_Y = \tau^{UK}$\\
+        $Y_t = C_t + \varpi G^{UK}_t$ \\
+        $Y^*_t = C^*_t + (1-\varpi) G^{UK}_t$
+    }  
+    \end{tabular}
+    \end{table}
+where:
 \begin{table}[H]
     \centering
     \begin{tabular}{c|c}
@@ -47,57 +92,33 @@
         }
     \end{tabular}
 \end{table}
-\begin{align}
-    &\max\limits_{C_t, N_t, B_t/B^*_t} \E_t \left\{\sum^{\infty}_{t=0} \  \mathcal{U}(C_t, N_t)\right\} \\
-&s.t. \nonumber
-\end{align}
-\renewcommand{\arraystretch}{8}
+
+\restoregeometry
+
+\renewcommand{\arraystretch}{2}
+
 \begin{table}[H]
     \centering
-    \begin{tabular}{l|l c}
-    \makecell{Scenario 1 \\ (G: 2, $\tau_n: 0$)} &  \makecell{S HBC: \\ rUK HBC: \\ S GBC: \\ rUK GBC: \\ S TR: \\ rUK TR: \\ S RC: \\ rUK RC:} & 
+    \begin{tabular}{l|l|c}
+    \makecell{Scenario 1 \\ (G: 2, $\tau: 0$)} & \makecell{Scotland \\ rUK } & 
         \makecell{
             $P_t C_t + \E_t [{R^{-1}_{t+1}}B_{t+1}] = B_t + W_t N_t + T_t$ \\
-            $P^*_t C^*_t + \E_t [{R^{*-1}_{t+1}}B^*_{t+1}] = B^*_t + W^*_t N^*_t + T^*_t$ \\
-            $\E_t [{R^{-1}_{t+1}}B_{t+1}] + T_t = P_tG_t + B_t$\\
-            $\E_t [{R^{*-1}_{t+1}}B^*_{t+1}] + T^*_t = P^*_tG^*_t + B^*_t$ \\
-            $T_t = G_t$ \\
-            $T^*_t = G^*_t$ \\
-            $Y_t = C_t + G_t$ \\
-            $Y^*_t = C^*_t + G^*_t$
+            $P^*_t C^*_t + \E_t [{R^{*-1}_{t+1}}B^*_{t+1}] = B^*_t + W^*_t N^*_t + T^*_t$
         }  \\ 
-    \makecell{Scenario 2 \\ (G: 1, $\tau_n: 0$)} &  \makecell{S HBC: \\ rUK HBC: \\ S GBC: \\ rUK GBC: \\ S TR: \\ rUK TR: \\ S RC: \\ rUK RC:} & 
+    \makecell{Scenario 2 \\ (G: 1, $\tau: 0$)} & \makecell{Scotland \\ rUK } & 
         \makecell{
-            $P_t C_t + \E_t [{R^{*-1}_{t+1}}B^*_{t+1}] = B^*_t + W_t N_t + \varpi T^*_t$ \\
-            $P^*_t C^*_t + \E_t [{R^{*-1}_{t+1}}B^*_{t+1}] = B^*_t + W^*_t N^*_t + (1-\varpi)T^*_t$ \\
-            N/A\\
-            $\E_t [{R^{*-1}_{t+1}}B^*_{t+1}] + T^*_t = P^*_tG^*_t + B^*_t$\\
-            N/A \\
-            $T^*_t = P^*_tG^*_t$ \\
-            $Y_t = C_t + \varpi G^*_t$ \\
-            $Y^*_t = C^*_t + (1-\varpi) G^*_t$
+            $P_t C_t + \E_t [{R^{UK-1}_{t+1}}B^{UK}_{t+1}] = B^{UK}_t + W_t N_t + \varpi T^{UK}_t$ \\
+            $P^*_t C^*_t + \E_t [{R^{UK-1}_{t+1}}B^{UK}_{t+1}] = B^{UK}_t + W^*_t N^*_t + (1-\varpi)T^{UK}_t$
         }   \\ 
-    \makecell{Scenario 3 \\ (G: 2, $\tau_n: 1$)} &  \makecell{S HBC: \\ rUK HBC: \\ S GBC: \\ rUK GBC: \\ S TR: \\ rUK TR: \\ S RC: \\ rUK RC:} & 
+    \makecell{Scenario 3 \\ (G: 2, $\tau: 1$)} & \makecell{Scotland \\ rUK } & 
     \makecell{
-        $P_t C_t + \E_t [{R^{-1}_{t+1}}B_{t+1}] = B_t + (1-\tau_n)W_t N_t + T_t$ \\
-        $P^*_t C^*_t + \E_t [{R^{*-1}_{t+1}}B^*_{t+1}] = B^*_t + (1-\tau_n)W^*_t N^*_t + T^*_t$ \\
-        $\E_t [{R^{-1}_{t+1}}B_{t+1}] + T_t = P_tG_t + B_t$\\ 
-        $\E_t [{R^{*-1}_{t+1}}B^*_{t+1}] + T^*_t = P^*_tG^*_t + B^*_t$\\ 
-        $T_t = \tau_n W_t N_t$ \\
-        $T^*_t = \tau_n W^*_t N^*_t$ \\
-        $Y_t = C_t + G_t$ \\
-        $Y^*_t = C^*_t + G^*_t$
+        $P_t C_t + \E_t [{R^{-1}_{t+1}}B_{t+1}] = B_t + (1-\tau_t)W_t N_t + T_t$ \\
+        $P^*_t C^*_t + \E_t [{R^{*-1}_{t+1}}B^*_{t+1}] = B^*_t + (1-\tau^*_t)W^*_t N^*_t + T^*_t$ 
     }  \\
-    \makecell{Scenario 4 \\ (G: 1, $\tau_n: 1$)} &  \makecell{S HBC: \\ rUK HBC: \\ S GBC: \\ rUK GBC: \\ S TR: \\ rUK TR: \\ S RC: \\ rUK RC:} & 
+    \makecell{Scenario 4 \\ (G: 1, $\tau: 1$)} & \makecell{Scotland \\ rUK } & 
     \makecell{
-        $P_t C_t + \E_t [{R^{*-1}_{t+1}}B^*_{t+1}] = B^*_t + (1-\tau_n)W_t N_t + \varpi T_t$ \\
-        $P^*_t C^*_t + \E_t [{R^{*-1}_{t+1}}B^*_{t+1}] = B^*_t + (1-\tau_n)W^*_t N^*_t + (1-\varpi)T^*_t$ \\
-        N/A \\
-        $\E_t [{R^{*-1}_{t+1}}B^*_{t+1}] + T^*_t = P^*_tG^*_t + B^*_t$\\ 
-        N/A \\
-        $T^*_t = \varpi\tau_n W_t N_t + (1-\varpi)\tau_n W^*_t N^*_t$ \\
-        $Y_t = C_t + \varpi G^*_t$ \\
-        $Y^*_t = C^*_t + (1-\varpi) G^*_t$
+        $P_t C_t + \E_t [{R^{UK-1}_{t+1}}B^{UK}_{t+1}] = B^{UK}_t + (1-\tau^{UK}_t)W_t N_t + \varpi T^{UK}_t$ \\
+        $P^*_t C^*_t + \E_t [{R^{UK-1}_{t+1}}B^{UK}_{t+1}] = B^{UK}_t + (1-\tau^{UK}_t)W^*_t N^*_t + (1-\varpi)T^{UK}_t$
     }  
     \end{tabular}
     \end{table}

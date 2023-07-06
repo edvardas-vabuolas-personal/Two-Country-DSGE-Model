@@ -4,14 +4,9 @@
 \usetikzlibrary{positioning,fit}
 \addbibresource{DissertationDSGE.bib}
 \usepackage{svg}
-% \usepackage{epstopdf}
-% \usepackage{epsfig}
 \begin{document}
 \begin{sloppypar}
 \import{./Title Page/}{title_page.tex}
-\import{.}{model.tex}
-% \includegraphics[scale=0.5]{./Graphs/Priors_Posteriors.png}
-% \import{./Graphs}{estimated_params.tex}
 \pagebreak
 \import{.}{structure.tex}
 \pagebreak
@@ -26,12 +21,17 @@
 \import{./Theoretical DSGE model}{firms.tex}
 \import{./Theoretical DSGE model}{equilibrium.tex}
 \section{Application} \label{application}
-\import{./Graphs}{data_graphs.tex}
-\import{./Graphs}{dynare_data_graphs.tex}
+% \import{./Graphs}{data_graphs.tex}
+% \import{./Graphs}{dynare_data_graphs.tex}
 \section{Results}
 \section{Conclusion}
-\section{Bibliography}
-\printbibliography
+% \section{Bibliography}
+% \printbibliography
 \section{Appendix}
+\appendix 
+\renewcommand{\theequation}{A.\arabic{equation}}
+\import{./Appendix}{intratemporal_loglinear.tex}
+\import{.}{model.tex}
+
 \end{sloppypar}
 \end{document}

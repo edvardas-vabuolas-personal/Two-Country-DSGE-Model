@@ -196,42 +196,6 @@
       \verb 10.1257/jep.21.4.25
       \endverb
     \endentry
-    \entry{kolasa_2009_structural}{article}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=4f31efd614c53750306e03c5e9bbabfa}{%
-           family={Kolasa},
-           familyi={K\bibinitperiod},
-           given={Marcin},
-           giveni={M\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{4f31efd614c53750306e03c5e9bbabfa}
-      \strng{fullhash}{4f31efd614c53750306e03c5e9bbabfa}
-      \strng{bibnamehash}{4f31efd614c53750306e03c5e9bbabfa}
-      \strng{authorbibnamehash}{4f31efd614c53750306e03c5e9bbabfa}
-      \strng{authornamehash}{4f31efd614c53750306e03c5e9bbabfa}
-      \strng{authorfullhash}{4f31efd614c53750306e03c5e9bbabfa}
-      \field{sortinit}{K}
-      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Economic Modelling}
-      \field{month}{11}
-      \field{title}{Structural heterogeneity or asymmetric shocks? Poland and the euro area through the lens of a two-country DSGE model}
-      \field{urlday}{1}
-      \field{urlmonth}{3}
-      \field{urlyear}{2020}
-      \field{volume}{26}
-      \field{year}{2009}
-      \field{urldateera}{ce}
-      \field{pages}{1245\bibrangedash 1269}
-      \range{pages}{25}
-      \verb{doi}
-      \verb 10.1016/j.econmod.2009.06.001
-      \endverb
-    \endentry
     \entry{kydland_1982_time}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=6be288a40283930f05891739c0e64875}{%
@@ -304,6 +268,50 @@
       \range{pages}{34}
       \verb{doi}
       \verb 10.1016/0167-2231(86)90035-7
+      \endverb
+    \endentry
+    \entry{rabanal_2010_eurodollar}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=72052fb946d5418a3621ba3f19980b83}{%
+           family={Rabanal},
+           familyi={R\bibinitperiod},
+           given={Pau},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f00bf881108016ca2ae1f595e8ee548a}{%
+           family={Tuesta},
+           familyi={T\bibinitperiod},
+           given={Vicente},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b2e163c795b40be6e0e21476a8d5b227}
+      \strng{fullhash}{b2e163c795b40be6e0e21476a8d5b227}
+      \strng{bibnamehash}{b2e163c795b40be6e0e21476a8d5b227}
+      \strng{authorbibnamehash}{b2e163c795b40be6e0e21476a8d5b227}
+      \strng{authornamehash}{b2e163c795b40be6e0e21476a8d5b227}
+      \strng{authorfullhash}{b2e163c795b40be6e0e21476a8d5b227}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Economic Dynamics and Control}
+      \field{title}{Euro-dollar real exchange rate dynamics in an estimated two-country model: An assessment}
+      \field{urlday}{14}
+      \field{urlmonth}{6}
+      \field{urlyear}{2023}
+      \field{volume}{34}
+      \field{year}{2010}
+      \field{urldateera}{ce}
+      \field{pages}{780\bibrangedash 797}
+      \range{pages}{18}
+      \verb{urlraw}
+      \verb https://econpapers.repec.org/RePEc:eee:dyncon:v:34:y:2010:i:4:p:780-797
+      \endverb
+      \verb{url}
+      \verb https://econpapers.repec.org/RePEc:eee:dyncon:v:34:y:2010:i:4:p:780-797
       \endverb
     \endentry
     \entry{ricci_2019_essays}{misc}{}

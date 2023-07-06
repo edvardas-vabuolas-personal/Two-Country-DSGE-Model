@@ -1,0 +1,16 @@
+\begin{equation}
+    \frac{V_{t,t+1}}{P_t}C_{t}^{-\sigma} = \xi_{t,t+1} \beta C_{t+1}^{-\sigma} \frac{1}{P_{t+1}} \label{eq:introduces_arrow_securities}
+\end{equation}
+Where $V_{t,t+1}$ is an Arrow security and $\xi_{t,t+1}$ is the probability that the Arrow security will yield a payoff next period. Interpretation: LHS is paying for the security (expenses) in terms of consumption at $P_t$ prices. RHS is the payoff if the Arrow security yields a payoff. The consumer will only be willing to pay LHS if the payoff is at least as big on the RHS.
+Given that:
+\begin{equation}
+    Q_{t,t+1} = \frac{V_{t,t+1}}{\xi_{t,t+1}}
+\end{equation}
+\begin{align}
+    \frac{V_{t,t+1}}{P_t}C_{t}^{-\sigma} = \xi_{t,t+1} \beta C_{t+1}^{-\sigma} \frac{1}{P_{t+1}} \\
+    Q_{t,t+1} = \beta \left(\frac{C_{t+1}}{C_{t}}\right)^{-\sigma} \frac{P_t}{P_{t+1}}           \\
+    \E_t [Q_{t,t+1}] = \beta \E_t\left[\left(\frac{C_{t+1}}{C_{t}}\right)^{-\sigma} \frac{P_t}{P_{t+1}}\right]
+\end{align}
+\begin{align}
+    \beta\E_t\left[\left(\frac{C_{t+1}}{C_{t}}\right)^{-\sigma} \left(\frac{P_{t}}{ P_{t+1}}\right)\right] \label{eq:euler_equation}                = Q_t &  & \text{Euler equation}
+\end{align}
