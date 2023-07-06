@@ -1,7 +1,7 @@
 % monetary_union: 0 - Standard NK Phillips Curves and Dynamic IS curves, 2 interest rates; 1 - Price passthrough and unified monetary authority
 @#define monetary_union = 1
 
-@#define scenario = 1
+@#define scenario = 4
 
 % no_of_govs: 1 - One government budget constraint; 2 - Two government budget constraints
 % labour_tax: 0 - Lump-Sum; 1 - Distortionary taxes (labour tax)
@@ -29,6 +29,7 @@
 
 % mcmc: 0 - do not estimate (use pre-defined parameters); 1 - estimate (use calibrated parameters)
 @#define mcmc = 0
+
 % shock_type: 1 - monetary; 2 - fiscal
 @#define shock_type = 2
 
@@ -85,7 +86,7 @@ a_f           ${a^f}$           (long_name='AR(1) technology shock process')
 z_f           ${z^f}$           (long_name='AR(1) preference shock process')
 wp_f          ${wp^f}$           (long_name='Real Wage')
 
-pi_uk
+p_h_uk
 
 % Fiscal Policy
 @#if no_of_govs == 2
@@ -136,7 +137,7 @@ interest_uk    ${i^f}$           (long_name='Interest Rate (UK)')
     w_obs_ruk          ${w^{OBS, ruk}}$           (long_name='Observed Wage (RUK)')
     pi_obs_ruk         ${\pi^{OBS, ruk}}$           (long_name='Observed Inflation (RUK)')
 
-    /* i_obs          ${i^{OBS, uk}}$           (long_name='Observed Interest Rate (UK)') */
+    i_obs          ${i^{OBS, uk}}$           (long_name='Observed Interest Rate (UK)')
 @#endif
 
 ;
@@ -186,7 +187,7 @@ p_star       ${p^*}$                 (long_name='world price level')
     w_obs_ruk_me       ${\varepsilon_w^{ME, RUK}}$     (long_name='Observed Wage ME (RUK)')
     pi_obs_ruk_me       ${\varepsilon_{\pi}^{ME}}$     (long_name='Observed Inflation ME (RUK)')
     
-    /* i_obs_me       ${\varepsilon_i^{ME}}$     (long_name='Observed Interest Rate ME (UK)') */
+    i_obs_me       ${\varepsilon_i^{ME}}$     (long_name='Observed Interest Rate ME (UK)')
 @#endif
 
 ;
@@ -315,14 +316,19 @@ B_Y_SS_f = B_Y_SS;
 TR_Y_SS = 0.4;
 TR_Y_SS_f = TR_Y_SS;
 
-G_Y_SS = 0.25;
+@#if labour_tax == 1
+    G_Y_SS = 0.25;
+@#else
+    G_Y_SS = 0;
+@#endif
+
 G_Y_SS_f = G_Y_SS;
 
 @#if no_of_govs == 2
     rho_g = 0.966;
     rho_g_f = rho_g;
 
-    phi_b = 0.01;
+    phi_b = 0.25;
     phi_g = 0.09;
     phi_b_f = phi_b;
     phi_g_f = phi_g;
@@ -511,16 +517,16 @@ y_star - y_star(-1) = rho_y_star * (y_star(-1) - y_star(-2)) + eps_y_star;
     tr_f - p_h_f = phi_g_f * G_Y_SS_f * g_f +  phi_b_f * (b_f - p_h_f);
 @#else
     [name='Debt Stabilising']
-    tr_uk - pi_uk = phi_g_uk * (pop * G_Y_SS + (1 - pop) * G_Y_SS_f) * g_uk + phi_b_uk * (b_uk - pi_uk);
+    tr_uk - p_h_uk = phi_g_uk * (pop * G_Y_SS + (1 - pop) * G_Y_SS_f) * g_uk + phi_b_uk * (b_uk - p_h_uk);
 @#endif
 
 @#if no_of_govs == 2
     [name='Bonds determined by budget constraint']
-    betta * (b(+1) - p_h - interest(+1))  = (1 - phi_b) * (b - p_h) + G_Y_SS*(1 - phi_g) * g;
+    betta * (b(+1) - p_h - interest(+1))  = (1 - phi_b) * (b - pi_h) + G_Y_SS*(1 - phi_g) * g;
     betta_f * (b_f(+1) - p_h_f - interest_f(+1)) =  (1 - phi_b_f) * (b_f - p_h_f) + G_Y_SS_f * (1 - phi_g_f) * g_f;
 @#else
     [name='Bonds determined by budget constraint']
-    betta_f * (b_uk(+1) - pi_uk - interest_f(+1)) = (1 - phi_b_uk) * (b_uk - pi_uk) + (pop * G_Y_SS + (1 - pop) * G_Y_SS_f) * (1 - phi_g_uk) * g_uk;
+    betta_f * (b_uk(+1) - p_h_uk - interest_uk(+1)) = (1 - phi_b_uk) * (b_uk - p_h_uk) + (pop * G_Y_SS + (1 - pop) * G_Y_SS_f) * (1 - phi_g_uk) * g_uk;
 @#endif
 
 @#if no_of_govs == 2
@@ -596,7 +602,7 @@ d_er = er - er(-1);
 d_er_f = er_f - er_f(-1);
 
 [name='Inflation in the UK']
-pi_uk = pop * p_h + (1 - pop) * p_h_f;
+p_h_uk = pop * p_h + (1 - pop) * p_h_f;
 
 [name='Definition Real Wage']
 wp = w - p_h;
@@ -614,7 +620,7 @@ wp_f = w_f - p_h_f;
     c_obs_ruk = c_f - c_f(-1) + c_obs_ruk_me;
     w_obs_ruk = w_f - w_f(-1) + w_obs_ruk_me;
     pi_obs_ruk = pi_f + pi_obs_ruk_me;
-    /* i_obs = interest_uk - interest_uk(-1) + i_obs_me; */
+    i_obs = interest_uk - interest_uk(-1) + i_obs_me;
 @#endif
 /* ###### ESTIMATION END ###### */
 
@@ -624,28 +630,41 @@ end;
 %  define shock variances
 %---------------------------------------------------------------
 shocks;
-/* var eps_a = 0.25^2;
-var eps_a_f = 0.25^2;
+@#if mcmc == 0
+    /* var eps_a = 0.25^2; */
+    /* var eps_a_f = 0.25^2; */
 
-var eps_z = 0.25^2;
-var eps_z_f = 0.25^2;
+    /* var eps_z = 0.25^2; */
+    /* var eps_z_f = 0.25^2; */
 
-var eps_y_star = 0.25^2;
-var p_star = 0.25^2; */
-@#if shock_type == 2
-    @#if no_of_govs == 2
-        var eps_g = 0.25;
-        var eps_g_f = 0.25;
+    /* var eps_y_star = 0.25^2; */
+    /* var p_star = 0.25^2; */
+    @#if shock_type == 2
+        @#if no_of_govs == 2
+            var eps_g = 0.25;
+            var eps_g_f = 0.25;
+        @#else
+            var eps_g_uk = 0.25^2;
+        @#endif
     @#else
-        var eps_g_uk = 0.25^2;
+        @#if monetary_union == 1
+            var eps_nu_uk = 0.25^2;
+        @#else
+            var eps_nu = 0.25^2;
+            var eps_nu_f = 0.25^2;
+        @#endif
     @#endif
 @#else
-    @#if monetary_union == 1
-        var eps_nu_uk = 0.25^2;
-    @#else
-        var eps_nu = 0.25^2;
-        var eps_nu_f = 0.25^2;
-    @#endif
+    var eps_a = 0.25^2;
+    var eps_a_f = 0.25^2;
+
+    var eps_z = 0.25^2;
+    var eps_z_f = 0.25^2;
+
+    var eps_y_star = 0.25^2;
+    var p_star = 0.25^2;
+    var eps_g_uk = 0.25^2;
+    var eps_nu_uk = 0.25^2;
 @#endif
 
 end;
@@ -660,20 +679,27 @@ end;
     stderr c_obs_ruk_me,inv_gamma_pdf,0.01,2;
     stderr w_obs_ruk_me,inv_gamma_pdf,0.01,2;
     stderr pi_obs_ruk_me,inv_gamma_pdf,0.01,2;
-    /* stderr i_obs_me,inv_gamma_pdf,0.01,2; */
-    % Home country
-    % rho_a, beta_pdf, 0.7, 0.1;
-    % rho_y_star, beta_pdf, 0.7, 0.1;
-    % rho_z,beta_pdf,0.7,0.1;
+    stderr i_obs_me,inv_gamma_pdf,0.01,2;
+    
+    rho_a, beta_pdf, 0.7, 0.1;
+    rho_y_star, beta_pdf, 0.7, 0.1;
+    rho_z,beta_pdf,0.7,0.1;
 
-    % Foreign country
-    % rho_a_f, beta_pdf, 0.5, 0.2;
-    % rho_y_star_f, beta_pdf, 0.7, 0.1;
-    % rho_z_f,beta_pdf,0.7,0.1;
-    phi_pi, normal_pdf, 1.5, 0.1;
-    phi_y, normal_pdf, 0.5/4, 0.1;
-    phi_b, normal_pdf, 0.5, 0.2;
-    phi_g, normal_pdf, 0.1, 0.1;
+    rho_a_f, beta_pdf, 0.7, 0.1;
+    rho_y_star_f, beta_pdf, 0.7, 0.1;
+    rho_z_f,beta_pdf,0.7,0.1;
+
+    @#if no_of_govs == 2
+        phi_b, beta_pdf, 0.25, 0.1;
+        phi_g, beta_pdf, 0.1, 0.1;
+        phi_b_f, beta_pdf, 0.25, 0.1;
+        phi_g_f, beta_pdf, 0.1, 0.1;
+    @#else
+        phi_b_uk, beta_pdf, 0.25, 0.1;
+        phi_g_uk, beta_pdf, 0.1, 0.05;
+    @#endif
+    rho_g_uk, beta_pdf, 0.9, 0.05;
+    /* rho_nu, normal_pdf, 0.5, 0.1; */
     % theta, beta_pdf, 0.6, 0.25;
     % theta_f, beta_pdf, 0.6, 0.25;
     % siggma, gamma_pdf, 1.5, 0.25;
@@ -694,7 +720,7 @@ resid(1);
 steady;
 check;
 
-@#if scenario == 1
+@#if scenario == 1 && mcmc == 0
     @#if shock_type == 1
         stoch_simul(irf=201) interest interest_f interest_uk r_real r_real_f s s_f s_nat s_nat_f debt debt_f b b_f g g_f tr tr_f c c_f y y_f wp wp_f n n_f p_h p_h_f pi_h pi_h_f;
     @#else
@@ -703,9 +729,9 @@ check;
 @#else
     @#if scenario == 2
         @#if shock_type == 1
-            stoch_simul(irf=201) interest interest_f interest_uk s s_f s_nat s_nat_f debt_uk b_uk g_uk tr_uk c c_f y y_f wp wp_f n n_f p_h p_h_f pi_h pi_h_f;
+            stoch_simul(irf=201) interest interest_f interest_uk r_real r_real_f s s_f s_nat s_nat_f debt_uk b_uk g_uk tr_uk c c_f y y_f wp wp_f n n_f p_h p_h_f pi_h pi_h_f;
         @#else
-            stoch_simul(irf=200) interest interest_f interest_uk s s_f s_nat s_nat_f debt_uk b_uk g_uk tr_uk c c_f y y_f wp wp_f n n_f p_h p_h_f pi_h pi_h_f;
+            stoch_simul(irf=200) interest interest_f interest_uk r_real r_real_f s s_f s_nat s_nat_f debt_uk b_uk g_uk tr_uk c c_f y y_f wp wp_f n n_f p_h p_h_f pi_h pi_h_f;
         @#endif
     @#else
         @#if scenario == 3
