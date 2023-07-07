@@ -1,0 +1,118 @@
+\subsection{Government}
+
+As mentioned in the literature review, this dissertation makes two essential assumptions related to government spending: households are assumed to be Ricardian, and; government spending is non-productive. The latter follows from the fact that government spending does not enter the utility function nor the firm's production function. Therefore, government spending is equivalent to reducing the quantity of available resources. In line with most of the literature, deviations from the steady state government spending are assumed to be temporary, i.e. following an autoregressive process of order 1, as opposed to a permanent increase considered by Baxter and King (1993). Below is a typical budget constrained faced by the government every period:
+\begin{align}
+    \underbrace{\E_t [R^{-1}_tB_{t+1}] + P_t T_t}_{Revenue} = \underbrace{P_tG_t + B_t}_{Spending}
+\end{align}
+That is, government accrues revenue by collecting taxes in current prices $P_t T_t$ and by issuing bonds at current gross return rate $\E_t [R^{-1}_tB_{t+1}]$. The government needs to pay one unit of consumption good for each mature bond issued previous period $B_t$ and pay for its spending in current prices $P_t G_t$. The government budget constraint varies depending on the policy scenario considered:
+\begin{table}[H]
+    \renewcommand{\arraystretch}{2}
+    \centering
+    \begin{tabular}{l|l|c}
+    \makecell{Scen. 1 \\ G: 2, $\tau: 0$} & \makecell{Scot. \\ rUK } & 
+        \makecell{
+            $\E_t [R^{-1}_tB_{t+1}] + P_t T_t = P_tG_t + B_t$\\
+            $\E_t [{R^{*-1}_{t}}B^*_{t+1}] + P^*_tT^*_t = P^*_tG^*_t + B^*_t$
+        }  \\ 
+    \makecell{Scen. 2 \\ G: 1, $\tau: 0$} & \makecell{Scot. \\ rUK } & 
+        \makecell{
+            N/A\\
+            $\E_t [{R^{UK-1}_{t}}B^{UK}_{t+1}] + P^{UK}_tT^{UK}_t = P^{UK}_tG^{UK}_t + B^{UK}_t$
+        }   \\ 
+    \makecell{Scen. 3 \\ G: 2, $\tau: 1$} & \makecell{Scot. \\ rUK } & 
+    \makecell{
+        $\E_t [{R^{-1}_{t}}B_{t+1}] + P_tT_t = P_tG_t + B_t$\\ 
+        $\E_t [{R^{*-1}_{t}}B^*_{t+1}] + P^*_tT^*_t = P^*_tG^*_t + B^*_t$
+    }  \\
+    \makecell{Scen. 4 \\ G: 1, $\tau: 1$} & \makecell{Scot. \\ rUK } & 
+    \makecell{
+        N/A \\
+        $\E_t [{R^{UK-1}_{t}}B^{UK}_{t+1}] + P^{UK}_tT^{UK}_t = P^{UK}_tG^{UK}_t + B^{UK}_t$
+    }  
+    \end{tabular}
+\end{table}
+where $P^{UK}_t$ is a weighted sum of price levels in Scotland and the rest of the UK, i.e., $P^{UK}_t = \varpi P_t + (1-\varpi)P^*_t$. Similarly, a monetary union implies a single rate of gross return, which we define as $R^{UK}_t = \varpi R_t + (1-\varpi)R^*_t$.\footnote{Due to technical limitations (see limitations section), the dissertation modelled two countries as having individual nominal interest rates. However, in the budget constraints and debt-stabilising equations with one government, a weighted sum of the two interests rates was used. Conceptually, it is equivalent to having one UK-wide interest rate, where Scotland's interest rate ``influences'' UK-wide interest rate ($\varpi \approx 9\%$) but is primarily determined by the rest of the UK ($\varpi \approx 91\%$), so Scotland (almost) takes it as given.}. In each of the scenarios, the government tax revenue is accrued either by imposing lump-sum taxes or a labour tax:
+\begin{table}[H]
+    \renewcommand{\arraystretch}{2}
+    \centering
+    \begin{tabular}{l|l|c}
+    \makecell{Scen. 1 \\ G: 2, $\tau: 0$} & \makecell{Scot. \\ rUK } & 
+        \makecell{
+            $P_t T_t = P_tG_t$\\
+            $ P^*_tT^*_t = P^*_tG^*_t $
+        }  \\ 
+    \makecell{Scen. 2 \\ G: 1, $\tau: 0$} & \makecell{Scot. \\ rUK } & 
+        \makecell{
+            N/A\\
+            $P^{UK}_tT^{UK}_t = P^{UK}_tG^{UK}_t$
+        }   \\ 
+    \makecell{Scen. 3 \\ G: 2, $\tau: 1$} & \makecell{Scot. \\ rUK } & 
+    \makecell{
+        $P_tT_t = \tau_tW_t N_t$\\ 
+        $P^*_tT^*_t = \tau^*_tW^*_t N^*_t$
+    }  \\
+    \makecell{Scen. 4 \\ G: 1, $\tau: 1$} & \makecell{Scot. \\ rUK } & 
+    \makecell{
+        N/A \\
+        $P^{UK}_tT^{UK}_t = \varpi\tau^{UK}_tW_t N_t + (1-\varpi)\tau^{UK}_tW^*_t N^*_t$
+    }  
+    \end{tabular}
+    \caption{Tax revenue for each of the policy scenarios}
+\end{table}
+That is, in the case of lump-sum taxes, tax revenue simply equals government spending; similarly, in the case of labour taxes, tax revenue is a share ($ \tau_t \in [0,1]$) of nominal labour income. However, given that the two sources of income are close substitutes for the government (it can raise revenue either by raising taxes or by issuing bonds), tax revenue and budget constraint alone do not lead to a stable equilibrium (there are many ``solutions''). The governing of this relationship is captured by a fiscal rule of the following form:
+\begin{table}[H]
+    \renewcommand{\arraystretch}{2}
+    \centering
+    \begin{tabular}{l|l|c}
+    \makecell{Scen. 1 \\ G: 2, $\tau: 0$} & \makecell{Scot. \\ rUK } & 
+        \makecell{
+            $t_t = \phi_g G_Y g_t + \phi_b b_t$, \quad $G_Y = 0$\\
+            $t^*_t = \phi^*_g G^*_Y g^*_t + \phi^*_b b^*_t$, \quad $G^*_Y = 0$\\
+        }  \\ 
+    \makecell{Scen. 2 \\ G: 1, $\tau: 0$} & \makecell{Scot. \\ rUK } & 
+        \makecell{
+            N/A\\
+            $t^{UK}_t = \phi^{UK}_g G^{UK}_Y g^{UK}_t + \phi^{UK}_b b^{UK}_t$, \quad $G^{UK}_Y = 0$\\
+        }   \\ 
+    \makecell{Scen. 3 \\ G: 2, $\tau: 1$} & \makecell{Scot. \\ rUK } & 
+    \makecell{
+        $t_t = \phi_g G_Y g_t + \phi_b b_t$, \quad $G_Y = \tau$\\
+        $t^*_t = \phi^*_g G^*_Y g^*_t + \phi^*_b b^*_t$, \quad $G^*_Y = \tau^*$\\
+}  \\
+    \makecell{Scen. 4 \\ G: 1, $\tau: 1$} & \makecell{Scot. \\ rUK } & 
+    \makecell{
+        N/A \\
+        $t^{UK}_t = \phi^{UK}_g G^{UK}_Y g^{UK}_t + \phi^{UK}_b b^{UK}_t$, \quad $G^{UK}_Y = \tau^{UK}$\\
+        }  
+    \end{tabular}
+    \caption{Fiscal (debt-stabilising) rules for each of the policy scenarios}
+\end{table}
+where following Gali, Lopez-Salido, and Valles (2005), we define $g_t = \frac{G_t-G}{Y}$, $b_t = \frac{(B_t/P_{t-1}) - (B/P)}{Y}$, and $t_t = \frac{T_t - T}{Y}$. Moreover, we denote the government spending-to-GDP ratio as $G_Y$ and assume that in the steady state, the government's budget is balanced, i.e. $\frac{B}{Y} = 0$ and $G_Y = \tau$ if the government is funded by a labour tax and $G_Y=0$ otherwise. Each fiscal policy rule states that tax revenue responds to changes in government spending and government debt, where the responses depend on $\phi_b \in [0,1]$ and $\phi_g \in [0,1]$. Intuitively, setting $\phi_b = 0$ would imply that the government cannot issue bonds/borrow, and taxpayers would have to absorb any shock in government spending. At the same time, $\phi_g = 0$ would make government fund its spending solely by issuing bonds. Plugging fiscal rules into the log linearised government budget constraints yields:
+\begin{table}[H]
+    \renewcommand{\arraystretch}{2}
+    \centering
+    \begin{tabular}{l|l|c}
+    \makecell{Scen. 1 \\ G: 2, $\tau: 0$} & \makecell{Scot. \\ rUK } & 
+        \makecell{
+            $b_{t+1} = (1-\rho)(1-\phi_g) g_t + (1-\rho)(1-\phi_b)b_t$\\
+            $b^*_{t+1} = (1-\rho^*)(1-\phi^*_g) g^*_t + (1-\rho^*)(1-\phi^*_b)b^*_t$
+        }  \\ 
+    \makecell{Scen. 2 \\ G: 1, $\tau: 0$} & \makecell{Scot. \\ rUK } & 
+        \makecell{
+            N/A\\
+            $b^{UK}_{t+1} = (1-\rho^{UK})(1-\phi^{UK}_g) g^{UK}_t + (1-\rho^{UK})(1-\phi^{UK}_b)b^{UK}_t$
+        }   \\ 
+    \makecell{Scen. 3 \\ G: 2, $\tau: 1$} & \makecell{Scot. \\ rUK } & 
+    \makecell{
+        $b_{t+1} = (1-\rho)(1-\phi_g) g_t + (1-\rho)(1-\phi_b)b_t$\\
+        $b^*_{t+1} = (1-\rho^*)(1-\phi^*_g) g^*_t + (1-\rho^*)(1-\phi^*_b)b^*_t$
+}  \\
+    \makecell{Scen. 4 \\ G: 1, $\tau: 1$} & \makecell{Scot. \\ rUK } & 
+    \makecell{
+        N/A\\
+        $b^{UK}_{t+1} = (1-\rho^{UK})(1-\phi^{UK}_g) g^{UK}_t + (1-\rho^{UK})(1-\phi^{UK}_b)b^{UK}_t$
+}  
+    \end{tabular}
+    \caption{Future bonds are determined by government spending and current government debt}
+\end{table}
+These equations determine the equilibrium path for bond supply. Note that $B_t$ is the only predetermined variable in the model.

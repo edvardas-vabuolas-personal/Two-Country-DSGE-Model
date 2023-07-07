@@ -122,3 +122,58 @@ where:
     }  
     \end{tabular}
     \end{table}
+
+\renewcommand{\arraystretch}{2}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{l|l c}
+    \makecell{Scenario 1 \\ (G: 2, $\tau: 0$)} &  \makecell{S GBC: \\ rUK GBC:} & 
+        \makecell{
+            $\E_t [{R^{-1}_{t+1}}B_{t+1}] + T_t = P_tG_t + B_t$\\
+            $\E_t [{R^{*-1}_{t+1}}B^*_{t+1}] + T^*_t = P^*_tG^*_t + B^*_t$
+        }  \\ 
+    \makecell{Scenario 2 \\ (G: 1, $\tau: 0$)} &  \makecell{S GBC: \\ rUK GBC:} & 
+        \makecell{
+            N/A\\
+            $\E_t [{R^{UK-1}_{t+1}}B^{UK}_{t+1}] + T^{UK}_t = P^{UK}_tG^{UK}_t + B^{UK}_t$
+        }   \\ 
+    \makecell{Scenario 3 \\ (G: 2, $\tau: 1$)} &  \makecell{S GBC: \\ rUK GBC:} & 
+    \makecell{
+        $\E_t [{R^{-1}_{t+1}}B_{t+1}] + T_t = P_tG_t + B_t$\\ 
+        $\E_t [{R^{*-1}_{t+1}}B^*_{t+1}] + T^*_t = P^*_tG^*_t + B^*_t$
+    }  \\
+    \makecell{Scenario 4 \\ (G: 1, $\tau: 1$)} &  \makecell{S GBC: \\ rUK GBC:} & 
+    \makecell{
+        N/A \\
+        $\E_t [{R^{UK-1}_{t+1}}B^{UK}_{t+1}] + T^{UK}_t = P^{UK}_tG^{UK}_t + B^{UK}_t$
+    }  
+    \end{tabular}
+    \end{table}
+\restoregeometry
+
+\renewcommand{\arraystretch}{2}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{l|l|c}
+    \makecell{Scen. 1 \\ G: 2, $\tau: 0$} & \makecell{Scot. \\ rUK } & 
+        \makecell{
+            $b_{t+1} = (1-\rho)(1-\phi_g) g_t + (1-\rho)(1-\phi_b)b_t$\\
+            $b^*_{t+1} = (1-\rho^*)(1-\phi^*_g) g^*_t + (1-\rho^*)(1-\phi^*_b)b^*_t$
+        }  \\ 
+    \makecell{Scen. 2 \\ G: 1, $\tau: 0$} & \makecell{Scot. \\ rUK } & 
+        \makecell{
+            N/A\\
+            $b^{UK}_{t+1} = (1-\rho^{UK})(1-\phi^{UK}_g) g^{UK}_t + (1-\rho^{UK})(1-\phi^{UK}_b)b^{UK}_t$
+        }   \\ 
+    \makecell{Scen. 3 \\ G: 2, $\tau: 1$} & \makecell{Scot. \\ rUK } & 
+    \makecell{
+        $b_{t+1} = (1-\rho)(1-\phi_g) g_t + (1-\rho)(1-\phi_b)b_t$\\
+        $b^*_{t+1} = (1-\rho^*)(1-\phi^*_g) g^*_t + (1-\rho^*)(1-\phi^*_b)b^*_t$
+}  \\
+    \makecell{Scen. 4 \\ G: 1, $\tau: 1$} & \makecell{Scot. \\ rUK } & 
+    \makecell{
+        N/A\\
+        $b^{UK}_{t+1} = (1-\rho^{UK})(1-\phi^{UK}_g) g^{UK}_t + (1-\rho^{UK})(1-\phi^{UK}_b)b^{UK}_t$
+}  
+    \end{tabular}
+\end{table}

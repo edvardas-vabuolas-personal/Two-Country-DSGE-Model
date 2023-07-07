@@ -1028,22 +1028,22 @@ INPUT ./Graphs/timeline.tex
 INPUT ./Graphs/timeline.tex
 INPUT ./Graphs/timeline.tex
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
-INPUT ./Theoretical DSGE model/model.tex
-INPUT ./Theoretical DSGE model/model.tex
-INPUT ./Theoretical DSGE model/model.tex
-INPUT ./Theoretical DSGE model/model.tex
-INPUT ./Theoretical DSGE model/households.tex
-INPUT ./Theoretical DSGE model/households.tex
-INPUT ./Theoretical DSGE model/households.tex
-INPUT ./Theoretical DSGE model/households.tex
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT ./Theoretical DSGE model/model.tex
+INPUT ./Theoretical DSGE model/model.tex
+INPUT ./Theoretical DSGE model/model.tex
+INPUT ./Theoretical DSGE model/model.tex
+INPUT ./Theoretical DSGE model/households.tex
+INPUT ./Theoretical DSGE model/households.tex
+INPUT ./Theoretical DSGE model/households.tex
+INPUT ./Theoretical DSGE model/households.tex
 INPUT ./Graphs/sigma_varphi.tex
 INPUT ./Graphs/sigma_varphi.tex
 INPUT ./Graphs/sigma_varphi.tex
@@ -1053,6 +1053,12 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx6.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm
+INPUT ./Theoretical DSGE model/government.tex
+INPUT ./Theoretical DSGE model/government.tex
+INPUT ./Theoretical DSGE model/government.tex
+INPUT ./Theoretical DSGE model/government.tex
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm
 INPUT ./Theoretical DSGE model/firms.tex
 INPUT ./Theoretical DSGE model/firms.tex
 INPUT ./Theoretical DSGE model/firms.tex
@@ -1078,6 +1084,7 @@ INPUT main.run.xml
 OUTPUT main.run.xml
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
