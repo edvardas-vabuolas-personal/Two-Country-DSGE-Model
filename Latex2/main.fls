@@ -1067,18 +1067,6 @@ INPUT ./Theoretical DSGE model/equilibrium.tex
 INPUT ./Theoretical DSGE model/equilibrium.tex
 INPUT ./Theoretical DSGE model/equilibrium.tex
 INPUT ./Theoretical DSGE model/equilibrium.tex
-INPUT ./Appendix/intratemporal_loglinear.tex
-INPUT ./Appendix/intratemporal_loglinear.tex
-INPUT ./Appendix/intratemporal_loglinear.tex
-INPUT ./Appendix/intratemporal_loglinear.tex
-INPUT ./model.tex
-INPUT ././model.tex
-INPUT ./model.tex
-INPUT ././model.tex
-INPUT ./scenarios.tex
-INPUT ././scenarios.tex
-INPUT ./scenarios.tex
-INPUT ././scenarios.tex
 INPUT main.aux
 INPUT main.run.xml
 OUTPUT main.run.xml
@@ -1086,11 +1074,14 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.p
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb

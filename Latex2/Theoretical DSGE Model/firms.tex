@@ -1,28 +1,58 @@
 \subsection{Firms}
+In line with the literature, we assume a continuum of infinitesimally small firms, each producing a single good $j$ over which they have monopolistic power. Given the monopolistic nature of the market for each good, the firms are allowed to adjust their prices to maximise profits but, following Calvo (1983), we assume that only a fraction $\theta \in [0,1]$ of them actually do. The firms are assumed to be owned by households, implying that our budget constraint should have a $\Pi_t$ (dividend) term. However, as all households own all firms and take profit/dividends as given, it does not affect first-order conditions/optimal behaviour and, as such, is not considered. The firm's production function is given by: 
 \begin{align}
-    Y_t(j)   & = A_t N_t(j)                          \\
-    \log A_t & = \alpha_t                            \\
-    \alpha_t & = \rho_a \alpha_{t-1} + \varepsilon_t
+    Y_t(j)   & = A_t {N_t(j)}^{1-\alpha}                         
 \end{align}
+where $A_t$ is the technology level shifter common to all firms and is assumed to evolve exogenously as an AR(1) process in log terms: $\ln A_t = \rho_a \ln A_{t-1} + \varepsilon^a_t$. Notice that the production function depends on labour input only as the model does not consider capital (\textbf{why?}). As mentioned earlier, the price stickiness is introduced by assuming that firms update their prices with probability $(1-\theta)$. The newly set price is denoted as $\xbar{P}_{H,t}(j)$. Following a similar proof offered by \textcite{jordigal_2015_monetary}\footnote{In, \textcite{jordigal_2015_monetary} the proof is only available for a closed-economy NK DSGE (Chapter 3) and less detailed than presented here}, note that if all firms are symmetrical, then they will choose the same price, i.e. $\xbar{P}_{H,t}(j) = \xbar{P}_{H,t}$. Thus, the domestic price index from Equation (\ref{eq:domestic_price_index}) can be rewritten as:
 \begin{align}
-    L             & =P_{t}(j)Y_{t}(j) - W_t(j)N_{t}(j) \\
-    \Rightarrow L & =P_{t}Y_{t} - W_tN_{t}             \\
-    \Rightarrow L & =P_{t}A_t N_t - W_tN_{t}           \\
+    P_{H,t} &= \left[ \int_{0}^{1} (P_{H,t-1}(j))^{1-\epsilon} \, dj\right]^{\frac{1}{1-\epsilon}} \\
+     &= \left[ \int_{S(t)}^{1} {P_{H,t-1}(j)}^{1-\epsilon} \, dj + \int_{0}^{S(t)}{P_{H,t-1}(j)}^{1-\epsilon} \, dj\right]^{\frac{1}{1-\epsilon}} \\
+     &= \left[ \theta (\xbar{P}_{H,t-1})^{1-\epsilon} + (1-\theta)(\xbar{P}_{H,t})^{1-\epsilon} \right]^{\frac{1}{1-\epsilon}} \label{eq:price_dynamics_final_step}
 \end{align}
-\begin{align}
-    \frac{\partial L}{\partial N_t} & = P_t A_t - W_t = 0          &  & \Rightarrow W_t - P_tA_t = 0 \\
-    MC_t                            & = W_t - P_tA_t                                                 \\
-    mc_t                            & = w_t - p_t - a_t                                              \\
-    mc_t                            & = -\nu + w_t - p_t - a_t                                       \\
-    mc_t                            & = -\nu + w_t - p_{H,t} - a_t                                   \\
-\end{align}
-$\nu=-(\log (1-\tau))$, where $\tau$ is the employment subsidy, introduced later. $p_{H,t}$ because this is for domestic firms.
-
-Firms that get to reset their price, do it using the following problem:
+where $S(t)$ is a subset of firms that do not update their prices, and Equation (\ref{eq:price_dynamics_final_step}) ``follows from the fact that the distribution of prices among firms not adjusting in period $t$ corresponds to the distribution of effective prices in period $t-1$, though with total mass reduced to $\theta$'' \parencite[84]{jordigal_2015_monetary}. Dividing (\ref{eq:price_dynamics_final_step}) by $(P_{H,t-1})^{1-\epsilon}$ yields:
 \begin{equation}
-    \bar{p_{H,t}} = \mu + (1-\beta \theta) \sum_{k=0}^{\infty} (\beta \theta)^{k} \E_t [mc_{t+k} + p_{H,t+k}]
+    \Pi_{H,t}^{1-\epsilon} = \theta + (1-\theta)\left(\frac{\xbar{P}_{H,t}}{P_{H,t-1}}\right)^{1-\epsilon} \label{eq:price_dynamics_inflation}
 \end{equation}
+Log-linearising (\ref{eq:price_dynamics_inflation}) around zero inflation steady state yields:
 \begin{align}
-    \bar{p_{H,t}} &  & \text{Is the (log) new price}                  \\
-    \mu           &  & \text{Is the (log) markup in the steady state}
+    \Pi_{H,t}^{1-\epsilon} &= \theta + (1-\theta)\left(\frac{\xbar{P}_{H,t}}{P_{H,t-1}}\right)^{1-\epsilon} \\
+    \Pi_H \mathbf{e}^{(1-\epsilon)\pi_{H,t}} &= \theta + (1-\theta)\frac{\xbar{P_H}}{P_H}\mathbf{e}^{(1-\epsilon)(\bar{p}_{H,t} - p_{H,t})} \\
+    \vdots & \quad \text{(see Appendix A.xx - A.xx)} \\
+    \pi_{H,t} &= (1-\theta)(\bar{p}_{H,t} - p_{H,t})
 \end{align}
+Intuitively, this means that log domestic inflation depends on two elements: the difference between the current and new domestic price levels, and the price stickiness parameter $\theta$. Consider two extreme cases when $\theta = 1$ and $\theta = 0$: when $\theta = 1$, then no firms would be permitted to update their prices and the domestic inflation would always be equal to zero (CPI would still vary due to terms of trade, assuming $\upsilon \ne 0$). When $\theta = 0$, then all firms immediately react to any changes in marginal cost of production and traditional RBC ``ineffective-money'' results would follow. Firms that get to update their prices, do so by maximising their \textit{discounted lifetime cash flow}:
+\begin{align}
+    \max_{\xbar{P}_{H,t}} \sum_{k=0}^{\infty} \theta^k \E_t \left[\Lambda_{t,t+k} \left( \underbrace{\xbar{P}_{H,t} Y_{t+k|t}}_{Revenue} - \underbrace{\mathcal{C}_{t+k}(Y_{t+k|t})}_{Cost} \right) / P_{H,t+k} \right] \label{eq:profit_maximisation_cash_flow}\\
+    \text{s.t.} \quad Y_{t+k|t} = \left(\frac{\xbar{P}_{H,t}}{P_{H,t+k}}\right)^{-\epsilon} C_{t+k} \label{eq:profit_maximisation_demand_constraints}
+\end{align}
+where $\E_t \left[\Lambda_{t,t+k}\right]\ \forall k \geq 0$ is the expected stochastic discount factor used to discount profit (revenue less cost) in every period starting from current\footnote{Notice that we could write this as $\E_t \left[\Lambda_{t,t+k}\right]=\E_t \left[\frac{1}{R_{t, t+k}}\right]$ derived from the households' optimisation problem.}. $Y_{t+k|t}$ is the expected output in periods $t+k$ given output in period $t$, and $\mathcal{C}_{t+k}$ is the nominal cost of producting the expected output. The maximisation problem is subject to $k$ number of demand constraints (\ref{eq:profit_maximisation_demand_constraints}). Substituting the constraint into (\ref{eq:profit_maximisation_cash_flow}), taking first-order conditions, and log-linearising around zero-inflation steady state yields:
+\begin{align}
+    \sum_{k=0}^{\infty} \theta^k \E_t &\left[\Lambda_{t,t+k} \left( \xbar{P}_{H,t} \left(\frac{\xbar{P}_{H,t}}{P_{H,t+k}}\right)^{-\epsilon} C_{t+k} - \mathcal{C}_{t+k}(Y_{t+k|t})\right) / P_{H,t+k} \right] \\
+    \vdots & \quad \text{(see Appendix A.xx-A.xx)} \nonumber \\
+    \bar{p}_{H,t} &= \mu + (1-\beta \theta) \sum_{k=0}^{\infty} (\beta \theta)^{k} \E_t \left[ \psi_{t+k|t} \right] \label{eq:log_optimal_price_setting_condition}
+\end{align}
+where $\E_t \left[ \psi_{t+k|t} \right]$ and $\mu$ are the expected log marginal cost and desired\footnote{Markup that occurs under flexible or frictionless prices} markup, respectively. Equation (\ref{eq:log_optimal_price_setting_condition}) is known as the (log) \textit{optimal price setting condition} and presents firms as forward looking discounted profit maximisers. Note, that it is consistent with the previous exposition of the two extreme cases when $\theta = 0$ and $\theta = 1$, i.e. when $\theta = 1$, then $\pi_{H,t} = \bar{p}_{H,t} - \bar{p}_{H,t-1} = \mu - \mu = 0$.
+% Deriving firm's optimal behaviour requires setting up a standard Lagrangian function:
+% \begin{align}
+%     \mathcal{L}             & =P_{H,t}(j)Y_{t}(j) - W_t(j)N_{t}(j) \\
+%      & =P_{H,t}Y_{t} - W_tN_{t}             \label{eq:firms_lagrangian_substitute}\\
+%      & =P_{H,t}A_t N_t - W_tN_{t}           
+% \end{align}
+% where Equation (\ref{eq:firms_lagrangian_substitute}) makes use of the fact that each firm is facing the same optimisation problem. Taking the first-order conditions with respect to $N_t$ yields marginal cost of labour; the latter, given the absence of capital in the model, is also the marginal cost of production $MC_t$.
+% \begin{align}
+%     \frac{\partial \mathcal{L}}{\partial N_t} = P_{H,t} A_t - W_t &= 0          \\ 
+%     P_{H,t}A_t &= W_t \\
+%     p_{H,t} + a_t &= w_t 
+% \end{align}
+% Rearranging allows us to obtain:
+% \begin{equation}
+%     mc_t = w_t - p_{H,t} - a_t
+% \end{equation}
+% Firms that get to reset their price, do it using the following problem:
+% \begin{equation}
+%     \bar{p_{H,t}} = \mu + (1-\beta \theta) \sum_{k=0}^{\infty} (\beta \theta)^{k} \E_t [mc_{t+k} + p_{H,t+k}]
+% \end{equation}
+% \begin{align}
+%     \bar{p_{H,t}} &  & \text{Is the (log) new price}                  \\
+%     \mu           &  & \text{Is the (log) markup in the steady state}
+% \end{align}
