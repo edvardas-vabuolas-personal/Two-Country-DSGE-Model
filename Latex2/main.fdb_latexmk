@@ -1,14 +1,16 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1688830659 -1
+["biber main"] 1688835362 "main.bcf" "main.bbl" "main" 1688836343 0
   "./DissertationDSGE.bib" 1686949460 4479 c98594d863b4f30bcda63b955582ee9e ""
-  "main.bcf" 1688830658 109455 9600d45e6172baa5ed720e7ccdcf9092 "pdflatex"
+  "main.bcf" 1688836342 109763 250a3442bb2b1838c83cfede5946b839 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1688830656 "/Users/edvardasvabuolas/Documents/University/Dissertation/Latex2/main.tex" "main.pdf" "main" 1688830659 0
+["pdflatex"] 1688836340 "/Users/edvardasvabuolas/Documents/University/Dissertation/Latex2/main.tex" "main.pdf" "main" 1688836343 0
+  "./model.tex" 1688649940 26019 2db07c857e0c9fe4f7c2254ab89e1168 ""
+  "./scenarios.tex" 1688757868 8738 70f775c6905138d08026dc14ed67bf38 ""
   "./structure.tex" 1686997298 1127 bd0e6815ac9768e43404f62e2ee55929 ""
-  "/Users/edvardasvabuolas/Documents/University/Dissertation/Latex2/main.tex" 1688817061 1094 dfdd9b2d02291fb685b83fe5c425d216 ""
+  "/Users/edvardasvabuolas/Documents/University/Dissertation/Latex2/main.tex" 1688834500 1092 6c8d75632cf3155c7ea0887f8df61c12 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -210,19 +212,21 @@
   "Introduction/introduction.tex" 1686921052 0 d41d8cd98f00b204e9800998ecf8427e ""
   "Introduction/literature_review.tex" 1688742078 7025 4c7ff3f714cbdbe658957b09969bcfe6 ""
   "Packages.sty" 1688811325 1148 163c86c54b39ec1ead18a5e5b5f46b2b ""
-  "Theoretical DSGE model/equilibrium.tex" 1686763409 7519 37a0e4fae5c52073dc7081aa9761e11e ""
-  "Theoretical DSGE model/firms.tex" 1688830656 7656 d1e051c87648c25143a572ff78583762 ""
+  "Theoretical DSGE model/equilibrium.tex" 1688836340 3108 468d5d6182a7e574cb6d9df1d3f26bf0 ""
+  "Theoretical DSGE model/firms.tex" 1688831307 6785 7b13a878c24fbf3b20b0b0d9f887c7ad ""
   "Theoretical DSGE model/government.tex" 1688760501 8446 1e1e3a44d714cb76733e51eea9e6181f ""
   "Theoretical DSGE model/households.tex" 1688734561 25507 d554456ff5320b3460f60c4b238d350f ""
   "Theoretical DSGE model/model.tex" 1688565847 2180 b914577df6fae4989fa6760b7610d4fb ""
   "Title Page/title_page.tex" 1688488319 725 0870f481c563c2e8d9581639a4b27ab0 ""
   "Title Page/uoe_logo.png" 1686316242 20326 1cb2a3031b2bfffe2295b1170a85379a ""
-  "detailed_wordcount.txt" 1688819434 1019 9b1223a23e0b26120849e194e722456d ""
-  "final_wordcount.txt" 1688819434 4 ccb421d5f36c5a412816d494b15ca9f6 ""
-  "main.aux" 1688830658 6412 e5a954a7d1ecc5f424f5da3ddae34697 "pdflatex"
-  "main.bbl" 1688817701 13792 e1243356da930739f32d10ab689aa98b "biber main"
-  "main.run.xml" 1688830658 2351 e48ac35430ef4eb0fe9dd6f256db4588 "pdflatex"
-  "main.tex" 1688817061 1094 dfdd9b2d02291fb685b83fe5c425d216 ""
+  "detailed_wordcount.txt" 1688830919 1019 8caa16cfa6924c7448ea0d2f020ce1d2 ""
+  "final_wordcount.txt" 1688830919 4 4e2ecebbfafe27a7c00e0462fad0873a ""
+  "main.aux" 1688836342 7121 8ab9a5a74c4292637af18f951b36152d "pdflatex"
+  "main.bbl" 1688835366 13792 e1243356da930739f32d10ab689aa98b "biber main"
+  "main.run.xml" 1688836342 2351 e48ac35430ef4eb0fe9dd6f256db4588 "pdflatex"
+  "main.tex" 1688834500 1092 6c8d75632cf3155c7ea0887f8df61c12 ""
+  "model.tex" 1688649940 26019 2db07c857e0c9fe4f7c2254ab89e1168 ""
+  "scenarios.tex" 1688757868 8738 70f775c6905138d08026dc14ed67bf38 ""
   "structure.tex" 1686997298 1127 bd0e6815ac9768e43404f62e2ee55929 ""
   (generated)
   "main.aux"

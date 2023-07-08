@@ -31,28 +31,4 @@ where $\E_t \left[\Lambda_{t,t+k}\right]\ \forall k \geq 0$ is the expected stoc
     \vdots & \quad \text{(see Appendix A.xx-A.xx)} \nonumber \\
     \bar{p}_{H,t} &= \mu + (1-\beta \theta) \sum_{k=0}^{\infty} (\beta \theta)^{k} \E_t \left[ \psi_{t+k|t} \right] \label{eq:log_optimal_price_setting_condition}
 \end{align}
-where $\E_t \left[ \psi_{t+k|t} \right]$ and $\mu$ are the expected log marginal cost and desired\footnote{Markup that occurs under flexible or frictionless prices} markup, respectively. Equation (\ref{eq:log_optimal_price_setting_condition}) is known as the (log) \textit{optimal price setting condition} and presents firms as forward looking discounted profit maximisers. Note, that it is consistent with the previous exposition of the two extreme cases when $\theta = 0$ and $\theta = 1$, i.e. when $\theta = 1$, then $\pi_{H,t} = \bar{p}_{H,t} - \bar{p}_{H,t-1} = \mu - \mu = 0$.
-% Deriving firm's optimal behaviour requires setting up a standard Lagrangian function:
-% \begin{align}
-%     \mathcal{L}             & =P_{H,t}(j)Y_{t}(j) - W_t(j)N_{t}(j) \\
-%      & =P_{H,t}Y_{t} - W_tN_{t}             \label{eq:firms_lagrangian_substitute}\\
-%      & =P_{H,t}A_t N_t - W_tN_{t}           
-% \end{align}
-% where Equation (\ref{eq:firms_lagrangian_substitute}) makes use of the fact that each firm is facing the same optimisation problem. Taking the first-order conditions with respect to $N_t$ yields marginal cost of labour; the latter, given the absence of capital in the model, is also the marginal cost of production $MC_t$.
-% \begin{align}
-%     \frac{\partial \mathcal{L}}{\partial N_t} = P_{H,t} A_t - W_t &= 0          \\ 
-%     P_{H,t}A_t &= W_t \\
-%     p_{H,t} + a_t &= w_t 
-% \end{align}
-% Rearranging allows us to obtain:
-% \begin{equation}
-%     mc_t = w_t - p_{H,t} - a_t
-% \end{equation}
-% Firms that get to reset their price, do it using the following problem:
-% \begin{equation}
-%     \bar{p_{H,t}} = \mu + (1-\beta \theta) \sum_{k=0}^{\infty} (\beta \theta)^{k} \E_t [mc_{t+k} + p_{H,t+k}]
-% \end{equation}
-% \begin{align}
-%     \bar{p_{H,t}} &  & \text{Is the (log) new price}                  \\
-%     \mu           &  & \text{Is the (log) markup in the steady state}
-% \end{align}
+where $\E_t \left[ \psi_{t+k|t} \right]$ and $\mu$ are the expected log marginal cost and desired\footnote{Markup that occurs under flexible or frictionless prices} markup, respectively. Equation (\ref{eq:log_optimal_price_setting_condition}) is known as the (log) \textit{optimal price setting condition} and presents firms as forward looking discounted profit maximisers. Note, that it is consistent with the previous exposition of the two extreme cases when $\theta = 0$ and $\theta = 1$, i.e. when $\theta = 1$, then $\pi_{H,t} = \bar{p}_{H,t} - \bar{p}_{H,t-1} = \mu - \mu = 0$. This equation is arguably one of the most important equations of the model: it introduces anticipation, which is used to derive relationship between domestic inflation ``today'' and (expected) ``tomorrow'', better known as the \textit{New Keynesian Phillips Curve} (NKPC). The next section is about the equilibrium or market clearing conditions, that will introduce NKPC as well as Dynamic IS curve, ``natural'' variables and the monetary policy rule. 

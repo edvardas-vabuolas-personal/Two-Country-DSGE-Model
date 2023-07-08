@@ -1067,6 +1067,14 @@ INPUT ./Theoretical DSGE model/equilibrium.tex
 INPUT ./Theoretical DSGE model/equilibrium.tex
 INPUT ./Theoretical DSGE model/equilibrium.tex
 INPUT ./Theoretical DSGE model/equilibrium.tex
+INPUT ./model.tex
+INPUT ././model.tex
+INPUT ./model.tex
+INPUT ././model.tex
+INPUT ./scenarios.tex
+INPUT ././scenarios.tex
+INPUT ./scenarios.tex
+INPUT ././scenarios.tex
 INPUT main.aux
 INPUT main.run.xml
 OUTPUT main.run.xml

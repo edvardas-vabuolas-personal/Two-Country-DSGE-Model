@@ -1,75 +1,44 @@
 \subsection{Equilibrium}
+The goods market for a specific good $j$ clears when domestic firms produce just enough of the good to satisfy the demand of home households, foreign households, and the home government. In line with \textcite{jordigal_2015_monetary}, the demand for exports of good $j$ is taken to be given as:
 \begin{align}
-    Y_t(j) & = C_{H,t}(j) + \int_{0}^{1} C_{H,t}^i (j) \, di                                                                                                                                                                                                                                      \\
-           & =\left(\frac{P_{H,t}(j)}{P_{H,t}}^{-\varepsilon}\right) \left[ (1-\alpha) \left(\frac{P_{H,t}}{P_t} \right)^{-\eta} C_t + \alpha \int_{0}^{1} \left( \frac{P_{H_t}}{\mathcal{E}_{i,t}P_{F,t}^i}\right)^{-\gamma} \left(\frac{P_{F,t}^i}{P_t^i} \right)^{-\eta} C_{t}^i \, di \right]
-\end{align}
-Given that
+    X_t(j) &= \left(\frac{P_{H,t(i)}}{P_{H,t}}\right)^{-\epsilon} X_t\\
+    \text{where} \quad X_t &= \left( \int_{0}^{1} X_t(j)^{\frac{\epsilon-1}{\epsilon}} \, dj\right)^{\frac{\epsilon}{\epsilon-1}} \label{eq:index_of_aggregate_exports}\\
+    & =\upsilon\left( \frac{P_{H,t}}{\mathcal{E}_t \xbar{P}_{H,t}}\right)^{-\eta}Y^\star_t \label{eq:aggregate_exports}\\
+    & = \upsilon \mathcal{S}_t^{\eta}Y^\star_t \label{eq:aggregate_exports_terms_of_trade}
+\end{align} 
+where (\ref{eq:index_of_aggregate_exports}) is the index of aggregate exports, (\ref{eq:aggregate_exports}) determines aggregate exports as a function of world output (the relationship is assumed to be given), and (\ref{eq:aggregate_exports_terms_of_trade}) is derived by substituting definition of the effective terms of trade. Differently than \textcite{jordigal_2015_monetary}, we introduce index of government purchasing:
 \begin{equation}
-    Y_t = \left( \int_{0}^{1} (Y_t(j))^{\frac{\varepsilon-1}{\varepsilon}}\right)^{\frac{\varepsilon}{\varepsilon-1}}
+    G_t = \left( \int_{0}^{1} {G_t(j)}^{\frac{\epsilon-1}{\epsilon}} \, dj\right)^{\frac{\epsilon}{\epsilon-1}}
 \end{equation}
-\begin{align}
-    Y_t & = (1-\alpha) \left(\frac{P_{H,t}}{P_t} \right)^{-\eta} C_t + \alpha \int_{0}^{1} \left( \frac{P_{H_t}}{\mathcal{E}_{i,t}P_{F,t}^i}\right)^{-\gamma} \left(\frac{P_{F,t}^i}{P_t^i} \right)^{-\eta} C_{t}^i \, di \\
-        & = \left(\frac{P_{H,t}}{P_t}\right)^{-\eta}C_t \left[ (1-\alpha) + \alpha \int_{0}^{1} (S_t^i S_{i,t})^{\gamma - \eta} \mathcal{Q}_{i,t}^{\eta - \frac{1}{\sigma}} \, di \right]
-\end{align}
-Which can be log-linearised to:
-\begin{align}
-    y_t & = c_t + \alpha \gamma s_t + \alpha(\eta - \frac{1}{\sigma})q_t \\
-        & = c_t + \frac{\alpha w}{\sigma}s_t                             \\
-    w_t & = \sigma \gamma + (1-\alpha)(\sigma \eta - 1)
-\end{align}
-Assuming that country \textit{i} is symmetric:
-\begin{align}
-    y_t^i = c_t^i + \frac{\alpha w}{\sigma} s_t^i            &  &                          \\
-    \int_{0}^{1} y_t^i = \int_{0}^{1} c_t^i + 0 =c_t^{\star} &  & \text{World Consumption}
-\end{align}
-Using equations (), (), ():
-\begin{align}
-    y                     & = c_t + \frac{\alpha w}{\sigma}s_t                                       \\
-    y_t                   & = c_t^{\star} + \frac{1-\alpha}{\sigma}s_t + \frac{\alpha w}{\sigma} s_t \\
-    y_t                   & = y_t^{\star} + \frac{1-\alpha}{\sigma}s_t + \frac{\alpha w}{\sigma} s_t \\
-    y_t                   & = y_t^{\star} + \frac{1-\alpha + \alpha w}{\sigma}s_t                    \\
-    y_t                   & = y_t^{\star} + \frac{1+ \alpha(w-1)}{\sigma}s_t                         \\
-    \sigma_\alpha         & = \frac{1+ \alpha(w-1)}{\sigma}                                          \\
-    \Rightarrow \quad y_t & =y^{\star}_t + \frac{1}{\sigma_\alpha}s_t \label{eq:output_as_world_output_plus_trade}
-\end{align}
-\begin{landscape}
-Combining Euler equation () and (\ref{eq:output_as_world_output_plus_trade}) gives :
-\begin{align*}
-    c_t &=  \E_t[c_{t+1}] - \frac{1}{\sigma}( i_t  - \E_t [\pi_{t+1}] - \rho  ) \\
-    y_t - \frac{\alpha w}{\sigma}s_t &= \E_t\left[y_{t-1} - \frac{\alpha w}{\sigma}s_{t+1} \right]- \frac{1}{\sigma}( i_t  - \E_t [\pi_{t+1}] - \rho  ) \\
-    y_t &= \E_t\left[y_{t-1}\right] - \frac{\alpha w}{\sigma}\E_t[(s_{t+1}-s_t)]- \frac{1}{\sigma}( i_t  - \E_t [\pi_{t+1}] - \rho  ) \\
-    &= \E_t\left[y_{t-1}\right] - \frac{\alpha w}{\sigma}\E_t[\Delta s_{t+1}]- \frac{1}{\sigma}( i_t  - \E_t [\pi_{t+1}] - \rho  ) \\
-    &= \E_t\left[y_{t-1}\right] - \frac{\alpha w}{\sigma}\E_t[\Delta s_{t+1}]- \frac{1}{\sigma}( i_t  - \E_t [\pi_{H,t+1}] - \alpha \E_t[\Delta s_{t+1}] - \rho  ) \\
-    &= \E_t\left[y_{t-1}\right] - \frac{\alpha w}{\sigma}\E_t[\Delta s_{t+1}] + \frac{\alpha}{\sigma} \E_t[\Delta s_{t+1}] - \frac{1}{\sigma}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \\
-    &= \E_t\left[y_{t-1}\right] - \frac{\alpha w+\alpha}{\sigma}\E_t[\Delta s_{t+1}] - \frac{1}{\sigma}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \\
-    &= \E_t\left[y_{t-1}\right] + \frac{\alpha - \alpha w}{\sigma}\E_t[\Delta s_{t+1}] - \frac{1}{\sigma}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \\
-    &= \E_t\left[y_{t-1}\right] + \frac{-\alpha (-1+w)}{\sigma}\E_t[\Delta s_{t+1}] - \frac{1}{\sigma}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \\
-    &= \E_t\left[y_{t-1}\right] - \frac{\alpha(w-1)}{\sigma}\E_t[\Delta s_{t+1}] - \frac{1}{\sigma}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \\
-    &= \E_t\left[y_{t-1}\right] - \frac{\alpha \Theta}{\sigma}\E_t[\Delta s_{t+1}] - \frac{1}{\sigma}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \\
-    \E_t[\Delta s_{t+1}] &= \sigma_\alpha \E_t[\Delta y_{t+1} - \Delta y_{t+1}^{\star}] \quad \text{from Equation(): } \\
-    &= \E_t\left[y_{t-1}\right] - \frac{\alpha \Theta}{\sigma}\sigma_\alpha \E_t[\Delta y_{t+1} - \Delta y_{t+1}^{\star}] - \frac{1}{\sigma}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \\
-    &= \E_t\left[y_{t-1}\right] - \frac{\alpha \Theta}{1+\alpha \Theta} \E_t[\Delta y_{t+1} - \Delta y_{t+1}^{\star}] - \frac{1}{\sigma}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \\
-    &= \E_t\left[y_{t-1}\right] - \frac{\alpha \Theta}{1+\alpha \Theta} \E_t[\Delta y_{t+1}] + \frac{\alpha \Theta}{1+\alpha \Theta}\E_t[\Delta y_{t+1}^{\star}] - \frac{1}{\sigma}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \\
-    &= \E_t\left[y_{t-1}\right] - \frac{\alpha \Theta}{1+\alpha \Theta} \E_t[\Delta y_{t+1}] + \frac{\alpha \Theta}{1+\alpha \Theta}\E_t[\Delta y_{t+1}^{\star}] - \frac{1}{(1+\alpha \Theta)\sigma_\alpha}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \\
-\end{align*}  
-\begin{align}  
-    (1+\alpha \Theta)y_t&= (1+\alpha \Theta)\E_t\left[y_{t-1}\right] - \alpha \Theta \E_t[\Delta y_{t+1}] + \alpha \Theta\E_t[\Delta y_{t+1}^{\star}] - \frac{1}{\sigma_\alpha}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \nonumber\\
-    (1+\alpha \Theta)\E_t\left[y_t - y_{t-1}\right]&=  - \alpha \Theta \E_t[\Delta y_{t+1}] + \alpha \Theta\E_t[\Delta y_{t+1}^{\star}] - \frac{1}{\sigma_\alpha}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \nonumber\\
-    -(1+\alpha \Theta)\E_t\left[y_{t-1} - y_t \right]&=  - \alpha \Theta \E_t[\Delta y_{t+1}] + \alpha \Theta\E_t[\Delta y_{t+1}^{\star}] - \frac{1}{\sigma_\alpha}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \nonumber\\
-    (1+\alpha \Theta)\E_t\left[\Delta y_{t+1}\right]&=  \alpha \Theta \E_t[\Delta y_{t+1}] - \alpha \Theta\E_t[\Delta y_{t+1}^{\star}] + \frac{1}{\sigma_\alpha}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \nonumber\\
-    (1+\alpha \Theta)\E_t\left[\Delta y_{t+1}\right] - \alpha \Theta \E_t[\Delta y_{t+1}]&= - \alpha \Theta\E_t[\Delta y_{t+1}^{\star}] + \frac{1}{\sigma_\alpha}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \nonumber\\
-    \E_t\left[\Delta y_{t+1}\right] +\alpha \Theta\E_t\left[\Delta y_{t+1}\right] - \alpha \Theta \E_t[\Delta y_{t+1}]&= - \alpha \Theta\E_t[\Delta y_{t+1}^{\star}] + \frac{1}{\sigma_\alpha}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \nonumber\\
-    \E_t\left[\Delta y_{t+1}\right] &= - \alpha \Theta\E_t[\Delta y_{t+1}^{\star}] + \frac{1}{\sigma_\alpha}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \nonumber\\
-    \E_t\left[y_{t+1}-y_t\right] &= - \alpha \Theta\E_t[\Delta y_{t+1}^{\star}] + \frac{1}{\sigma_\alpha}( i_t  - \E_t [\pi_{H,t+1}] - \rho  )\nonumber\\
-    -y_t &= -\E_t\left[y_{t+1}\right]- \alpha \Theta\E_t[\Delta y_{t+1}^{\star}] + \frac{1}{\sigma_\alpha}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) \nonumber\\
-    \Rightarrow y_t &= \E_t\left[y_{t+1}\right]- \frac{1}{\sigma_\alpha}( i_t  - \E_t [\pi_{H,t+1}] - \rho  ) + \alpha \Theta\E_t[\Delta y_{t+1}^{\star}] \\
-\end{align}
-\end{landscape}
-\begin{align}
-    \pi_{avg, t} = 0.0816 \pi^{scot}_{H,t} + 0.9184 \pi^{ruk}_{H,t} \\
-    \tilde{y}_{avg, t} = 0.0816 \tilde{y}_{scot, t} + 0.9184 \tilde{y}_{ruk, t}
-\end{align}
+so that the government demand of any good $j$ is defined as (derivation provided by Appendix A.xx-A.xx):
 \begin{equation}
-    i_t = \rho_{\pi}\pi_{avg, t-1} + \rho_{\tilde y}\tilde{y}_{avg, t-1} + \Delta  \pi_{avg, t-1} + \Delta \tilde{y}_{avg, t-1} + \nu_t
+    G_t(j) = \left( \frac{P_{H,t}(j)}{P_{H,t}} \right)^{-\epsilon} G_t
 \end{equation}
-
+Therefore, total demand for good $j$ is:
+\begin{align}
+    Y_t(j) &= C_t(j) + X_t(j) + G_t(j) \label{eq:demand_for_one_good}\\
+    \vdots & \quad \text{(see Appendix A.xx-A.xx)} \\
+    Y_t(j) &= \left(\frac{P_{H,t}(j)}{P_{H,t}}^{-\varepsilon}\right) \left[ (1-\upsilon)\left(\frac{P_{H,t}}{P_t}\right)^{-\eta}C_t + \upsilon \mathcal{S}^\eta Y^\star_t + G_t\right]
+\end{align}
+which can be plugged in to definition of aggregate output $Y_t = \left( \int_{0}^{1} Y_t(j)^{\frac{\varepsilon-1}{\varepsilon}}\right)^{\frac{\varepsilon}{\varepsilon-1}}$ to yield:
+\begin{equation}
+    Y_t = (1-\upsilon) \left(\frac{P_{H,t}}{P_t}\right)^{-\eta}C_t + \upsilon \mathcal{S}^\eta Y^\star_t + G_t
+\end{equation}
+Note that Equation (\ref{eq:demand_for_one_good}) and all subsequent derivations (marginally) vary depending on the policy scenario in question:
+\begin{table}[H]
+    \renewcommand{\arraystretch}{2}
+    \centering
+    \begin{tabular}{l|l|c}
+    \makecell{Scen. 1 \& Scen. 3\\ G: 2, $\tau \in \{0, 1\}$} & \makecell{Scot. \\ rUK } & 
+        \makecell{
+            $Y_t(j) = C_t(j) + X_t(j) + G_t(j)$\\
+            $Y^*_t(j) = C^*_t(j) + X^*_t(j) + G^*_t(j)$
+        }  \\ 
+        \makecell{Scen. 3 \& Scen. 4\\ G: 1, $\tau \in \{0, 1\}$} & \makecell{Scot. \\ rUK } & 
+        \makecell{
+            $Y_t(j) = C_t(j) + X_t(j) + \varpi G^{UK}_t(j)$\\
+            $Y^*_t(j) = C^*_t(j) + X^*_t(j) + (1-\varpi) G^{UK}_t(j)$
+        }   
+    \end{tabular}
+    \caption{Demand for good $j$ for different policy scenarios}
+\end{table}

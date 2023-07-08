@@ -1,13 +1,13 @@
 
-Sum count: 4287
-Words in text: 3873
-Words in headers: 20
-Words outside text (captions, etc.): 223
-Number of headers: 12
-Number of floats/tables/figures: 7
-Number of math inlines: 129
-Number of math displayed: 42
-Files: 13
+Sum count: 4876
+Words in text: 4380
+Words in headers: 33
+Words outside text (captions, etc.): 251
+Number of headers: 14
+Number of floats/tables/figures: 13
+Number of math inlines: 153
+Number of math displayed: 59
+Files: 15
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
   1+8+0 (6/0/0/0) File: main.tex
@@ -16,9 +16,11 @@ Subcounts:
   324+0+0 (0/0/3/0) Included file: ././Theoretical DSGE model/model.tex
   1696+1+33 (1/1/82/27) Included file: ././Theoretical DSGE model/households.tex
   479+1+102 (1/4/25/1) Included file: ././Theoretical DSGE model/government.tex
-  349+1+22 (1/0/19/4) Included file: ././Theoretical DSGE model/firms.tex
-  20+1+0 (1/0/0/10) Included file: ././Theoretical DSGE model/equilibrium.tex
+  550+1+43 (1/0/32/6) Included file: ././Theoretical DSGE model/firms.tex
+  144+1+7 (1/1/6/5) Included file: ././Theoretical DSGE model/equilibrium.tex
+  173+13+0 (2/0/5/20) Included file: ././model.tex
   1+0+0 (0/0/0/0) Included file: ././final_wordcount.txt
   0+0+11 (0/1/0/0) Included file: ././Graphs/timeline.tex
   0+0+0 (0/1/0/0) Included file: ././Graphs/sigma_varphi.tex
+  9+0+0 (0/5/0/0) Included file: ././scenarios.tex
 
