@@ -1,50 +1,33 @@
-\section*{Two-country DSGE model for Scotland and the rest of the UK}
+% \section*{Two-country DSGE model for Scotland and the rest of the UK}
 
-Closely follows \textcite{jordigal_2015_monetary} and \textcite{gali_2005_monetary}
-\begin{enumerate}
-    \item Home country: Scotland (notation - $X$)
-    \item Foreign country: rUK (notation - $X^*$)
-    \item Notation for UK-wide variables - $X^{UK}$
-    \item  Scotland and rUK are SOEs
-          \begin{enumerate}
-              \item They trade, take world output, inflation, and consumption as given and cannot influence it
-          \end{enumerate}
-    \item Calvo staggered prices, no capital/investment
-    \item Scotland and RUK are assumed to be symmetrical in market structure and preferences
-    \item Monetary Union: There is a population-weighted UK-wide interest rate in place, and all four nations within the UK purchase government-issued bonds at this rate
-    \begin{enumerate}
-        \item We also consider counterfactual scenarios, i.e. where both Holyrood and Westminister can issue bonds at country-specific interest rate
-    \end{enumerate}
-    \item The government spending can be financed via a lump-sum tax, a labour (income) tax, and borrowing.
-    \item We consider 4 scenarios:
-    \begin{enumerate}
-        \item Two governments funded by lump-sum tax, \underline{two} of which can issue bonds
-        \item Two governments funded by lump-sum tax, \underline{one} of which can issue bonds
-        \item Two governments funded by an income tax, \underline{two} of which can issue bonds
-        \item Two governments funded by an income tax, \underline{one} of which can issue bonds
-    \end{enumerate}
-\end{enumerate}
+% Closely follows \textcite{jordigal_2015_monetary} and \textcite{gali_2005_monetary}
+% \begin{enumerate}
+%     \item Home country: Scotland (notation - $X$)
+%     \item Foreign country: rUK (notation - $X^*$)
+%     \item Notation for UK-wide variables - $X^{UK}$
+%     \item  Scotland and rUK are SOEs
+%           \begin{enumerate}
+%               \item They trade, take world output, inflation, and consumption as given and cannot influence it
+%           \end{enumerate}
+%     \item Calvo staggered prices, no capital/investment
+%     \item Scotland and RUK are assumed to be symmetrical in market structure and preferences
+%     \item Monetary Union: There is a population-weighted UK-wide interest rate in place, and all four nations within the UK purchase government-issued bonds at this rate
+%     \begin{enumerate}
+%         \item We also consider counterfactual scenarios, i.e. where both Holyrood and Westminister can issue bonds at country-specific interest rate
+%     \end{enumerate}
+%     \item The government spending can be financed via a lump-sum tax, a labour (income) tax, and borrowing.
+%     \item We consider 4 scenarios:
+%     \begin{enumerate}
+%         \item Two governments funded by lump-sum tax, \underline{two} of which can issue bonds
+%         \item Two governments funded by lump-sum tax, \underline{one} of which can issue bonds
+%         \item Two governments funded by an income tax, \underline{two} of which can issue bonds
+%         \item Two governments funded by an income tax, \underline{one} of which can issue bonds
+%     \end{enumerate}
+% \end{enumerate}
 
-\pagebreak
-\import{.}{scenarios.tex}
-\pagebreak
-\subsection*{Tax Revenue}
-\begin{align*}
-    T^*_t &= \varpi\tau_t W_t N_t + (1-\varpi)\tau_t W^*_t N^*_t \\
-    T^* &= \varpi\tau W N + (1-\varpi)\tau W^* N^* \label{eq:tr_ss} \quad \text{(Steady state)}\\
-    &\text{Using Uhlig's (1999) method, $X_tY_t \approx XY\mathbf{e}^{\tilde{X}_t + \tilde{Y}_t}$: }\\
-    T\mathbf{e}^{\tilde{T}^*_t} &= \varpi \tau W N \mathbf{e}^{\tilde{\tau}_t+\tilde{W}_t+\tilde{N}_t} + (1-\varpi) \tau W^* N^* \mathbf{e}^{\tilde{\tau}_t+\tilde{W}^*_t+\tilde{N}^*_T} \\
-    &\text{Using $\mathbf{e}^{\tilde{X}_t} \approx 1 + {\tilde{X}_t}$: }\\
-    T^* (1 + {\tilde{T}^*_t}) &= \varpi \tau W N (1 + {\tilde{\tau}_t+\tilde{W}_t+\tilde{N}_t}) + (1-\varpi) \tau W^* N^* (1 + {\tilde{\tau}_t+\tilde{W}^*_t+\tilde{N}^*_T}) \\
-    &\text{Subtract (\ref{eq:tr_ss}): } \\
-    T^* (1 + {\tilde{T}^*_t}) - T^* &= \varpi \tau W N (1 + {\tilde{\tau}_t+\tilde{W}_t+\tilde{N}_t}) - \varpi\tau W N + (1-\varpi) \tau W^* N^* (1 + {\tilde{\tau}_t+\tilde{W}^*_t+\tilde{N}^*_T}) - (1-\varpi)\tau W^* N^* \\
-    T^*[(1 + {\tilde{T}^*_t}) - 1] &= \varpi \tau W N [(1 + {\tilde{\tau}_t+\tilde{W}_t+\tilde{N}_t}) - 1] + (1-\varpi) \tau W^* N^* [(1 + {\tilde{\tau}_t+\tilde{W}^*_t+\tilde{N}^*_T}) - 1] \\
-    T^*\tilde{T}^*_t &= \varpi \tau W N (\tilde{\tau}_t + \tilde{W}_t + \tilde{N}_t) + (1-\varpi) \tau W^* N^* (\tilde{\tau}_t+\tilde{W}^*_t+\tilde{N}^*_T) \\
-    &\text{Divide by $T^*$}:
-\end{align*}
-\begin{equation}
-    \dboxed{\tilde{T}^*_t = \tau\frac{ W N}{T^*}\times \varpi (\tilde{\tau}_t + \tilde{W}_t + \tilde{N}_t) + \tau \frac{ W^* N^*}{T^*} \times (1-\varpi) (\tilde{\tau}_t+\tilde{W}^*_t+\tilde{N}^*_t)}
-\end{equation}
+% \pagebreak
+% \import{.}{scenarios.tex}
+% \pagebreak
 
 \begin{align}
     y_t &= a_t + (1-\alpha)n_t\\
@@ -132,70 +115,32 @@ Given that
     Y_t = \left( \int_{0}^{1} (Y_t(i))^{\frac{\varepsilon-1}{\varepsilon}}\right)^{\frac{\varepsilon}{\varepsilon-1}}
 \end{equation}
 \begin{align}
-    Y_t &= (1-\upsilon)\left(\frac{P_{H,t}}{P_t}\right)^{-\eta}C_t + \upsilon \mathcal{S}_t^{\eta}Y_t^* + G_t\\
-    Y \mathbf{e}^{y_t} &= (1-\upsilon)\left(\frac{P}{P_{H}}\right)^{\eta}C \mathbf{e}^{-\eta p_{H,t} + \eta p_t + c_t}+ \upsilon S^{\eta} Y^* \mathbf{e}^{\eta s_t + y^*_t} + G \mathbf{e}^{g_t}\\
-    Y ({1+y_t}) &= (1-\upsilon)\left(\frac{P}{P_{H}}\right)^{\eta}C ({1 -\eta p_{H,t} + \eta p_t + c_t})+ \upsilon S^{\eta} Y^* ({1 + \eta s_t + y^*_t}) + G ({1+ g_t})\\
-    Y y_t &= (1-\upsilon)\left(\frac{P}{P_{H}}\right)^{\eta}C ({-\eta p_{H,t} + \eta p_t + c_t})+ \upsilon S^{\eta} Y^* ({\eta s_t + y^*_t}) + G g_t\\
-    &\text{Using $P/P_H = \mathcal{\upsilon S}$, $\mathcal{S} = 1$, and $C=Y^*$}:\\
-    y_t &= (1-\upsilon)({-\eta p_{H,t} + \eta p_t + c_t})+ \upsilon ({\eta s_t + y^*_t}) + G_Y g_t\\
-    &\text{Using $p_t - p_{H,t} = \upsilon s_t$}:\\
-    y_t &= (1-\upsilon)({\eta \upsilon s_t + c_t})+ \upsilon ({\eta s_t + y^*_t}) + G_Y g_t\\
-    y_t &= (1-\upsilon)c_t + (1-\upsilon) \eta \upsilon s_t + \upsilon {\eta s_t} + \upsilon y^*_t + G_Y g_t\\
-    y_t &= (1-\upsilon)c_t + \upsilon (2-\upsilon)\eta s_t + \upsilon y^*_t + G_Y g_t\\
-\end{align}
-\pagebreak
-\begin{align}
-    c_t & = y^*_t + \frac{1}{\sigma}z_t + \frac{1-\upsilon}{\sigma}s_t\\
-    y_t &= (1-\upsilon)c_t + \upsilon (2-\upsilon)\eta s_t + \upsilon y^*_t + G_Y g_t\\
-    \implies y_t &= (1-\upsilon)\left( y^*_t + \frac{1}{\sigma}z_t + \frac{1-\upsilon}{\sigma}s_t \right) + \upsilon (2-\upsilon)\eta s_t + \upsilon y^*_t + G_Y g_t\\
-    y_t &= (1-\upsilon)y^*_t + \frac{1-\upsilon}{\sigma}z_t + (1-\upsilon)\frac{1-\upsilon}{\sigma}s_t + \upsilon (2-\upsilon)\eta s_t + \upsilon y^*_t + G_Y g_t\\
-    y_t &= y^*_t + \frac{1-\upsilon}{\sigma}z_t + (1-\upsilon)\frac{1-\upsilon}{\sigma}s_t + \upsilon (2-\upsilon)\eta s_t + G_Y g_t\\
-    y_t &= y^*_t + \frac{1-\upsilon}{\sigma}z_t + \left((1-\upsilon)\frac{1-\upsilon}{\sigma} + \upsilon (2-\upsilon)\eta \right) s_t + G_Y g_t\\
-    \left((1-\upsilon)\frac{1-\upsilon}{\sigma} + \upsilon (2-\upsilon)\eta \right) s_t &= y_t - y^*_t - \frac{1-\upsilon}{\sigma}z_t - G_Y g_t\\
-    \left(\frac{(1-\upsilon)(1-\upsilon) + \sigma\upsilon (2-\upsilon)\eta}{\sigma} \right) s_t &= y_t - y^*_t - \frac{1-\upsilon}{\sigma}z_t - G_Y g_t\\
-    \left(\frac{1 -2\upsilon + \upsilon^2 + \sigma\upsilon (2-\upsilon)\eta}{\sigma} \right) s_t &= y_t - y^*_t - \frac{1-\upsilon}{\sigma}z_t - G_Y g_t\\
-    \left(\frac{1 - \upsilon (2-\upsilon) + \sigma\upsilon (2-\upsilon)\eta}{\sigma} \right) s_t &= y_t - y^*_t - \frac{1-\upsilon}{\sigma}z_t - G_Y g_t\\
-    \left(\frac{1 - \upsilon (2-\upsilon)(1-\sigma \eta)}{\sigma} \right) s_t &= y_t - y^*_t - \frac{1-\upsilon}{\sigma}z_t - G_Y g_t\\
-    \left(\frac{1 + \upsilon (2-\upsilon)(\sigma \eta - 1)}{\sigma} \right) s_t &= y_t - y^*_t - \frac{1-\upsilon}{\sigma}z_t - G_Y g_t\\
-    \left(\frac{1 + \upsilon (2\sigma \eta-\upsilon\sigma \eta -2 + \upsilon)}{\sigma} \right) s_t &= y_t - y^*_t - \frac{1-\upsilon}{\sigma}z_t - G_Y g_t\\
-    \left(\frac{1 + \upsilon (\varpi - 1)}{\sigma} \right) s_t &= y_t - y^*_t - \frac{1-\upsilon}{\sigma}z_t - G_Y g_t\\
-    \sigma^{-1} \Phi^{-1} s_t &= y_t - y^*_t - \frac{1-\upsilon}{\sigma}z_t - G_Y g_t\\
-    s_t &= \sigma \Phi(y_t - y^*_t) - (1-\upsilon)\Phi z_t - G_Y \sigma \Phi g_t\\
-    s_t &= \sigma_\upsilon(y_t - y^*_t) - (1-\upsilon)\Phi z_t - G_Y \sigma_\upsilon g_t\\
-\end{align}
-\begin{align}
-    \Phi &= \frac{1}{1 + \upsilon (\varpi - 1)}\\
-    \varpi &=  \sigma \eta + (1-\upsilon)(\sigma \eta - 1) = 2\sigma \eta-\upsilon\sigma \eta -1 + \upsilon\\
-    \sigma_\upsilon &= \sigma \Phi
-\end{align}
-\pagebreak
-\begin{align}
     y_t &= (1-\upsilon)c_t + \upsilon(2-\upsilon)\eta s_t + \upsilon y_t^* + G_Y g_t\\
     \implies c_t &= (1-\upsilon)^{-1}(y_t - \upsilon(2-\upsilon)\eta s_t - \upsilon y_t^* - G_Y g_t)\\
     c_t &= \E \{ c_{t+1}\} - \frac{1}{\sigma}(i_t - \E \{ \pi_{t+1}\} - \rho) + \frac{\upsilon}{\sigma}\E \{ \Delta s_{t+1} \} + \frac{1}{\sigma}(1-\rho_z)z_t \\
     s_t &= \sigma_\upsilon(y_t - y^*_t) - (1-\upsilon)\Phi z_t - G_Y \sigma_\upsilon g_t\\
 \end{align}
-\begin{align*}
-    0 &= \E \{ \Delta c_{t+1}\} - \frac{1}{\sigma}(i_t - \E \{ \pi_{H,+1}\} - \rho) + \frac{\upsilon}{\sigma}\E \{ \Delta s_{t+1} \} + \frac{1}{\sigma}(1-\rho_z)z_t \\
-    0  &= \E \{ \Delta y_{t+1}\}  - \upsilon(2-\upsilon)\eta \E \{\Delta s_{t+1} \} - \upsilon \E \{\Delta y_{t+1}^* \} -G_Y \Delta g_{t+1} - \frac{1-\upsilon}{\sigma}(i_t - \E \{ \pi_{H,+1}\} - \rho) + \frac{(1-\upsilon)\upsilon}{\sigma}\E \{ \Delta s_{t+1} \} + \frac{1-\upsilon}{\sigma}(1-\rho_z)z_t \\
-    0  &= \E \{ \Delta y_{t+1}\}  + \left(\frac{(1-\upsilon)\upsilon}{\sigma} - \upsilon(2-\upsilon)\eta\right) \E \{\Delta s_{t+1} \} - \upsilon \E \{\Delta y_{t+1}^* \} -G_Y \Delta g_{t+1} - \frac{1-\upsilon}{\sigma}(i_t - \E \{ \pi_{H,+1}\} - \rho)  + \frac{1-\upsilon}{\sigma}(1-\rho_z)z_t \\
-    0  &= \E \{ \Delta y_{t+1}\}  - \left(\frac{\upsilon \varpi}{\sigma}\right) \E \{\Delta s_{t+1} \} - \upsilon \E \{\Delta y_{t+1}^* \} -G_Y \Delta g_{t+1} - \frac{1-\upsilon}{\sigma}(i_t - \E \{ \pi_{H,+1}\} - \rho)  + \frac{1-\upsilon}{\sigma}(1-\rho_z)z_t \\
-    0  &= \E \{ \Delta y_{t+1}\}  - \left(\frac{\upsilon \varpi}{\sigma}\right) \E \left( \sigma_\upsilon(\Delta y_{t+1} - \Delta y^*_{t+1}) - (1-\upsilon)\Phi (\Delta z_{t+1}) - G_Y \sigma_\upsilon \Delta g_{t+1} \right) - \upsilon \E \{\Delta y_{t+1}^* \} - \frac{1-\upsilon}{\sigma}(i_t - \E \{ \pi_{H,+1}\} - \rho)  + \frac{1-\upsilon}{\sigma}(1-\rho_z)z_t \\
-    0  &= \E \{ \Delta y_{t+1}\} -\upsilon \varpi \Phi \Delta y_{t+1} + \upsilon \varpi \Phi \Delta y^*_{t+1} - \upsilon \E \{\Delta y_{t+1}^* \} + \frac{1-\upsilon}{\sigma}(1-\rho_z)z_t + \upsilon \varpi \Phi \frac{1-\upsilon}{\sigma} (\rho_z - 1)z_t + \upsilon \varpi\Phi G_Y \Delta g_{t+1} -G_Y \Delta g_{t+1} - \frac{1-\upsilon}{\sigma}(i_t - \E \{ \pi_{H,+1}\} - \rho)\\
-    0  &= \Phi^{-1} \E \{ \Delta y_{t+1}\} -\upsilon \varpi \Delta y_{t+1} + \upsilon \varpi \Delta y^*_{t+1} - \upsilon \Phi^{-1} \E \{\Delta y_{t+1}^* \} \\
-        &  +\Phi^{-1} \frac{1-\upsilon}{\sigma}(1-\rho_z)z_t + \upsilon \varpi \frac{1-\upsilon}{\sigma} (\rho_z - 1)z_t + \upsilon \varpi G_Y \Delta g_{t+1} -G_Y \Delta g_{t+1}\\
-        &- \frac{1-\upsilon}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - \rho)\\
-    0  &= (\Phi^{-1} -\upsilon \varpi) \Delta y_{t+1} + \upsilon (\varpi - \Phi^{-1})\E \{\Delta y_{t+1}^* \} \\
-        &  -(\Phi^{-1} -\upsilon \varpi)\frac{1-\upsilon}{\sigma} (\rho_z - 1)z_t + (\upsilon \varpi  - 1) G_Y \Delta g_{t+1}\\
-        &- \frac{1-\upsilon}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - \rho)\\
-    0  &= \Delta y_{t+1} + \frac{\upsilon (\varpi - \Phi^{-1})}{\Phi^{-1} -\upsilon \varpi}\E \{\Delta y_{t+1}^* \} \\
-        &  -\frac{1-\upsilon}{\sigma} (\rho_z - 1)z_t + \frac{(\upsilon \varpi  - 1)}{\Phi^{-1} -\upsilon \varpi} G_Y \Delta g_{t+1}\\
-        &- \frac{1-\upsilon}{\Phi^{-1} -\upsilon \varpi}\frac{1}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - \rho)\\
-    y_t  &= y_{t+1}  -\frac{1-\upsilon}{\sigma} (\rho_z - 1)z_t \\
-        & + \frac{(\upsilon \varpi  - 1)}{\Phi^{-1} -\upsilon \varpi} G_Y \Delta g_{t+1} + \frac{\upsilon (\varpi - \Phi^{-1})}{\Phi^{-1} -\upsilon \varpi}\E \{\Delta y_{t+1}^* \} - \frac{1-\upsilon}{\Phi^{-1} -\upsilon \varpi}\frac{1}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - \rho) \\
-    y_t  &= y_{t+1}  -\frac{1-\upsilon}{\sigma} (\rho_z - 1)z_t - \frac{1-\upsilon}{1-\upsilon}\frac{1}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - \rho) + \frac{(1-\upsilon)(\upsilon \varpi - \upsilon)}{1 - \upsilon}\E \{\Delta y_{t+1}^* \} + \frac{\upsilon \varpi  - 1}{1-\upsilon} G_Y \Delta g_{t+1}\\
-    y_t  &= y_{t+1} - \frac{1}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - \rho) + \upsilon (\varpi - 1)\E \{\Delta y_{t+1}^* \}  + \frac{1-\upsilon}{\sigma} (1-\rho_z)z_t + \frac{\upsilon \varpi  - 1}{1-\upsilon} G_Y \Delta g_{t+1}
-\end{align*}
+% \begin{align*}
+%     0 &= \E \{ \Delta c_{t+1}\} - \frac{1}{\sigma}(i_t - \E \{ \pi_{H,+1}\} - \rho) + \frac{\upsilon}{\sigma}\E \{ \Delta s_{t+1} \} + \frac{1}{\sigma}(1-\rho_z)z_t \\
+%     0  &= \E \{ \Delta y_{t+1}\}  - \upsilon(2-\upsilon)\eta \E \{\Delta s_{t+1} \} - \upsilon \E \{\Delta y_{t+1}^* \} -G_Y \Delta g_{t+1} - \frac{1-\upsilon}{\sigma}(i_t - \E \{ \pi_{H,+1}\} - \rho) + \frac{(1-\upsilon)\upsilon}{\sigma}\E \{ \Delta s_{t+1} \} + \frac{1-\upsilon}{\sigma}(1-\rho_z)z_t \\
+%     0  &= \E \{ \Delta y_{t+1}\}  + \left(\frac{(1-\upsilon)\upsilon}{\sigma} - \upsilon(2-\upsilon)\eta\right) \E \{\Delta s_{t+1} \} - \upsilon \E \{\Delta y_{t+1}^* \} -G_Y \Delta g_{t+1} - \frac{1-\upsilon}{\sigma}(i_t - \E \{ \pi_{H,+1}\} - \rho)  + \frac{1-\upsilon}{\sigma}(1-\rho_z)z_t \\
+%     0  &= \E \{ \Delta y_{t+1}\}  - \left(\frac{\upsilon \varpi}{\sigma}\right) \E \{\Delta s_{t+1} \} - \upsilon \E \{\Delta y_{t+1}^* \} -G_Y \Delta g_{t+1} - \frac{1-\upsilon}{\sigma}(i_t - \E \{ \pi_{H,+1}\} - \rho)  + \frac{1-\upsilon}{\sigma}(1-\rho_z)z_t \\
+%     0  &= \E \{ \Delta y_{t+1}\}  - \left(\frac{\upsilon \varpi}{\sigma}\right) \E \left( \sigma_\upsilon(\Delta y_{t+1} - \Delta y^*_{t+1}) - (1-\upsilon)\Phi (\Delta z_{t+1}) - G_Y \sigma_\upsilon \Delta g_{t+1} \right) - \upsilon \E \{\Delta y_{t+1}^* \} - \frac{1-\upsilon}{\sigma}(i_t - \E \{ \pi_{H,+1}\} - \rho)  + \frac{1-\upsilon}{\sigma}(1-\rho_z)z_t \\
+%     0  &= \E \{ \Delta y_{t+1}\} -\upsilon \varpi \Phi \Delta y_{t+1} + \upsilon \varpi \Phi \Delta y^*_{t+1} - \upsilon \E \{\Delta y_{t+1}^* \} + \frac{1-\upsilon}{\sigma}(1-\rho_z)z_t + \upsilon \varpi \Phi \frac{1-\upsilon}{\sigma} (\rho_z - 1)z_t + \upsilon \varpi\Phi G_Y \Delta g_{t+1} -G_Y \Delta g_{t+1} - \frac{1-\upsilon}{\sigma}(i_t - \E \{ \pi_{H,+1}\} - \rho)\\
+%     0  &= \Phi^{-1} \E \{ \Delta y_{t+1}\} -\upsilon \varpi \Delta y_{t+1} + \upsilon \varpi \Delta y^*_{t+1} - \upsilon \Phi^{-1} \E \{\Delta y_{t+1}^* \} \\
+%         &  +\Phi^{-1} \frac{1-\upsilon}{\sigma}(1-\rho_z)z_t + \upsilon \varpi \frac{1-\upsilon}{\sigma} (\rho_z - 1)z_t + \upsilon \varpi G_Y \Delta g_{t+1} -G_Y \Delta g_{t+1}\\
+%         &- \frac{1-\upsilon}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - \rho)\\
+%     0  &= (\Phi^{-1} -\upsilon \varpi) \Delta y_{t+1} + \upsilon (\varpi - \Phi^{-1})\E \{\Delta y_{t+1}^* \} \\
+%         &  -(\Phi^{-1} -\upsilon \varpi)\frac{1-\upsilon}{\sigma} (\rho_z - 1)z_t + (\upsilon \varpi  - 1) G_Y \Delta g_{t+1}\\
+%         &- \frac{1-\upsilon}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - \rho)\\
+%     0  &= \Delta y_{t+1} + \frac{\upsilon (\varpi - \Phi^{-1})}{\Phi^{-1} -\upsilon \varpi}\E \{\Delta y_{t+1}^* \} \\
+%         &  -\frac{1-\upsilon}{\sigma} (\rho_z - 1)z_t + \frac{(\upsilon \varpi  - 1)}{\Phi^{-1} -\upsilon \varpi} G_Y \Delta g_{t+1}\\
+%         &- \frac{1-\upsilon}{\Phi^{-1} -\upsilon \varpi}\frac{1}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - \rho)\\
+%     y_t  &= y_{t+1}  -\frac{1-\upsilon}{\sigma} (\rho_z - 1)z_t \\
+%         & + \frac{(\upsilon \varpi  - 1)}{\Phi^{-1} -\upsilon \varpi} G_Y \Delta g_{t+1} + \frac{\upsilon (\varpi - \Phi^{-1})}{\Phi^{-1} -\upsilon \varpi}\E \{\Delta y_{t+1}^* \} - \frac{1-\upsilon}{\Phi^{-1} -\upsilon \varpi}\frac{1}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - \rho) \\
+%     y_t  &= y_{t+1}  -\frac{1-\upsilon}{\sigma} (\rho_z - 1)z_t - \frac{1-\upsilon}{1-\upsilon}\frac{1}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - \rho) + \frac{(1-\upsilon)(\upsilon \varpi - \upsilon)}{1 - \upsilon}\E \{\Delta y_{t+1}^* \} + \frac{\upsilon \varpi  - 1}{1-\upsilon} G_Y \Delta g_{t+1}\\
+%     y_t  &= y_{t+1} - \frac{1}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - \rho) + \upsilon (\varpi - 1)\E \{\Delta y_{t+1}^* \}  + \frac{1-\upsilon}{\sigma} (1-\rho_z)z_t + \frac{\upsilon \varpi  - 1}{1-\upsilon} G_Y \Delta g_{t+1}
+% \end{align*}
 \begin{align}
     y^n_t  &= y^n_{t+1} - \frac{1}{\sigma_\upsilon}(r^n_t - \rho) + \upsilon (\varpi - 1)\E \{\Delta y_{t+1}^* \}  + \frac{1-\upsilon}{\sigma} (1-\rho_z)z_t + \frac{\upsilon \varpi  - 1}{1-\upsilon} G_Y \Delta g_{t+1}\\
     0  &= \Delta y^n_{t+1} - \frac{1}{\sigma_\upsilon}(r^n_t - \rho) + \upsilon (\varpi - 1)\E \{\Delta y_{t+1}^* \}  + \frac{1-\upsilon}{\sigma} (1-\rho_z)z_t + \frac{\upsilon \varpi  - 1}{1-\upsilon} G_Y \Delta g_{t+1}\\

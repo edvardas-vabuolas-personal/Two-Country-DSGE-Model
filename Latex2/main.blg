@@ -1,17 +1,17 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'main.blg'
-[73] biber-darwin:340> INFO - === Sat Jul  8, 2023, 17:56:05
-[88] Biber.pm:419> INFO - Reading 'main.bcf'
-[164] Biber.pm:979> INFO - Found 9 citekeys in bib section 0
-[176] Biber.pm:4419> INFO - Processing section 0
-[184] Biber.pm:4610> INFO - Looking for bibtex file 'DissertationDSGE.bib' for section 0
-[185] bibtex.pm:1713> INFO - LaTeX decoding ...
-[197] bibtex.pm:1519> INFO - Found BibTeX data source 'DissertationDSGE.bib'
-[258] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[258] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[258] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
-[258] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
-[269] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[273] bbl.pm:763> INFO - Output to main.bbl
-[273] Biber.pm:131> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
-[273] Biber.pm:133> INFO - WARNINGS: 1
+[63] biber-darwin:340> INFO - === Sun Jul  9, 2023, 16:42:40
+[78] Biber.pm:419> INFO - Reading 'main.bcf'
+[151] Biber.pm:979> INFO - Found 9 citekeys in bib section 0
+[163] Biber.pm:4419> INFO - Processing section 0
+[172] Biber.pm:4610> INFO - Looking for bibtex file 'DissertationDSGE.bib' for section 0
+[173] bibtex.pm:1713> INFO - LaTeX decoding ...
+[185] bibtex.pm:1519> INFO - Found BibTeX data source 'DissertationDSGE.bib'
+[246] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[246] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[246] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[246] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[258] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[262] bbl.pm:763> INFO - Output to main.bbl
+[263] Biber.pm:131> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
+[263] Biber.pm:133> INFO - WARNINGS: 1

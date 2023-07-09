@@ -1067,14 +1067,42 @@ INPUT ./Theoretical DSGE model/equilibrium.tex
 INPUT ./Theoretical DSGE model/equilibrium.tex
 INPUT ./Theoretical DSGE model/equilibrium.tex
 INPUT ./Theoretical DSGE model/equilibrium.tex
+INPUT ./Appendix/appendix.tex
+INPUT ./Appendix/appendix.tex
+INPUT ./Appendix/appendix.tex
+INPUT ./Appendix/appendix.tex
+INPUT ./Appendix/intratemporal_loglinear.tex
+INPUT ./Appendix/intratemporal_loglinear.tex
+INPUT ./Appendix/intratemporal_loglinear.tex
+INPUT ./Appendix/intratemporal_loglinear.tex
+INPUT ./Appendix/log_aggregate_rc.tex
+INPUT ./Appendix/log_aggregate_rc.tex
+INPUT ./Appendix/log_aggregate_rc.tex
+INPUT ./Appendix/log_aggregate_rc.tex
+INPUT ./Appendix/euler_w_arrow.tex
+INPUT ./Appendix/euler_w_arrow.tex
+INPUT ./Appendix/euler_w_arrow.tex
+INPUT ./Appendix/euler_w_arrow.tex
+INPUT ./Appendix/deriving_bilateral_exchange_rate.tex
+INPUT ./Appendix/deriving_bilateral_exchange_rate.tex
+INPUT ./Appendix/deriving_bilateral_exchange_rate.tex
+INPUT ./Appendix/deriving_bilateral_exchange_rate.tex
+INPUT ./Appendix/loglinearised_tax_revenue.tex
+INPUT ./Appendix/loglinearised_tax_revenue.tex
+INPUT ./Appendix/loglinearised_tax_revenue.tex
+INPUT ./Appendix/loglinearised_tax_revenue.tex
+INPUT ./Appendix/terms_of_trade_derivation.tex
+INPUT ./Appendix/terms_of_trade_derivation.tex
+INPUT ./Appendix/terms_of_trade_derivation.tex
+INPUT ./Appendix/terms_of_trade_derivation.tex
+INPUT ./Appendix/dynamic_is.tex
+INPUT ./Appendix/dynamic_is.tex
+INPUT ./Appendix/dynamic_is.tex
+INPUT ./Appendix/dynamic_is.tex
 INPUT ./model.tex
 INPUT ././model.tex
 INPUT ./model.tex
 INPUT ././model.tex
-INPUT ./scenarios.tex
-INPUT ././scenarios.tex
-INPUT ./scenarios.tex
-INPUT ././scenarios.tex
 INPUT main.aux
 INPUT main.run.xml
 OUTPUT main.run.xml

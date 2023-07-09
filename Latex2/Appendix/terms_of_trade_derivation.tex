@@ -1,0 +1,25 @@
+\subsubsection*{Derivation of loglinearised terms of trade}
+\begin{align} \label{eq:terms_of_trade_derivation_beginning}
+    c_t & = y^*_t + \frac{1}{\sigma}z_t + \frac{1-\upsilon}{\sigma}s_t\\
+    y_t &= (1-\upsilon)c_t + \upsilon (2-\upsilon)\eta s_t + \upsilon y^*_t + G_Y g_t\\
+    y_t &= (1-\upsilon)\left( y^*_t + \frac{1}{\sigma}z_t + \frac{1-\upsilon}{\sigma}s_t \right) + \upsilon (2-\upsilon)\eta s_t + \upsilon y^*_t + G_Y g_t\\
+    y_t &= (1-\upsilon)y^*_t + \frac{1-\upsilon}{\sigma}z_t + (1-\upsilon)\frac{1-\upsilon}{\sigma}s_t + \upsilon (2-\upsilon)\eta s_t + \upsilon y^*_t + G_Y g_t\\
+    y_t &= y^*_t + \frac{1-\upsilon}{\sigma}z_t + (1-\upsilon)\frac{1-\upsilon}{\sigma}s_t + \upsilon (2-\upsilon)\eta s_t + G_Y g_t\\
+    y_t &= y^*_t + \frac{1-\upsilon}{\sigma}z_t + \left((1-\upsilon)\frac{1-\upsilon}{\sigma} + \upsilon (2-\upsilon)\eta \right) s_t + G_Y g_t
+\end{align} 
+Rearrange:
+\begin{align}   
+    \left((1-\upsilon)\frac{1-\upsilon}{\sigma} + \upsilon (2-\upsilon)\eta \right) s_t &= y_t - y^*_t - \frac{1-\upsilon}{\sigma}z_t - G_Y g_t\\
+    \left(\frac{(1-\upsilon)(1-\upsilon) + \sigma\upsilon (2-\upsilon)\eta}{\sigma} \right) s_t &= y_t - y^*_t - \frac{1-\upsilon}{\sigma}z_t - G_Y g_t\\
+    \left(\frac{1 -2\upsilon + \upsilon^2 + \sigma\upsilon (2-\upsilon)\eta}{\sigma} \right) s_t &= y_t - y^*_t - \frac{1-\upsilon}{\sigma}z_t - G_Y g_t\\
+    \left(\frac{1 - \upsilon (2-\upsilon) + \sigma\upsilon (2-\upsilon)\eta}{\sigma} \right) s_t &= y_t - y^*_t - \frac{1-\upsilon}{\sigma}z_t - G_Y g_t\\
+    \left(\frac{1 - \upsilon (2-\upsilon)(1-\sigma \eta)}{\sigma} \right) s_t &= y_t - y^*_t - \frac{1-\upsilon}{\sigma}z_t - G_Y g_t\\
+    \left(\frac{1 + \upsilon (2-\upsilon)(\sigma \eta - 1)}{\sigma} \right) s_t &= y_t - y^*_t - \frac{1-\upsilon}{\sigma}z_t - G_Y g_t\\
+    \left(\frac{1 + \upsilon (2\sigma \eta-\upsilon\sigma \eta -2 + \upsilon)}{\sigma} \right) s_t &= y_t - y^*_t - \frac{1-\upsilon}{\sigma}z_t - G_Y g_t\\
+    \left(\frac{1 + \upsilon (\varpi - 1)}{\sigma} \right) s_t &= y_t - y^*_t - \frac{1-\upsilon}{\sigma}z_t - G_Y g_t\\
+    \sigma^{-1} \Phi^{-1} s_t &= y_t - y^*_t - \frac{1-\upsilon}{\sigma}z_t - G_Y g_t\\
+    % s_t &= \sigma \Phi(y_t - y^*_t) - (1-\upsilon)\Phi z_t - G_Y \sigma \Phi g_t\\
+    s_t &= \sigma_\upsilon(y_t - y^*_t) - (1-\upsilon)\Phi z_t - G_Y \sigma_\upsilon g_t \label{eq:terms_of_trade_derivation_end}
+\end{align}
+where $\varpi = \sigma \eta + (1-\upsilon)(\sigma \eta - 1)$, $\Phi = \frac{1}{1 + \upsilon (\varpi - 1)}$ and $\sigma_\upsilon = \sigma \Phi$.
+\newpage

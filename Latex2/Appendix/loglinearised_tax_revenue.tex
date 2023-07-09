@@ -1,0 +1,18 @@
+\subsubsection*{Derivation of loglinearised tax revenue}
+\begin{align*}
+    T^*_t &= \varpi\tau_t W_t N_t + (1-\varpi)\tau_t W^*_t N^*_t \\
+    T^* &= \varpi\tau W N + (1-\varpi)\tau W^* N^* \quad \text{(Steady state)}\\
+    &\text{Using Uhlig's (1999) method, $X_tY_t \approx XY\mathbf{e}^{\tilde{X}_t + \tilde{Y}_t}$: }\\
+    T\mathbf{e}^{\tilde{T}^*_t} &= \varpi \tau W N \mathbf{e}^{\tilde{\tau}_t+\tilde{W}_t+\tilde{N}_t} + (1-\varpi) \tau W^* N^* \mathbf{e}^{\tilde{\tau}_t+\tilde{W}^*_t+\tilde{N}^*_T} \\
+    &\text{Using $\mathbf{e}^{\tilde{X}_t} \approx 1 + {\tilde{X}_t}$: }\\
+    T^* (1 + {\tilde{T}^*_t}) &= \varpi \tau W N (1 + {\tilde{\tau}_t+\tilde{W}_t+\tilde{N}_t}) + (1-\varpi) \tau W^* N^* (1 + {\tilde{\tau}_t+\tilde{W}^*_t+\tilde{N}^*_T}) \\
+    &\text{Subtract (\textbf{??}): } \\
+    T^* (1 + {\tilde{T}^*_t}) - T^* &= \varpi \tau W N (1 + {\tilde{\tau}_t+\tilde{W}_t+\tilde{N}_t}) - \varpi\tau W N + (1-\varpi) \tau W^* N^* (1 + {\tilde{\tau}_t+\tilde{W}^*_t+\tilde{N}^*_T}) - (1-\varpi)\tau W^* N^* \\
+    T^*[(1 + {\tilde{T}^*_t}) - 1] &= \varpi \tau W N [(1 + {\tilde{\tau}_t+\tilde{W}_t+\tilde{N}_t}) - 1] + (1-\varpi) \tau W^* N^* [(1 + {\tilde{\tau}_t+\tilde{W}^*_t+\tilde{N}^*_T}) - 1] \\
+    T^*\tilde{T}^*_t &= \varpi \tau W N (\tilde{\tau}_t + \tilde{W}_t + \tilde{N}_t) + (1-\varpi) \tau W^* N^* (\tilde{\tau}_t+\tilde{W}^*_t+\tilde{N}^*_T) \\
+    &\text{Divide by $T^*$}:
+\end{align*}
+\begin{equation}
+    \dboxed{\tilde{T}^*_t = \tau\frac{ W N}{T^*}\times \varpi (\tilde{\tau}_t + \tilde{W}_t + \tilde{N}_t) + \tau \frac{ W^* N^*}{T^*} \times (1-\varpi) (\tilde{\tau}_t+\tilde{W}^*_t+\tilde{N}^*_t)}
+\end{equation}
+\newpage

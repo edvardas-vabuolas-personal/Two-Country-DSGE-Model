@@ -42,3 +42,33 @@ Note that Equation (\ref{eq:demand_for_one_good}) and all subsequent derivations
     \end{tabular}
     \caption{Demand for good $j$ for different policy scenarios}
 \end{table}
+Equation (\ref{eq:demand_for_one_good}) can be loglinearised around a symmetric steady state to yield:
+\begin{align}
+    Y_t &= (1-\upsilon)\left(\frac{P_{H,t}}{P_t}\right)^{-\eta}C_t + \upsilon \mathcal{S}_t^{\eta}Y_t^* + G_t\\
+    Y \mathbf{e}^{y_t} &= (1-\upsilon)\left(\frac{P}{P_{H}}\right)^{\eta}C \mathbf{e}^{-\eta p_{H,t} + \eta p_t + c_t}+ \upsilon S^{\eta} Y^* \mathbf{e}^{\eta s_t + y^*_t} + G \mathbf{e}^{g_t}\\
+    \vdots & \quad \text{(see Appendix \ref{eq:appendix_log_rc_beginning} - \ref{eq:appendix_log_rc_end})} \nonumber \\
+    y_t &= (1-\upsilon)c_t + \upsilon (2-\upsilon)\eta s_t + \upsilon y^*_t + G_Y g_t \label{eq:aggregate_rc}
+\end{align}
+where the last term is equal to zero if the government is financed via lump-sum taxes. (\textbf{??}) We can use Equation (\ref{eq:link_between_consumption_and_world_output}) that links domestic consumption to world output and previous equation (\ref{eq:aggregate_rc}) to express terms of trade as a function of domestic output, world output, preference shifter, and government spending:
+\begin{align}
+    y_t &= (1-\upsilon)\left( y^*_t + \frac{1}{\sigma}z_t + \frac{1-\upsilon}{\sigma}s_t \right) + \upsilon (2-\upsilon)\eta s_t + \upsilon y^*_t + G_Y g_t \\
+    \vdots & \quad \text{(see Appendix \ref{eq:terms_of_trade_derivation_beginning} - \ref{eq:terms_of_trade_derivation_end})} \nonumber \\
+    s_t &= \sigma_\upsilon(y_t - y^*_t) - (1-\upsilon)\Phi z_t - \sigma_\upsilon G_Y g_t \label{eq:terms_of_trade_w_gov}
+\end{align}
+where $\varpi = \sigma \eta + (1-\upsilon)(\sigma \eta - 1)$, $\Phi = \frac{1}{1 + \upsilon (\varpi - 1)}$ and $\sigma_\upsilon = \sigma \Phi$. Negative government term implies that (effective) trade of terms are decreasing in government spending. This is intuitive: the government is modelled to demand exclusively domestic goods, which induces inflationary pressure and makes home goods less competitive internationally. The opposite is true for the domestic-world output gap: if our firms produce relatively more than the rest of the world and is able to export relatively more, then terms of trade increase (the first term of (\ref{eq:terms_of_trade_w_gov}) is positive).
+
+Furthermore, the Euler equation in (\ref{eq:euler_equation}) is a function of CPI, but using CPI definition (\ref{eq:cpi_inflation_tot}), it can be rewritten to be a function of domestic inflation and terms of trade:
+\begin{align}
+    c_t &= \E\{ c_{t+1}\} - \frac{1}{\sigma}(i_t - \E \{ \pi_{H,t+1}\} - \rho) + \frac{\upsilon}{\sigma}\E \{ \Delta s_{t+1} \} + \frac{1}{\sigma}(1-\rho_z)z_t \label{eq:euler_w_domestic_inflation}
+\end{align}
+Finally, aggregate resource constraint (\ref{eq:aggregate_rc}), terms of trade definition (\ref{eq:terms_of_trade_w_gov}), and new Euler equation (\ref{eq:euler_w_domestic_inflation}) can be combined and used to derive a version of dynamic IS equation:
+\begin{align}
+    c_t &= \E\{ c_{t+1}\} - \frac{1}{\sigma}(i_t - \E \{ \pi_{H,t+1}\} - \rho) + \frac{\upsilon}{\sigma}\E \{ \Delta s_{t+1} \} + \frac{1}{\sigma}(1-\rho_z)z_t \\
+    \vdots & \quad \text{(see Appendix \ref{eq:dynamic_is_beginning}-\ref{eq:dynamic_is_end})} \nonumber \\
+    y_t  &= \E_t \{y_{t+1}\} - \frac{1}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - \rho) + \upsilon (\varpi - 1)\E \{\Delta y_{t+1}^* \} \nonumber \\ 
+    &+ \frac{1-\upsilon}{\sigma} (1-\rho_z)z_t + \frac{\upsilon \varpi  - 1}{1-\upsilon} G_Y \{\Delta g_{t+1}\} \label{eq:a_version_of_dis}
+\end{align}
+which implies that output in current period depends not only on expected output, inflation, and change in world output, but it also depends on expected government spending. Equation (\ref{eq:a_version_of_dis}) implies that the natural rate of interest is:
+
+
+
