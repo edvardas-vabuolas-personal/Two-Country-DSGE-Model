@@ -1,0 +1,16 @@
+\subsubsection*{Derivation of (final) Dynamic IS}
+\begin{align}\label{eq:final_dynamic_is_derivation_beginning}
+    y^n_t  &= y^n_{t+1} - \frac{1}{\sigma_\upsilon}(r^n_t - \rho) + \upsilon (\varpi - 1)\E \{\Delta y_{t+1}^* \}  + \frac{1-\upsilon}{\sigma} (1-\rho_z)z_t + \frac{\upsilon \varpi  - 1}{1-\upsilon} G_Y \Delta g_{t+1}\\
+    0  &= \Delta y^n_{t+1} - \frac{1}{\sigma_\upsilon}(r^n_t - \rho) + \upsilon (\varpi - 1)\E \{\Delta y_{t+1}^* \}  + \frac{1-\upsilon}{\sigma} (1-\rho_z)z_t + \frac{\upsilon \varpi  - 1}{1-\upsilon} G_Y \Delta g_{t+1}\\
+    0  &= \sigma_\upsilon \Delta y^n_{t+1} - (r^n_t - \rho) + \sigma_\upsilon \upsilon (\varpi - 1)\E \{\Delta y_{t+1}^* \}  + \Phi (1-\upsilon)(1-\rho_z)z_t + \sigma_\upsilon \frac{\upsilon \varpi  - 1}{1-\upsilon} G_Y \Delta g_{t+1}\\
+    r^n_t  &= \sigma_\upsilon \Delta y^n_{t+1} + \rho + \sigma_\upsilon \upsilon (\varpi - 1)\E \{\Delta y_{t+1}^* \}  + \Phi (1-\upsilon)(1-\rho_z)z_t + \sigma_\upsilon \frac{\upsilon \varpi  - 1}{1-\upsilon} G_Y \Delta g_{t+1} \label{eq:appendix_natural_rate_of_interest_dynamic_is}
+\end{align}
+Subtract (\ref{eq:final_dynamic_is_derivation_beginning}) from (\ref{eq:a_version_of_dis}) to yield:
+\begin{align}
+    0 &= \sigma_\upsilon \Delta y_{t+1} - (i_t - \E \{ \pi_{H,+1}\}) + \rho + \sigma_\upsilon \upsilon (\varpi - 1)\E \{\Delta y_{t+1}^* \} \nonumber \\ 
+    &+ \Phi(1-\upsilon) (1-\rho_z)z_t + \sigma_\upsilon \frac{\upsilon \varpi  - 1}{1-\upsilon} G_Y \Delta g_{t+1} \nonumber \\
+    & - (\sigma_\upsilon \Delta y^n_{t+1} - (r^n_t - \rho) + \sigma_\upsilon \upsilon (\varpi - 1)\E \{\Delta y_{t+1}^* \}  \nonumber \\ 
+    &+ \Phi (1-\upsilon)(1-\rho_z)z_t + \sigma_\upsilon \frac{\upsilon \varpi  - 1}{1-\upsilon} G_Y \E_t \{ \Delta g_{t+1} \})\\
+    0 &= \sigma_\upsilon \Delta \tilde{y}_{t+1} - (i_t - \E \{ \pi_{H,+1}\} - r^n_t)\\
+    \tilde{y}_t &= \tilde{y}_{t+1} - \frac{1}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - r^n_t) \label{eq:final_dynamic_is_derivation_end}
+\end{align}

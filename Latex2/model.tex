@@ -29,36 +29,6 @@
 % \import{.}{scenarios.tex}
 % \pagebreak
 
-\begin{align}
-    y_t &= a_t + (1-\alpha)n_t\\
-    n_t &= \frac{1}{1-\alpha}(y_t - a_t)\\
-    \varpi &= \sigma \eta + (1-\upsilon)(\sigma \eta - 1)\\
-    \sigma c_t + \varphi n_t &= w_t - p_t - \frac{1}{1-\tau}\tau_t\\
-    y_t &= (1-\upsilon)c_t + \upsilon_t(2-\upsilon)\eta s_t + \upsilon y_t^*\\
-    c_t &= y_t^* + \frac{1}{\sigma}z_t + \frac{1-\upsilon}{\sigma}s_t\\
-    \implies c_t &= y_t - \upsilon s_t \left( (2-\upsilon)\eta + \frac{1-\upsilon}{\sigma}\right) + \frac{\upsilon}{\sigma}z_t
-\end{align}
-\begin{align}
-    \mu_t &= -(\sigma c_t + \varphi n_t + \frac{1}{1-\tau}\tau_t) - \upsilon s_t + a_t - \alpha n_t\\
-    &= -\sigma c_t - \varphi n_t - \frac{1}{1-\tau}\tau_t - \upsilon s_t + a_t - \alpha n_t\\
-    &= -\sigma c_t - \frac{1}{1-\tau}\tau_t - \upsilon s_t + a_t - n_t(\varphi + \alpha)\\
-\end{align}
-\begin{align}
-    -n_t(\varphi + \alpha) = -\frac{1}{1-\alpha}(y_t - a_t)(\varphi + \alpha)\\
-    -n_t(\varphi + \alpha) = -\frac{\varphi + \alpha}{1-\alpha}(y_t - a_t)\\
-    -n_t(\varphi + \alpha) = -\frac{\varphi + \alpha}{1-\alpha}y_t + \frac{\varphi + \alpha}{1-\alpha}a_t\\
-\end{align}
-\begin{align}
-   \mu_t &= -\sigma c_t - \frac{1}{1-\tau}\tau_t - \upsilon s_t + a_t -\frac{\varphi + \alpha}{1-\alpha}y_t + \frac{\varphi + \alpha}{1-\alpha}a_t\\
-   \mu_t &= -\sigma c_t - \frac{1}{1-\tau}\tau_t - \upsilon s_t + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t -\frac{\varphi + \alpha}{1-\alpha}y_t \\
-   \mu_t &= -\sigma \left(y_t - \upsilon s_t \left( (2-\upsilon)\eta + \frac{1-\upsilon}{\sigma}\right) + \frac{\upsilon}{\sigma}z_t\right) - \frac{1}{1-\tau}\tau_t - \upsilon s_t + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t -\frac{\varphi + \alpha}{1-\alpha}y_t \\
-   \mu_t &= -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y_t + \sigma \upsilon s_t \left( (2-\upsilon)\eta + \frac{1-\upsilon}{\sigma}\right) - \upsilon z_t- \frac{1}{1-\tau}\tau_t - \upsilon s_t + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t \\
-   \mu_t &= -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y_t + \upsilon s_t \left(\sigma  \left( (2-\upsilon)\eta + \frac{1-\upsilon}{\sigma}\right)- 1 \right) - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t\\
-   \mu_t &= -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y_t + \upsilon s_t \left( (2-\upsilon)\sigma \eta + {1-\upsilon}\right)- 1 - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t\\
-   \mu_t &= -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y_t + \upsilon s_t \left( (2-\upsilon)\sigma \eta -\upsilon\right) - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t\\
-   \mu_t &= -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y_t + \upsilon s_t \left( 2\sigma \eta-\upsilon\sigma \eta -\upsilon\right) - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t\\
-   \mu_t &= -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y_t + \upsilon (\varpi - 1) s_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t
-\end{align}
 
 \begin{align}
     \pi_{H,t} &= \beta \E \{\pi_{H,t+1}\} + \lambda \hat{\mu}_t \implies \pi_{H,t} = \beta \E \{\pi_{H,t+1}\} - \lambda \mu_t \\
@@ -141,19 +111,8 @@ Given that
 %     y_t  &= y_{t+1}  -\frac{1-\upsilon}{\sigma} (\rho_z - 1)z_t - \frac{1-\upsilon}{1-\upsilon}\frac{1}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - \rho) + \frac{(1-\upsilon)(\upsilon \varpi - \upsilon)}{1 - \upsilon}\E \{\Delta y_{t+1}^* \} + \frac{\upsilon \varpi  - 1}{1-\upsilon} G_Y \Delta g_{t+1}\\
 %     y_t  &= y_{t+1} - \frac{1}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - \rho) + \upsilon (\varpi - 1)\E \{\Delta y_{t+1}^* \}  + \frac{1-\upsilon}{\sigma} (1-\rho_z)z_t + \frac{\upsilon \varpi  - 1}{1-\upsilon} G_Y \Delta g_{t+1}
 % \end{align*}
-\begin{align}
-    y^n_t  &= y^n_{t+1} - \frac{1}{\sigma_\upsilon}(r^n_t - \rho) + \upsilon (\varpi - 1)\E \{\Delta y_{t+1}^* \}  + \frac{1-\upsilon}{\sigma} (1-\rho_z)z_t + \frac{\upsilon \varpi  - 1}{1-\upsilon} G_Y \Delta g_{t+1}\\
-    0  &= \Delta y^n_{t+1} - \frac{1}{\sigma_\upsilon}(r^n_t - \rho) + \upsilon (\varpi - 1)\E \{\Delta y_{t+1}^* \}  + \frac{1-\upsilon}{\sigma} (1-\rho_z)z_t + \frac{\upsilon \varpi  - 1}{1-\upsilon} G_Y \Delta g_{t+1}\\
-    0  &= \sigma_\upsilon \Delta y^n_{t+1} - (r^n_t - \rho) + \sigma_\upsilon \upsilon (\varpi - 1)\E \{\Delta y_{t+1}^* \}  + \Phi (1-\upsilon)(1-\rho_z)z_t + \sigma_\upsilon \frac{\upsilon \varpi  - 1}{1-\upsilon} G_Y \Delta g_{t+1}\\
-    r^n_t  &= \sigma_\upsilon \Delta y^n_{t+1} + \rho + \sigma_\upsilon \upsilon (\varpi - 1)\E \{\Delta y_{t+1}^* \}  + \Phi (1-\upsilon)(1-\rho_z)z_t + \sigma_\upsilon \frac{\upsilon \varpi  - 1}{1-\upsilon} G_Y \Delta g_{t+1}\\
-\end{align}
-\begin{align}
-    0 &= \sigma_\upsilon \Delta y_{t+1} - (i_t - \E \{ \pi_{H,+1}\}) + \rho + \sigma_\upsilon \upsilon (\varpi - 1)\E \{\Delta y_{t+1}^* \}  + \Phi(1-\upsilon) (1-\rho_z)z_t + \sigma_\upsilon \frac{\upsilon \varpi  - 1}{1-\upsilon} G_Y \Delta g_{t+1} \\
-    & - (\sigma_\upsilon \Delta y^n_{t+1} - (r^n_t - \rho) + \sigma_\upsilon \upsilon (\varpi - 1)\E \{\Delta y_{t+1}^* \}  + \Phi (1-\upsilon)(1-\rho_z)z_t + \sigma_\upsilon \frac{\upsilon \varpi  - 1}{1-\upsilon} G_Y \Delta g_{t+1})\\
-    0 &= \sigma_\upsilon \Delta \tilde{y}_{t+1} - (i_t - \E \{ \pi_{H,+1}\} - r^n_t)\\
-    \tilde{y}_t &= \tilde{y}_{t+1} - \frac{1}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - r^n_t) \quad \text{Dynamic IS Curve}\\
-\end{align}
 \pagebreak
+natural rate of interest
 \begin{align}
     r^n_t  &= \sigma_\upsilon \Delta y^n_{t+1} + \rho + \sigma_\upsilon \upsilon (\varpi - 1)\E \{\Delta y_{t+1}^* \}  + \Phi (1-\upsilon)(1-\rho_z)z_t + \sigma_\upsilon \frac{\upsilon \varpi  - 1}{1-\upsilon} G_Y \Delta g_{t+1}\\
     \sigma_\upsilon \Delta y^n_{t+1} &= \sigma_\upsilon(\Gamma_* \Delta y^*_{t+1} + \Gamma_z \Delta z_{t+1} + \Gamma_a \Delta a_{t+1} + \Gamma_g \Delta g_{t+1} + \Gamma_\tau \Delta \tau_{t+1})\\

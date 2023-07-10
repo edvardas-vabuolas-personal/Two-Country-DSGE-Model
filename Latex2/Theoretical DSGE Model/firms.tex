@@ -3,7 +3,27 @@ In line with the literature, we assume a continuum of infinitesimally small firm
 \begin{align}
     Y_t(j)   & = A_t {N_t(j)}^{1-\alpha}                         
 \end{align}
-where $A_t$ is the technology level shifter common to all firms and is assumed to evolve exogenously as an AR(1) process in log terms: $\ln A_t = \rho_a \ln A_{t-1} + \varepsilon^a_t$. Notice that the production function depends on labour input only as the model does not consider capital (\textbf{why?}). As mentioned earlier, the price stickiness is introduced by assuming that firms update their prices with probability $(1-\theta)$. The newly set price is denoted as $\xbar{P}_{H,t}(j)$. Following a similar proof offered by \textcite{jordigal_2015_monetary}\footnote{In, \textcite{jordigal_2015_monetary} the proof is only available for a closed-economy NK DSGE (Chapter 3) and less detailed than presented here}, note that if all firms are symmetrical, then they will choose the same price, i.e. $\xbar{P}_{H,t}(j) = \xbar{P}_{H,t}$. Thus, the domestic price index from Equation (\ref{eq:domestic_price_index}) can be rewritten as:
+where $A_t$ is the technology level shifter common to all firms and is assumed to evolve exogenously as an AR(1) process in log terms: $\ln A_t = \rho_a \ln A_{t-1} + \varepsilon^a_t$. Notice that the marginal product of labour is
+\begin{equation}
+    \frac{\partial Y_t(j)}{\partial N_t(j)} = (1-\alpha)A_t N_t^{-\alpha}
+\end{equation}
+which is increasing in technology level (increases labour productivity). Second order derivate with respect to hours worked indicates, that the production function exhibits decreasing returns to scale. Knowing this, the firm maximises their profit by choosing the optimal amount of labour:
+\begin{align}
+    \max_{N_t(j)}             \quad & \mathcal{F} = P_{H,t}(j)Y_{t}(j) - W_t(j)N_{t}(j) \\
+     & \text{s.t.} \quad  Y_t(j)    = A_t {N_t(j)}^{1-\alpha}     
+\end{align}
+which can be solved (see Appendix A.xx-A.xx) to yield an optimality condition:
+\begin{equation}
+    \frac{\partial \mathcal{F}}{\partial N_t(j)} \implies \frac{W_t}{P_t} = (1-\alpha)A_t N_t^{-\alpha} \label{eq:firm_optimality_condition}
+\end{equation}
+Suggesting that firm will hire workers up until the marginal product of labour is equal to the real wage. The optimality condition also acts as a link between real wage ($w_t - p_t$), labour and technology. Moreover, given that the marginal cost $\Psi_t$ needs to equal domestic price level, rearranging Equation (\ref{eq:firm_optimality_condition}) yields: 
+\begin{align}
+    \Psi_t &= \frac{W_t}{(1-\alpha)A_t N_t^{-\alpha}} & \text{Marginal cost}\\
+    \psi_t &= w_t - (a_t - \alpha n_t + log(1-\alpha)) & \text{(Log) Marginal cost} \label{eq:log_average_marginal_cost}
+\end{align}
+Unsurprisingly, the marginal cost is increasing in wages and decreasing in marginal product of labour. It is important to emphasise that definition above is an \textit{average} marginal cost across all firms producing goods $j$. The marginal cost varies across firms due to different existing levels of labour. 
+
+As mentioned earlier, the price stickiness is introduced by assuming that firms update their prices with probability $(1-\theta)$. The newly set price is denoted as $\xbar{P}_{H,t}(j)$. Following a similar proof offered by \textcite{jordigal_2015_monetary}\footnote{In, \textcite{jordigal_2015_monetary} the proof is only available for a closed-economy NK DSGE (Chapter 3) and less detailed than presented here}, note that if all firms are symmetrical, then they will choose the same price, i.e. $\xbar{P}_{H,t}(j) = \xbar{P}_{H,t}$. Thus, the domestic price index from Equation (\ref{eq:domestic_price_index}) can be rewritten as:
 \begin{align}
     P_{H,t} &= \left[ \int_{0}^{1} (P_{H,t-1}(j))^{1-\epsilon} \, dj\right]^{\frac{1}{1-\epsilon}} \\
      &= \left[ \int_{S(t)}^{1} {P_{H,t-1}(j)}^{1-\epsilon} \, dj + \int_{0}^{S(t)}{P_{H,t-1}(j)}^{1-\epsilon} \, dj\right]^{\frac{1}{1-\epsilon}} \\
@@ -31,4 +51,14 @@ where $\E_t \left[\Lambda_{t,t+k}\right]\ \forall k \geq 0$ is the expected stoc
     \vdots & \quad \text{(see Appendix A.xx-A.xx)} \nonumber \\
     \bar{p}_{H,t} &= \mu + (1-\beta \theta) \sum_{k=0}^{\infty} (\beta \theta)^{k} \E_t \left[ \psi_{t+k|t} \right] \label{eq:log_optimal_price_setting_condition}
 \end{align}
-where $\E_t \left[ \psi_{t+k|t} \right]$ and $\mu$ are the expected log marginal cost and desired\footnote{Markup that occurs under flexible or frictionless prices} markup, respectively. Equation (\ref{eq:log_optimal_price_setting_condition}) is known as the (log) \textit{optimal price setting condition} and presents firms as forward looking discounted profit maximisers. Note, that it is consistent with the previous exposition of the two extreme cases when $\theta = 0$ and $\theta = 1$, i.e. when $\theta = 1$, then $\pi_{H,t} = \bar{p}_{H,t} - \bar{p}_{H,t-1} = \mu - \mu = 0$. This equation is arguably one of the most important equations of the model: it introduces anticipation, which is used to derive relationship between domestic inflation ``today'' and (expected) ``tomorrow'', better known as the \textit{New Keynesian Phillips Curve} (NKPC). The next section is about the equilibrium or market clearing conditions, that will introduce NKPC as well as Dynamic IS curve, ``natural'' variables and the monetary policy rule. 
+where $\E_t \left[ \psi_{t+k|t} \right]$ and $\mu$ are the expected log marginal cost and desired\footnote{Markup that occurs under flexible or frictionless prices} markup, respectively. Equation (\ref{eq:log_optimal_price_setting_condition}) is known as the (log) \textit{optimal price setting condition} and presents firms as forward looking discounted profit maximisers. Note, that it is consistent with the previous exposition of the two extreme cases when $\theta = 0$ and $\theta = 1$, i.e. when $\theta = 1$, then $\pi_{H,t} = \bar{p}_{H,t} - \bar{p}_{H,t-1} = \mu - \mu = 0$. This equation is arguably one of the most important equations of the model: it introduces anticipation, which is used to derive relationship between domestic inflation ``today'' and (expected) ``tomorrow'', better known as the \textit{New Keynesian Phillips Curve} (NKPC).
+
+Moreover, Equation (\ref{eq:log_average_marginal_cost}) can be used to derive the \textit{average markup} $\mu_t$ which by definition is the log difference between domestic price level and the average marginal cost:
+\begin{align}
+    \mu_t &= p_{H,t} - (w_t - a_t + \alpha n_t) \\
+    \vdots & \quad \text{(see Appendix A.xx-A.xx)} \nonumber \\
+    \mu_t &= -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y_t + \upsilon (\varpi - 1) s_t - \frac{\tau}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t
+\end{align}
+From here it is clear that average markup is decreas
+
+The next section is about the equilibrium or market clearing conditions, that will introduce NKPC as well as Dynamic IS curve, ``natural'' variables and the monetary policy rule. 
