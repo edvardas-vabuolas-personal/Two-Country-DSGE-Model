@@ -1,13 +1,13 @@
 
-Sum count: 5066
-Words in text: 4516
-Words in headers: 63
+Sum count: 5479
+Words in text: 4876
+Words in headers: 80
 Words outside text (captions, etc.): 251
-Number of headers: 19
+Number of headers: 22
 Number of floats/tables/figures: 8
-Number of math inlines: 159
-Number of math displayed: 77
-Files: 22
+Number of math inlines: 179
+Number of math displayed: 93
+Files: 25
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
   1+7+0 (5/0/0/0) File: main.tex
@@ -16,10 +16,10 @@ Subcounts:
   324+0+0 (0/0/3/0) Included file: ././Theoretical DSGE model/model.tex
   1696+1+33 (1/1/82/27) Included file: ././Theoretical DSGE model/households.tex
   479+1+102 (1/4/25/1) Included file: ././Theoretical DSGE model/government.tex
-  550+1+43 (1/0/32/6) Included file: ././Theoretical DSGE model/firms.tex
-  371+1+7 (1/1/9/9) Included file: ././Theoretical DSGE model/equilibrium.tex
+  865+1+43 (1/0/48/18) Included file: ././Theoretical DSGE model/firms.tex
+  390+1+7 (1/1/11/10) Included file: ././Theoretical DSGE model/equilibrium.tex
   0+1+0 (1/0/0/0) Included file: ././Appendix/appendix.tex
-  2+0+0 (0/0/2/14) Included file: ././model.tex
+  6+0+0 (0/0/2/6) Included file: ././model.tex
   1+0+0 (0/0/0/0) Included file: ././final_wordcount.txt
   0+0+11 (0/1/0/0) Included file: ././Graphs/timeline.tex
   0+0+0 (0/1/0/0) Included file: ././Graphs/sigma_varphi.tex
@@ -30,4 +30,7 @@ Subcounts:
   0+5+0 (1/0/0/2) Included file: ././Appendix/loglinearised_tax_revenue.tex
   3+6+0 (1/0/3/2) Included file: ././Appendix/terms_of_trade_derivation.tex
   0+8+0 (1/0/0/2) Included file: ././Appendix/dynamic_is.tex
+  4+5+0 (1/0/0/2) Included file: ././Appendix/final_dynamic_is.tex
+  17+5+0 (1/0/2/4) Included file: ././Appendix/average_markup.tex
+  1+7+0 (1/0/0/5) Included file: ././Appendix/natural_output.tex
 

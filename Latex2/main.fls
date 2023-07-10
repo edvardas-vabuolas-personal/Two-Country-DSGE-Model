@@ -1107,6 +1107,10 @@ INPUT ./Appendix/average_markup.tex
 INPUT ./Appendix/average_markup.tex
 INPUT ./Appendix/average_markup.tex
 INPUT ./Appendix/average_markup.tex
+INPUT ./Appendix/natural_output.tex
+INPUT ./Appendix/natural_output.tex
+INPUT ./Appendix/natural_output.tex
+INPUT ./Appendix/natural_output.tex
 INPUT ./model.tex
 INPUT ././model.tex
 INPUT ./model.tex

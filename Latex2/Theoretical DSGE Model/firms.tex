@@ -38,7 +38,7 @@ Log-linearising (\ref{eq:price_dynamics_inflation}) around zero inflation steady
     \Pi_{H,t}^{1-\epsilon} &= \theta + (1-\theta)\left(\frac{\xbar{P}_{H,t}}{P_{H,t-1}}\right)^{1-\epsilon} \\
     \Pi_H \mathbf{e}^{(1-\epsilon)\pi_{H,t}} &= \theta + (1-\theta)\frac{\xbar{P_H}}{P_H}\mathbf{e}^{(1-\epsilon)(\bar{p}_{H,t} - p_{H,t})} \\
     \vdots & \quad \text{(see Appendix A.xx - A.xx)} \\
-    \pi_{H,t} &= (1-\theta)(\bar{p}_{H,t} - p_{H,t})
+    \pi_{H,t} &= (1-\theta)(\bar{p}_{H,t} - p_{H,t}) \label{eq:domestic_inflation_new_price_relationship}
 \end{align}
 Intuitively, this means that log domestic inflation depends on two elements: the difference between the current and new domestic price levels, and the price stickiness parameter $\theta$. Consider two extreme cases when $\theta = 1$ and $\theta = 0$: when $\theta = 1$, then no firms would be permitted to update their prices and the domestic inflation would always be equal to zero (CPI would still vary due to terms of trade, assuming $\upsilon \ne 0$). When $\theta = 0$, then all firms immediately react to any changes in marginal cost of production and traditional RBC ``ineffective-money'' results would follow. Firms that get to update their prices, do so by maximising their \textit{discounted lifetime cash flow}:
 \begin{align}
@@ -51,14 +51,59 @@ where $\E_t \left[\Lambda_{t,t+k}\right]\ \forall k \geq 0$ is the expected stoc
     \vdots & \quad \text{(see Appendix A.xx-A.xx)} \nonumber \\
     \bar{p}_{H,t} &= \mu + (1-\beta \theta) \sum_{k=0}^{\infty} (\beta \theta)^{k} \E_t \left[ \psi_{t+k|t} \right] \label{eq:log_optimal_price_setting_condition}
 \end{align}
-where $\E_t \left[ \psi_{t+k|t} \right]$ and $\mu$ are the expected log marginal cost and desired\footnote{Markup that occurs under flexible or frictionless prices} markup, respectively. Equation (\ref{eq:log_optimal_price_setting_condition}) is known as the (log) \textit{optimal price setting condition} and presents firms as forward looking discounted profit maximisers. Note, that it is consistent with the previous exposition of the two extreme cases when $\theta = 0$ and $\theta = 1$, i.e. when $\theta = 1$, then $\pi_{H,t} = \bar{p}_{H,t} - \bar{p}_{H,t-1} = \mu - \mu = 0$. This equation is arguably one of the most important equations of the model: it introduces anticipation, which is used to derive relationship between domestic inflation ``today'' and (expected) ``tomorrow'', better known as the \textit{New Keynesian Phillips Curve} (NKPC).
-
-Moreover, Equation (\ref{eq:log_average_marginal_cost}) can be used to derive the \textit{average markup} $\mu_t$ which by definition is the log difference between domestic price level and the average marginal cost:
+where $\E_t \left[ \psi_{t+k|t} \right]$ and $\mu$ are the expected log marginal cost and desired\footnote{Markup that occurs under flexible or frictionless prices} markup, respectively. Equation (\ref{eq:log_optimal_price_setting_condition}) is known as the (log) \textit{optimal price setting condition} and presents firms as forward looking discounted profit maximisers. Note, that it is consistent with the previous exposition of the two extreme cases when $\theta = 0$ and $\theta = 1$, i.e. when $\theta = 1$, then $\pi_{H,t} = \bar{p}_{H,t} - \bar{p}_{H,t-1} = \mu - \mu = 0$. Furthermore, the earlier discussion on optimality condition noted that firms will hire labour up until the real wage is equal to the marginal product of labour. Given that the price (and, subsequently, real wage) changed, firms might choose a different level of labour compared to that of other firms, i.e.:
+% TODO
 \begin{align}
-    \mu_t &= p_{H,t} - (w_t - a_t + \alpha n_t) \\
-    \vdots & \quad \text{(see Appendix A.xx-A.xx)} \nonumber \\
-    \mu_t &= -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y_t + \upsilon (\varpi - 1) s_t - \frac{\tau}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t
+     \psi_{t+k|t} &=  \psi_{t+k} + \alpha(n_{t+k|t} - n_{t+k}) \\
+     \vdots & \quad \text{(see Appendix A.xx-A.xx)} \nonumber \\
+     &=\psi_{t+k} - \frac{\alpha \epsilon}{1-\alpha} \label{eq:mc_to_avg_mcs}
 \end{align}
-From here it is clear that average markup is decreas
+Plugging (\ref{eq:mc_to_avg_mcs}) to (\ref{eq:log_optimal_price_setting_condition}) and rewritting as a recursive equation yields:
+% TODO
+\begin{align}
+    \bar{p}_{H,t} &= \mu + (1-\beta \theta) \sum_{k=0}^{\infty} (\beta \theta)^{k} \E_t \left[ \psi_{t+k} - \frac{\alpha \epsilon}{1-\alpha} \right]\\
+    \vdots & \quad \text{(see Appendix A.xx - A.xx)} \nonumber \\
+    \bar{p}_{H,t} &= \beta \theta \E_t \left[ \bar{p}_{H,t+1} \right] + (1-\beta \theta)(p_{H,t} - \Theta \hat{\mu}_t) \label{eq:dynamic_price_recursive}
+\end{align}
+where $\mu_t = p_{H,t} - \psi_t$ is the average markup, $\hat{\mu}_t$ is the gap between the average and desired markups, and $\Theta = \frac{1-\alpha}{1-\alpha + \alpha \epsilon}$. Using (\ref{eq:domestic_inflation_new_price_relationship}), it is easy to transform (\ref{eq:dynamic_price_recursive}) into a version of New Keynesian Phillips Curve (NKPC):
+\begin{align}
+    \bar{p}_{H,t} &= \beta \theta \E_t \left[ \bar{p}_{H,t+1} \right] + (1-\beta \theta)(p_{H,t} - \Theta \hat{\mu}_t) \\
+    \vdots & \quad \text{(see Appendix A.xx-A.xx)} \nonumber \\
+    \pi_{H,t} &= \beta \E_t \left[ \pi_{H,t+1}\right] - \lambda \hat{\mu}_t \label{eq:nkpc_a_version}
+\end{align}
+where $\lambda = \frac{(1-\theta)(1-\beta \theta)}{\theta}\Theta$. Average markup is derived using Equation (\ref{eq:log_average_marginal_cost}) without the constant term:
+\begin{align}
+    \mu_t &= p_{H,t} - \psi_t \\
+     &= p_{H,t} - (w_t - a_t + \alpha n_t) \nonumber \\
+    \vdots & \quad \text{(see Appendix \ref{eq:appendix_average_markup_beginning}-\ref{eq:appendix_average_markup_end})} \nonumber \\
+    \mu_t &= -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y_t + \upsilon (\varpi - 1) s_t - \frac{\tau}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t \label{eq:average_markup}
+\end{align}
+Evaluating (\ref{eq:average_markup}) at flexible prices $\theta=0$ and solving for the output term yields the expression for the natural level of output $y_t^n$:
+\begin{align}
+    \mu_t &= -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t + \upsilon (\varpi - 1) s^n_t - \frac{\tau}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t \label{eq:average_markup_flexible_prices}\\
+    \vdots & \quad \text{(see Appendix \ref{eq:appendix_natural_level_of_output_beginning} - \ref{eq:appendix_natural_level_of_output_end})} \nonumber \\
+    y^n_t &= \Gamma_* y^*_t + \Gamma_z z_t + \Gamma_a a_t + \Gamma_\tau \tau_t + \Gamma_g g_t
+\end{align}
+where:
+\begin{align}
+    \Gamma_* &= -\frac{\upsilon(\varpi - 1)\sigma_\upsilon(1-\alpha)}{\sigma_\upsilon (1-\alpha) + \varphi + \alpha} \\
+    \Gamma_z &= -\frac{\upsilon \varpi \Phi (1-\alpha)}{\sigma_\upsilon (1-\alpha) + \varphi + \alpha} \\
+    \Gamma_a &= \frac{1+\varpi}{\sigma_\upsilon (1-\alpha) + \varphi + \alpha} \\
+    \Gamma_g &= -\frac{\upsilon(\varpi - 1)\sigma_\upsilon(1-\alpha)}{\sigma_\upsilon (1-\alpha) + \varphi + \alpha}\\
+    \Gamma_\tau &= \frac{(1-\tau)(1-\alpha)}{\sigma_\upsilon (1-\alpha) + \varphi + \alpha}
+\end{align}
+When the prices are flexible, then each firm will choose the same optimal level of labour, implying constant average markup $\mu_t = \mu$. Subtracting $\mu_t$ definition (\ref{eq:average_markup}) from $\mu$ definition (\ref{eq:average_markup_flexible_prices}) yields:
+\begin{align}
+    \hat{\mu}_t = \mu_t - \mu &= - \left( \sigma + \frac{\varphi + \alpha}{1-\alpha}\right) \tilde{y}_t + \upsilon(\varpi-1)\tilde{s}_t \\
+     &= - \left( \sigma_\upsilon + \frac{\varphi + \alpha}{1-\alpha}\right) \tilde{y}_t \label{eq:average_markup_gap_w_tildes}
+\end{align}
+where the second $\tilde{y}_t$ and $\tilde{s}_t$ denote natural output and terms of trade gaps, and the (\ref{eq:average_markup_gap_w_tildes}) uses $\tilde{s}_t=\sigma_\upsilon \tilde{y}_t$ relationship introduced in the next section. Finally, plugging (\ref{eq:average_markup_gap_w_tildes}) in a version of NKPC defined by Equation (\ref{eq:nkpc_a_version}), yields:
+\begin{equation}
+    \pi_{H,t} = \beta \E_t \left[ \pi_{H,t+1}\right] - \kappa \tilde{y}_t
+\end{equation}
+where $\kappa=\lambda\left( \sigma_\upsilon + \frac{\varphi + \alpha}{1-\alpha}\right)$.
+
 
 The next section is about the equilibrium or market clearing conditions, that will introduce NKPC as well as Dynamic IS curve, ``natural'' variables and the monetary policy rule. 
+
+This equation is arguably one of the most important equations of the model: it introduces anticipation, which is used to derive relationship between domestic inflation ``today'' and (expected) ``tomorrow'', better known as the \textit{New Keynesian Phillips Curve} (NKPC). 

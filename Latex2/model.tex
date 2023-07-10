@@ -32,43 +32,12 @@
 
 \begin{align}
     \pi_{H,t} &= \beta \E \{\pi_{H,t+1}\} + \lambda \hat{\mu}_t \implies \pi_{H,t} = \beta \E \{\pi_{H,t+1}\} - \lambda \mu_t \\
-    \pi_{H,t} &= \beta \E \{\pi_{H,t+1}\} + \lambda \left(\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y_t - \upsilon (\varpi - 1) s_t + \frac{1}{1-\tau}\tau_t  - \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t + \upsilon z_t\right) \\
-    \pi_{H,t} &= \beta \E \{\pi_{H,t+1}\} + \kappa y_t + \lambda \left(- \upsilon (\varpi - 1) s_t + \frac{1}{1-\tau}\tau_t  - \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t + \upsilon z_t\right) \\
-    \pi_{H,t} &= \beta \E \{\pi_{H,t+1}\} + \kappa y_t - \lambda \upsilon (\varpi - 1) s_t + \lambda\frac{1}{1-\tau}\tau_t  - \lambda\left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t + \lambda\upsilon z_t \\
+    \pi_{H,t} &= \beta \E \{\pi_{H,t+1}\} + \lambda \left(\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y_t - \upsilon (\varpi - 1) s_t + \frac{\tau}{1-\tau}\tau_t  - \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t + \upsilon z_t\right) \\
+    \pi_{H,t} &= \beta \E \{\pi_{H,t+1}\} + \kappa y_t + \lambda \left(- \upsilon (\varpi - 1) s_t + \frac{\tau}{1-\tau}\tau_t  - \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t + \upsilon z_t\right) \\
+    \pi_{H,t} &= \beta \E \{\pi_{H,t+1}\} + \kappa y_t - \lambda \upsilon (\varpi - 1) s_t + \lambda\frac{\tau}{1-\tau}\tau_t  - \lambda\left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t + \lambda\upsilon z_t \\
 \end{align}
 \pagebreak
-\begin{align*}
-    \mu_t = -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t + \upsilon (\varpi - 1) s^n_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t\\
-    \mu_t - \left( \upsilon (\varpi - 1) s^n_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t \right) = -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
-    \upsilon (\varpi - 1) s^n_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
-    \upsilon (\varpi - 1) s^n_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
-    \upsilon (\varpi - 1) (\sigma_\upsilon(y^n_t - y^*_t) - (1-\upsilon)\Phi z_t - G_Y \sigma_\upsilon g_t) - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
-    (- 1 + 1 + \upsilon (\varpi - 1)) (\sigma_\upsilon(y^n_t - y^*_t) - (1-\upsilon)\Phi z_t - G_Y \sigma_\upsilon g_t) - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
-    (- 1 + \Phi^{-1}) (\sigma_\upsilon(y^n_t - y^*_t) - (1-\upsilon)\Phi z_t- G_Y \sigma_\upsilon g_t) - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
-    (- 1 + \Phi^{-1}) (\sigma_\upsilon y^n_t - \sigma_\upsilon y^*_t - (1-\upsilon)\Phi z_t- G_Y \sigma_\upsilon g_t) - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
-    (- 1 + \Phi^{-1})\sigma_\upsilon y^n_t +(1 - \Phi^{-1}) \sigma_\upsilon y^*_t + (1 - \Phi^{-1}) (1-\upsilon)\Phi z_t + (1 - \Phi^{-1}) G_Y \sigma_\upsilon g_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
-    (- 1 + \Phi^{-1})\sigma \Phi y^n_t +(1 - \Phi^{-1}) \sigma_\upsilon y^*_t + (1 - \Phi^{-1}) (1-\upsilon)\Phi z_t + (1 - \Phi^{-1}) G_Y \sigma_\upsilon g_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
-    -\sigma \Phi y^n_t + \sigma y^n_t +(1 - \Phi^{-1}) \sigma_\upsilon y^*_t + (1 - \Phi^{-1}) (1-\upsilon)\Phi z_t + (1 - \Phi^{-1}) G_Y \sigma_\upsilon g_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
-    (1 - \Phi)\sigma y^n_t +(1 - \Phi^{-1}) \sigma_\upsilon y^*_t + (1 - \Phi^{-1}) (1-\upsilon)\Phi z_t + (1 - \Phi^{-1}) G_Y \sigma_\upsilon g_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t\\
-    (1 - \Phi^{-1}) \sigma_\upsilon y^*_t + (1 - \Phi^{-1}) (1-\upsilon)\Phi z_t + (1 - \Phi^{-1}) G_Y \sigma_\upsilon g_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t -\mu_t = \left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t - (1 - \Phi)\sigma y^n_t\\
-    (1 - \Phi^{-1}) \sigma_\upsilon y^*_t + (1 - \Phi^{-1}) (1-\upsilon)\Phi z_t + (1 - \Phi^{-1}) G_Y \sigma_\upsilon g_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t -\mu_t = \left(\frac{\sigma(1-\alpha) + \varphi + \alpha-(1-\Phi)\sigma(1-\alpha)}{1-\alpha}\right)y^n_t\\
-    (1 - \Phi^{-1}) \sigma_\upsilon y^*_t + (1 - \Phi^{-1}) (1-\upsilon)\Phi z_t + (1 - \Phi^{-1}) G_Y \sigma_\upsilon g_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t -\mu_t = \left(\frac{\sigma(1-\alpha) + \varphi + \alpha-(\sigma(1-\alpha)-\sigma\Phi(1-\alpha))}{1-\alpha}\right)y^n_t\\
-    (1 - \Phi^{-1}) \sigma_\upsilon y^*_t + (1 - \Phi^{-1}) (1-\upsilon)\Phi z_t + (1 - \Phi^{-1}) G_Y \sigma_\upsilon g_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t -\mu_t = \left(\frac{-\sigma_\upsilon(1-\alpha) + \varphi + \alpha}{1-\alpha}\right)y^n_t\\
-    \left(\frac{-\sigma_\upsilon(1-\alpha) + \varphi + \alpha}{1-\alpha}\right)^{-1}\left((1 - \Phi^{-1}) \sigma_\upsilon y^*_t + (1 - \Phi^{-1}) (1-\upsilon)\Phi z_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t -\mu_t \right)= y^n_t\\
-    \Gamma_* y^*_t + \left(\frac{-\sigma_\upsilon(1-\alpha) + \varphi + \alpha}{1-\alpha}\right)^{-1}\left((1 - \Phi^{-1}) (1-\upsilon)\Phi z_t + (1 - \Phi^{-1}) G_Y \sigma_\upsilon g_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t -\mu_t \right)= y^n_t\\
-    \Gamma_* y^*_t + \left(\frac{-\sigma_\upsilon(1-\alpha) + \varphi + \alpha}{1-\alpha}\right)^{-1}\left(\upsilon \varpi \Phi z_t + (1 - \Phi^{-1}) G_Y \sigma_\upsilon g_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t -\mu_t \right)= y^n_t\\
-    \Gamma_* y^*_t + \Gamma_z z_t + \Gamma_a a_t + \left(\frac{-\sigma_\upsilon(1-\alpha) + \varphi + \alpha}{1-\alpha}\right)^{-1}\left((1 - \Phi^{-1}) G_Y \sigma_\upsilon g_t - \frac{1}{1-\tau}\tau_t -\mu_t \right)= y^n_t\\
-    \Gamma_* y^*_t + \Gamma_z z_t + \Gamma_a a_t + \Gamma_g g_t + \left(\frac{-\sigma_\upsilon(1-\alpha) + \varphi + \alpha}{1-\alpha}\right)^{-1}\left(- \frac{1}{1-\tau}\tau_t \right)= y^n_t\\
-    \Gamma_* y^*_t + \Gamma_z z_t + \Gamma_a a_t + \Gamma_g g_t + \Gamma_\tau \tau_t = y^n_t
-\end{align*}
-\begin{align}
-    y^n_t &= \Gamma_* y^*_t + \Gamma_z z_t + \Gamma_a a_t + \Gamma_\tau \tau_t \\
-    \Gamma_* &= -\frac{\upsilon(\varpi - 1)\sigma_\upsilon(1-\alpha)}{\sigma_\upsilon (1-\alpha) + \varphi + \alpha} \\
-    \Gamma_z &= -\frac{\upsilon \varpi \Phi (1-\alpha)}{\sigma_\upsilon (1-\alpha) + \varphi + \alpha} \\
-    \Gamma_a &= \frac{1+\varpi}{\sigma_\upsilon (1-\alpha) + \varphi + \alpha} \\
-    \Gamma_g &= -\frac{\upsilon(\varpi - 1)\sigma_\upsilon(1-\alpha)}{\sigma_\upsilon (1-\alpha) + \varphi + \alpha} \times\\
-    \Gamma_\tau &= \frac{(1-\tau)(1-\alpha)}{\sigma_\upsilon (1-\alpha) + \varphi + \alpha}
-\end{align}
+
 \pagebreak
 \begin{align}
     c_t &= \E\{ c_{t+1}\} - \frac{1}{\sigma}(i_t - \E \{ \pi_{t+1}\} - \rho) + \frac{1}{\sigma}(1-\rho_z)z_t\\

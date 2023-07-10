@@ -5,7 +5,7 @@ We will make use of the following definitions
     y_t &= a_t + (1-\alpha)n_t\\
     n_t &= \frac{1}{1-\alpha}(y_t - a_t)\\
     \varpi &= \sigma \eta + (1-\upsilon)(\sigma \eta - 1)\\
-    \sigma c_t + \varphi n_t &= w_t - p_t - \frac{1}{1-\tau}\tau_t\\
+    \sigma c_t + \varphi n_t &= w_t - p_t - \frac{\tau}{1-\tau}\tau_t\\
     y_t &= (1-\upsilon)c_t + \upsilon_t(2-\upsilon)\eta s_t + \upsilon y_t^*\\
     c_t &= y_t^* + \frac{1}{\sigma}z_t + \frac{1-\upsilon}{\sigma}s_t\\
     \implies c_t &= y_t - \upsilon s_t \left( (2-\upsilon)\eta + \frac{1-\upsilon}{\sigma}\right) + \frac{\upsilon}{\sigma}z_t
@@ -13,9 +13,9 @@ We will make use of the following definitions
 \begin{align}
     \mu_t &= p_{H,t} - \psi_t\\
     &=-(w_t-p_t) - (p_t - p_{H,t}) + a_t - \alpha n_t \label{eq:appendix_average_markup_add_subtract_p}\\
-    &= -(\sigma c_t + \varphi n_t + \frac{1}{1-\tau}\tau_t) - \upsilon s_t + a_t - \alpha n_t\\
-    &= -\sigma c_t - \varphi n_t - \frac{1}{1-\tau}\tau_t - \upsilon s_t + a_t - \alpha n_t\\
-    &= -\sigma c_t - \frac{1}{1-\tau}\tau_t - \upsilon s_t + a_t - n_t(\varphi + \alpha)
+    &= -(\sigma c_t + \varphi n_t + \frac{\tau}{1-\tau}\tau_t) - \upsilon s_t + a_t - \alpha n_t\\
+    &= -\sigma c_t - \varphi n_t - \frac{\tau}{1-\tau}\tau_t - \upsilon s_t + a_t - \alpha n_t\\
+    &= -\sigma c_t - \frac{\tau}{1-\tau}\tau_t - \upsilon s_t + a_t - n_t(\varphi + \alpha)
 \end{align}
 where (\ref{eq:appendix_average_markup_add_subtract_p}) adds and subtracts $p_t$. Furthermore, expand $-n_t(\varphi + \alpha)$:
 \begin{align}
@@ -25,13 +25,13 @@ where (\ref{eq:appendix_average_markup_add_subtract_p}) adds and subtracts $p_t$
 \end{align}
 Substitute and rearrange:
 \begin{align}
-   \mu_t &= -\sigma c_t - \frac{1}{1-\tau}\tau_t - \upsilon s_t + a_t -\frac{\varphi + \alpha}{1-\alpha}y_t + \frac{\varphi + \alpha}{1-\alpha}a_t\\
-   \mu_t &= -\sigma c_t - \frac{1}{1-\tau}\tau_t - \upsilon s_t + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t -\frac{\varphi + \alpha}{1-\alpha}y_t \\
-   \mu_t &= -\sigma \left(y_t - \upsilon s_t \left( (2-\upsilon)\eta + \frac{1-\upsilon}{\sigma}\right) + \frac{\upsilon}{\sigma}z_t\right) - \frac{1}{1-\tau}\tau_t - \upsilon s_t + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t -\frac{\varphi + \alpha}{1-\alpha}y_t \\
-   \mu_t &= -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y_t + \sigma \upsilon s_t \left( (2-\upsilon)\eta + \frac{1-\upsilon}{\sigma}\right) - \upsilon z_t- \frac{1}{1-\tau}\tau_t - \upsilon s_t + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t \\
-   \mu_t &= -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y_t + \upsilon s_t \left(\sigma  \left( (2-\upsilon)\eta + \frac{1-\upsilon}{\sigma}\right)- 1 \right) - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t\\
-   \mu_t &= -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y_t + \upsilon s_t \left( (2-\upsilon)\sigma \eta + {1-\upsilon}\right)- 1 - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t\\
-   \mu_t &= -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y_t + \upsilon s_t \left( (2-\upsilon)\sigma \eta -\upsilon\right) - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t\\
-   \mu_t &= -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y_t + \upsilon s_t \left( 2\sigma \eta-\upsilon\sigma \eta -\upsilon\right) - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t\\
-   \mu_t &= -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y_t + \upsilon (\varpi - 1) s_t - \frac{1}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t \label{eq:appendix_average_markup_end}
+   \mu_t &= -\sigma c_t - \frac{\tau}{1-\tau}\tau_t - \upsilon s_t + a_t -\frac{\varphi + \alpha}{1-\alpha}y_t + \frac{\varphi + \alpha}{1-\alpha}a_t\\
+   \mu_t &= -\sigma c_t - \frac{\tau}{1-\tau}\tau_t - \upsilon s_t + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t -\frac{\varphi + \alpha}{1-\alpha}y_t \\
+   \mu_t &= -\sigma \left(y_t - \upsilon s_t \left( (2-\upsilon)\eta + \frac{1-\upsilon}{\sigma}\right) + \frac{\upsilon}{\sigma}z_t\right) - \frac{\tau}{1-\tau}\tau_t - \upsilon s_t + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t -\frac{\varphi + \alpha}{1-\alpha}y_t \\
+   \mu_t &= -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y_t + \sigma \upsilon s_t \left( (2-\upsilon)\eta + \frac{1-\upsilon}{\sigma}\right) - \upsilon z_t- \frac{\tau}{1-\tau}\tau_t - \upsilon s_t + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t \\
+   \mu_t &= -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y_t + \upsilon s_t \left(\sigma  \left( (2-\upsilon)\eta + \frac{1-\upsilon}{\sigma}\right)- 1 \right) - \frac{\tau}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t\\
+   \mu_t &= -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y_t + \upsilon s_t \left( (2-\upsilon)\sigma \eta + {1-\upsilon}\right)- 1 - \frac{\tau}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t\\
+   \mu_t &= -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y_t + \upsilon s_t \left( (2-\upsilon)\sigma \eta -\upsilon\right) - \frac{\tau}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t\\
+   \mu_t &= -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y_t + \upsilon s_t \left( 2\sigma \eta-\upsilon\sigma \eta -\upsilon\right) - \frac{\tau}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t\\
+   \mu_t &= -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y_t + \upsilon (\varpi - 1) s_t - \frac{\tau}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t \label{eq:appendix_average_markup_end}
 \end{align}

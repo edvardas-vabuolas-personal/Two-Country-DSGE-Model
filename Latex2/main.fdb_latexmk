@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1689010083 -1
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1689021527 -1
   "./DissertationDSGE.bib" 1686949460 4479 c98594d863b4f30bcda63b955582ee9e ""
-  "main.bcf" 1689010083 109611 4b058c242d3fdda5d406b79565c30ebe "pdflatex"
+  "main.bcf" 1689021526 109611 4b058c242d3fdda5d406b79565c30ebe "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1689010081 "/Users/edvardasvabuolas/Documents/University/Dissertation/Latex2/main.tex" "main.pdf" "main" 1689010083 0
-  "./model.tex" 1689004966 16003 cda82b94b91a13fca5fdf75c4a390b42 ""
+["pdflatex"] 1689021525 "/Users/edvardasvabuolas/Documents/University/Dissertation/Latex2/main.tex" "main.pdf" "main" 1689021527 0
+  "./model.tex" 1689021525 9414 fb033730c85fafd8c9377fa3c6e645f3 ""
   "./structure.tex" 1686997298 1127 bd0e6815ac9768e43404f62e2ee55929 ""
   "/Users/edvardasvabuolas/Documents/University/Dissertation/Latex2/main.tex" 1688917603 994 cdfdbe10ec31ace9fe09d79c69921785 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -206,8 +206,8 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1686149292 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1686149237 7883462 5fc4e405034948f17e53a1e5c9053c4c ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "Appendix/appendix.tex" 1689005026 487 2ae53c630abcc1f3ef375ce53c5c0b90 ""
-  "Appendix/average_markup.tex" 1689005294 3662 ee513407a1f8ba068dab1963931437e5 ""
+  "Appendix/appendix.tex" 1689015783 527 2e916f39e604032455d19e788cb82b43 ""
+  "Appendix/average_markup.tex" 1689021525 3701 974361e454eda80bbedc8671f84a557c ""
   "Appendix/deriving_bilateral_exchange_rate.tex" 1688917561 2538 03409414665e53ef9eb972e5bf022c24 ""
   "Appendix/dynamic_is.tex" 1688919464 4159 a932a64f77b931c2eead3fb5192e556a ""
   "Appendix/euler_w_arrow.tex" 1688917454 1262 d7c1f2860a8f5c4cf601e577a3dbb57a ""
@@ -215,6 +215,7 @@
   "Appendix/intratemporal_loglinear.tex" 1688913641 1751 3f31447876c87dc529299b43c318cc22 ""
   "Appendix/log_aggregate_rc.tex" 1688913681 1332 73da1791003f9afc330a7790694c54f2 ""
   "Appendix/loglinearised_tax_revenue.tex" 1688913899 1660 b3e80f567dd957d207a10ce36d3e611d ""
+  "Appendix/natural_output.tex" 1689021525 7311 c4f4b445c438e7418a3d52a68a5716f1 ""
   "Appendix/terms_of_trade_derivation.tex" 1688915936 2553 f21fa9b403bc536267fa37e2d9db4664 ""
   "Graphs/sigma_varphi.tex" 1686946077 18110 f0e16d3ce5283471223d2647f251041b ""
   "Graphs/timeline.tex" 1686985732 1167 e25b88d2ddc5512a839d8cd10d5c7292 ""
@@ -222,19 +223,19 @@
   "Introduction/literature_review.tex" 1688742078 7025 4c7ff3f714cbdbe658957b09969bcfe6 ""
   "Packages.sty" 1688811325 1148 163c86c54b39ec1ead18a5e5b5f46b2b ""
   "Theoretical DSGE model/equilibrium.tex" 1688921053 8037 b3243ef3398a971c3d4d7f465a619c21 ""
-  "Theoretical DSGE model/firms.tex" 1689010080 9053 e11a0dd768b2c6257445843d4e393715 ""
+  "Theoretical DSGE model/firms.tex" 1689021525 13260 61c3feccbc8792ec5ee0821286050ef2 ""
   "Theoretical DSGE model/government.tex" 1688760501 8446 1e1e3a44d714cb76733e51eea9e6181f ""
   "Theoretical DSGE model/households.tex" 1688916865 25535 d7bc39fc83d55a10ddf7e55b4ac77dfd ""
   "Theoretical DSGE model/model.tex" 1688565847 2180 b914577df6fae4989fa6760b7610d4fb ""
   "Title Page/title_page.tex" 1688488319 725 0870f481c563c2e8d9581639a4b27ab0 ""
   "Title Page/uoe_logo.png" 1686316242 20326 1cb2a3031b2bfffe2295b1170a85379a ""
-  "detailed_wordcount.txt" 1688919966 1629 adba773ec3c3d1a394415f06df12fa18 ""
-  "final_wordcount.txt" 1688919966 4 bdb3c278f45e6734c35733d24299d3f4 ""
-  "main.aux" 1689010083 8284 34681a02d46ac1ede687fd47030ad17b "pdflatex"
+  "detailed_wordcount.txt" 1689020642 1829 fb5d57b27543baf99e2b92e8301165bb ""
+  "final_wordcount.txt" 1689020642 4 d96eed18098da6ab5c15dd856998e4bd ""
+  "main.aux" 1689021526 8761 deb323fab4a8d9603bacf79cbbd2c97d "pdflatex"
   "main.bbl" 1688917360 13792 e1243356da930739f32d10ab689aa98b "biber main"
-  "main.run.xml" 1689010083 2351 e48ac35430ef4eb0fe9dd6f256db4588 "pdflatex"
+  "main.run.xml" 1689021526 2351 e48ac35430ef4eb0fe9dd6f256db4588 "pdflatex"
   "main.tex" 1688917603 994 cdfdbe10ec31ace9fe09d79c69921785 ""
-  "model.tex" 1689004966 16003 cda82b94b91a13fca5fdf75c4a390b42 ""
+  "model.tex" 1689021525 9414 fb033730c85fafd8c9377fa3c6e645f3 ""
   "structure.tex" 1686997298 1127 bd0e6815ac9768e43404f62e2ee55929 ""
   (generated)
   "main.aux"
