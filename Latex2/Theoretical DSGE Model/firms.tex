@@ -5,7 +5,7 @@ In line with the literature, we assume a continuum of infinitesimally small firm
 \end{align}
 where $A_t$ is the technology level shifter common to all firms and is assumed to evolve exogenously as an AR(1) process in log terms: $\ln A_t = \rho_a \ln A_{t-1} + \varepsilon^a_t$. Notice that the marginal product of labour is
 \begin{equation}
-    \frac{\partial Y_t(j)}{\partial N_t(j)} = (1-\alpha)A_t N_t^{-\alpha}
+    \frac{\partial Y_t(j)}{\partial N_t(j)} = (1-\alpha)A_t {N_t(j)}^{-\alpha}
 \end{equation}
 which is increasing in technology level (increases labour productivity). Second order derivate with respect to hours worked indicates, that the production function exhibits decreasing returns to scale. Knowing this, the firm maximises their profit by choosing the optimal amount of labour:
 \begin{align}
@@ -23,13 +23,13 @@ Suggesting that firm will hire workers up until the marginal product of labour i
 \end{align}
 Unsurprisingly, the marginal cost is increasing in wages and decreasing in marginal product of labour. It is important to emphasise that definition above is an \textit{average} marginal cost across all firms producing goods $j$. The marginal cost varies across firms due to different existing levels of labour. 
 
-As mentioned earlier, the price stickiness is introduced by assuming that firms update their prices with probability $(1-\theta)$. The newly set price is denoted as $\xbar{P}_{H,t}(j)$. Following a similar proof offered by \textcite{jordigal_2015_monetary}\footnote{In, \textcite{jordigal_2015_monetary} the proof is only available for a closed-economy NK DSGE (Chapter 3) and less detailed than presented here}, note that if all firms are symmetrical, then they will choose the same price, i.e. $\xbar{P}_{H,t}(j) = \xbar{P}_{H,t}$. Thus, the domestic price index from Equation (\ref{eq:domestic_price_index}) can be rewritten as:
+As mentioned earlier, the price stickiness is introduced by assuming that firms update their prices with probability $(1-\theta)$. The newly set price is denoted as $\xbar{P}_{H,t}(j)$. Following a similar proof offered by \textcite{jordigal_2015_monetary} for a closed-economy NK DSGE, note that if all firms are symmetrical, then they will choose the same price, i.e. $\xbar{P}_{H,t}(j) = \xbar{P}_{H,t}$. Thus, the domestic price index from Equation (\ref{eq:domestic_price_index}) can be rewritten as:
 \begin{align}
-    P_{H,t} &= \left[ \int_{0}^{1} (P_{H,t-1}(j))^{1-\epsilon} \, dj\right]^{\frac{1}{1-\epsilon}} \\
-     &= \left[ \int_{S(t)}^{1} {P_{H,t-1}(j)}^{1-\epsilon} \, dj + \int_{0}^{S(t)}{P_{H,t-1}(j)}^{1-\epsilon} \, dj\right]^{\frac{1}{1-\epsilon}} \\
-     &= \left[ \theta (\xbar{P}_{H,t-1})^{1-\epsilon} + (1-\theta)(\xbar{P}_{H,t})^{1-\epsilon} \right]^{\frac{1}{1-\epsilon}} \label{eq:price_dynamics_final_step}
+    P_{H,t} &= \left[ \int_{0}^{1} (P_{H,t}(j))^{1-\epsilon} \, dj\right]^{\frac{1}{1-\epsilon}} \\
+     &= \left[ \int_{S(t)}^{1} {P_{H,t}(j)}^{1-\epsilon} \, dj + \int_{0}^{S(t)}{P_{H,t}(j)}^{1-\epsilon} \, dj\right]^{\frac{1}{1-\epsilon}} \\
+     &= \left[ \theta (P_{H,t-1})^{1-\epsilon} + (1-\theta)(\xbar{P}_{H,t})^{1-\epsilon} \right]^{\frac{1}{1-\epsilon}} \label{eq:price_dynamics_final_step}
 \end{align}
-where $S(t)$ is a subset of firms that do not update their prices, and Equation (\ref{eq:price_dynamics_final_step}) ``follows from the fact that the distribution of prices among firms not adjusting in period $t$ corresponds to the distribution of effective prices in period $t-1$, though with total mass reduced to $\theta$'' \parencite[84]{jordigal_2015_monetary}. Dividing (\ref{eq:price_dynamics_final_step}) by $(P_{H,t-1})^{1-\epsilon}$ yields:
+where $S(t)$ is a subset of firms that do not update their prices, and Equation (\ref{eq:price_dynamics_final_step}) ``follows from the fact that the distribution of prices among firms not adjusting in period $t$ corresponds to the distribution of effective prices in period $t-1$, though with total mass reduced to $\theta$'' \parencite[84]{jordigal_2015_monetary}; similarly, the total mass of firms with prices $\xbar{P}_{H,t}$ will be equal to $(1-\theta)$. Dividing (\ref{eq:price_dynamics_final_step}) by $(P_{H,t-1})^{1-\epsilon}$ yields:
 \begin{equation}
     \Pi_{H,t}^{1-\epsilon} = \theta + (1-\theta)\left(\frac{\xbar{P}_{H,t}}{P_{H,t-1}}\right)^{1-\epsilon} \label{eq:price_dynamics_inflation}
 \end{equation}
@@ -51,7 +51,7 @@ where $\E_t \left[\Lambda_{t,t+k}\right]\ \forall k \geq 0$ is the expected stoc
     \vdots & \quad \text{(see Appendix A.xx-A.xx)} \nonumber \\
     \bar{p}_{H,t} &= \mu + (1-\beta \theta) \sum_{k=0}^{\infty} (\beta \theta)^{k} \E_t \left[ \psi_{t+k|t} \right] \label{eq:log_optimal_price_setting_condition}
 \end{align}
-where $\E_t \left[ \psi_{t+k|t} \right]$ and $\mu$ are the expected log marginal cost and desired\footnote{Markup that occurs under flexible or frictionless prices} markup, respectively. Equation (\ref{eq:log_optimal_price_setting_condition}) is known as the (log) \textit{optimal price setting condition} and presents firms as forward looking discounted profit maximisers. Note, that it is consistent with the previous exposition of the two extreme cases when $\theta = 0$ and $\theta = 1$, i.e. when $\theta = 1$, then $\pi_{H,t} = \bar{p}_{H,t} - \bar{p}_{H,t-1} = \mu - \mu = 0$. Furthermore, the earlier discussion on optimality condition noted that firms will hire labour up until the real wage is equal to the marginal product of labour. Given that the price (and, subsequently, real wage) changed, firms might choose a different level of labour compared to that of other firms, i.e.:
+where $\E_t \left[ \psi_{t+k|t} \right]$ and $\mu$ are the expected log marginal cost and desired\footnote{Markup that occurs under flexible or frictionless prices} markup, respectively. Equation (\ref{eq:log_optimal_price_setting_condition}) is known as the (log) \textit{optimal price setting condition} and presents firms as forward looking discounted profit maximisers. Note, that it is consistent with the previous exposition of the two extreme cases when $\theta = 0$ and $\theta = 1$, i.e. when $\theta = 1$, then $\pi_{H,t} = \bar{p}_{H,t} - \bar{p}_{H,t-1} = \mu - \mu = 0$. Furthermore, the earlier discussion on optimality condition noted that firms will hire labour up until the real wage is equal to the marginal product of labour. Given that the price (and, subsequently, real wage) changed, firms might choose a different level of labour compared to that of other firms. This allows us to derive a relationship between the average marginal cost and a marginal cost of a firm that just updated their price:
 % TODO
 \begin{align}
      \psi_{t+k|t} &=  \psi_{t+k} + \alpha(n_{t+k|t} - n_{t+k}) \\
@@ -71,39 +71,4 @@ where $\mu_t = p_{H,t} - \psi_t$ is the average markup, $\hat{\mu}_t$ is the gap
     \vdots & \quad \text{(see Appendix A.xx-A.xx)} \nonumber \\
     \pi_{H,t} &= \beta \E_t \left[ \pi_{H,t+1}\right] - \lambda \hat{\mu}_t \label{eq:nkpc_a_version}
 \end{align}
-where $\lambda = \frac{(1-\theta)(1-\beta \theta)}{\theta}\Theta$. Average markup is derived using Equation (\ref{eq:log_average_marginal_cost}) without the constant term:
-\begin{align}
-    \mu_t &= p_{H,t} - \psi_t \\
-     &= p_{H,t} - (w_t - a_t + \alpha n_t) \nonumber \\
-    \vdots & \quad \text{(see Appendix \ref{eq:appendix_average_markup_beginning}-\ref{eq:appendix_average_markup_end})} \nonumber \\
-    \mu_t &= -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y_t + \upsilon (\varpi - 1) s_t - \frac{\tau}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t \label{eq:average_markup}
-\end{align}
-Evaluating (\ref{eq:average_markup}) at flexible prices $\theta=0$ and solving for the output term yields the expression for the natural level of output $y_t^n$:
-\begin{align}
-    \mu_t &= -\left(\sigma + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t + \upsilon (\varpi - 1) s^n_t - \frac{\tau}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t \label{eq:average_markup_flexible_prices}\\
-    \vdots & \quad \text{(see Appendix \ref{eq:appendix_natural_level_of_output_beginning} - \ref{eq:appendix_natural_level_of_output_end})} \nonumber \\
-    y^n_t &= \Gamma_* y^*_t + \Gamma_z z_t + \Gamma_a a_t + \Gamma_\tau \tau_t + \Gamma_g g_t
-\end{align}
-where:
-\begin{align}
-    \Gamma_* &= -\frac{\upsilon(\varpi - 1)\sigma_\upsilon(1-\alpha)}{\sigma_\upsilon (1-\alpha) + \varphi + \alpha} \\
-    \Gamma_z &= -\frac{\upsilon \varpi \Phi (1-\alpha)}{\sigma_\upsilon (1-\alpha) + \varphi + \alpha} \\
-    \Gamma_a &= \frac{1+\varpi}{\sigma_\upsilon (1-\alpha) + \varphi + \alpha} \\
-    \Gamma_g &= -\frac{\upsilon(\varpi - 1)\sigma_\upsilon(1-\alpha)}{\sigma_\upsilon (1-\alpha) + \varphi + \alpha}\\
-    \Gamma_\tau &= \frac{(1-\tau)(1-\alpha)}{\sigma_\upsilon (1-\alpha) + \varphi + \alpha}
-\end{align}
-When the prices are flexible, then each firm will choose the same optimal level of labour, implying constant average markup $\mu_t = \mu$. Subtracting $\mu_t$ definition (\ref{eq:average_markup}) from $\mu$ definition (\ref{eq:average_markup_flexible_prices}) yields:
-\begin{align}
-    \hat{\mu}_t = \mu_t - \mu &= - \left( \sigma + \frac{\varphi + \alpha}{1-\alpha}\right) \tilde{y}_t + \upsilon(\varpi-1)\tilde{s}_t \\
-     &= - \left( \sigma_\upsilon + \frac{\varphi + \alpha}{1-\alpha}\right) \tilde{y}_t \label{eq:average_markup_gap_w_tildes}
-\end{align}
-where the second $\tilde{y}_t$ and $\tilde{s}_t$ denote natural output and terms of trade gaps, and the (\ref{eq:average_markup_gap_w_tildes}) uses $\tilde{s}_t=\sigma_\upsilon \tilde{y}_t$ relationship introduced in the next section. Finally, plugging (\ref{eq:average_markup_gap_w_tildes}) in a version of NKPC defined by Equation (\ref{eq:nkpc_a_version}), yields:
-\begin{equation}
-    \pi_{H,t} = \beta \E_t \left[ \pi_{H,t+1}\right] - \kappa \tilde{y}_t
-\end{equation}
-where $\kappa=\lambda\left( \sigma_\upsilon + \frac{\varphi + \alpha}{1-\alpha}\right)$.
-
-
-The next section is about the equilibrium or market clearing conditions, that will introduce NKPC as well as Dynamic IS curve, ``natural'' variables and the monetary policy rule. 
-
-This equation is arguably one of the most important equations of the model: it introduces anticipation, which is used to derive relationship between domestic inflation ``today'' and (expected) ``tomorrow'', better known as the \textit{New Keynesian Phillips Curve} (NKPC). 
+where $\lambda = \frac{(1-\theta)(1-\beta \theta)}{\theta}\Theta$. Equation (\ref{eq:nkpc_a_version}) suggests that inflation will be increasing as long as $\mu > \mu_t$. That is, price-adjusting firms will continue raising prices until the difference between the marginal cost and the domestic price level is smaller than the desired markup, i.e. $p_{H,t} - \psi_t < \mu$. At $p_{H,t} - \psi_t = \mu$, the domestic inflation will (slowly) tend towards the steady state level of zero due to the discount factor $\beta \in (0,1)$. The next section will show that the markup gap can be expressed as a function of the natural output gap, which itself is a function of technology level, taxes, government spending, world output, and the preference shifter. Therefore, the resulting expression (NKPC) will pin the relationship between domestic inflation and all other real variables. This is why NKPC is regarded as one of the key (non-policy) equations in NK DSGE models.

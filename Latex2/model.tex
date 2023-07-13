@@ -80,17 +80,3 @@ Given that
 %     y_t  &= y_{t+1}  -\frac{1-\upsilon}{\sigma} (\rho_z - 1)z_t - \frac{1-\upsilon}{1-\upsilon}\frac{1}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - \rho) + \frac{(1-\upsilon)(\upsilon \varpi - \upsilon)}{1 - \upsilon}\E \{\Delta y_{t+1}^* \} + \frac{\upsilon \varpi  - 1}{1-\upsilon} G_Y \Delta g_{t+1}\\
 %     y_t  &= y_{t+1} - \frac{1}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - \rho) + \upsilon (\varpi - 1)\E \{\Delta y_{t+1}^* \}  + \frac{1-\upsilon}{\sigma} (1-\rho_z)z_t + \frac{\upsilon \varpi  - 1}{1-\upsilon} G_Y \Delta g_{t+1}
 % \end{align*}
-\pagebreak
-natural rate of interest
-\begin{align}
-    r^n_t  &= \sigma_\upsilon \Delta y^n_{t+1} + \rho + \sigma_\upsilon \upsilon (\varpi - 1)\E \{\Delta y_{t+1}^* \}  + \Phi (1-\upsilon)(1-\rho_z)z_t + \sigma_\upsilon \frac{\upsilon \varpi  - 1}{1-\upsilon} G_Y \Delta g_{t+1}\\
-    \sigma_\upsilon \Delta y^n_{t+1} &= \sigma_\upsilon(\Gamma_* \Delta y^*_{t+1} + \Gamma_z \Delta z_{t+1} + \Gamma_a \Delta a_{t+1} + \Gamma_g \Delta g_{t+1} + \Gamma_\tau \Delta \tau_{t+1})\\
-    y^*_t&: \sigma_\upsilon \Gamma_* \Delta y^*_{t+1} + \sigma_\upsilon \upsilon(\varpi-1)\Delta y^*_{t+1} = \sigma_\upsilon(\Gamma_* + \upsilon(\varpi-1))\Delta y^*_{t+1} = \Psi_* y^*_{t+1}\\
-    z_t&: \sigma_\upsilon \Gamma_z \Delta z_{t+1} + \Phi (1-\rho_z)z_t = \sigma_\upsilon \Gamma_z (\rho_z - 1)z_t + \Phi (1-\upsilon)(1-\rho_z)z_t\\
-    &= \sigma_\upsilon \Gamma_z (\rho_z - 1)z_t + \Phi (1-\upsilon)(1-\rho_z)z_t = (\Phi (1-\upsilon) - \sigma_\upsilon \Gamma_z)(1-\rho_z)z_t = \Psi_z (1-\rho_z) z_t\\
-    a_t&: \sigma_\upsilon \Gamma_a \Delta a_{t+1} = \sigma_\upsilon \Gamma_a (\rho_a - 1)a_t = - \sigma_\upsilon \Gamma_a (1 - \rho_a)a_t\\
-    g_t&: \sigma_\upsilon \Gamma_g G_Y \Delta g_{t+1} + \sigma_\upsilon \frac{\upsilon \varpi  - 1}{1-\upsilon} G_Y \Delta g_{t+1} = \left( \sigma_\upsilon \left(\Gamma_g + \frac{\upsilon \varpi  - 1}{1-\upsilon} \right) \right)G_Y \Delta g_{t+1} = -\Psi_g G_Y (1-\rho_g)g_t \\
-    \tau_t&: \sigma_\upsilon \Gamma_\tau \Delta \tau_{t+1}\\
-    r^n_t  &= \rho + \Psi_* y^*_{t+1} + \Psi_z (1-\rho_z) z_t - \sigma_\upsilon \Gamma_a (1 - \rho_a)a_t -\Psi_g G_Y (1-\rho_g)g_t + \sigma_\upsilon \Gamma_\tau \Delta \tau_{t+1}
-\end{align}
-$\upsilon$ $v$

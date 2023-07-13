@@ -1,32 +1,38 @@
 \subsubsection*{Derivation of (a version of) dynamic IS equation}
 \begin{align}\label{eq:dynamic_is_beginning}
     0 &= \E \{ \Delta c_{t+1}\} - \frac{1}{\sigma}(i_t - \E \{ \pi_{H,+1}\} - \rho) + \frac{\upsilon}{\sigma}\E \{ \Delta s_{t+1} \} + \frac{1}{\sigma}(1-\rho_z)z_t \\
-    0  &= \E \{ \Delta y_{t+1}\}  - \upsilon(2-\upsilon)\eta \E \{\Delta s_{t+1} \} - \upsilon \E \{\Delta y_{t+1}^* \} -G_Y \Delta g_{t+1} \nonumber\\ 
-    &- \frac{1-\upsilon}{\sigma}(i_t - \E \{ \pi_{H,+1}\} - \rho) + \frac{(1-\upsilon)\upsilon}{\sigma}\E \{ \Delta s_{t+1} \} + \frac{1-\upsilon}{\sigma}(1-\rho_z)z_t \\
-    0  &= \E \{ \Delta y_{t+1}\}  + \left(\frac{(1-\upsilon)\upsilon}{\sigma} - \upsilon(2-\upsilon)\eta\right) \E \{\Delta s_{t+1} \} - \upsilon \E \{\Delta y_{t+1}^* \} \nonumber\\ 
-    &-G_Y \Delta g_{t+1} - \frac{1-\upsilon}{\sigma}(i_t - \E \{ \pi_{H,+1}\} - \rho)  + \frac{1-\upsilon}{\sigma}(1-\rho_z)z_t \\
-    0  &= \E \{ \Delta y_{t+1}\}  - \left(\frac{\upsilon \varpi}{\sigma}\right) \E \{\Delta s_{t+1} \} - \upsilon \E \{\Delta y_{t+1}^* \} \nonumber\\
-     &-G_Y \Delta g_{t+1} - \frac{1-\upsilon}{\sigma}(i_t - \E \{ \pi_{H,+1}\} - \rho)  + \frac{1-\upsilon}{\sigma}(1-\rho_z)z_t \\
-    0  &= \E \{ \Delta y_{t+1}\}  - \left(\frac{\upsilon \varpi}{\sigma}\right) \E \left( \sigma_\upsilon(\Delta y_{t+1} - \Delta y^*_{t+1}) - (1-\upsilon)\Phi (\Delta z_{t+1}) - G_Y \sigma_\upsilon \Delta g_{t+1} \right) \nonumber \\ 
-    &- \upsilon \E \{\Delta y_{t+1}^* \} - \frac{1-\upsilon}{\sigma}(i_t - \E \{ \pi_{H,+1}\} - \rho)  + \frac{1-\upsilon}{\sigma}(1-\rho_z)z_t \\
-    0  &= \E \{ \Delta y_{t+1}\} -\upsilon \varpi \Phi \Delta y_{t+1} + \upsilon \varpi \Phi \Delta y^*_{t+1} - \upsilon \E \{\Delta y_{t+1}^* \} + \frac{1-\upsilon}{\sigma}(1-\rho_z)z_t \nonumber \\ 
-    &+ \upsilon \varpi \Phi \frac{1-\upsilon}{\sigma} (\rho_z - 1)z_t + \upsilon \varpi\Phi G_Y \Delta g_{t+1} -G_Y \Delta g_{t+1} \nonumber \\ 
-    &- \frac{1-\upsilon}{\sigma}(i_t - \E \{ \pi_{H,+1}\} - \rho)\\
-    0  &= \Phi^{-1} \E \{ \Delta y_{t+1}\} -\upsilon \varpi \Delta y_{t+1} + \upsilon \varpi \Delta y^*_{t+1} - \upsilon \Phi^{-1} \E \{\Delta y_{t+1}^* \} \nonumber\\
-        &  +\Phi^{-1} \frac{1-\upsilon}{\sigma}(1-\rho_z)z_t + \upsilon \varpi \frac{1-\upsilon}{\sigma} (\rho_z - 1)z_t + \upsilon \varpi G_Y \Delta g_{t+1} -G_Y \Delta g_{t+1}\nonumber\\
-        &- \frac{1-\upsilon}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - \rho)\\
-    0  &= (\Phi^{-1} -\upsilon \varpi) \Delta y_{t+1} + \upsilon (\varpi - \Phi^{-1})\E \{\Delta y_{t+1}^* \} \nonumber\\
-        &  -(\Phi^{-1} -\upsilon \varpi)\frac{1-\upsilon}{\sigma} (\rho_z - 1)z_t + (\upsilon \varpi  - 1) G_Y \Delta g_{t+1}\nonumber\\
-        &- \frac{1-\upsilon}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - \rho)\\
-    0  &= \Delta y_{t+1} + \frac{\upsilon (\varpi - \Phi^{-1})}{\Phi^{-1} -\upsilon \varpi}\E \{\Delta y_{t+1}^* \} -\frac{1-\upsilon}{\sigma} (\rho_z - 1)z_t + \frac{(\upsilon \varpi  - 1)}{\Phi^{-1} -\upsilon \varpi} G_Y \Delta g_{t+1} \nonumber\\
-        &- \frac{1-\upsilon}{\Phi^{-1} -\upsilon \varpi}\frac{1}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - \rho)
+    &\text{From aggregate RC: $c_t = \left[ y_t - C_Y[\upsilon(2-\upsilon)\eta s_t + \upsilon y_t^*] + G_Y g_t\right] C_Y(1-\upsilon)$} \nonumber\\
+    &\text{Substitute and divide by $C_Y(1-\upsilon)$}\nonumber\\
+    0  &= \E \{ \Delta y_{t+1}\}  - C_Y[\upsilon(2-\upsilon)\eta \E \{\Delta s_{t+1} \} - \upsilon \E \{\Delta y_{t+1}^* \}] -G_Y \E_t\{\Delta g_{t+1}\} + \nonumber\\ 
+    &C_Y\left[- \frac{1-\upsilon}{\sigma}(i_t - \E \{ \pi_{H,+1}\} - \rho) + \frac{(1-\upsilon)\upsilon}{\sigma}\E \{ \Delta s_{t+1} \} + \frac{1-\upsilon}{\sigma}(1-\rho_z)z_t \right] \\
+    0  &= \E \{ \Delta y_{t+1}\}  + C_Y\left(\frac{(1-\upsilon)\upsilon}{\sigma} - \upsilon(2-\upsilon)\eta\right) \E \{\Delta s_{t+1} \} - C_Y C_Y \upsilon \E \{\Delta y_{t+1}^* \} \nonumber\\ 
+    &-G_Y \E_t\{\Delta g_{t+1}\} + C_Y\left[- \frac{1-\upsilon}{\sigma}(i_t - \E \{ \pi_{H,+1}\} - \rho)  + \frac{1-\upsilon}{\sigma}(1-\rho_z)z_t \right] \\
+    0  &= \E \{ \Delta y_{t+1}\}  - C_Y\left(\frac{\upsilon \varpi}{\sigma}\right) \E \{\Delta s_{t+1} \} - C_Y \upsilon \E \{\Delta y_{t+1}^* \} \nonumber\\
+     &-G_Y \E_t\{\Delta g_{t+1}\} + C_Y\left[- \frac{1-\upsilon}{\sigma}(i_t - \E \{ \pi_{H,+1}\} - \rho)  + \frac{1-\upsilon}{\sigma}(1-\rho_z)z_t \right] \\
+     &\text{ Recall $\E_t \{ \Delta s_{t+1}\} = \E_t\{\sigma_\upsilon(C_Y^{-1} \Delta y_{t+1} - \Delta y^*_{t+1} - C_G^{-1} \Delta g_{t+1}) - (1-\upsilon)\Phi \Delta z_{t+1}\}$}\nonumber\\
+    0 &= \E \{ \Delta y_{t+1}\}  - C_Y\left(\frac{\upsilon \varpi}{\sigma}\right) \E_t\{\sigma_\upsilon(C_Y^{-1} \Delta y_{t+1} - \Delta y^*_{t+1} - C_G^{-1} \Delta g_{t+1}) - (1-\upsilon)\Phi \Delta z_{t+1}\} \nonumber \\ 
+    &- C_Y \upsilon \E \{\Delta y_{t+1}^* \} + C_Y\left[- \frac{1-\upsilon}{\sigma}(i_t - \E \{ \pi_{H,+1}\} - \rho)  + \frac{1-\upsilon}{\sigma}(1-\rho_z)z_t \right] \\
+    0  &= \E \{ \Delta y_{t+1}\} -\upsilon \varpi \Phi \Delta y_{t+1} + C_Y \upsilon \varpi \Phi \Delta y^*_{t+1} - C_Y \upsilon \E \{\Delta y_{t+1}^* \} + C_Y\frac{1-\upsilon}{\sigma}(1-\rho_z)z_t \nonumber \\ 
+    &+ C_Y \upsilon \varpi \Phi \frac{1-\upsilon}{\sigma} (\rho_z - 1)z_t + \upsilon \varpi\Phi G_Y \E_t\{\Delta g_{t+1}\} -G_Y \E_t\{\Delta g_{t+1}\} \nonumber \\ 
+    &- C_Y\frac{1-\upsilon}{\sigma}(i_t - \E \{ \pi_{H,+1}\} - \rho)\\
+    &\text{Divide by $\Phi^{-1}$}\nonumber\\
+    0  &= \Phi^{-1} \E \{ \Delta y_{t+1}\} - \upsilon \varpi \Delta y_{t+1} + C_Y \upsilon \varpi \Delta y^*_{t+1} - C_Y\upsilon \Phi^{-1} \E \{\Delta y_{t+1}^* \} \nonumber\\
+        &  +C_Y \Phi^{-1} \frac{1-\upsilon}{\sigma}(1-\rho_z)z_t + C_Y\upsilon \varpi \frac{1-\upsilon}{\sigma} (\rho_z - 1)z_t + \upsilon \varpi G_Y \E_t\{\Delta g_{t+1}\} -G_Y \Phi^{-1}\E_t\{\Delta g_{t+1}\}\nonumber\\
+        &- C_Y \frac{1-\upsilon}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - \rho)
 \end{align}
-\begin{align}
-    y_t  &= y_{t+1}  -\frac{1-\upsilon}{\sigma} (\rho_z - 1)z_t + \frac{(\upsilon \varpi  - 1)}{\Phi^{-1} -\upsilon \varpi} G_Y \Delta g_{t+1} + \frac{\upsilon (\varpi - \Phi^{-1})}{\Phi^{-1} -\upsilon \varpi}\E \{\Delta y_{t+1}^* \} \nonumber \\ 
-    &- \frac{1-\upsilon}{\Phi^{-1} -\upsilon \varpi}\frac{1}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - \rho) \\
-    y_t  &= y_{t+1}  -\frac{1-\upsilon}{\sigma} (\rho_z - 1)z_t - \frac{1-\upsilon}{1-\upsilon}\frac{1}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - \rho) \nonumber \\ 
-    &+ \frac{(1-\upsilon)(\upsilon \varpi - \upsilon)}{1 - \upsilon}\E \{\Delta y_{t+1}^* \} + \frac{\upsilon \varpi  - 1}{1-\upsilon} G_Y \Delta g_{t+1}\\
-    y_t  &= y_{t+1} - \frac{1}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - \rho) + \upsilon (\varpi - 1)\E \{\Delta y_{t+1}^* \} \nonumber \\ 
-    &+ \frac{1-\upsilon}{\sigma} (1-\rho_z)z_t + \frac{\upsilon \varpi  - 1}{1-\upsilon} G_Y \E_t \{\Delta g_{t+1}\} \label{eq:dynamic_is_end}
+\begin{align}   
+    0  &= (\Phi^{-1} - \upsilon \varpi) \E \{ \Delta y_{t+1}\} +C_Y \upsilon ( \varpi - \Phi^{-1})\E \{\Delta y_{t+1}^* \} \nonumber\\
+        &  -C_Y(\Phi^{-1} -\upsilon \varpi)\frac{1-\upsilon}{\sigma} (\rho_z - 1)z_t + (\upsilon \varpi  - \Phi^{-1}) G_Y \E_t\{\Delta g_{t+1}\}\nonumber\\
+        &- C_Y\frac{1-\upsilon}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - \rho)\\
+    &\text{Divide by $(\Phi^{-1} - \upsilon \varpi)$}\\
+    0  &= \E \{ \Delta y_{t+1}\} + C_Y\frac{\upsilon (\varpi - \Phi^{-1})}{\Phi^{-1} -\upsilon \varpi}\E \{\Delta y_{t+1}^* \} -C_Y\frac{1-\upsilon}{\sigma} (\rho_z - 1)z_t  \nonumber\\
+        &+ \frac{(\upsilon \varpi  - \Phi^{-1})}{\Phi^{-1} -\upsilon \varpi} G_Y \E_t\{\Delta g_{t+1}\}- \frac{1-\upsilon}{\Phi^{-1} -\upsilon \varpi}C_Y\frac{1}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - \rho)\\
+    y_t  &= y_{t+1}  - C_Y \frac{1-\upsilon}{\sigma} (\rho_z - 1)z_t - G_Y \E_t\{\Delta g_{t+1}\} + C_Y\frac{\upsilon ( \varpi - \Phi^{-1})}{\Phi^{-1} -\upsilon \varpi}\E \{\Delta y_{t+1}^* \} \nonumber \\ 
+    &- \frac{1-\upsilon}{\Phi^{-1} -\upsilon \varpi}C_Y \frac{1}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - \rho) \\
+    &\text{Note that $(\Phi^{-1} -\upsilon \varpi)$ can be simplified to $(1-\upsilon)$ }\\
+    y_t  &= y_{t+1}  -C_Y \frac{1-\upsilon}{\sigma} (\rho_z - 1)z_t - \frac{1-\upsilon}{1-\upsilon} C_Y \frac{1}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - \rho) \nonumber \\ 
+    &+ C_Y\frac{(1-\upsilon)(\upsilon \varpi - \upsilon)}{1 - \upsilon}\E \{\Delta y_{t+1}^* \} - G_Y \E_t\{\Delta g_{t+1}\}\\
+    y_t  &= y_{t+1} - C_Y\left[\frac{1}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - \rho) + \frac{1-\upsilon}{\sigma} (1-\rho_z)z_t + \upsilon (\varpi - 1)\E \{\Delta y_{t+1}^* \}\right] \nonumber \\ 
+    & - G_Y \E_t \{\Delta g_{t+1}\} \label{eq:dynamic_is_end}
 \end{align}
 \newpage
