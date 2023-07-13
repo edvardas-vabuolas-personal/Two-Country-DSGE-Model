@@ -63,13 +63,13 @@ Number of math displayed: 0
 
 Included file: ././Theoretical DSGE model/model.tex
 Encoding: ascii
-Sum count: 327
-Words in text: 324
+Sum count: 367
+Words in text: 363
 Words in headers: 0
 Words outside text (captions, etc.): 0
 Number of headers: 0
 Number of floats/tables/figures: 0
-Number of math inlines: 3
+Number of math inlines: 4
 Number of math displayed: 0
 
 Included file: ././Theoretical DSGE model/households.tex
@@ -96,25 +96,25 @@ Number of math displayed: 1
 
 Included file: ././Theoretical DSGE model/firms.tex
 Encoding: ascii
-Sum count: 975
-Words in text: 865
+Sum count: 958
+Words in text: 878
 Words in headers: 1
-Words outside text (captions, etc.): 43
+Words outside text (captions, etc.): 21
 Number of headers: 1
 Number of floats/tables/figures: 0
-Number of math inlines: 48
-Number of math displayed: 18
+Number of math inlines: 45
+Number of math displayed: 13
 
 Included file: ././Theoretical DSGE model/equilibrium.tex
 Encoding: ascii
-Sum count: 419
-Words in text: 390
+Sum count: 865
+Words in text: 807
 Words in headers: 1
 Words outside text (captions, etc.): 7
 Number of headers: 1
 Number of floats/tables/figures: 1
-Number of math inlines: 11
-Number of math displayed: 10
+Number of math inlines: 33
+Number of math displayed: 17
 
 Included file: ././Appendix/appendix.tex
 Encoding: ascii
@@ -129,14 +129,14 @@ Number of math displayed: 0
 
 Included file: ././model.tex
 Encoding: ascii
-Sum count: 14
-Words in text: 6
+Sum count: 7
+Words in text: 2
 Words in headers: 0
 Words outside text (captions, etc.): 0
 Number of headers: 0
 Number of floats/tables/figures: 0
-Number of math inlines: 2
-Number of math displayed: 6
+Number of math inlines: 0
+Number of math displayed: 5
 
 Included file: ././final_wordcount.txt
 Encoding: ascii
@@ -261,13 +261,13 @@ Number of math displayed: 2
 
 Included file: ././Appendix/average_markup.tex
 Encoding: ascii
-Sum count: 28
-Words in text: 17
+Sum count: 22
+Words in text: 12
 Words in headers: 5
 Words outside text (captions, etc.): 0
 Number of headers: 1
 Number of floats/tables/figures: 0
-Number of math inlines: 2
+Number of math inlines: 1
 Number of math displayed: 4
 
 Included file: ././Appendix/natural_output.tex
@@ -281,29 +281,40 @@ Number of floats/tables/figures: 0
 Number of math inlines: 0
 Number of math displayed: 5
 
+Included file: ././Appendix/natural_interest_rate.tex
+Encoding: ascii
+Sum count: 9
+Words in text: 1
+Words in headers: 6
+Words outside text (captions, etc.): 0
+Number of headers: 1
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 2
+
 Sum of files: main.tex
 File(s) total: main.tex
-Sum count: 5479
-Words in text: 4876
-Words in headers: 80
-Words outside text (captions, etc.): 251
-Number of headers: 22
+Sum count: 5944
+Words in text: 5337
+Words in headers: 86
+Words outside text (captions, etc.): 229
+Number of headers: 23
 Number of floats/tables/figures: 8
-Number of math inlines: 179
-Number of math displayed: 93
-Files: 25
+Number of math inlines: 196
+Number of math displayed: 96
+Files: 26
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
   1+7+0 (5/0/0/0) File: main.tex
   65+6+0 (1/0/0/0) Included file: ././structure.tex
   938+2+55 (1/0/0/0) Included file: ././Introduction/literature_review.tex
-  324+0+0 (0/0/3/0) Included file: ././Theoretical DSGE model/model.tex
+  363+0+0 (0/0/4/0) Included file: ././Theoretical DSGE model/model.tex
   1696+1+33 (1/1/82/27) Included file: ././Theoretical DSGE model/households.tex
   479+1+102 (1/4/25/1) Included file: ././Theoretical DSGE model/government.tex
-  865+1+43 (1/0/48/18) Included file: ././Theoretical DSGE model/firms.tex
-  390+1+7 (1/1/11/10) Included file: ././Theoretical DSGE model/equilibrium.tex
+  878+1+21 (1/0/45/13) Included file: ././Theoretical DSGE model/firms.tex
+  807+1+7 (1/1/33/17) Included file: ././Theoretical DSGE model/equilibrium.tex
   0+1+0 (1/0/0/0) Included file: ././Appendix/appendix.tex
-  6+0+0 (0/0/2/6) Included file: ././model.tex
+  2+0+0 (0/0/0/5) Included file: ././model.tex
   1+0+0 (0/0/0/0) Included file: ././final_wordcount.txt
   0+0+11 (0/1/0/0) Included file: ././Graphs/timeline.tex
   0+0+0 (0/1/0/0) Included file: ././Graphs/sigma_varphi.tex
@@ -315,6 +326,7 @@ Subcounts:
   3+6+0 (1/0/3/2) Included file: ././Appendix/terms_of_trade_derivation.tex
   0+8+0 (1/0/0/2) Included file: ././Appendix/dynamic_is.tex
   4+5+0 (1/0/0/2) Included file: ././Appendix/final_dynamic_is.tex
-  17+5+0 (1/0/2/4) Included file: ././Appendix/average_markup.tex
+  12+5+0 (1/0/1/4) Included file: ././Appendix/average_markup.tex
   1+7+0 (1/0/0/5) Included file: ././Appendix/natural_output.tex
+  1+6+0 (1/0/0/2) Included file: ././Appendix/natural_interest_rate.tex
 

@@ -1,0 +1,18 @@
+\subsubsection*{Derivation of the trade balance}
+\begin{align}\label{eq:appendix_trade_balance_derivation_beginning}
+    y_t &= C_Y\left[(1-\upsilon)c_t + \upsilon (2-\upsilon)\eta s_t + \upsilon y^*_t\right] + G_Y g_t\\
+    c_t &= y_t^* + \frac{1}{\sigma}z_t + \frac{1-\upsilon}{\sigma}s_t\\
+    &= \left[C_Y^{-1} y_t -(1-\upsilon)c_t - \upsilon(2-\upsilon)\eta s_t - C^{-1}_G g_t \right]\upsilon^{-1} + \frac{1}{\sigma}z_t + \frac{1-\upsilon}{\sigma}s_t\\
+    \implies c_t &= C_Y^{-1} y_t + \upsilon s_t \left( -(2-\upsilon)\eta + \frac{1-\upsilon}{\sigma}\right) + \frac{\upsilon}{\sigma}z_t - C_G^{-1} g_t \\
+     &= C_Y^{-1} y_t - \upsilon \frac{\varpi}{\sigma} s_t + \frac{\upsilon}{\sigma}z_t - C_G^{-1} g_t \label{eq:consumption_world_output_substituted}
+\end{align}
+Substitute (\ref{eq:consumption_world_output_substituted}) to $nx_t=y_t - C_Y[c_t + \upsilon s_t] - G_Y g_t$:
+\begin{align}
+    nx_t&=y_t - C_Y\left[C_Y^{-1} y_t - \upsilon \frac{\varpi}{\sigma} s_t + \frac{\upsilon}{\sigma}z_t - C_G^{-1} g_t + \upsilon s_t \right] - G_Y g_t \\
+    nx_t&=y_t - C_Y\left[C_Y^{-1} y_t + \upsilon \left(-\frac{\varpi}{\sigma} + 1\right) s_t + \frac{\upsilon}{\sigma}z_t - C_G^{-1} g_t \right] - G_Y g_t \\
+    &\text{$y_t$ terms cancel out:} \nonumber\\
+    nx_t&=-C_Y\left[\upsilon \left(-\frac{\varpi}{\sigma} + 1\right) s_t + \frac{\upsilon}{\sigma}z_t - C_G^{-1} g_t \right] - G_Y g_t \\
+    &\text{$g_t$ terms cancel out because $C_Y^{-1}\times C_G^{-1} = G_Y$} \nonumber\\
+    nx_t&=C_Y\left[\upsilon \left(\frac{\varpi}{\sigma} - 1\right) s_t - \frac{\upsilon}{\sigma}z_t \right] \label{eq:appendix_trade_balance_derivation_end}
+\end{align}
+\newpage
