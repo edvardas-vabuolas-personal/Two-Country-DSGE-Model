@@ -55,19 +55,15 @@ where the last term is equal to zero if the government is financed via lump-sum 
     \vdots & \quad \text{(see Appendix \ref{eq:terms_of_trade_derivation_beginning} - \ref{eq:terms_of_trade_derivation_end})} \nonumber \\
     s_t &= \sigma_\upsilon(C_Y^{-1} y_t - y^*_t - C_G^{-1} g_t) - (1-\upsilon)\Phi z_t \label{eq:terms_of_trade_w_gov}
 \end{align}
-where $\varpi = \sigma \eta + (1-\upsilon)(\sigma \eta - 1)$, $\Phi = \frac{1}{1 + \upsilon (\varpi - 1)}$ and $\sigma_\upsilon = \sigma \Phi$. Notice that when $G=0,\ Y=C$, then $s_t = \sigma_\upsilon(y_t - y^*_t) - (1-\upsilon)\Phi z_t$, i.e. identical to \textcite{jordigal_2015_monetary}. Negative government term implies that (effective) trade of terms are decreasing in government spending. This is intuitive: the government is modelled to demand exclusively domestic goods, which induces inflationary pressure and makes home goods less competitive internationally. The opposite is true for the domestic-world output gap: if our firms produce relatively more than the rest of the world and is able to export relatively more, then terms of trade increase (the first term of (\ref{eq:terms_of_trade_w_gov}) is positive). However, $y_t > y^*_t$, does not \textit{automatically} imply $\Delta x_{t+1} > 0$ (an increase in exports), the terms to be explicitly linked. Following \textcite{jordigal_2015_monetary} but adding a government spending term, we assume the following relationship between terms of trade and net exports $NX_t$:
+where $\varpi = \sigma \eta + (1-\upsilon)(\sigma \eta - 1)$, $\Phi = \frac{1}{1 + \upsilon (\varpi - 1)}$ and $\sigma_\upsilon = \sigma \Phi$. Notice that when $G=0,\ Y=C$, then $s_t = \sigma_\upsilon(y_t - y^*_t) - (1-\upsilon)\Phi z_t$, i.e. identical to \textcite{jordigal_2015_monetary}. Negative government term implies that (effective) trade of terms are decreasing in government spending. This is intuitive: the government is modelled to demand exclusively domestic goods, which induces inflationary pressure and makes home goods less competitive internationally. The opposite is true for the domestic-world output gap: if our firms produce relatively more than the rest of the world and is able to export relatively more, then terms of trade increase (the first term of (\ref{eq:terms_of_trade_w_gov}) is positive). However, $y_t > y^*_t$, does not \textit{automatically} imply $\Delta x_{t+1} > 0$ (an increase in exports), the terms to be explicitly linked. Following a similar approach to \textcite{jordigal_2015_monetary}, the net exports is denoted in terms of each GDP component as a share of their respective steady state values. The resulting expression can be combined with the aggregate resource constraint (\ref{eq:aggregate_rc}) and (\ref{eq:link_between_consumption_and_world_output}) to yield a link between terms of trade and net exports $NX_t$:
 \begin{align}
-    NX_t &= \frac{1}{Y}\left( Y_t - \frac{P_t}{P_{H,t}}C_t - G_t\right) \\
+    NX_t &= \frac{1}{Y} Y_t - \frac{1}{C}\left(\frac{P_t}{P_{H,t}}C_t\right) - \frac{1}{G}G_t \\
     \vdots & \quad \text{(see Appendix A.xx-A.xx)} \nonumber \\
-    nx_t &= y_t - C_Y\left( c_t + \upsilon s_t \right) - G_Y g_t \label{eq:trade_balance_w_consumption}
-\end{align}
-With the use of (\ref{eq:aggregate_rc}) and (\ref{eq:link_between_consumption_and_world_output}), we can rewrite it as:
-\begin{align}
-    nx_t&=y_t - C_Y\left[C_Y^{-1} y_t - \upsilon \frac{\varpi}{\sigma} s_t + \frac{\upsilon}{\sigma}z_t - C_G^{-1} g_t + \upsilon s_t \right] - G_Y g_t \\
-    \vdots & \quad \text{see Appendix \ref{eq:appendix_trade_balance_derivation_beginning} - \ref{eq:appendix_trade_balance_derivation_end}} \nonumber \\
+    nx_t &= y_t - c_t - \upsilon s_t - g_t \label{eq:trade_balance_w_consumption} \\
+    \vdots & \quad \text{(see Appendix A.xx-A.xx)} \nonumber \\
     nx_t&=C_Y\left[\upsilon \left(\frac{\varpi}{\sigma} - 1\right) s_t - \frac{\upsilon}{\sigma}z_t \right] \label{eq:trade_balance_wout_consumption}
 \end{align}
-Note that without the government spending (G = 0 and Y = C), the expressions (\ref{eq:trade_balance_w_consumption}) and (\ref{eq:trade_balance_wout_consumption}) become identical to the ones in \textcite{jordigal_2015_monetary}, i.e. $nx_t = y_t - c_t -\upsilon s_t$ and $nx_t = \upsilon \left(\frac{\varpi}{\sigma} - 1\right) s_t - \frac{\upsilon}{\sigma}z_t$, respectively. Furthermore, the Euler equation in (\ref{eq:euler_equation}) is a function of CPI, but using (\ref{eq:cpi_inflation_tot}), it can be rewritten to be a function of domestic inflation and terms of trade:
+Furthermore, the Euler equation in (\ref{eq:euler_equation}) is a function of CPI, but using (\ref{eq:cpi_inflation_tot}), it can be rewritten to be a function of domestic inflation and terms of trade:
 \begin{align}
     c_t &= \E\{ c_{t+1}\} - \frac{1}{\sigma}(i_t - \E \{ \pi_{H,t+1}\} - \rho) + \frac{\upsilon}{\sigma}\E \{ \Delta s_{t+1} \} + \frac{1}{\sigma}(1-\rho_z)z_t \label{eq:euler_w_domestic_inflation}
 \end{align}
@@ -146,3 +142,12 @@ Finally, we have a path for output gap (implied by DIS), a path for inflation (i
     i_t = \rho_i i_{t-1} + (1-\rho_i)(\phi_\pi \pi_{H,t}+ \phi_y \hat{y}_t) + m_t
 \end{equation}
 where $m_t$ is a contractionary shock, which is assumed to follow an AR(1) process $m_t = \rho_m m_{t-1} + \varepsilon^m_{t},\ \varepsilon^m_{t} \sim \mathcal{N}(0,\sigma^2_m)$, and $\hat{y}_t = y_t - y$ is the deviation from the steady state output. The Taylor rule suggests that monetary authority will raise the interest rate whenever inflation increases or output exceeds the steady state output.
+
+
+% Bin:
+% Reference to derivation of the net exports
+% \begin{align}
+%     nx_t&=y_t - C_Y\left[C_Y^{-1} y_t - \upsilon \frac{\varpi}{\sigma} s_t + \frac{\upsilon}{\sigma}z_t - C_G^{-1} g_t + \upsilon s_t \right] - G_Y g_t \\
+%     \vdots & \quad \text{see Appendix \ref{eq:appendix_trade_balance_derivation_beginning} - \ref{eq:appendix_trade_balance_derivation_end}} \nonumber \\
+%     nx_t&=C_Y\left[\upsilon \left(\frac{\varpi}{\sigma} - 1\right) s_t - \frac{\upsilon}{\sigma}z_t \right] \label{eq:trade_balance_wout_consumption}
+% \end{align}

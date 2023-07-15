@@ -63,10 +63,10 @@ Number of math displayed: 0
 
 Included file: ././Theoretical DSGE model/model.tex
 Encoding: ascii
-Sum count: 367
-Words in text: 363
+Sum count: 491
+Words in text: 438
 Words in headers: 0
-Words outside text (captions, etc.): 0
+Words outside text (captions, etc.): 49
 Number of headers: 0
 Number of floats/tables/figures: 0
 Number of math inlines: 4
@@ -107,14 +107,14 @@ Number of math displayed: 13
 
 Included file: ././Theoretical DSGE model/equilibrium.tex
 Encoding: ascii
-Sum count: 865
-Words in text: 807
+Sum count: 947
+Words in text: 885
 Words in headers: 1
 Words outside text (captions, etc.): 7
 Number of headers: 1
 Number of floats/tables/figures: 1
-Number of math inlines: 33
-Number of math displayed: 17
+Number of math inlines: 34
+Number of math displayed: 20
 
 Included file: ././Appendix/appendix.tex
 Encoding: ascii
@@ -129,14 +129,14 @@ Number of math displayed: 0
 
 Included file: ././model.tex
 Encoding: ascii
-Sum count: 7
-Words in text: 2
+Sum count: 0
+Words in text: 0
 Words in headers: 0
 Words outside text (captions, etc.): 0
 Number of headers: 0
 Number of floats/tables/figures: 0
 Number of math inlines: 0
-Number of math displayed: 5
+Number of math displayed: 0
 
 Included file: ././final_wordcount.txt
 Encoding: ascii
@@ -193,17 +193,6 @@ Number of floats/tables/figures: 0
 Number of math inlines: 0
 Number of math displayed: 1
 
-Included file: ././Appendix/euler_w_arrow.tex
-Encoding: ascii
-Sum count: 81
-Words in text: 66
-Words in headers: 8
-Words outside text (captions, etc.): 0
-Number of headers: 1
-Number of floats/tables/figures: 0
-Number of math inlines: 3
-Number of math displayed: 4
-
 Included file: ././Appendix/deriving_bilateral_exchange_rate.tex
 Encoding: ascii
 Sum count: 33
@@ -214,17 +203,6 @@ Number of headers: 1
 Number of floats/tables/figures: 0
 Number of math inlines: 0
 Number of math displayed: 8
-
-Included file: ././Appendix/loglinearised_tax_revenue.tex
-Encoding: ascii
-Sum count: 7
-Words in text: 0
-Words in headers: 5
-Words outside text (captions, etc.): 0
-Number of headers: 1
-Number of floats/tables/figures: 0
-Number of math inlines: 0
-Number of math displayed: 2
 
 Included file: ././Appendix/terms_of_trade_derivation.tex
 Encoding: ascii
@@ -292,41 +270,74 @@ Number of floats/tables/figures: 0
 Number of math inlines: 0
 Number of math displayed: 2
 
+Included file: ././Appendix/trade_balance.tex
+Encoding: ascii
+Sum count: 10
+Words in text: 2
+Words in headers: 5
+Words outside text (captions, etc.): 0
+Number of headers: 1
+Number of floats/tables/figures: 0
+Number of math inlines: 1
+Number of math displayed: 2
+
+Included file: ././Appendix/euler_w_arrow.tex
+Encoding: ascii
+Sum count: 81
+Words in text: 66
+Words in headers: 8
+Words outside text (captions, etc.): 0
+Number of headers: 1
+Number of floats/tables/figures: 0
+Number of math inlines: 3
+Number of math displayed: 4
+
+Included file: ././Appendix/loglinearised_tax_revenue.tex
+Encoding: ascii
+Sum count: 7
+Words in text: 0
+Words in headers: 5
+Words outside text (captions, etc.): 0
+Number of headers: 1
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 2
+
 Sum of files: main.tex
 File(s) total: main.tex
-Sum count: 5944
-Words in text: 5337
-Words in headers: 86
-Words outside text (captions, etc.): 229
-Number of headers: 23
+Sum count: 6153
+Words in text: 5490
+Words in headers: 91
+Words outside text (captions, etc.): 278
+Number of headers: 24
 Number of floats/tables/figures: 8
-Number of math inlines: 196
+Number of math inlines: 198
 Number of math displayed: 96
-Files: 26
+Files: 27
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
   1+7+0 (5/0/0/0) File: main.tex
   65+6+0 (1/0/0/0) Included file: ././structure.tex
   938+2+55 (1/0/0/0) Included file: ././Introduction/literature_review.tex
-  363+0+0 (0/0/4/0) Included file: ././Theoretical DSGE model/model.tex
+  438+0+49 (0/0/4/0) Included file: ././Theoretical DSGE model/model.tex
   1696+1+33 (1/1/82/27) Included file: ././Theoretical DSGE model/households.tex
   479+1+102 (1/4/25/1) Included file: ././Theoretical DSGE model/government.tex
   878+1+21 (1/0/45/13) Included file: ././Theoretical DSGE model/firms.tex
-  807+1+7 (1/1/33/17) Included file: ././Theoretical DSGE model/equilibrium.tex
+  885+1+7 (1/1/34/20) Included file: ././Theoretical DSGE model/equilibrium.tex
   0+1+0 (1/0/0/0) Included file: ././Appendix/appendix.tex
-  2+0+0 (0/0/0/5) Included file: ././model.tex
   1+0+0 (0/0/0/0) Included file: ././final_wordcount.txt
   0+0+11 (0/1/0/0) Included file: ././Graphs/timeline.tex
   0+0+0 (0/1/0/0) Included file: ././Graphs/sigma_varphi.tex
   0+5+0 (1/0/0/1) Included file: ././Appendix/intratemporal_loglinear.tex
   0+6+0 (1/0/0/1) Included file: ././Appendix/log_aggregate_rc.tex
-  66+8+0 (1/0/3/4) Included file: ././Appendix/euler_w_arrow.tex
   20+5+0 (1/0/0/8) Included file: ././Appendix/deriving_bilateral_exchange_rate.tex
-  0+5+0 (1/0/0/2) Included file: ././Appendix/loglinearised_tax_revenue.tex
   3+6+0 (1/0/3/2) Included file: ././Appendix/terms_of_trade_derivation.tex
   0+8+0 (1/0/0/2) Included file: ././Appendix/dynamic_is.tex
   4+5+0 (1/0/0/2) Included file: ././Appendix/final_dynamic_is.tex
   12+5+0 (1/0/1/4) Included file: ././Appendix/average_markup.tex
   1+7+0 (1/0/0/5) Included file: ././Appendix/natural_output.tex
   1+6+0 (1/0/0/2) Included file: ././Appendix/natural_interest_rate.tex
+  2+5+0 (1/0/1/2) Included file: ././Appendix/trade_balance.tex
+  66+8+0 (1/0/3/4) Included file: ././Appendix/euler_w_arrow.tex
+  0+5+0 (1/0/0/2) Included file: ././Appendix/loglinearised_tax_revenue.tex
 

@@ -1,9 +1,13 @@
 \subsubsection*{Derivation of loglinearised terms of trade}
+We use two definitions:
 \begin{align} \label{eq:terms_of_trade_derivation_beginning}
     c_t & = y^*_t + \frac{1}{\sigma}z_t + \frac{1-\upsilon}{\sigma}s_t\\
-    y_t &= C_Y\left[(1-\upsilon)c_t + \upsilon (2-\upsilon)\eta s_t + \upsilon y^*_t\right] + G_Y g_t\\
+    y_t &= C_Y\left[(1-\upsilon)c_t + \upsilon (2-\upsilon)\eta s_t + \upsilon y^*_t\right] + G_Y g_t
+\end{align}
+\begin{align} 
     y_t &= C_Y\left[(1-\upsilon)\left( y^*_t + \frac{1}{\sigma}z_t + \frac{1-\upsilon}{\sigma}s_t \right) + \upsilon (2-\upsilon)\eta s_t + \upsilon y^*_t\right] + G_Y g_t\\
     y_t &= C_Y\left[(1-\upsilon)y^*_t + \frac{1-\upsilon}{\sigma}z_t + (1-\upsilon)\frac{1-\upsilon}{\sigma}s_t + \upsilon (2-\upsilon)\eta s_t + \upsilon y^*_t\right] + G_Y g_t\\
+    &\text{Notice $(1-\upsilon)y^*_t + \upsilon y^*_t = y^*_t$} \nonumber \\
     y_t &= C_Y\left[y^*_t + \frac{1-\upsilon}{\sigma}z_t + (1-\upsilon)\frac{1-\upsilon}{\sigma}s_t + \upsilon (2-\upsilon)\eta s_t\right] + G_Y g_t\\
     y_t &= C_Y\left[y^*_t + \frac{1-\upsilon}{\sigma}z_t + \left((1-\upsilon)\frac{1-\upsilon}{\sigma} + \upsilon (2-\upsilon)\eta \right) s_t\right] + G_Y g_t
 \end{align} 

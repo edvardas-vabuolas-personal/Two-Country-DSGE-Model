@@ -1,0 +1,32 @@
+\subsubsection*{Log linearising government budget constraint}
+\begin{align} \label{eq:appendix_log_budget_constraint_derivation_beginning}
+    \E_t [R^{-1}_tB_{t+1}] + P_t T_t &= P_tG_t + B_t\\
+    &\text{Divide by $P_t$} \nonumber\\
+    \E_t [R^{-1}_tB_{t+1}P_t^{-1}] + T_t &= G_t + B_tP_t P_{t-1} P^{-1}_{t-1}
+\end{align} 
+\begin{align}   
+    &\frac{1}{R}\frac{B}{P}\left[ 1 + \frac{B_{t+1}-B}{B} - \frac{P_t - P}{P} - \frac{R_t-R}{R}\right] + T\left[ 1 + \frac{T_t - T}{T} \right] \nonumber \\ 
+    &= G\left[ 1 + \frac{G_t - G}{G} \right] + \frac{B}{P} \frac{P}{P} \left[ 1 + \frac{B_t - B}{B} - \frac{P_{t-1} - P}{P} + \underbrace{\frac{P_{t} - P}{P} - \frac{P_{t-1} - P}{P}}_{\pi = 0}\right]
+\end{align}
+\begin{align}
+    \text{Subtract steady state (\ref{eq:appendix_log_budget_constraint_derivation_beginning})}\nonumber \\
+    \frac{1}{R}\frac{B}{P}\left[\frac{B_{t+1}-B}{B} - \frac{P_t - P}{P} - \frac{R_t-R}{R}\right] + \left[T_t - T \right] &= \left[G_t - G \right] + \frac{B}{P} \left[\frac{B_t - B}{B} - \frac{P_{t-1} - P}{P}\right]\\
+    \text{Divide by $Y$} \nonumber\\
+    \frac{1}{R}\frac{1}{Y}\frac{B}{P}\left[\frac{B_{t+1}-B}{B} - \frac{P_t - P}{P} - \frac{R_t-R}{R}\right] + t_t &= g_t + \frac{1}{Y}\frac{B}{P} \left[\frac{B_t - B}{B} - \frac{P_{t-1} - P}{P}\right]\\
+    \frac{1}{R}\frac{1}{Y}\left[\frac{B_{t+1}-B}{P} - \frac{B(P_t - P)}{P^{2}} - \frac{B(R_t-R)}{R}\right] + t_t &= g_t + \frac{1}{Y} \left[\frac{B_t-B}{P} - \frac{B(P_{t-1} - P)}{P^{2}}\right]\\
+    \frac{1}{R}\frac{1}{Y}\left[\frac{B_{t+1}-B}{P} - \frac{(B/P)(P_t - P)}{P} - \frac{B(R_t-R)}{R}\right] + t_t &= g_t + \frac{1}{Y} \left[\frac{B_t-B}{P} - \frac{(B/P)(P_{t-1} - P)}{P}\right]\\
+    \frac{1}{R}\frac{1}{Y}\left[\frac{B_{t+1}-B - (B/P)(P_t - P)}{P} - \frac{B(R_t-R)}{R}\right] + t_t &= g_t + \frac{1}{Y} \left[\frac{B_{t}-B - (B/P)(P_{t-1} - P)}{P}\right]
+\end{align}
+\begin{align}
+    \frac{1}{R}\frac{1}{Y}\left[\frac{B_{t+1}-B - (B/P)P_t + B}{P} - \frac{B(R_t-R)}{R}\right] + t_t &= g_t + \frac{1}{Y} \left[\frac{B_{t}-B - (B/P)P_{t-1} + B}{P}\right]\\
+    \frac{1}{R}\frac{1}{Y}\left[\frac{B_{t+1} - (B/P)P_t}{P} - \frac{B(R_t-R)}{R}\right] + t_t &= g_t + \frac{1}{Y} \left[\frac{B_{t} - (B/P)P_{t-1}}{P}\right]\\
+    \frac{1}{R}\frac{1}{Y}\left[\frac{(B_{t+1}/P_{t}) - (B/P)}{P / P_t} - \frac{B(R_t-R)}{R}\right] + t_t &= g_t + \frac{1}{Y} \left[\frac{(B_{t}/P_{t-1}) - (B/P)}{P/P_{t-1}}\right]\\
+    \frac{1}{R} b_{t+1} \frac{1}{P / P_t} + t_t &= g_t + b_t \left[\frac{1}{P/P_{t-1}}\right]\\
+    \frac{1}{R} b_{t+1} \left(\frac{P_t}{P} - 1 + 1\right) + t_t &= g_t + b_t \left(\frac{P_{t-1}}{P} - 1 + 1\right)\\
+    \frac{1}{R} b_{t+1} \left(p_t + 1\right) + t_t &= g_t + b_t \left(p_{t-1} + 1\right)\\
+    \text{Following Uhlig (1995), $x_t y_t \approx 0$}\nonumber \\
+    \frac{1}{R} b_{t+1} + t_t &= g_t + b_t \\
+    b_{t+1} = (1 + \rho)(b_t + g_t - t_t) \label{eq:appendix_log_budget_constraint_derivation_end}
+\end{align}
+where: $\rho = \beta^{-1} - 1$
+\newpage
