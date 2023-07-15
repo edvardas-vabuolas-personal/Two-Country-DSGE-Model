@@ -307,7 +307,7 @@ phi_pi_f  = phi_pi;
 phi_y_f   = phi_y;
 
 G_Y_SS = 0.2;
-G_Y_SS_f = G_Y_SS + 0.05;
+G_Y_SS_f = G_Y_SS;
 
 C_Y_SS = 1 - G_Y_SS;
 C_Y_SS_f = 1 - G_Y_SS_f;
@@ -348,7 +348,7 @@ model(linear);
 #omega = siggma * eta + (1 - upsilon) * (siggma * eta - 1);
 #Phi = 1 / (1 + upsilon * (omega - 1));
 #siggma_upsilon = siggma * Phi;
-#kappa_upsilon = lambda * (siggma_upsilon * Y_C_SS + siggma * (1 - Y_C_SS) + (varphi + alppha) / (1 - alppha));
+#kappa_upsilon = lambda * (siggma_upsilon * Y_C_SS + (varphi + alppha) / (1 - alppha));
 
 
 % Foreign Country
@@ -357,7 +357,7 @@ model(linear);
 #omega_f = siggma_f * eta_f + (1 - upsilon_f) * (siggma_f * eta_f - 1);
 #Phi_f = 1 / (1 + upsilon_f * (omega_f - 1));
 #siggma_upsilon_f = siggma_f * Phi_f;
-#kappa_upsilon_f = lambda_f * (siggma_upsilon_f * Y_C_SS_f + siggma_f * (1 - Y_C_SS_f) + (varphi_f + alppha_f) / (1 - alppha_f));
+#kappa_upsilon_f = lambda_f * (siggma_upsilon_f * Y_C_SS_f + (varphi_f + alppha_f) / (1 - alppha_f));
 
 
 /* Natural Output Gammas */

@@ -129,25 +129,16 @@ where:
 When the prices are flexible, then each firm will choose the same optimal level of labour, implying constant average markup $\mu_t = \mu$. Subtracting $\mu_t$ definition (\ref{eq:average_markup}) from $\mu$ definition (\ref{eq:average_markup_flexible_prices}) yields:
 \begin{align}
     \hat{\mu}_t = \mu_t - \mu &= - \left( \sigma + \frac{\varphi + \alpha}{1-\alpha}\right) \tilde{y}_t + \upsilon(\varpi-1)\tilde{s}_t \\
-     &= - \left( \sigma_\upsilon + \frac{\varphi + \alpha}{1-\alpha}\right) \tilde{y}_t \label{eq:average_markup_gap_w_tildes}
+     &= - \left( \sigma_\upsilon C_Y^{-1} + \frac{\varphi + \alpha}{1-\alpha}\right) \tilde{y}_t \label{eq:average_markup_gap_w_tildes}
 \end{align}
-where $\tilde{s}_t$ denote terms of trade gap, and Equation (\ref{eq:average_markup_gap_w_tildes}) uses $\tilde{s}_t=\sigma_\upsilon \tilde{y}_t$ relationship implied by (\ref{eq:terms_of_trade_w_gov}). Finally, plugging (\ref{eq:average_markup_gap_w_tildes}) in a version of NKPC defined by Equation (\ref{eq:nkpc_a_version}), yields:
+where $\tilde{s}_t$ denote terms of trade gap, and Equation (\ref{eq:average_markup_gap_w_tildes}) uses $\tilde{s}_t=\sigma_\upsilon C_Y^{-1} \tilde{y}_t$ relationship implied by (\ref{eq:terms_of_trade_w_gov}). Finally, plugging (\ref{eq:average_markup_gap_w_tildes}) in a version of NKPC defined by Equation (\ref{eq:nkpc_a_version}), yields:
 \begin{equation}
     \pi_{H,t} = \beta \E_t \left[ \pi_{H,t+1}\right] + \kappa \tilde{y}_t
 \end{equation}
-where $\kappa=\lambda\left( \sigma_\upsilon + \frac{\varphi + \alpha}{1-\alpha}\right)$. That is, whenever output is greater than that implied by the natural level of output ($\tilde{y}_t > 0$), inflation increases, which subsequently reduces demand and brings output closer to the natural level of output. The opposite is also true, i.e. whenever economy is under-producing goods ($\tilde{y}_t < 0$), then inflation decreases to induce demand and bring output level to that under flexible prices. If prices were fully flexible ($\theta = 0$), then economy would always be producing $y_t = y^n_t$, suggesting a zero inflation steady state.
+where $\kappa=\lambda\left( \sigma_\upsilon C_Y^{-1} + \frac{\varphi + \alpha}{1-\alpha}\right)$. That is, whenever output is greater than that implied by the natural level of output ($\tilde{y}_t > 0$), inflation increases, which subsequently reduces demand and brings output closer to the natural level of output. The opposite is also true, i.e. whenever economy is under-producing goods ($\tilde{y}_t < 0$), then inflation decreases to induce demand and bring output level to that under flexible prices. If prices were fully flexible ($\theta = 0$), then economy would always be producing $y_t = y^n_t$, suggesting a zero inflation steady state.
 
-Finally, we have a path for output gap (implied by DIS), a path for inflation (implied by NKPC), the only remaining path to ``close'' the model is that for the interest rate. Here, the monetary authority is assumed to set interest rate following a Taylor rule with smoothing:
+Finally, we have a path for output gap (implied by DIS), a path for inflation (implied by NKPC), the only remaining path to ``close'' the model is that for the interest rate. Here, the monetary authority is assumed to set interest rate following a Taylor rule:
 \begin{equation}
-    i_t = \rho_i i_{t-1} + (1-\rho_i)(\phi_\pi \pi_{H,t}+ \phi_y \hat{y}_t) + m_t
+    i_t = \phi_\pi \pi_{H,t}+ \phi_y \hat{y}_t + m_t
 \end{equation}
 where $m_t$ is a contractionary shock, which is assumed to follow an AR(1) process $m_t = \rho_m m_{t-1} + \varepsilon^m_{t},\ \varepsilon^m_{t} \sim \mathcal{N}(0,\sigma^2_m)$, and $\hat{y}_t = y_t - y$ is the deviation from the steady state output. The Taylor rule suggests that monetary authority will raise the interest rate whenever inflation increases or output exceeds the steady state output.
-
-
-% Bin:
-% Reference to derivation of the net exports
-% \begin{align}
-%     nx_t&=y_t - C_Y\left[C_Y^{-1} y_t - \upsilon \frac{\varpi}{\sigma} s_t + \frac{\upsilon}{\sigma}z_t - C_G^{-1} g_t + \upsilon s_t \right] - G_Y g_t \\
-%     \vdots & \quad \text{see Appendix \ref{eq:appendix_trade_balance_derivation_beginning} - \ref{eq:appendix_trade_balance_derivation_end}} \nonumber \\
-%     nx_t&=C_Y\left[\upsilon \left(\frac{\varpi}{\sigma} - 1\right) s_t - \frac{\upsilon}{\sigma}z_t \right] \label{eq:trade_balance_wout_consumption}
-% \end{align}
