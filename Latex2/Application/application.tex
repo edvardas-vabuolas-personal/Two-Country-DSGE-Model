@@ -1,42 +1,61 @@
-In terms of RBC family of models, application normally refers to the process of calibrating model parameters and analysing impulse response functions, given temporary shocks in interest rate, level of technology, world output, etc. In 20XX, Smith and Watson (\textbf{??}) applied Markov Chain Monte Carlo (MCMC) technique to estimate model parameters, which has become a standard practice. However, due to the limitations of the word count and the scope of this dissertation, the specifics of Bayesian estimation will not be delved into. Blake and Mumtaz (2017) handbook of applied Bayesian econometrics has a dedicate section for implementation of random walk Metropolis-Hastings algorithm for DSGE models and even includes complementary Matlab code repository. For model parameters estimation and impulse response functions, this dissertation will utilise out-of-the-box solutions offered by Dynare (\textbf{refs}). This section will cover parameters, data, and estimation results. The next section will cover impulse response functions.
+In terms of RBC family of models, application normally refers to the process of calibrating model parameters and analysing impulse response functions, given temporary shocks in interest rate, level of technology, world output, etc. In 20XX, Smith and Watson (\textbf{??}) applied Markov Chain Monte Carlo (MCMC) technique to estimate model parameters, which has become a standard practice. However, due to the limitations of the word count and the scope of this dissertation, the specifics of Bayesian estimation will not be delved into. Blake and Mumtaz (2017) handbook of applied Bayesian econometrics has a dedicate section for implementation of random walk Metropolis-Hastings algorithm for DSGE models and even includes complementary Matlab code repository. For model parameters estimation and impulse response functions, this dissertation will utilise out-of-the-box solutions offered by Dynare computer package (\textbf{refs}). This section will cover parameters, data, and estimation results. The next section will cover impulse response functions.
 
-Whilst estimating all (or most) of the parameters is an option, the majority of parameter values will be calibrated in line with the literature. The reason behind the decision is the simplicity of our model. The model does not consider capital, investment, sticky wages, limited access to financial instruments, and many other extensions in the literature that are found to improve data fit. The dissertation, however, does estimate three sensitive parameters key to the research question: $\phi_b$, $\phi_g$, and $\rho_g$. The table below lists all model parameters and reasoning behind their associated values:
+Whilst estimating all of the parameters is an option in theory, the majority of parameter values will be calibrated in line with the literature. The reason behind the decision is the simplicity of our model. The model does not consider capital, habit formation, sticky wages, limited access to financial instruments, and many other extensions in the literature that are found to improve data fit. This makes our data uninformative for some of the parameters and estimation results heavily rely on priors. The Table \ref{table:model_parameters} below lists calibrated (as opposed to estimated) model parameters for Scotland and the rest of the UK. In majority of the cases, parameters are assumed to be symmetrical. The assymetry in responses to government spending is assumed to stem from different government spending-to-output ratio in the steady state and estimated fiscal policy feedback parameters $\phi_b$ and $\phi_g$, as well as government spending persistence parameter $\rho_g$. The last column provides reasoning behind all model parameter values.
 
+The dissertation, however, does estimate three sensitive parameters key to the research question: $\phi_b$, $\phi_g$, and $\rho_g$ (and their rUK / UK counterparts). The acceptance rate per chain was c. 22\%, which is close to the optimal acceptance rate suggested by Roberts and Rosenthal (2001). The acceptance rate in the range of 23\% ensures that the variance of candidate parameter values is neither too large nor too small (ibid). The number of MH draws and initial (``burn-in'') draws was set to 300.000 and 100.000, respectively. The posterior means of all estimated parameters are close to their initial values, which can be largely attributed to tight prior variance, but the two means do not coincide, suggesting informative estimation of the parameters. The Table \ref{tab:priors_and_posteriors} lists distribution, prior mean and variance, as well as posterior mean. Figures (\textbf{??})-(\textbf{??}) display how the 300.000 draw varied, as well as a histogram of the draws. The variance of the draws suggests that the serial correlation of lagged draws was not persistent (fading), which is also indicative of successful estimation Roberts and Rosenthal (2001).
+\import{./Tables}{model_parameters.tex}
 \begin{table}[H]
     \centering
-    \begin{tabular}{ll|lll}
-        Parameter & Value & Parameter & Value & Strategy \\
+    \label{tab:priors_and_posteriors}
+    \begin{tabular}{cccccc}
+        \textbf{Variable} & \textbf{Distribution} & \textbf{Prior Mean} & \textbf{Prior Variance} & \textbf{Posterior Mean} \\
         \hline
-        \hline
-        $\beta$ & 0.99 & $\beta^*$ & $\beta$ & Calculated so that $R_t = 1.01$\\
-        $\sigma$ & 1.00 & $\sigma^*$ & $\sigma$ & (\textbf{refs})\\
-        $\varphi$ & 6.00 & $\varphi^*$ & $\varphi$ & (\textbf{refs})\\
-        $\alpha$ & $\frac{1}{3}$ & $\alpha^*$ & $\alpha$ & (\textbf{refs})\\
-        $\epsilon$ & 6.00 & $\epsilon^*$ & $\epsilon$ & (\textbf{refs})\\
-        $\theta$ & $\frac{3}{4}$ & $\theta^*$ & $\theta$ & (\textbf{refs})\\
-        $\upsilon$ & 0.60 & $\upsilon^*$ & $\upsilon$ & (\textbf{refs})\\
-        $\rho_a$ & 0.50 & $\rho_a^*$ & $\rho_a$ & (\textbf{refs})\\
-        $\eta$ & 1 & $\eta^*$ & $\eta$ & (\textbf{refs})\\
-        $\rho_z$ & 0.50 & $\rho_z^*$ & $\rho_z$ & (\textbf{refs})\\
-        $\rho_\nu$ & 0.50 & $\rho^*_\nu$ & $\rho_\nu$ & (\textbf{refs})\\
-        $\phi_\pi$ & 1.50 & $\phi^*_\pi$ & $\phi_\pi$ & (\textbf{refs})\\
-        $\phi_y$ & 0.125 & $\phi^*_y$ & $\phi_y$ & (\textbf{refs})\\
-        $G_Y$ & 0.25 & $G_Y^*$ & 0.2 & (\textbf{refs})\\
-        $C_Y$ & 1.00 - $G_Y$ & $C_Y^*$ & 1 - $G_Y^*$ & Implied by $1=\frac{C}{Y} + \frac{G}{Y}$\\
-        $Y_C$ & $1/{C_Y}$ & $Y_C^*$ & $1/{C_Y^*}$ & Implied \\
-        $G_C$ & $Y_C$ - 1 & $G_C^*$ & $Y_C^*$ - 1 & Implied \\
-        \multicolumn{5}{l}{\textit{For multiple governments:}} \\
-        $\rho_g$ & 0.90 & $\rho_g^*$ & $\rho_g$ & Estimated and Gali, Lopez, Valles, 2005\\
-        $\phi_b$ & 0.33 & $\phi_b^*$ & $\phi_b$ & Estimated and Gali, Lopez, Valles, 2005\\
-        $\phi_g$ & 0.10 & $\phi_g^*$ & $\phi_g$ & Estimated and Gali, Lopez, Valles, 2005\\
-        $\tau$ & 0.20 & $\tau^*$ & $\tau$ & (\textbf{refs})\\
-        \multicolumn{5}{l}{\textit{For a single government:}} \\
-         &&$\rho_g^{UK}$  & 0.90  & Estimated and Gali, Lopez, Valles, 2005\\
-         &&$\phi_b^{UK}$  & 0.33  & Estimated and Gali, Lopez, Valles, 2005\\
-         &&$\phi_g^{UK}$  & 0.10  & Estimated and Gali, Lopez, Valles, 2005\\
-         &&$\tau^{UK}$    & 0.20  & (\textbf{refs})\\
+        \multicolumn{5}{l}{\textit{For policy scenarios with multiple governments:}} \\
+        $\phi_b$ & Beta & 0.33 & 0.15 & 0.351\\
+        $\phi_g$ & Beta & 0.10 & 0.05 & 0.102\\
+        $\rho_g$ & Beta & 0.90 & 0.05 & 0.898\\
+        $\phi_b^*$ & Beta & 0.33 & 0.15 & 0.341\\
+        $\phi_g^*$ & Beta & 0.10 & 0.05 & 0.104\\
+        $\rho_g^*$ & Beta & 0.90 & 0.05 & 0.902\\
+        \multicolumn{5}{l}{\textit{For policy scenarios with a single government:}} \\
+        $\phi_b^{UK}$ & Beta & 0.33 & 0.15 & 0.341\\
+        $\phi_g^{UK}$ & Beta & 0.10 & 0.05 & 0.104\\
+        $\rho_g^{UK}$ & Beta & 0.90 & 0.05 & 0.902\\
     \end{tabular}
-    \caption{Model parameters, their values, and the strategy for obtaining the values}
+    \caption{Variable Statistics}
 \end{table}
+\import{./Graphs}{MCMC_Scot.tex}
+\import{./Graphs}{MCMC_RUK.tex}
+In terms of data, the majority of time series for Scotland and the rest of the UK were acquired from the Quarterly National Accounts of Scotland (QNAS) and the Quarterly Nationals Account (QNA), respectively.
+\begin{table}[htbp]
+    \begin{tabular}{ll}
+    \textbf{Time Series} & \textbf{Source}  \\ \hline
+    Scot. Deflator (2018=100)         & QNAS 2022: Q2 Table A, column O                                                       \\ 
+    Scot. Output                      & QNAS 2022: Q2 Table A, column D                                                       \\
+    Scot. Consumption                 & QNAS 2022: Q2 Supplementary Tables, \\& Table 12, Column P                                \\
+    Scot. Compensation of Employees & QNAS 2022: Q2 Table I, column C                                                       \\
+    Scot. Working Population                & Population Estimates Time Series Data, \\ & National Records of Scotland                   \\
+    UK Deflator (2023=100)          & QNA: Implied GDP deflator at market prices: \\ &SA Index                                  \\
+    UK Output                       & QNA: Gross Domestic Product at market prices:\\ & Current price: Seasonally adjusted £m   \\
+    UK Consumption                  & QNA: 0 Household final consumption expenditure:\\ &Domestic concept CP SA £m             \\
+    UK Compensation of Employees  & QNA: UK (S.1): Compensation of employees (D.1) \\ & Uses: Current price: £m: SA            \\
+    rUK Working Population                & NOMIS Population Estimates                                                            \\ 
+    \end{tabular}
+    \caption{Data used for estimation}
+    \label{table:data_for_estimation}
+\end{table} 
+Each time series were then processed in line with Pfifer (2019), i.e. each time series for Scotland were adjusted to 2018 price levels and divided by the number of (estimated) working age residents in Scotland. Then, the time series were expressed in natural logarithms and first-differenced to induce stationarity. Finally, the series were demeaned. Similarly, the time series for the rest of the UK were adjusted to 2023 price levels. The remaining steps were identical to the ones for Scotland. Note, that data was not available for all regions of the UK. Therefore, in the majority of the cases, the rest of the UK time series were calculated by taking UK-wide time series and subtracting them from Scotland's. The resulting values should be approximately equal to the rest of the UK ones, as long as QNAS and QNA use symmetrical accounting/data processing methods. Appendix B displays plots of the pre- and post-transformed time series.
+\import{./Graphs}{data_graphs.tex}
+\import{./Graphs}{dynare_data_graphs.tex}
 
+% \import{./Graphs}{MCMC_UK.tex}
+% $\rho_g$ & 0.90 & $\rho_g^*$ & $\rho_g$ & Estimated and Gali, Lopez, Valles, 2005\\
+% $\phi_b$ & 0.33 & $\phi_b^*$ & $\phi_b$ & Estimated and Gali, Lopez, Valles, 2005\\
+% $\phi_g$ & 0.10 & $\phi_g^*$ & $\phi_g$ & Estimated and Gali, Lopez, Valles, 2005\\
+% $\tau$ & 0.20 & $\tau^*$ & $\tau$ & (\textbf{refs})\\
+% \multicolumn{5}{l}{\textit{For policy scenarios with a single government:}} \\
+%  &&$\rho_g^{UK}$  & 0.90  & Estimated and Gali, Lopez, Valles, 2005\\
+%  &&$\phi_b^{UK}$  & 0.33  & Estimated and Gali, Lopez, Valles, 2005\\
+%  &&$\phi_g^{UK}$  & 0.10  & Estimated and Gali, Lopez, Valles, 2005\\
+%  &&$\tau^{UK}$    & 0.20  & (\textbf{refs})\\
 

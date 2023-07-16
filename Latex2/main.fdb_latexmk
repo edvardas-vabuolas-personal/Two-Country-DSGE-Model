@@ -1,15 +1,15 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1689449982 -1
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1689520438 -1
   "./DissertationDSGE.bib" 1686949460 4479 c98594d863b4f30bcda63b955582ee9e ""
-  "main.bcf" 1689449982 111015 f9c46d21c3eabc9ec7a462b484d8bf07 "pdflatex"
+  "main.bcf" 1689520437 111015 f9c46d21c3eabc9ec7a462b484d8bf07 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1689449980 "/Users/edvardasvabuolas/Documents/University/Dissertation/Latex2/main.tex" "main.pdf" "main" 1689449982 0
+["pdflatex"] 1689520433 "/Users/edvardasvabuolas/Documents/University/Dissertation/Latex2/main.tex" "main.pdf" "main" 1689520438 0
   "./model.tex" 1689265482 1669 823122a5f41dabf3ca6a830723063356 ""
   "./structure.tex" 1686997298 1127 bd0e6815ac9768e43404f62e2ee55929 ""
-  "/Users/edvardasvabuolas/Documents/University/Dissertation/Latex2/main.tex" 1689449977 1030 56130f3c6eaf4ff9c66d582e1535df36 ""
+  "/Users/edvardasvabuolas/Documents/University/Dissertation/Latex2/main.tex" 1689458405 953 6f1dad32dba2df5b3946613bb01688c8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -227,9 +227,12 @@
   "Appendix/natural_output.tex" 1689363243 7748 e0c45c6bf0b14b0f4f031af4a90942c0 ""
   "Appendix/terms_of_trade_derivation.tex" 1689360722 3059 0413dbab19645f0c8a8c413a799183ef ""
   "Appendix/trade_balance.tex" 1689364132 1860 b5fb0368d6a17210a664ef32c807a715 ""
-  "Application/application.tex" 1689449948 3897 69e70fc8ba70f2d6efdc5b85ea0637d4 ""
-  "Graphs/data_graphs.tex" 1687006891 59265 f63901f6cf52507253209fd33fd958c7 ""
-  "Graphs/dynare_data_graphs.tex" 1687007887 50236 f411b7663cc62fc88f11c23c3e0aabc0 ""
+  "Application//./Tables/model_parameters.tex" 1689518497 1787 38605e0b7f3a0d0a2badba9a231af8e0 ""
+  "Application/application.tex" 1689520432 7780 3cae84efc45a9046e8788067a679669d ""
+  "Graphs/MCMC_RUK.tex" 1689516589 50109 0d9c5b339f39cf33c7057e77dab8e18a ""
+  "Graphs/MCMC_Scot.tex" 1689516611 50985 935320394eec1315035063d7a1c6d074 ""
+  "Graphs/data_graphs.tex" 1689460806 59310 1d4bcab6258fd4f1dbfd8d761f48d19c ""
+  "Graphs/dynare_data_graphs.tex" 1689508677 37749 e1fc5796b53efadb6a217b7ea8445483 ""
   "Graphs/sigma_varphi.tex" 1686946077 18110 f0e16d3ce5283471223d2647f251041b ""
   "Graphs/timeline.tex" 1686985732 1167 e25b88d2ddc5512a839d8cd10d5c7292 ""
   "Introduction/introduction.tex" 1686921052 0 d41d8cd98f00b204e9800998ecf8427e ""
@@ -242,12 +245,12 @@
   "Theoretical DSGE model/model.tex" 1689253937 3220 91aac46dea1443c7055ee699f9406e76 ""
   "Title Page/title_page.tex" 1688488319 725 0870f481c563c2e8d9581639a4b27ab0 ""
   "Title Page/uoe_logo.png" 1686316242 20326 1cb2a3031b2bfffe2295b1170a85379a ""
-  "detailed_wordcount.txt" 1689443849 1992 06dcac14adb76b129caa7ec727aa349c ""
-  "final_wordcount.txt" 1689443849 4 07b2ee9f02d5e6e8894377afb4feed32 ""
-  "main.aux" 1689449982 11521 7f8008bd341f0005c6238871a7d54442 "pdflatex"
-  "main.bbl" 1689443043 13792 e1243356da930739f32d10ab689aa98b "biber main"
-  "main.run.xml" 1689449982 2351 e48ac35430ef4eb0fe9dd6f256db4588 "pdflatex"
-  "main.tex" 1689449977 1030 56130f3c6eaf4ff9c66d582e1535df36 ""
+  "detailed_wordcount.txt" 1689450000 2061 844287aadab038fea4773761b65b6404 ""
+  "final_wordcount.txt" 1689450000 4 2fcd5cf1ebcd4213d8a17edc4cd47ad7 ""
+  "main.aux" 1689520437 11905 5a67491164774c31f2d5a323b13c938b "pdflatex"
+  "main.bbl" 1689508772 13792 e1243356da930739f32d10ab689aa98b "biber main"
+  "main.run.xml" 1689520437 2351 e48ac35430ef4eb0fe9dd6f256db4588 "pdflatex"
+  "main.tex" 1689458405 953 6f1dad32dba2df5b3946613bb01688c8 ""
   "model.tex" 1689265482 1669 823122a5f41dabf3ca6a830723063356 ""
   "structure.tex" 1686997298 1127 bd0e6815ac9768e43404f62e2ee55929 ""
   (generated)

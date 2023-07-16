@@ -1,7 +1,7 @@
 % monetary_union: 0 - Standard NK Phillips Curves and Dynamic IS curves, 2 interest rates; 1 - Price passthrough and unified monetary authority
 @#define monetary_union = 1
 
-@#define scenario = 4
+@#define scenario = 3
 
 % no_of_govs: 1 - One government budget constraint; 2 - Two government budget constraints
 % labour_tax: 0 - Lump-Sum; 1 - Distortionary taxes (labour tax)
@@ -28,7 +28,7 @@
 
 
 % mcmc: 0 - do not estimate (use pre-defined parameters); 1 - estimate (use calibrated parameters)
-@#define mcmc = 0
+@#define mcmc = 1
 
 % shock_type: 1 - monetary; 2 - fiscal
 @#define shock_type = 2
@@ -621,11 +621,11 @@ wp_f = w_f - p_f;
 @#if mcmc == 1
     y_obs = y - y(-1) + y_obs_me;
     c_obs = c - c(-1) + c_obs_me;
-    w_obs = w - w(-1) + w_obs_me;
+    w_obs = wp - wp(-1) + w_obs_me;
     pi_obs = pi + pi_obs_me;
     y_obs_ruk = y_f - y_f(-1) + y_obs_ruk_me;
     c_obs_ruk = c_f - c_f(-1) + c_obs_ruk_me;
-    w_obs_ruk = w_f - w_f(-1) + w_obs_ruk_me;
+    w_obs_ruk = wp_f - wp_f(-1) + w_obs_ruk_me;
     pi_obs_ruk = pi_f + pi_obs_ruk_me;
     i_obs = interest_uk - interest_uk(-1) + i_obs_me;
 @#endif
@@ -678,50 +678,37 @@ end;
 
 @#if mcmc == 1
     estimated_params;
-    /* stderr y_obs_me,inv_gamma_pdf,0.01,2; */
+    stderr y_obs_me,inv_gamma_pdf,0.01,2;
     /* stderr c_obs_me,inv_gamma_pdf,0.01,2; */
     /* stderr w_obs_me,inv_gamma_pdf,0.01,2; */
-    /* stderr pi_obs_me,inv_gamma_pdf,0.01,2; */
-    /* stderr y_obs_ruk_me,inv_gamma_pdf,0.01,2; */
+    stderr pi_obs_me,inv_gamma_pdf,0.01,2;
+    stderr y_obs_ruk_me,inv_gamma_pdf,0.01,2;
     /* stderr c_obs_ruk_me,inv_gamma_pdf,0.01,2; */
     /* stderr w_obs_ruk_me,inv_gamma_pdf,0.01,2; */
-    /* stderr pi_obs_ruk_me,inv_gamma_pdf,0.01,2; */
+    stderr pi_obs_ruk_me,inv_gamma_pdf,0.01,2;
     /* stderr i_obs_me,inv_gamma_pdf,0.01,2; */
     
-    /* rho_a, beta_pdf, 0.7, 0.1;
-    rho_y_star, beta_pdf, 0.7, 0.1;
-    rho_z,beta_pdf,0.7,0.1;
-
-    rho_a_f, beta_pdf, 0.7, 0.1;
-    rho_y_star_f, beta_pdf, 0.7, 0.1;
-    rho_z_f,beta_pdf,0.7,0.1; */
-
     @#if no_of_govs == 2
-        phi_b, beta_pdf, 0.25, 0.1;
-        /* phi_g, beta_pdf, 0.1, 0.1; */
-        /* phi_b_f, beta_pdf, 0.25, 0.1; */
-        /* phi_g_f, beta_pdf, 0.1, 0.1; */
+        phi_b, beta_pdf, 0.30, 0.15;
+        phi_g, beta_pdf, 0.1, 0.05;
+        phi_b_f, beta_pdf, 0.30, 0.15;
+        phi_g_f, beta_pdf, 0.1, 0.05;
+        rho_g, beta_pdf, 0.9, 0.05;
+        rho_g_f, beta_pdf, 0.9, 0.05;
     @#else
-        phi_b_uk, beta_pdf, 0.33, 0.1;
+        phi_b_uk, beta_pdf, 0.30, 0.15;
         phi_g_uk, beta_pdf, 0.1, 0.05;
+        rho_g_uk, beta_pdf, 0.9, 0.1;
     @#endif
-    /* rho_g_uk, beta_pdf, 0.9, 0.05; */
-    /* rho_nu, normal_pdf, 0.5, 0.1; */
-    /* theta, beta_pdf, 0.6, 0.25; */
-    /* theta_f, beta_pdf, 0.6, 0.25; */
-    /* siggma, gamma_pdf, 1.5, 0.25; */
-    /* siggma_f, gamma_pdf, 1.5, 0.25; */
-
-    /* rho_nu, beta_pdf, 0.7, 0.2; */
-    /* rho_i, beta_pdf, 0.7, 0.2; */
 
     end;
 
     /* varobs y_obs c_obs w_obs y_obs_ruk c_obs_ruk w_obs_ruk; */
-    varobs y_obs c_obs w_obs y_obs_ruk c_obs_ruk w_obs_ruk;
+    varobs y_obs c_obs w_obs y_obs_ruk c_obs_ruk w_obs_ruk pi_obs pi_obs_ruk;
     /* varobs y_obs; */
 
-    estimation(datafile=DynareData, mh_replic=300000, mh_nblocks=1, smoother, diffuse_filter);
+    /* estimation(datafile=DynareData, mh_replic=20000, mh_nblocks=1, logdata, smoother, diffuse_filter, mh_jscale=1.2592); */
+    estimation(datafile=DynareData, mh_replic=20000, mh_nblocks=1, logdata, smoother, diffuse_filter, mh_jscale=0.5);
 @#endif
 
 resid(1);
