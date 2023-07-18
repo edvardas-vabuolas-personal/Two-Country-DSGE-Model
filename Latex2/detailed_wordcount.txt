@@ -1,13 +1,13 @@
 
-Sum count: 6452
-Words in text: 5750
+Sum count: 6889
+Words in text: 6178
 Words in headers: 96
-Words outside text (captions, etc.): 304
+Words outside text (captions, etc.): 310
 Number of headers: 25
-Number of floats/tables/figures: 10
-Number of math inlines: 201
+Number of floats/tables/figures: 14
+Number of math inlines: 204
 Number of math displayed: 101
-Files: 31
+Files: 34
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
   1+7+0 (5/0/0/0) File: main.tex
@@ -18,11 +18,14 @@ Subcounts:
   501+1+117 (1/5/26/1) Included file: ././Theoretical DSGE model/government.tex
   878+1+21 (1/0/45/13) Included file: ././Theoretical DSGE model/firms.tex
   876+1+7 (1/1/32/19) Included file: ././Theoretical DSGE model/equilibrium.tex
-  236+0+11 (0/1/3/0) Included file: ././Application/application.tex
+  664+0+6 (0/2/6/0) Included file: ././Application/application.tex
   0+1+0 (1/0/0/0) Included file: ././Appendix/appendix.tex
   1+0+0 (0/0/0/0) Included file: ././final_wordcount.txt
   0+0+11 (0/1/0/0) Included file: ././Graphs/timeline.tex
   0+0+0 (0/1/0/0) Included file: ././Graphs/sigma_varphi.tex
+  0+0+11 (0/1/0/0) Included file: ././Application/Tables/model_parameters.tex
+  0+0+0 (0/1/0/0) Included file: ././Graphs/data_graphs.tex
+  0+0+0 (0/1/0/0) Included file: ././Graphs/dynare_data_graphs.tex
   0+5+0 (1/0/0/1) Included file: ././Appendix/intratemporal_loglinear.tex
   1+5+0 (1/0/1/4) Included file: ././Appendix/log_budget_constraint.tex
   0+6+0 (1/0/0/1) Included file: ././Appendix/log_aggregate_rc.tex

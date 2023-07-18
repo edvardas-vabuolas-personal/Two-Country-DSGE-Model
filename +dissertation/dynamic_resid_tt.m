@@ -34,7 +34,7 @@ T(11) = (1-params(16))*T(5)*(-params(19))*(params(13)*params(20)+(1-params(19))*
 T(12) = (1-params(16))*T(4)*(params(13)*params(20)+(1-params(19))*(params(13)*params(20)-1))*(-params(19))/(params(16)+params(15)+(1-params(16))*params(30)*T(5));
 T(13) = (1+params(15))/(params(16)+params(15)+(1-params(16))*params(30)*T(5));
 T(14) = (1-params(16))*params(32)*T(5)/(params(16)+params(15)+(1-params(16))*params(30)*T(5));
-T(15) = (1-params(4))*(-params(39))/((1-params(39))*(params(4)+params(3)+(1-params(4))*params(29)*T(2)));
-T(16) = (1-params(16))*(-params(40))/((1-params(40))*(params(16)+params(15)+(1-params(16))*params(30)*T(5)));
+T(15) = (1-params(4))*(-params(36))/((1-params(36))*(params(4)+params(3)+(1-params(4))*params(29)*T(2)));
+T(16) = (1-params(16))*(-params(36))/((1-params(36))*(params(16)+params(15)+(1-params(16))*params(30)*T(5)));
 
 end

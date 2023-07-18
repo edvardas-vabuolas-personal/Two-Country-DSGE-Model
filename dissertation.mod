@@ -1,7 +1,7 @@
 % monetary_union: 0 - Standard NK Phillips Curves and Dynamic IS curves, 2 interest rates; 1 - Price passthrough and unified monetary authority
 @#define monetary_union = 1
 
-@#define scenario = 3
+@#define scenario = 4
 
 % no_of_govs: 1 - One government budget constraint; 2 - Two government budget constraints
 % labour_tax: 0 - Lump-Sum; 1 - Distortionary taxes (labour tax)
@@ -28,102 +28,99 @@
 
 
 % mcmc: 0 - do not estimate (use pre-defined parameters); 1 - estimate (use calibrated parameters)
-@#define mcmc = 1
+@#define mcmc = 0
 
 % shock_type: 1 - monetary; 2 - fiscal
 @#define shock_type = 2
 
 @#define enable_forloop = 0
+@#define enable_irfs_to_csv = 1
 
 var 
 
-% Home country
-y_gap       ${\tilde{y}_t}$   (long_name='Output gap')
-pi_h        ${\pi_{H,t}}$       (long_name='domestic inflation')
-y_nat       ${y^{n}}$       (long_name='natural output')
-r_nat       ${r^{n}}$       (long_name='natural interest rate')
-s_nat       ${s^{n}}$       (long_name='natural terms of trade')
-y           ${y}$           (long_name='output')
-s_gap       ${\tilde{s}}$   (long_name='terms of trade gap')
-s           ${s}$           (long_name='terms of trade')
-pi          ${\pi}$         (long_name='CPI inflation')
-n           ${n}$           (long_name='employment')
-r_real      ${r^r}$         (long_name='real interest rate')   
-w           ${w}$           (long_name='nominal wage')   
-nx          ${nx}$          (long_name='net exports in terms of domestic outout')   
-c           ${c}$           (long_name='consumption')   
-yhat        ${\hat y}$      (long_name='output deviation from steady state')
-p_h         ${p_H}$         (long_name='domestic price level')
-p           ${p}$           (long_name='CPI')
-er          ${e}$           (long_name='Nominal exchange rate')
-d_er        ${\Delta e}$    (long_name='Nominal exchange rate growth')
-y_star      ${y^*}$         (long_name='world output')
-a           ${a}$           (long_name='AR(1) technology shock process')
-z           ${z}$           (long_name='AR(1) preference shock process')
-wp          ${wp}$           (long_name='Real Wage')
+y_gap       ${\tilde{y}_t}$   (long_name='Scotland output gap')
+pi_h        ${\pi_{H,t}}$     (long_name='Scotland domestic inflation')
+y_nat       ${y^{nat}_t}$       (long_name='Scotland natural output')
+r_nat       ${r^{nat}_t}$       (long_name='Scotland natural interest rate')
+s_nat       ${s^{nat}_t}$       (long_name='Scotland natural terms of trade')
+y           ${y_t}$           (long_name='Scotland output')
+s_gap       ${\tilde{s}_t}$   (long_name='Scotland terms of trade gap')
+s           ${s_t}$           (long_name='Scotland terms of trade')
+pi          ${\pi_t}$         (long_name='Scotland CPI inflation')
+n           ${n_t}$           (long_name='Scotland employment')
+r_real      ${r^r_t}$         (long_name='Scotland real interest rate')   
+w           ${w_t}$           (long_name='Scotland nominal wage')   
+nx          ${nx_t}$          (long_name='Scotland net exports')   
+c           ${c_t}$           (long_name='Scotland consumption')   
+yhat        ${\hat{y}_t}$     (long_name='Scotland output deviation from steady state')
+p_h         ${p_H_t}$         (long_name='Scotland domestic price level')
+p           ${p_t}$           (long_name='Scotland CPI')
+er          ${e_t}$           (long_name='Scotland Nominal exchange rate')
+d_er        ${\Delta e_t}$    (long_name='Scotland Nominal exchange rate growth')
+y_star      ${y^*_t}$         (long_name='World output')
+a           ${a_t}$           (long_name='Scotland AR(1) technology shock process')
+z           ${z_t}$           (long_name='Scotland AR(1) preference shock process')
+wp          ${wp_t}$          (long_name='Scotland Real Wage')
 
-% Foreign Country
-y_gap_f       ${\tilde{y^f}}$   (long_name='output gap')
-pi_h_f        ${\pi^f_H}$       (long_name='domestic inflation')
-y_nat_f       ${{y^f}^{n}}$       (long_name='natural output')
-r_nat_f       ${{r^f}^{n}}$       (long_name='natural interest rate')
-s_nat_f       ${{s^f}^{n}}$       (long_name='natural terms of trade')
-y_f           ${y^f}$           (long_name='output')
-s_gap_f       ${\tilde{s^f}}$   (long_name='terms of trade gap')
-s_f           ${s^f}$           (long_name='terms of trade')
-pi_f          ${\pi^f}$         (long_name='CPI inflation')
-n_f           ${n^f}$           (long_name='employment')
-r_real_f      ${r^r}$         (long_name='real interest rate')   
-w_f           ${w^f}$           (long_name='nominal wage')   
-nx_f          ${nx^f}$          (long_name='net exports in terms of domestic outout')   
-c_f           ${c^f}$           (long_name='consumption')   
-yhat_f        ${\hat y^f}$      (long_name='output deviation from steady state')
-p_h_f         ${p^f_H}$         (long_name='domestic price level')
-p_f           ${p^f}$           (long_name='CPI')
-er_f          ${e^f}$           (long_name='Nominal exchange rate')
-d_er_f        ${\Delta e^f}$    (long_name='Nominal exchange rate growth')
-a_f           ${a^f}$           (long_name='AR(1) technology shock process')
-z_f           ${z^f}$           (long_name='AR(1) preference shock process')
-wp_f          ${wp^f}$           (long_name='Real Wage')
+y_gap_f       ${\tilde{y^*}}$   (long_name='rUK output gap')
+pi_h_f        ${\pi^*_{H,t}}$       (long_name='rUK domestic inflation')
+y_nat_f       ${y^{*nat}_t}$     (long_name='rUK natural output')
+r_nat_f       ${r^{*nat}_t}$     (long_name='rUK natural interest rate')
+s_nat_f       ${s^{*nat}_t}$     (long_name='rUK natural terms of trade')
+y_f           ${y^*_t}$           (long_name='rUK output')
+s_gap_f       ${\tilde{s^*}_t}$   (long_name='rUK terms of trade gap')
+s_f           ${s^*_t}$           (long_name='rUK terms of trade')
+pi_f          ${\pi^*_t}$         (long_name='rUK CPI inflation')
+n_f           ${n^*_t}$           (long_name='rUK employment')
+r_real_f      ${r^r_t}$           (long_name='rUK real interest rate')   
+w_f           ${w^*_t}$           (long_name='rUK nominal wage')   
+nx_f          ${nx^*_t}$          (long_name='rUK net exports in terms of domestic outout')   
+c_f           ${c^*_t}$           (long_name='rUK consumption')   
+yhat_f        ${\hat{y}^*_t}$      (long_name='rUK output deviation from steady state')
+p_h_f         ${p^*_{H, t}}$         (long_name='rUK domestic price level')
+p_f           ${p^*_t}$           (long_name='rUK CPI')
+er_f          ${e^*_t}$           (long_name='rUK Nominal exchange rate')
+d_er_f        ${\Delta e^*_t}$    (long_name='rUK Nominal exchange rate growth')
+a_f           ${a^*_t}$           (long_name='rUK AR(1) technology shock process')
+z_f           ${z^*_t}$           (long_name='rUK AR(1) preference shock process')
+wp_f          ${wp^*_t}$          (long_name='rUK Real Wage')
 
 p_h_uk
 
 % Fiscal Policy
+tr              ${tr_t}$          (long_name='Scotland Tax Revenue')    
+tr_f            ${TR^*_t}$        (long_name='rUK Tax Revenue')  
 @#if no_of_govs == 2
-    g           ${g}$           (long_name='Government Spending')
-    tr           ${TR}$           (long_name='Tax Revenue')    
-    g_f           ${g^f}$           (long_name='Government Spending')
-    tr_f           ${TR^f}$           (long_name='Tax Revenue')  
-    b
-    b_f
-    debt
-    debt_f
+    g           ${g_t}$           (long_name='Scotland Government Spending')
+    g_f         ${g^*_t}$         (long_name='rUK Government Spending')
+    b           ${b_t}$           (long_name='Scotland Government Bonds')
+    b_f         ${b^*_t}$           (long_name='rUK Government Bonds')
+    debt        ${d_t}$           (long_name='rUK Government Debt')
+    debt_f      ${d^{*}_t}$       (long_name='rUK Government Debt')
     @#if labour_tax == 1
-        tau           ${\tau_l}$           (long_name='Labour Tax (Scotland)')
-        tau_f           ${\tau^f_l}$           (long_name='Labour Tax (rUK)')
+        tau     ${\tau_t}$        (long_name='Scotland Labour Tax')
+        tau_f   ${\tau^*_t}$      (long_name='rUK Labour Tax')
     @#endif    
 @#else
-    g_uk           ${g}$           (long_name='Government Spending (UK)')
-    tr_uk           ${TR}$           (long_name='Tax Revenue (UK)')
-    b_uk
-    debt_uk
+    g_uk        ${g^{UK}_t}$      (long_name='UK Government Spending')
+    tr_uk       ${tr^{UK}_t}$     (long_name='UK Tax Revenue')
+    b_uk        ${b^{UK}_t}$      (long_name='UK Government Bonds')
+    debt_uk     ${d^{UK}_t}$      (long_name='UK Government Debt')
     @#if labour_tax == 1
-        tr
-        tr_f
-        tau_uk           ${\tau^{uk}}$           (long_name='Labour Tax (UK)')
+        tau_uk  ${\tau^{UK}_t}$   (long_name='UK Labour Tax')
     @#endif
 @#endif
 
-interest    ${i}$           (long_name='Interest Rate (Scotland)')
-interest_f    ${i^f}$           (long_name='Interest Rate (rUK)')
-interest_uk    ${i^f}$           (long_name='Interest Rate (UK)')
+interest      ${i_t}$           (long_name='Scotland Interest Rate')
+interest_f    ${i^*_t}$         (long_name='rUK Interest Rate')
+interest_uk   ${i^{UK}_t}$      (long_name='UK Interest Rate')
 
 % Monetary Policy
 @#if monetary_union == 1
-    nu_uk          ${\nu}$         (long_name='AR(1) monetary policy shock process')
+    nu_uk       ${\nu^{UK}_t}$         (long_name='UK AR(1) monetary policy shock process')
 @#else
-    nu          ${\nu}$         (long_name='AR(1) monetary policy shock process')    
-    nu_f          ${\nu}$         (long_name='AR(1) monetary policy shock process')    
+    nu          ${\nu_t}$              (long_name='Scotland AR(1) monetary policy shock process')    
+    nu_f        ${\nu^*_t}$            (long_name='rUK AR(1) monetary policy shock process')    
 @#endif
 
 % Estimation
@@ -306,8 +303,8 @@ rho_i_f = rho_i;
 phi_pi_f  = phi_pi;
 phi_y_f   = phi_y;
 
-G_Y_SS = 0.2;
-G_Y_SS_f = G_Y_SS;
+G_Y_SS = 0.25;
+G_Y_SS_f = G_Y_SS - 0.05;
 
 C_Y_SS = 1 - G_Y_SS;
 C_Y_SS_f = 1 - G_Y_SS_f;
@@ -328,8 +325,8 @@ G_C_SS_f = Y_C_SS_f - 1;
     phi_g_f = phi_g;
 
     @#if labour_tax == 1
-        tau_ss = 0.1;
-        tau_ss_f = tau_ss;
+        tau_ss = 0.25;
+        tau_ss_f = tau_ss - 0.05;
     @#endif
 @#else
     rho_g_uk = 0.9;
@@ -512,13 +509,13 @@ y_star - y_star(-1) = rho_y_star * (y_star(-1) - y_star(-2)) + eps_y_star;
 @#if labour_tax == 1
     @#if no_of_govs == 2
         [name='Tax Revenue']
-        tr = tau + wp + n;
+        tr = tau + w - p + n;
         tr_f = tau_f + wp_f + n_f;
     @#else
         [name='Tax Revenue']
-        tr = w + n;
-        tr_f = w_f + n_f;
-        tr_uk = pop * tr + (1-pop) * tr_f + tau_uk - p_h_uk;
+        tr = tau_uk + wp + n;
+        tr_f = tau_uk + wp_f + n_f;
+        tr_uk = pop * tr + (1-pop) * tr_f;
     @#endif
 @#endif
 
@@ -715,35 +712,41 @@ resid(1);
 steady;
 check;
 
-@#if scenario == 1 && mcmc == 0
+stoch_simul(irf=200);
+
+@#if enable_irfs_to_csv == 1
+    options_.nomoments=0;
+    options_.nofunctions=1;
+    options_.nograph=1;
+    options_.verbosity=0;
+    options_.noprint=1;
+    options_.TeX=0;
+    [info, oo_, options_] = stoch_simul(M_, options_, oo_, var_list_);
+    m_irfs = fieldnames(oo_.irfs);
+    matrix_irfs = strings(0,0)
+    for ii = 1:numel(m_irfs)
+        matrix_irfs(end+1, 1) = m_irfs{ii};
+        matrix_irfs(end, 2:201) = [oo_.irfs.(m_irfs{ii})];
+    end
+
     @#if shock_type == 1
-        stoch_simul(irf=201) nx nx_f y_star interest interest_f interest_uk r_real r_real_f s s_f s_nat s_nat_f debt debt_f b b_f g g_f tr tr_f c c_f y y_f wp wp_f n n_f p_h p_h_f pi_h pi_h_f p p_f w w_f pi pi_f;
+        dest = './IRFs/monetary_scenario_4.csv'
     @#else
-        stoch_simul(irf=30) nx nx_f y_star interest interest_f interest_uk s s_f s_nat s_nat_f debt debt_f b b_f g g_f tr tr_f c c_f y y_f wp wp_f n n_f p_h p_h_f pi_h pi_h_f p p_f w w_f pi pi_f;
-    @#endif
-@#else
-    @#if scenario == 2
-        @#if shock_type == 1
-            stoch_simul(irf=201) nx nx_f y_star interest interest_f interest_uk r_real r_real_f s s_f s_nat s_nat_f debt_uk b_uk g_uk tr_uk c c_f y y_f wp wp_f n n_f p_h p_h_f pi_h pi_h_f p p_f w w_f pi pi_f;
+        @#if scenario == 1
+            dest = './IRFs/fiscal_scenario_1.csv'
         @#else
-            stoch_simul(irf=50) nx nx_f y_star interest interest_f interest_uk r_real r_real_f s s_f s_nat s_nat_f debt_uk b_uk g_uk tr_uk c c_f y y_f wp wp_f n n_f p_h p_h_f pi_h pi_h_f p p_f w w_f pi pi_f;
-        @#endif
-    @#else
-        @#if scenario == 3
-            @#if shock_type == 1
-                stoch_simul(irf=201) nx nx_f y_star interest interest_f interest_uk s s_f s_nat s_nat_f debt debt_f b b_f g g_f tr tr_f tau tau_f c c_f y y_f wp wp_f n n_f p_h p_h_f pi_h pi_h_f p p_f w w_f pi pi_f;
-                /* stoch_simul(irf=201) interest interest_f interest_uk s s_f s_nat s_nat_f debt debt_f b b_f g g_f tr tr_f tau tau_f c c_f y y_f wp wp_f n n_f p_h p_h_f pi_h pi_h_f; */
+            @#if scenario == 2
+                dest = './IRFs/fiscal_scenario_2.csv'
             @#else
-                stoch_simul(irf=30) nx nx_f y_star interest interest_f interest_uk s s_f s_nat s_nat_f debt debt_f b b_f g g_f tr tr_f tau tau_f c c_f y y_f wp wp_f n n_f p_h p_h_f pi_h pi_h_f p p_f w w_f pi pi_f;
-            @#endif
-        @#else
-            @#if shock_type == 1
-                stoch_simul(irf=201) nx nx_f y_star interest interest_f interest_uk s s_f s_nat s_nat_f debt_uk b_uk g_uk tr_uk tau_uk c c_f y y_f wp wp_f n n_f p_h p_h_f pi_h pi_h_f p p_f w w_f pi pi_f;
-            @#else
-                stoch_simul(irf=30) nx nx_f y_star interest interest_f interest_uk s s_f s_nat s_nat_f debt_uk b_uk g_uk tr_uk tau_uk c c_f y y_f wp wp_f n n_f p_h p_h_f pi_h pi_h_f p p_f w w_f pi pi_f;
+                @#if scenario == 3
+                    dest = './IRFs/fiscal_scenario_3.csv'
+                @#else
+                    dest = './IRFs/fiscal_scenario_4.csv'
+                @#endif
             @#endif
         @#endif
     @#endif
+    writematrix(matrix_irfs, dest);
 @#endif
 
 @#if enable_forloop == 1

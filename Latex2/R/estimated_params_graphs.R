@@ -25,7 +25,7 @@ latex_names <- c(
 plotList <- c()
 for (i in 2:ncol(ndf)) {
   variable <- colnames(df)[i]
-  if (!grepl('_f', variable, fixed=TRUE)) {
+  if (grepl('_f', variable, fixed=TRUE)) {
     post_mean <- round(mean(df[10000:nrow(df),variable]), 3)
     plotList[[paste0("Line", i)]] <- ggplot(ndf) +
       aes_string(x='X', y=variable) +
@@ -49,6 +49,6 @@ for (i in 2:ncol(ndf)) {
   }
 }
 
-tikz('~/Documents/University/Dissertation/Latex2/Graphs/MCMC_Scot.tex', width = 6, height = 9)
-ggarrange(plotlist=plotList, nrow=4, ncol=2)
+tikz('~/Documents/University/Dissertation/Latex2/Graphs/MCMC_rUK.tex', width = 6, height = 6)
+ggarrange(plotlist=plotList, nrow=3, ncol=2)
 dev.off()
