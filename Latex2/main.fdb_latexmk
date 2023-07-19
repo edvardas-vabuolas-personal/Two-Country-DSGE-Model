@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1689700715 "main.bcf" "main.bbl" "main" 1689706789 0
+["biber main"] 1689700715 "main.bcf" "main.bbl" "main" 1689710572 0
   "./DissertationDSGE.bib" 1686949460 4479 c98594d863b4f30bcda63b955582ee9e ""
-  "main.bcf" 1689706788 111015 f9c46d21c3eabc9ec7a462b484d8bf07 "pdflatex"
+  "main.bcf" 1689710571 111015 f9c46d21c3eabc9ec7a462b484d8bf07 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1689706782 "/Users/edvardasvabuolas/Documents/University/Dissertation/Latex2/main.tex" "main.pdf" "main" 1689706789 0
+["pdflatex"] 1689710565 "/Users/edvardasvabuolas/Documents/University/Dissertation/Latex2/main.tex" "main.pdf" "main" 1689710572 0
   "./model.tex" 1689265482 1669 823122a5f41dabf3ca6a830723063356 ""
   "./structure.tex" 1686997298 1127 bd0e6815ac9768e43404f62e2ee55929 ""
   "/Users/edvardasvabuolas/Documents/University/Dissertation/Latex2/main.tex" 1689524318 985 4055cc880ca4daab482adad74946ea27 ""
@@ -228,10 +228,13 @@
   "Appendix/terms_of_trade_derivation.tex" 1689360722 3059 0413dbab19645f0c8a8c413a799183ef ""
   "Appendix/trade_balance.tex" 1689364132 1860 b5fb0368d6a17210a664ef32c807a715 ""
   "Application/Tables/model_parameters.tex" 1689518497 1787 38605e0b7f3a0d0a2badba9a231af8e0 ""
-  "Application/Tables/priors_posteriors.tex" 1689523663 931 e9689b839a3b2cb24f67661e3c7b30dc ""
+  "Application/Tables/priors_posteriors.tex" 1689709553 932 7526c0c5744b71e13d2b43b8aff835b2 ""
   "Application/Tables/sources.tex" 1689523700 1520 f1ce62ac8e63ad7ca5c2807444faa48f ""
-  "Application/application.tex" 1689523712 4663 42b9dcc0d354c544a7c9c1b58c1adea9 ""
-  "Graphs/IRFs/monetary_four.tex" 1689701535 69237 3a5cf952d24c62a27557636c271573d6 ""
+  "Application/application.tex" 1689710564 4713 8ae2aa1841645c1756fa65da1563da7f ""
+  "Graphs/IRFs/fiscal_four.tex" 1689701799 85812 aacc8e5232e1db264619e7a7775ad3d7 ""
+  "Graphs/IRFs/fiscal_one.tex" 1689707024 74323 d99de496e8314a3ae26b5264e6caa16d ""
+  "Graphs/IRFs/fiscal_one_f.tex" 1689701808 74322 3ddc5781db419be0272aaef1c9c29c0c ""
+  "Graphs/IRFs/monetary_four.tex" 1689707153 69397 48ffa49ded4eb394172069727c3ccde9 ""
   "Graphs/MCMC_RUK.tex" 1689521672 50150 1259e29442b16ed800d3341e61355946 ""
   "Graphs/MCMC_Scot.tex" 1689521676 51026 47a639652b8cebbdcf4815e9a0b81083 ""
   "Graphs/data_graphs.tex" 1689460806 59310 1d4bcab6258fd4f1dbfd8d761f48d19c ""
@@ -241,7 +244,7 @@
   "Introduction/introduction.tex" 1686921052 0 d41d8cd98f00b204e9800998ecf8427e ""
   "Introduction/literature_review.tex" 1688742078 7025 4c7ff3f714cbdbe658957b09969bcfe6 ""
   "Packages.sty" 1688811325 1148 163c86c54b39ec1ead18a5e5b5f46b2b ""
-  "Results/results.tex" 1689706782 2729 0bb84082c24d15e7c87e9c78c5aef325 ""
+  "Results/results.tex" 1689710366 5154 79a159693472fc7059f7c1905f2d6ff0 ""
   "Theoretical DSGE model/equilibrium.tex" 1689445408 16311 fd84e54a211b08554299f290a400b61c ""
   "Theoretical DSGE model/firms.tex" 1689088459 10853 98e26e84cc0f2b9825b9172defb34d6d ""
   "Theoretical DSGE model/government.tex" 1689278701 8668 4e827069398865fbb18a73eb29423988 ""
@@ -249,11 +252,11 @@
   "Theoretical DSGE model/model.tex" 1689253937 3220 91aac46dea1443c7055ee699f9406e76 ""
   "Title Page/title_page.tex" 1688488319 725 0870f481c563c2e8d9581639a4b27ab0 ""
   "Title Page/uoe_logo.png" 1686316242 20326 1cb2a3031b2bfffe2295b1170a85379a ""
-  "detailed_wordcount.txt" 1689520575 2265 016eec97a549317b795922f576012820 ""
-  "final_wordcount.txt" 1689520575 4 0a552abf945aad2831a917bd58bbdc70 ""
-  "main.aux" 1689706788 12081 d966039d7743b5ffb3d3f8f457875e60 "pdflatex"
+  "detailed_wordcount.txt" 1689706818 2652 060d3e67539ad3aa655c653f7ad6b1a7 ""
+  "final_wordcount.txt" 1689706818 4 3472ab80b6dff70c54758fd6dfc800c2 ""
+  "main.aux" 1689710571 12754 4898a8d7de0109784b8da60552c809ac "pdflatex"
   "main.bbl" 1689700719 13792 e1243356da930739f32d10ab689aa98b "biber main"
-  "main.run.xml" 1689706788 2351 e48ac35430ef4eb0fe9dd6f256db4588 "pdflatex"
+  "main.run.xml" 1689710571 2351 e48ac35430ef4eb0fe9dd6f256db4588 "pdflatex"
   "main.tex" 1689524318 985 4055cc880ca4daab482adad74946ea27 ""
   "model.tex" 1689265482 1669 823122a5f41dabf3ca6a830723063356 ""
   "structure.tex" 1686997298 1127 bd0e6815ac9768e43404f62e2ee55929 ""

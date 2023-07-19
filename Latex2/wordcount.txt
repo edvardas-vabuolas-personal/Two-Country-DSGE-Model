@@ -117,14 +117,25 @@ Number of math inlines: 32
 Number of math displayed: 19
 
 Included file: ././Application/application.tex
-Encoding: utf8
-Sum count: 676
-Words in text: 664
+Encoding: ascii
+Sum count: 669
+Words in text: 663
 Words in headers: 0
-Words outside text (captions, etc.): 6
+Words outside text (captions, etc.): 0
 Number of headers: 0
-Number of floats/tables/figures: 2
+Number of floats/tables/figures: 0
 Number of math inlines: 6
+Number of math displayed: 0
+
+Included file: ././Results/results.tex
+Encoding: ascii
+Sum count: 355
+Words in text: 352
+Words in headers: 0
+Words outside text (captions, etc.): 0
+Number of headers: 0
+Number of floats/tables/figures: 0
+Number of math inlines: 3
 Number of math displayed: 0
 
 Included file: ././Appendix/appendix.tex
@@ -193,6 +204,17 @@ Number of floats/tables/figures: 1
 Number of math inlines: 0
 Number of math displayed: 0
 
+Included file: ././Application/Tables/priors_posteriors.tex
+Encoding: ascii
+Sum count: 2
+Words in text: 0
+Words in headers: 0
+Words outside text (captions, etc.): 2
+Number of headers: 0
+Number of floats/tables/figures: 1
+Number of math inlines: 0
+Number of math displayed: 0
+
 Included file: ././Graphs/MCMC_Scot.tex
 Encoding: ascii
 Sum count: 0
@@ -200,18 +222,29 @@ Words in text: 0
 Words in headers: 0
 Words outside text (captions, etc.): 0
 Number of headers: 0
-Number of floats/tables/figures: 0
+Number of floats/tables/figures: 1
 Number of math inlines: 0
 Number of math displayed: 0
 
-Included file: ././Graphs/MCMC_RUK.tex
-Encoding: ascii
-Sum count: 0
+Included file: ././Application/Tables/sources.tex
+Encoding: utf8
+Sum count: 4
 Words in text: 0
 Words in headers: 0
-Words outside text (captions, etc.): 0
+Words outside text (captions, etc.): 4
 Number of headers: 0
-Number of floats/tables/figures: 0
+Number of floats/tables/figures: 1
+Number of math inlines: 0
+Number of math displayed: 0
+
+Included file: ././Graphs/IRFs/monetary_four.tex
+Encoding: ascii
+Sum count: 8
+Words in text: 0
+Words in headers: 0
+Words outside text (captions, etc.): 8
+Number of headers: 0
+Number of floats/tables/figures: 1
 Number of math inlines: 0
 Number of math displayed: 0
 
@@ -227,6 +260,17 @@ Number of math inlines: 0
 Number of math displayed: 0
 
 Included file: ././Graphs/dynare_data_graphs.tex
+Encoding: ascii
+Sum count: 0
+Words in text: 0
+Words in headers: 0
+Words outside text (captions, etc.): 0
+Number of headers: 0
+Number of floats/tables/figures: 1
+Number of math inlines: 0
+Number of math displayed: 0
+
+Included file: ././Graphs/MCMC_RUK.tex
 Encoding: ascii
 Sum count: 0
 Words in text: 0
@@ -382,15 +426,15 @@ Number of math displayed: 2
 
 Sum of files: main.tex
 File(s) total: main.tex
-Sum count: 6889
-Words in text: 6178
+Sum count: 7251
+Words in text: 6529
 Words in headers: 96
-Words outside text (captions, etc.): 310
+Words outside text (captions, etc.): 318
 Number of headers: 25
-Number of floats/tables/figures: 14
-Number of math inlines: 204
+Number of floats/tables/figures: 17
+Number of math inlines: 207
 Number of math displayed: 101
-Files: 34
+Files: 38
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
   1+7+0 (5/0/0/0) File: main.tex
@@ -401,14 +445,20 @@ Subcounts:
   501+1+117 (1/5/26/1) Included file: ././Theoretical DSGE model/government.tex
   878+1+21 (1/0/45/13) Included file: ././Theoretical DSGE model/firms.tex
   876+1+7 (1/1/32/19) Included file: ././Theoretical DSGE model/equilibrium.tex
-  664+0+6 (0/2/6/0) Included file: ././Application/application.tex
+  663+0+0 (0/0/6/0) Included file: ././Application/application.tex
+  352+0+0 (0/0/3/0) Included file: ././Results/results.tex
   0+1+0 (1/0/0/0) Included file: ././Appendix/appendix.tex
   1+0+0 (0/0/0/0) Included file: ././final_wordcount.txt
   0+0+11 (0/1/0/0) Included file: ././Graphs/timeline.tex
   0+0+0 (0/1/0/0) Included file: ././Graphs/sigma_varphi.tex
   0+0+11 (0/1/0/0) Included file: ././Application/Tables/model_parameters.tex
+  0+0+2 (0/1/0/0) Included file: ././Application/Tables/priors_posteriors.tex
+  0+0+0 (0/1/0/0) Included file: ././Graphs/MCMC_Scot.tex
+  0+0+4 (0/1/0/0) Included file: ././Application/Tables/sources.tex
+  0+0+8 (0/1/0/0) Included file: ././Graphs/IRFs/monetary_four.tex
   0+0+0 (0/1/0/0) Included file: ././Graphs/data_graphs.tex
   0+0+0 (0/1/0/0) Included file: ././Graphs/dynare_data_graphs.tex
+  0+0+0 (0/1/0/0) Included file: ././Graphs/MCMC_RUK.tex
   0+5+0 (1/0/0/1) Included file: ././Appendix/intratemporal_loglinear.tex
   1+5+0 (1/0/1/4) Included file: ././Appendix/log_budget_constraint.tex
   0+6+0 (1/0/0/1) Included file: ././Appendix/log_aggregate_rc.tex
