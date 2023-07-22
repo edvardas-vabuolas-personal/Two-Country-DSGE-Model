@@ -20,7 +20,7 @@ for (sigma in 1:length(sigmas)) {
 
 for (varphi in 1:length(varphis)) {
   for (c in 1:length(x)) {
-    df_v[c, paste0("$\\varphi = ", varphis[varphi], "$")] <- (c**(1+varphis[varphi]))/(1+varphis[varphi])
+    df_v[c, paste0("$\\varphi = ", varphis[varphi], "$")] <- -(c**(1+varphis[varphi]))/(1+varphis[varphi])
   }
 }
 

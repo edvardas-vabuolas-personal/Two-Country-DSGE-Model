@@ -8,35 +8,29 @@ That is, government accrues revenue by collecting taxes in current prices $P_t T
 \begin{table}[H]
     \renewcommand{\arraystretch}{2}
     \centering
-    \begin{tabular}{l|l|c}
+    \begin{tabular}{l|c|c}
     \makecell{Scen. 1 \& Scen. 3\\ G: 2, $\tau \in \{0, 1\}$} & \makecell{Scot. \\ rUK } & 
         \makecell{
             $\E_t [R^{-1}_tB_{t+1}] + P_t T_t = P_tG_t + B_t$\\
             $\E_t [{R^{*-1}_{t}}B^*_{t+1}] + P^*_tT^*_t = P^*_tG^*_t + B^*_t$
         }  \\ 
-    \makecell{Scen. 3 \& Scen. 4\\ G: 1, $\tau \in \{0, 1\}$} & \makecell{Scot. \\ rUK } & 
-        \makecell{
-            N/A\\
-            $\E_t [{R^{UK-1}_{t}}B^{UK}_{t+1}] + P^{UK}_tT^{UK}_t = P^{UK}_tG^{UK}_t + B^{UK}_t$
-        } 
+    \makecell{Scen. 3 \& Scen. 4\\ G: 1, $\tau \in \{0, 1\}$} & UK & 
+    $\E_t [{R^{UK-1}_{t}}B^{UK}_{t+1}] + P^{UK}_tT^{UK}_t = P^{UK}_tG^{UK}_t + B^{UK}_t$
     \end{tabular}
     \caption{Government budget constraints under different policy scenarios}
 \end{table}
-where $P^{UK}_t$ is a weighted sum of price levels in Scotland and the rest of the UK, i.e., $P^{UK}_t = \varpi P_t + (1-\varpi)P^*_t$. Similarly, a monetary union implies a single rate of gross return, which we define as $R^{UK}_t = \varpi R_t + (1-\varpi)R^*_t$.\footnote{Due to technical limitations (see limitations section), the dissertation modelled two countries as having individual nominal interest rates. However, in the budget constraints and debt-stabilising equations with one government, a weighted sum of the two interests rates was used. Conceptually, it is equivalent to having one UK-wide interest rate, where Scotland's interest rate ``influences'' UK-wide interest rate ($\varpi \approx 9\%$) but is primarily determined by the rest of the UK ($\varpi \approx 91\%$), so Scotland (almost) takes it as given.}. Also note the log-linearised government budget constraints in real terms (see Appendix \ref{eq:appendix_log_budget_constraint_derivation_beginning} - \ref{eq:appendix_log_budget_constraint_derivation_end} for derivation):
+where $P^{UK}_t$ is a weighted sum of price levels in Scotland and the rest of the UK, i.e., $P^{UK}_t = \varpi P_t + (1-\varpi)P^*_t$. Similarly, a monetary union implies a single rate of gross return, which we define as $R^{UK}_t = \varpi R_t + (1-\varpi)R^*_t$.\footnote{Due to technical limitations, the dissertation modelled two countries as having individual nominal interest rates. However, in the budget constraints and debt-stabilising equations with one government, a weighted sum of the two interests rates was used. Conceptually, it is equivalent to having one UK-wide interest rate, where Scotland's interest rate ``influences'' UK-wide interest rate ($\varpi \approx 9\%$) but is primarily determined by the rest of the UK ($\varpi \approx 91\%$), so Scotland (almost) takes it as given.}. Also note the log-linearised government budget constraints in real terms (see Appendix \ref{eq:appendix_log_budget_constraint_derivation_beginning} - \ref{eq:appendix_log_budget_constraint_derivation_end} for derivation):
 \begin{table}[H]
     \renewcommand{\arraystretch}{2}
     \centering
-    \begin{tabular}{l|l|c}
+    \begin{tabular}{l|c|c}
     \makecell{Scen. 1 \& Scen. 3\\ G: 2, $\tau \in \{0, 1\}$} & \makecell{Scot. \\ rUK } & 
         \makecell{
             $b_{t+1} = (1 + \rho)(b_t + g_t - t_t)$\\
             $b^*_{t+1} = (1 + \rho^*)(b^*_t + g^*_t - t^*_t)$
         }  \\ 
-    \makecell{Scen. 3 \& Scen. 4\\ G: 1, $\tau \in \{0, 1\}$} & \makecell{Scot. \\ rUK } & 
-        \makecell{
-            N/A\\
-            $b^{UK}_{t+1} = (1 + \rho^{UK})(b^{UK}_t + g^{UK}_t - t^{UK}_t)$
-        } 
+    \makecell{Scen. 3 \& Scen. 4\\ G: 1, $\tau \in \{0, 1\}$} & UK & 
+    $b^{UK}_{t+1} = (1 + \rho^{UK})(b^{UK}_t + g^{UK}_t - t^{UK}_t)$
     \end{tabular}
     \caption{(Log) Government budget constraints under different policy scenarios}
 \end{table}
@@ -44,27 +38,21 @@ where $\rho = \beta^{-1} - 1$ pins down the steady state interest rate. In each 
 \begin{table}[H]
     \renewcommand{\arraystretch}{2}
     \centering
-    \begin{tabular}{l|l|c}
+    \begin{tabular}{l|c|c}
     \makecell{Scen. 1 \\ G: 2, $\tau: 0$} & \makecell{Scot. \\ rUK } & 
         \makecell{
             $P_t T_t = P_tG_t$\\
             $ P^*_tT^*_t = P^*_tG^*_t $
         }  \\ 
-    \makecell{Scen. 2 \\ G: 1, $\tau: 0$} & \makecell{Scot. \\ rUK } & 
-        \makecell{
-            N/A\\
-            $P^{UK}_tT^{UK}_t = P^{UK}_tG^{UK}_t$
-        }   \\ 
+    \makecell{Scen. 2 \\ G: 1, $\tau: 0$} & UK & 
+    $P^{UK}_tT^{UK}_t = P^{UK}_tG^{UK}_t$\\
     \makecell{Scen. 3 \\ G: 2, $\tau: 1$} & \makecell{Scot. \\ rUK } & 
     \makecell{
         $P_tT_t = \tau_tW_t N_t$\\ 
         $P^*_tT^*_t = \tau^*_tW^*_t N^*_t$
     }  \\
-    \makecell{Scen. 4 \\ G: 1, $\tau: 1$} & \makecell{Scot. \\ rUK } & 
-    \makecell{
-        N/A \\
-        $P^{UK}_tT^{UK}_t = \varpi\tau^{UK}_tW_t N_t + (1-\varpi)\tau^{UK}_tW^*_t N^*_t$
-    }  
+    \makecell{Scen. 4 \\ G: 1, $\tau: 1$} & UK & 
+    $P^{UK}_tT^{UK}_t = \varpi\tau^{UK}_tW_t N_t + (1-\varpi)\tau^{UK}_tW^*_t N^*_t$
     \end{tabular}
     \caption{Tax revenue for each of the policy scenarios}
 \end{table}
@@ -72,46 +60,30 @@ That is, in the case of lump-sum taxes, tax revenue simply equals government spe
 \begin{table}[H]
     \renewcommand{\arraystretch}{2}
     \centering
-    \begin{tabular}{l|l|c}
-    \makecell{Scen. 1 \\ G: 2, $\tau: 0$} & \makecell{Scot. \\ rUK } & 
+    \begin{tabular}{l|c|c}
+        \makecell{Scen. 1 \& Scen. 3\\ G: 2, $\tau \in \{0, 1\}$} & \makecell{Scot. \\ rUK } & 
         \makecell{
-            $t_t = \phi_g G_Y g_t + \phi_b b_t$, \quad $G_Y = 0$\\
-            $t^*_t = \phi^*_g G^*_Y g^*_t + \phi^*_b b^*_t$, \quad $G^*_Y = 0$\\
+            $t_t = \phi_g  g_t + \phi_b b_t$\\
+            $t^*_t = \phi^*_g g^*_t + \phi^*_b b^*_t$\\
         }  \\ 
-    \makecell{Scen. 2 \\ G: 1, $\tau: 0$} & \makecell{Scot. \\ rUK } & 
-        \makecell{
-            N/A\\
-            $t^{UK}_t = \phi^{UK}_g G^{UK}_Y g^{UK}_t + \phi^{UK}_b b^{UK}_t$, \quad $G^{UK}_Y = 0$\\
-        }   \\ 
-    \makecell{Scen. 3 \\ G: 2, $\tau: 1$} & \makecell{Scot. \\ rUK } & 
-    \makecell{
-        $t_t = \phi_g G_Y g_t + \phi_b b_t$, \quad $G_Y = \tau$\\
-        $t^*_t = \phi^*_g G^*_Y g^*_t + \phi^*_b b^*_t$, \quad $G^*_Y = \tau^*$\\
-}  \\
-    \makecell{Scen. 4 \\ G: 1, $\tau: 1$} & \makecell{Scot. \\ rUK } & 
-    \makecell{
-        N/A \\
-        $t^{UK}_t = \phi^{UK}_g G^{UK}_Y g^{UK}_t + \phi^{UK}_b b^{UK}_t$, \quad $G^{UK}_Y = \tau^{UK}$\\
-        }  
+        \makecell{Scen. 3 \& Scen. 4\\ G: 1, $\tau \in \{0, 1\}$} & UK & 
+        $t^{UK}_t = \phi^{UK}_g g^{UK}_t + \phi^{UK}_b b^{UK}_t$
     \end{tabular}
     \caption{Fiscal (debt-stabilising) rules for each of the policy scenarios}
 \end{table}
-where following Gali, Lopez-Salido, and Valles (2005), we define $g_t = \frac{G_t-G}{Y}$, $b_t = \frac{(B_t/P_{t-1}) - (B/P)}{Y}$, and $t_t = \frac{T_t - T}{Y}$. Moreover, we denote the government spending-to-GDP ratio as $G_Y$ and assume that in the steady state, the government's budget is balanced, i.e. $\frac{B}{Y} = 0$ and $G_Y = \tau$ if the government is funded by a labour tax and $G_Y=0$ otherwise. Each fiscal policy rule states that tax revenue responds to changes in government spending and government debt, where the responses depend on $\phi_b \in [0,1]$ and $\phi_g \in [0,1]$. Intuitively, setting $\phi_b = 0$ would imply that the government cannot issue bonds/borrow, and taxpayers would have to absorb any shock in government spending. At the same time, $\phi_g = 0$ would make government fund its spending solely by issuing bonds. Plugging fiscal rules into the log linearised government budget constraints yields:
+where following Gali, Lopez-Salido, and Valles (2005), we define $g_t = \frac{G_t-G}{Y}$, $b_t = \frac{(B_t/P_{t-1}) - (B/P)}{Y}$, and $t_t = \frac{T_t - T}{Y}$. The model assumes that in the steady state, the government's budget is balanced, i.e. $\frac{B}{Y} = 0$. Each fiscal policy rule states that tax revenue responds to changes in government spending and government debt, where the responses depend on $\phi_b \in [0,1]$ and $\phi_g \in [0,1]$. Intuitively, setting $\phi_b = 0$ would imply that the government cannot issue bonds/borrow, and taxpayers would have to absorb any shock in government spending. At the same time, $\phi_g = 0$ would make government fund its spending solely by issuing bonds. Plugging fiscal rules into the log linearised government budget constraints yields:
 \begin{table}[H]
     \renewcommand{\arraystretch}{2}
     \centering
-    \begin{tabular}{l|l|c}
+    \begin{tabular}{l|c|c}
     \makecell{Scen. 1 \& Scen. 3\\ G: 2, $\tau \in \{0, 1\}$} & \makecell{Scot. \\ rUK } & 
         \makecell{
             $b_{t+1} = (1-\rho)(1-\phi_g) g_t + (1-\rho)(1-\phi_b)b_t$\\
             $b^*_{t+1} = (1-\rho^*)(1-\phi^*_g) g^*_t + (1-\rho^*)(1-\phi^*_b)b^*_t$
         }  \\ 
-    \makecell{Scen. 3 \& Scen. 4\\ G: 1, $\tau \in \{0, 1\}$} & \makecell{Scot. \\ rUK } & 
-        \makecell{
-            N/A\\
-            $b^{UK}_{t+1} = (1-\rho^{UK})(1-\phi^{UK}_g) g^{UK}_t + (1-\rho^{UK})(1-\phi^{UK}_b)b^{UK}_t$
-        }   
+    \makecell{Scen. 3 \& Scen. 4\\ G: 1, $\tau \in \{0, 1\}$} & UK & 
+    $b^{UK}_{t+1} = (1-\rho^{UK})(1-\phi^{UK}_g) g^{UK}_t + (1-\rho^{UK})(1-\phi^{UK}_b)b^{UK}_t$
     \end{tabular}
     \caption{Future bonds are determined by government spending and current government debt}
 \end{table}
-These equations determine the equilibrium path for bond supply, with \linebreak $(1-\rho)(1-\phi_b) < 1$ to ensure stability. This is equivalent to imposing a No-Ponzi condition, i.e. the government cannot have outstanding debt in period $T$. Finally, note that $B_t$ is a predetermined (state) variable, meaning its value is determined in the previous period, while the initial $B_0$ value is assumed to have been determined ``historically'', a.k.a given.
+These equations determine the equilibrium path for bond supply, with \linebreak $(1-\rho)(1-\phi_b) < 1$ to ensure stability (non-explosiveness). \textcolor{red}{This is equivalent to imposing a No-Ponzi condition, i.e. the government cannot have outstanding debt in period $T$.} Finally, note that $B_t$ is a predetermined (state) variable, meaning its value is determined in the previous period, while the initial $B_0$ value is assumed to have been determined ``historically'', a.k.a given.

@@ -15,7 +15,7 @@ f_three_df <- read.csv("~/Documents/University/Dissertation/IRFs/fiscal_scenario
 colnames(f_three_df) = c('Variable', seq(1:200))
 f_three_df <- gather(f_three_df, key = "variable", value = "value", -Variable)
 f_three_df <- arrange(f_three_df, Variable)
-f_three_df <- subset(f_three_df, !grepl("_eps_g_f", Variable))
+f_three_df <- subset(f_three_df, grepl("_eps_g_f", Variable))
 f_three_df$Variable <- gsub('_eps_g_f', '', f_three_df$Variable, fixed=TRUE) 
 f_three_df$Variable <- gsub('_eps_g', '', f_three_df$Variable, fixed=TRUE)
 

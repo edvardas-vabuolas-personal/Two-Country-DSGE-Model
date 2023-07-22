@@ -351,6 +351,50 @@
       \verb https://theses.gla.ac.uk/73043/
       \endverb
     \endentry
+    \entry{roberts_2001_optimal}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=2a3eb35b3da51a4b9368077a5552166e}{%
+           family={Roberts},
+           familyi={R\bibinitperiod},
+           given={Gareth\bibnamedelima O.},
+           giveni={G\bibinitperiod\bibinitdelim O\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ebb205999cd9bd45ba28fd1c37b17c6e}{%
+           family={Rosenthal},
+           familyi={R\bibinitperiod},
+           given={Jeffrey\bibnamedelima S.},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{53c5d14fcb510976fadcbc217ee583dd}
+      \strng{fullhash}{53c5d14fcb510976fadcbc217ee583dd}
+      \strng{bibnamehash}{53c5d14fcb510976fadcbc217ee583dd}
+      \strng{authorbibnamehash}{53c5d14fcb510976fadcbc217ee583dd}
+      \strng{authornamehash}{53c5d14fcb510976fadcbc217ee583dd}
+      \strng{authorfullhash}{53c5d14fcb510976fadcbc217ee583dd}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Statistical Science}
+      \field{title}{Optimal Scaling for Various Metropolis-Hastings Algorithms}
+      \field{urlday}{16}
+      \field{urlmonth}{7}
+      \field{urlyear}{2023}
+      \field{volume}{16}
+      \field{year}{2001}
+      \field{urldateera}{ce}
+      \field{pages}{351\bibrangedash 367}
+      \range{pages}{17}
+      \verb{urlraw}
+      \verb https://www.jstor.org/stable/3182776
+      \endverb
+      \verb{url}
+      \verb https://www.jstor.org/stable/3182776
+      \endverb
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

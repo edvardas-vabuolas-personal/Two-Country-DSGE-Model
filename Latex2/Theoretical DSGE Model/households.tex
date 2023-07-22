@@ -9,11 +9,11 @@ This model assumes that there is infinitely many households in the economy repre
     \end{cases}
     \label{eq:utility_function}
 \end{align}
-The household's utility depends on consumption $C_t$ and hours worked $N_t$. As seen from the utility function (Equation (\ref{eq:utility_function})), the model assumes the household's utility to be (decreasingly) increasing in consumption $C_t$ and (increasingly) decreasing in hours worked $N_t$. $\beta \in (0,1)$ is the discount factor, which can be thought of as an opportunity cost or an impatience rate, i.e. a unit of consumption $C$ today will be worth $\beta * C < C$ tomorrow. We also introduce a preference shifter $Z_t$ \parencite[225]{jordigal_2015_monetary} \footnote{While this specific shock is not relevant to the research question, it helps prevent stochastic singularity \textcolor{red}{Pfeifer, 2021} and allows parameter estimation with a greater number of macroeconomic data series, see Section \ref{application}. }. The shock is assumed to follow an autoregressive process of order 1:
+The household's utility depends on consumption $C_t$ and hours worked $N_t$. As seen from the utility function (Equation (\ref{eq:utility_function})), the model assumes the household's utility to be (decreasingly) increasing in consumption $C_t$ and (increasingly) decreasing in hours worked $N_t$. $\beta \in (0,1)$ is the discount factor, which can be thought of as an opportunity cost or an impatience rate, i.e. a unit of consumption $C$ today will be worth $\beta * C < C$ tomorrow. We also introduce a preference shifter $Z_t$ \parencite[225]{jordigal_2015_monetary} \textcolor{red}{expand}. The shock is assumed to follow an autoregressive process of order 1:
 \begin{equation}
     \log (Z_t) = \rho_z \log (Z_{t-1}) + \epsilon^z_{t}
 \end{equation}
-The parameter $\sigma \geq 0$ is the relative risk aversion coefficient and $\varphi \geq 0$ is the labour disutility parameter. Together, they determine the curvature of the utility of consumption and disutility of labour, respectively. Finally, $\E_t\left[*\right]$ is the expectational operator, conditional on all information available at period $t$ (Gali, 2015: 20).
+The parameter $\sigma \geq 0$ is the relative risk aversion coefficient and $\varphi \geq 0$ is the labour disutility parameter. Together, they determine the curvature of the utility of consumption and disutility of labour, respectively. Finally, $\E_t\left[*\right]$ and $\E_t\left\{*\right\}$ are the expectational operators, conditional on all information available at period $t$.
 \import{./Graphs}{sigma_varphi.tex}
 To allow goods differentiation between domestic and foreign, the model assumes that $C_t$ is a composite consumption index defined by:
 \begin{equation}
@@ -47,7 +47,7 @@ The representative household's choice of consumption and labour must satisfy the
 \begin{equation}
     \underbrace{\int_{0}^{1} P_{H,t}(j)C_{H,t}(j) \,dj + \int_{0}^{1} \int_{0}^{1} P_{i,t}(j)C_{i,t}(j) \,dj\,di + \E_t \left[ R^{-1}_{t+1} B_{t+1} \right]}_{Expenses} \leq \underbrace{\vphantom{\int_{0}^{1}} B_t + W_t N_t}_{Income}
 \end{equation}
-where $R_t$ is the gross nominal interest rate, $B_t$ denotes bonds, $W_t$ and $N_t$ stand for nominal wage and hours worked, respectively. For intuition, the LHS of the budget constraint implies that the representative household needs to choose the quantity of good $j$ produced domestically and in every country $i$, as well as the number of bonds at the expected nominal interest rate in period $t+1$. The RHS implies that the only two sources of income are nominal payoffs from bonds and gross pay, which later will be different from the same as net pay. The expenses cannot exceed income.
+where $R_t$ is the gross nominal interest rate, $B_t$ denotes bonds, $W_t$ and $N_t$ stand for nominal wage and hours worked, respectively. For intuition, the LHS of the budget constraint implies that the representative household needs to choose the quantity of good $j$ produced domestically and in every country $i$, as well as the number of bonds at the expected nominal interest rate in period $t+1$. The RHS implies that the only two sources of income are nominal payoffs from bonds and gross pay, which later will be different from the net pay. The expenses cannot exceed income.
 
 Taking the three price indices (\ref{eq:domestic_price_index})-(\ref{eq:price_index_imported_goods}), and plugging them into their respective demand functions (\ref{eq:optimal_imported_consumption}), yields:
 \begin{align}
@@ -134,7 +134,7 @@ Dividing one by the other and rearranging yields \textit{intertemporal optimalit
     &\vdots \quad \text{(see Appendix A.xx - A.xx)}\nonumber\\
     \beta\E_t\left[\left(\frac{C_{t+1}}{C_{t}}\right)^{-\sigma} \left(\frac{Z_{t+1}}{Z_t}\right) \left(\frac{P_{t}}{ P_{t+1}}\right)\right]                 &= \E_t \left[\frac{1}{R_{t+1}}\right] \label{eq:euler_equation}
 \end{align}
-where Equation (\ref{eq:euler_eq_derivation_bonds}) used Equation (\ref{eq:foc_b}). $\E_t [ R^{-1}_{t+1}]$ is the gross return on a risk-free one-period discount bond or a stochastic discount factor. More generally, Equation (\ref{eq:euler_equation}) is the Euler equation, and it determines the consumption path of a lifetime utility-maximising representative household. To state it in more intuitive terms, households choose consumption ``today'' and ``tomorrow'' and take all other terms as given. According to the equation, they choose consumption in the two periods in such a way so that the marginal utility ``today'' would be equal to the marginal consumption tomorrow while taking into account that saving consumption ``today'', will result in $R_t > 1$ consumption ``tomorrow''. Note that \textcite{jordigal_2015_monetary} uses a different approach to derive the Euler equation, which introduces Arrow securities. As it adds little value to our research question, this dissertation only provides a step-by-step derivation and interpretation in Appendix A for an interested reader. Also note, that \textcite{jordigal_2015_monetary} uses $Q_t = \E_t [ \frac{1}{R_{t+1}}]$ to denote the stochastic discount factor and $D_t$ to denote bonds or ``portfolio'' as they call it.
+where Equation (\ref{eq:euler_eq_derivation_bonds}) used Equation (\ref{eq:foc_b}). $\E_t [ R^{-1}_{t+1}]$ is the gross return on a risk-free one-period discount bond or a stochastic discount factor. More generally, Equation (\ref{eq:euler_equation}) is the Euler equation, and it determines the consumption path of a lifetime utility-maximising representative household. To state it in more intuitive terms, households choose consumption ``today'' and ``tomorrow'' and take all other terms as given. According to the equation, they choose consumption in the two periods in such a way so that the marginal utility ``today'' would be equal to the marginal consumption tomorrow while taking into account that saving consumption ``today'', will result in $R_t > 1$ consumption ``tomorrow''. Note that \textcite{jordigal_2015_monetary} uses a different approach to derive the Euler equation, which introduces Arrow securities. \textcolor{red}{As it adds little value to our research question, this dissertation only provides a step-by-step derivation and interpretation in Appendix A for an interested reader.} Also note, that \textcite{jordigal_2015_monetary} uses $Q_t = \E_t [ \frac{1}{R_{t+1}}]$ to denote the stochastic discount factor and $D_t$ to denote bonds or ``portfolio'' as they call it.
 
 Log-linearising (\ref{eq:euler_equation}):
 \begin{align}
@@ -146,7 +146,7 @@ Log-linearising (\ref{eq:euler_equation}):
 \end{align}
 where $i_t = \ln R_{t+1}$ is the nominal interest rate, $\rho = -\log \beta$ is the log discount rate, and $\pi_t = p_t - p_{t-1}$ is the CPI inflation. The loglinearised Euler equation makes it clearer to see, that consumption ``today'' is increasing in expected inflation ``tomorrow'', while the opposite is true for the nominal interest rate. The effect is scaled by $\sigma^{-1}$ parameter.
 
-Furthermore, OECD (2023) defines terms of trade as a ratio of import and export price indices, which in this model is denoted as $S_t$:
+Furthermore, OECD (2022) defines terms of trade as a ratio of import and export price indices, which in this model is denoted as $S_t$:
 \begin{align}
     S_{i,t} &= \frac{P_{i,t}}{P_{H,t}}                       \label{eq:bilateral_terms_of_trade}                                                                                    \\
     S_{t} &=  \frac{P_{F,t}}{P_{H,t}} = \left(\int_{0}^{1} (S_{i,t} \, di)^{1-\gamma}\right)^{\frac{1}{1-\gamma}}            \label{eq:effective_terms_of_trade}              
@@ -168,13 +168,13 @@ The gap between domestic inflation and CPI inflation is due to percentage change
 
 Furthermore, we assume that the Law of One Price (LOP) holds for all goods $j$. That is, the price of a single good in country $i$ is equal to the price of the same good in country $-i$ times the nominal exchange rate. It implies, that there are no opportunities for arbitrage.
 \begin{align}
-    P_{i,t}(j) & = \mathcal{E}_{i,t}P_{i,t}^i(j)                                                                         &  & \text{Law of One Price (LOP)}              \\
+    P_{i,t}(j) & = \mathcal{E}_{i,t}P_{i,t}^i(j)                                                                         &  &               \\
     P_{i,t}    & = \mathcal{E}_{i,t}P_{i,t}^i                                                                            &  & \text{Law of One Price (LOP)}              
 \end{align}
 where $\mathcal{E}_{i,t}$ is the nominal exchange rate between the home currency and the country's $i$ currency, and the second equation is derived by integrating both sides with respect to $j$. Even though we do not model currencies explicitly, it is useful to think about $\mathcal{E}_{i,t}$ as the price of one unit of currency in terms of another currency, i.e. the home currency. The two equations can be loglinearised to yield:
 \begin{align}
     p_{i,t}    & = e_{i,t}+p_{i,t}^i                                                                                     &  & \text{(Log) Law of One Price (LOP)}        \\
-    p_{F,t}    & = \int_{0}^{1}(e_{i,t}+p_{i,t}^i) \,di = e_t + p_t^{\star} \label{eq:log_price_index_of_imported_goods} &  & \text{(Log )Price index of Imported Goods}
+    p_{F,t}    & = \int_{0}^{1}(e_{i,t}+p_{i,t}^i) \,di = e_t + p_t^{\star} \label{eq:log_price_index_of_imported_goods} &  & \text{(Log) Price index of Imported Goods}
 \end{align}
 Where $e_t$ is (Log) Effective Nominal Exchange Rate, $p_t^{\star}$ is the World Price Index. This allows us to redefine log effective terms of trade in terms of the nominal exchange rate, domestic price, and the world price index:
 \begin{align}
@@ -192,7 +192,7 @@ Integrating both sides with respect to $i$ and using previous definitions yields
     & = s_t + p_{H_t} - p_t                                                         &  & \text{using (\ref{eq:terms_of_trade_with_world_price_index})}        \\
     & = (1-\upsilon)s_t                                                               &  & \text{using (\ref{eq:domestic_price_plus_bilateral_terms_of_trade})}
 \end{align}
-Finally, if we assume that all countries $i$ have symmetrical preferences and their households maximise lifetime-utility in the same manner that our home country's do, then maximising the Lagrangian function for country $i$, will yield:
+Finally, if we assume that all countries $i$ have symmetrical preferences and their households maximise lifetime-utility in the same manner that the home country's do, then maximising the Lagrangian function for country $i$, will yield:
 \begin{align}
     \frac{\partial \mathcal{L}^i}{\partial C_t^i} &= \beta^t {(C^i_t)}^{-\sigma} Z^i_t(\mathcal{E}_{i,t}P^i_{t})^{-1} = \lambda^i_t \nonumber\\
     \frac{\partial \mathcal{L}^i}{\partial D_{t+1}^i} & = -\lambda^i_t \E_t[R^{-1}_{t,t+1}] = -\E_t[\lambda^i_{t+1}] \nonumber\\

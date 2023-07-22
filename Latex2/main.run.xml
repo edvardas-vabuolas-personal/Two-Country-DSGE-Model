@@ -80,7 +80,7 @@
       <file>main.bcf</file>
     </requires>
     <requires type="editable">
-      <file>DissertationDSGE.bib</file>
+      <file>Dissertation-5.bib</file>
     </requires>
   </external>
 </requests>

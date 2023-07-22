@@ -60,16 +60,16 @@ vars_of_interest$m_four <- list('interest_uk',
                                 'wp')
 
 plotList <- c()
-plotList$m_four <- c()
+plotList$f_three <- c()
 HORIZON <- 50
-for (i in vars_of_interest$m_four) {
+for (i in vars_of_interest$f_three) {
   # Choose the variable
-  # filtered_data <- subset(m_four_df,
-  #                         (Variable %in% c(paste0(i, '_f'))) &
-  #                           as.numeric(variable) <= HORIZON)
-  filtered_data <- subset(m_four_df,
-                          (Variable %in% c(i, paste0(i, '_f'))) &
+  filtered_data <- subset(f_three_df,
+                          (Variable %in% c(paste0(i, '_f'))) &
                             as.numeric(variable) <= HORIZON)
+  # filtered_data <- subset(f_three_df,
+  #                         (Variable %in% c(i)) &
+  #                           as.numeric(variable) <= HORIZON)
   
   # Sort
   filtered_data <-
@@ -81,14 +81,14 @@ for (i in vars_of_interest$m_four) {
   
   # Create plot title
   title <-
-    paste0("$\\uparrow  i^{UK}_t \\Rightarrow $ ", tex_names)
+    paste0("$\\uparrow  g^*_t \\Rightarrow $ ", tex_names)
   
   filtered_data$Variable <-
     gsub(i, "Scotland", filtered_data$Variable)
   filtered_data$Variable <-
     gsub("Scotland_f", "rUK", filtered_data$Variable)
   
-  plotList$m_four[[i]] <- ggplot(filtered_data) +
+  plotList$f_three[[i]] <- ggplot(filtered_data) +
     aes(
       x = as.numeric(variable),
       y = value,
@@ -116,17 +116,17 @@ for (i in vars_of_interest$m_four) {
 }
 
 tikz(
-  '~/Documents/University/Dissertation/Latex2/Graphs/monetary_four.tex',
+  '~/Documents/University/Dissertation/Latex2/Graphs/f_three_f.tex',
   width = 6,
-  height = 7
+  height = 8.3
 )
-plot <- ggarrange(plotlist = plotList$m_four,
-                  nrow = 4,
+plot <- ggarrange(plotlist = plotList$f_three,
+                  nrow = 5,
                   ncol = 2)
 annotate_figure(
   plot,
   top = text_grob(
-    "Contractionary Monetary Shock (Scenario 1)",
+    "Monetar (Scenario 1)",
     color = "black",
     size = 12
   )

@@ -33,8 +33,8 @@
 % shock_type: 1 - monetary; 2 - fiscal
 @#define shock_type = 2
 
-@#define enable_forloop = 0
-@#define enable_irfs_to_csv = 1
+@#define enable_forloop = 1
+@#define enable_irfs_to_csv = 0
 
 var 
 
@@ -128,10 +128,12 @@ interest_uk   ${i^{UK}_t}$      (long_name='UK Interest Rate')
     y_obs           ${y^{OBS}}$           (long_name='Observed Output')
     c_obs           ${c^{OBS}}$           (long_name='Observed Consumption')
     w_obs           ${w^{OBS}}$           (long_name='Observed Wage')
+    g_obs           ${g^{OBS}}$           (long_name='Observed Government spending')
     pi_obs           ${\pi^{OBS}}$           (long_name='Observed Inflation')
     y_obs_ruk           ${y^{OBS, ruk}}$           (long_name='Observed Output (RUK)')
     c_obs_ruk           ${c^{OBS, ruk}}$           (long_name='Observed Consumption (RUK)')
     w_obs_ruk          ${w^{OBS, ruk}}$           (long_name='Observed Wage (RUK)')
+    g_obs_ruk          ${w^{OBS, ruk}}$           (long_name='Observed Government spending (RUK)')
     pi_obs_ruk         ${\pi^{OBS, ruk}}$           (long_name='Observed Inflation (RUK)')
 
     i_obs          ${i^{OBS, uk}}$           (long_name='Observed Interest Rate (UK)')
@@ -178,6 +180,8 @@ p_star       ${p^*}$                 (long_name='world price level')
     y_obs_me       ${\varepsilon_y^{ME}}$     (long_name='Observed Output ME')
     c_obs_me       ${\varepsilon_c^{ME}}$     (long_name='Observed Consumption ME')
     w_obs_me       ${\varepsilon_w^{ME}}$     (long_name='Observed Wage ME')
+    g_obs_me       ${\varepsilon_g^{ME}}$     (long_name='Observed Government Expenditure ME')
+    g_obs_ruk_me       ${\varepsilon_g^{ME, RUK}}$     (long_name='Observed Government Expenditure ME (RUK)')
     pi_obs_me       ${\varepsilon_{\pi}^{ME}}$     (long_name='Observed Inflation ME')
     y_obs_ruk_me       ${\varepsilon_y^{ME, RUK}}$     (long_name='Observed Output ME (RUK)')
     c_obs_ruk_me       ${\varepsilon_c^{ME, RUK}}$     (long_name='Observed Consumption ME (RUK)')
@@ -303,8 +307,13 @@ rho_i_f = rho_i;
 phi_pi_f  = phi_pi;
 phi_y_f   = phi_y;
 
-G_Y_SS = 0.25;
-G_Y_SS_f = G_Y_SS - 0.05;
+@#if labour_tax == 1
+    G_Y_SS = 0.25682;
+    G_Y_SS_f = 0.18012;
+@#else
+    G_Y_SS = 0;
+    G_Y_SS_f = 0;
+@#endif
 
 C_Y_SS = 1 - G_Y_SS;
 C_Y_SS_f = 1 - G_Y_SS_f;
@@ -316,24 +325,24 @@ G_C_SS = Y_C_SS - 1;
 G_C_SS_f = Y_C_SS_f - 1;
 
 @#if no_of_govs == 2
-    rho_g = 0.9;
-    rho_g_f = rho_g;
+    rho_g = 0.898;
+    rho_g_f = 0.902;
 
-    phi_b = 0.33;
-    phi_g = 0.10;
-    phi_b_f = phi_b;
-    phi_g_f = phi_g;
+    phi_b = 0.352;
+    phi_g = 0.102;
+    phi_b_f = 0.341;
+    phi_g_f = 0.104;
 
     @#if labour_tax == 1
-        tau_ss = 0.25;
-        tau_ss_f = tau_ss - 0.05;
+        tau_ss = G_Y_SS;
+        tau_ss_f = G_Y_SS_f;
     @#endif
 @#else
-    rho_g_uk = 0.9;
-    phi_b_uk = 0.33;
-    phi_g_uk = 0.10;
+    rho_g_uk = 0.902;
+    phi_b_uk = 0.341;
+    phi_g_uk = 0.104;
     @#if labour_tax == 1
-        tau_ss_uk = 0.1;
+        tau_ss_uk = pop * G_Y_SS + (1 - pop) * G_Y_SS_f;
     @#endif
 @#endif
 
@@ -619,10 +628,12 @@ wp_f = w_f - p_f;
     y_obs = y - y(-1) + y_obs_me;
     c_obs = c - c(-1) + c_obs_me;
     w_obs = wp - wp(-1) + w_obs_me;
+    g_obs = g - g(-1) + g_obs_me;
     pi_obs = pi + pi_obs_me;
     y_obs_ruk = y_f - y_f(-1) + y_obs_ruk_me;
     c_obs_ruk = c_f - c_f(-1) + c_obs_ruk_me;
     w_obs_ruk = wp_f - wp_f(-1) + w_obs_ruk_me;
+    g_obs_ruk = g_f - g_f(-1) + g_obs_ruk_me;
     pi_obs_ruk = pi_f + pi_obs_ruk_me;
     i_obs = interest_uk - interest_uk(-1) + i_obs_me;
 @#endif
@@ -645,7 +656,7 @@ shocks;
     /* var p_star = 0.25^2; */
     @#if shock_type == 2
         @#if no_of_govs == 2
-            var eps_g = 0.25^2;
+            /* var eps_g = 0.25^2; */
             var eps_g_f = 0.25^2;
         @#else
             var eps_g_uk = 0.25^2;
@@ -667,7 +678,9 @@ shocks;
 
     var eps_y_star = 0.25^2;
     var p_star = 0.25^2;
-    var eps_g_uk = 0.25^2;
+    /* var eps_g_uk = 0.25^2; */
+    var eps_g = 0.25^2;
+    var eps_g_f = 0.25^2;
     var eps_nu_uk = 0.25^2;
 @#endif
 
@@ -676,43 +689,45 @@ end;
 @#if mcmc == 1
     estimated_params;
     stderr y_obs_me,inv_gamma_pdf,0.01,2;
-    /* stderr c_obs_me,inv_gamma_pdf,0.01,2; */
+    stderr g_obs_me,inv_gamma_pdf,0.01,2;
+    stderr c_obs_me,inv_gamma_pdf,0.01,2;
     /* stderr w_obs_me,inv_gamma_pdf,0.01,2; */
-    stderr pi_obs_me,inv_gamma_pdf,0.01,2;
+    /* stderr pi_obs_me,inv_gamma_pdf,0.01,2; */
     stderr y_obs_ruk_me,inv_gamma_pdf,0.01,2;
-    /* stderr c_obs_ruk_me,inv_gamma_pdf,0.01,2; */
+    stderr g_obs_ruk_me,inv_gamma_pdf,0.01,2;
+    stderr c_obs_ruk_me,inv_gamma_pdf,0.01,2;
     /* stderr w_obs_ruk_me,inv_gamma_pdf,0.01,2; */
-    stderr pi_obs_ruk_me,inv_gamma_pdf,0.01,2;
+    /* stderr pi_obs_ruk_me,inv_gamma_pdf,0.01,2; */
     /* stderr i_obs_me,inv_gamma_pdf,0.01,2; */
     
     @#if no_of_govs == 2
-        phi_b, beta_pdf, 0.30, 0.15;
+        phi_b, beta_pdf, 0.33, 0.165;
         phi_g, beta_pdf, 0.1, 0.05;
-        phi_b_f, beta_pdf, 0.30, 0.15;
+        phi_b_f, beta_pdf, 0.33, 0.165;
         phi_g_f, beta_pdf, 0.1, 0.05;
         rho_g, beta_pdf, 0.9, 0.05;
         rho_g_f, beta_pdf, 0.9, 0.05;
     @#else
-        phi_b_uk, beta_pdf, 0.30, 0.15;
+        phi_b_uk, beta_pdf, 0.30, 0.2;
         phi_g_uk, beta_pdf, 0.1, 0.05;
-        rho_g_uk, beta_pdf, 0.9, 0.1;
+        rho_g_uk, beta_pdf, 0.9, 0.0.5;
     @#endif
 
     end;
 
     /* varobs y_obs c_obs w_obs y_obs_ruk c_obs_ruk w_obs_ruk; */
-    varobs y_obs c_obs w_obs y_obs_ruk c_obs_ruk w_obs_ruk pi_obs pi_obs_ruk;
+    varobs y_obs c_obs w_obs y_obs_ruk c_obs_ruk w_obs_ruk g_obs g_obs_ruk;
     /* varobs y_obs; */
 
     /* estimation(datafile=DynareData, mh_replic=20000, mh_nblocks=1, logdata, smoother, diffuse_filter, mh_jscale=1.2592); */
-    estimation(datafile=DynareData, mh_replic=20000, mh_nblocks=1, logdata, smoother, diffuse_filter, mh_jscale=0.5);
+    estimation(datafile=DynareData, mh_replic=50000, mh_nblocks=1, logdata, smoother, diffuse_filter, mh_jscale=0.6, mh_drop=0.333);
 @#endif
 
 resid(1);
 steady;
 check;
 
-stoch_simul(irf=200);
+stoch_simul(irf=200, nograph);
 
 @#if enable_irfs_to_csv == 1
     options_.nomoments=0;
@@ -756,14 +771,12 @@ stoch_simul(irf=200);
     options_.verbosity=0;
     options_.noprint=1;
     options_.TeX=0;
-    phi_b_grid = [0:0.05:1];
-    phi_g_grid = [0:0.05:1];
-    rho_g_grid = [0:0.05:1];
-    tau_ss_uk_grid = [0:0.025:0.5];
+    phi_b_grid = [0:0.20:1];
+    phi_g_grid = [0:0.20:1];
+    rho_g_grid = [0:0.20:1];
 
     m_debt = zeros(0,0);
     m_b = zeros(0,0);
-    /* m_r_real = zeros(0,0); */
     m_g = zeros(0,0);
     m_tr = zeros(0,0);
     m_tau = zeros(0,0);
@@ -775,33 +788,28 @@ stoch_simul(irf=200);
     for ii = 1:length(phi_b_grid)
         for jj = 1:length(phi_g_grid)
             for gg = 1:length(rho_g_grid)
-                for tt = 1:length(tau_ss_uk)
-                    set_param_value('phi_b_uk',phi_b_grid(ii))
-                    set_param_value('phi_g_uk',phi_g_grid(jj))
-                    set_param_value('rho_g_uk',rho_g_grid(gg))
-                    set_param_value('tau_ss_uk',tau_ss_uk_grid(tt))
-                    set_dynare_seed('default');
-                    [info, oo_, options_] = stoch_simul(M_, options_, oo_, var_list_);
-                    m_debt(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) rho_g_grid(gg) tau_ss_uk_grid(tt) oo_.irfs.debt_uk_eps_g_uk];
-                    m_b(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) rho_g_grid(gg) tau_ss_uk_grid(tt) oo_.irfs.b_uk_eps_g_uk];
-                    /* m_r_real(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) rho_g_grid(gg) tau_ss_uk_grid(tt) oo_.irfs.r_real_eps_g_uk]; */
-                    m_g(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) rho_g_grid(gg) tau_ss_uk_grid(tt) oo_.irfs.g_uk_eps_g_uk];
-                    m_tr(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) rho_g_grid(gg) tau_ss_uk_grid(tt) oo_.irfs.tr_uk_eps_g_uk];
-                    m_tau(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) rho_g_grid(gg) tau_ss_uk_grid(tt) oo_.irfs.tau_uk_eps_g_uk];
-                    m_c(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) rho_g_grid(gg) tau_ss_uk_grid(tt) oo_.irfs.c_eps_g_uk];
-                    m_y(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) rho_g_grid(gg) tau_ss_uk_grid(tt) oo_.irfs.y_eps_g_uk];
-                    m_wp(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) rho_g_grid(gg) tau_ss_uk_grid(tt) oo_.irfs.wp_eps_g_uk];
-                    m_n(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) rho_g_grid(gg) tau_ss_uk_grid(tt) oo_.irfs.n_eps_g_uk];
+                set_param_value('phi_b_uk',phi_b_grid(ii))
+                set_param_value('phi_g_uk',phi_g_grid(jj))
+                set_param_value('rho_g_uk',rho_g_grid(gg))
+                set_dynare_seed('default');
+                [info, oo_, options_] = stoch_simul(M_, options_, oo_, var_list_);
+                m_debt(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) rho_g_grid(gg) oo_.irfs.debt_uk_eps_g_uk];
+                m_b(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) rho_g_grid(gg) oo_.irfs.b_uk_eps_g_uk];
+                m_g(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) rho_g_grid(gg) oo_.irfs.g_uk_eps_g_uk];
+                m_tr(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) rho_g_grid(gg) oo_.irfs.tr_uk_eps_g_uk];
+                m_tau(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) rho_g_grid(gg) oo_.irfs.tau_uk_eps_g_uk];
+                m_c(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) rho_g_grid(gg) oo_.irfs.c_eps_g_uk];
+                m_y(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) rho_g_grid(gg) oo_.irfs.y_eps_g_uk];
+                m_wp(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) rho_g_grid(gg) oo_.irfs.wp_eps_g_uk];
+                m_n(end+1, :) = [phi_b_grid(ii) phi_g_grid(jj) rho_g_grid(gg) oo_.irfs.n_eps_g_uk];
 
-                    counter = counter + 1;
-                    disp(counter)
-                end
+                counter = counter + 1;
+                disp(counter)
             end
         end
     end
     writematrix(m_debt, './sim_output/debt.csv');
     writematrix(m_b, './sim_output/b.csv');
-    /* writematrix(m_r_real, './sim_output/r_real.csv'); */
     writematrix(m_g, './sim_output/g.csv');
     writematrix(m_tr, './sim_output/tr.csv');
     writematrix(m_tau, './sim_output/tau.csv');
