@@ -355,3 +355,9 @@ dissertation/
 +dissertation/
 *.mat
 *.dat
+
+*.aux
+*.fls
+*.synctex
+*.bbl
+*.run
