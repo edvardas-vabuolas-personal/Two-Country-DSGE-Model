@@ -121,7 +121,7 @@ The condition implies that the marginal utility of consumption and leisure is eq
     (1-\tau)({\sigma c_t + \varphi n_t})  &= \left[(1-\tau)({w_t - p_t}) - \tau \tilde{\tau}_t\right]\nonumber\\
     {\sigma c_t + \varphi n_t}  &= {w_t - p_t} - \frac{\tau}{1-\tau}\tilde{\tau}_t
 \end{align}
-Where $\tau$ and $\tilde{\tau}_t$ denote steady state labour tax rate and deviation from the steady state, respectively. As it is common in the literature, we denote natural logs of corresponding variables in lowercase letters, i.e. $x_t = \ln(X_t)$, and use tildes to denote deviations from the steady state. While loglinearising, we widely make use of Uhlig's (1999) proposed methods for multivariate equations with additive terms, i.e., $X_tY_t \approx XY\mathbf{e}^{\tilde{X}_t + \tilde{Y}_t}$, $X_t + Y_t \approx X\mathbf{e}^{\tilde{X}_t} + Y\mathbf{e}^{\tilde{Y}_t}$ and $\mathbf{e}^{\tilde{X}_t} \approx (1 + \tilde{X}_t)$. 
+Where $\tau$ and $\tilde{\tau}_t$ denote steady state labour tax rate and deviation from the steady state, respectively. As it is common in the literature, we denote natural logs of corresponding variables in lowercase letters, i.e. $x_t = \ln(X_t)$, and use tildes to denote deviations from the steady state. While loglinearising, we widely make use of \textcite{uhlig_1995_a} proposed methods for multivariate equations with additive terms, i.e., $X_tY_t \approx XY\mathbf{e}^{\tilde{X}_t + \tilde{Y}_t}$, $X_t + Y_t \approx X\mathbf{e}^{\tilde{X}_t} + Y\mathbf{e}^{\tilde{Y}_t}$ and $\mathbf{e}^{\tilde{X}_t} \approx (1 + \tilde{X}_t)$. 
 
 Iterating Equation (\ref{eq:foc_c}) one period forward, yields:
 \begin{align*}
@@ -146,7 +146,7 @@ Log-linearising (\ref{eq:euler_equation}):
 \end{align}
 where $i_t = \ln R_{t+1}$ is the nominal interest rate, $\rho = -\log \beta$ is the log discount rate, and $\pi_t = p_t - p_{t-1}$ is the CPI inflation. The loglinearised Euler equation makes it clearer to see, that consumption ``today'' is increasing in expected inflation ``tomorrow'', while the opposite is true for the nominal interest rate. The effect is scaled by $\sigma^{-1}$ parameter.
 
-Furthermore, OECD (2022) defines terms of trade as a ratio of import and export price indices, which in this model is denoted as $S_t$:
+Furthermore, \textcite{oecd_2022_international} defines terms of trade as a ratio of import and export price indices, which in this model is denoted as $S_t$:
 \begin{align}
     S_{i,t} &= \frac{P_{i,t}}{P_{H,t}}                       \label{eq:bilateral_terms_of_trade}                                                                                    \\
     S_{t} &=  \frac{P_{F,t}}{P_{H,t}} = \left(\int_{0}^{1} (S_{i,t} \, di)^{1-\gamma}\right)^{\frac{1}{1-\gamma}}            \label{eq:effective_terms_of_trade}              

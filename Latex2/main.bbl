@@ -19,14 +19,54 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
+    \entry{baxter_1993_fiscal}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=c2b9eeb40c53b88d50c93e35b61f9e59}{%
+           family={Baxter},
+           familyi={B\bibinitperiod},
+           given={Marianne},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e068047c81ba350319902fe3f06656cf}{%
+           family={King},
+           familyi={K\bibinitperiod},
+           given={Robert\bibnamedelima G.},
+           giveni={R\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{1e2e70912a2232e49b1acc74e5527dff}
+      \strng{fullhash}{1e2e70912a2232e49b1acc74e5527dff}
+      \strng{bibnamehash}{1e2e70912a2232e49b1acc74e5527dff}
+      \strng{authorbibnamehash}{1e2e70912a2232e49b1acc74e5527dff}
+      \strng{authornamehash}{1e2e70912a2232e49b1acc74e5527dff}
+      \strng{authorfullhash}{1e2e70912a2232e49b1acc74e5527dff}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The American Economic Review}
+      \field{title}{Fiscal Policy in General Equilibrium}
+      \field{volume}{83}
+      \field{year}{1993}
+      \field{pages}{315\bibrangedash 334}
+      \range{pages}{20}
+      \verb{urlraw}
+      \verb https://www.jstor.org/stable/2117521
+      \endverb
+      \verb{url}
+      \verb https://www.jstor.org/stable/2117521
+      \endverb
+    \endentry
     \entry{blanchard_2000_what}{article}{}
       \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=1bb42bb45a1078c2d2b1486908ad0699}{%
+        {{un=2,uniquepart=given,hash=1bb42bb45a1078c2d2b1486908ad0699}{%
            family={Blanchard},
            familyi={B\bibinitperiod},
            given={O.},
            giveni={O\bibinitperiod},
-           givenun=0}}%
+           givenun=2}}%
       }
       \strng{namehash}{1bb42bb45a1078c2d2b1486908ad0699}
       \strng{fullhash}{1bb42bb45a1078c2d2b1486908ad0699}
@@ -53,6 +93,46 @@
       \range{pages}{35}
       \verb{doi}
       \verb 10.1162/003355300554999
+      \endverb
+    \endentry
+    \entry{blanchard_2002_an}{article}{}
+      \name{author}{2}{}{%
+        {{un=2,uniquepart=given,hash=8ea1d54fee57ba07b648601ddd77664a}{%
+           family={Blanchard},
+           familyi={B\bibinitperiod},
+           given={Olivier},
+           giveni={O\bibinitperiod},
+           givenun=2}}%
+        {{un=0,uniquepart=base,hash=55ce5f65063eaaa17e18002f1298566a}{%
+           family={Perotti},
+           familyi={P\bibinitperiod},
+           given={Roberto},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{604dfe9a2507a84d2aeadcb3863370a1}
+      \strng{fullhash}{604dfe9a2507a84d2aeadcb3863370a1}
+      \strng{bibnamehash}{604dfe9a2507a84d2aeadcb3863370a1}
+      \strng{authorbibnamehash}{604dfe9a2507a84d2aeadcb3863370a1}
+      \strng{authornamehash}{604dfe9a2507a84d2aeadcb3863370a1}
+      \strng{authorfullhash}{604dfe9a2507a84d2aeadcb3863370a1}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Quarterly Journal of Economics}
+      \field{title}{An Empirical Characterization of the Dynamic Effects of Changes in Government Spending and Taxes on Output}
+      \field{volume}{117}
+      \field{year}{2002}
+      \field{pages}{1329\bibrangedash 1368}
+      \range{pages}{40}
+      \verb{urlraw}
+      \verb https://www.jstor.org/stable/4132480
+      \endverb
+      \verb{url}
+      \verb https://www.jstor.org/stable/4132480
       \endverb
     \endentry
     \entry{boe_2023_monetary}{misc}{}
@@ -91,6 +171,70 @@
       \endverb
       \verb{url}
       \verb https://www.bankofengland.co.uk/-/media/boe/files/monetary-policy-summary-and-minutes/2023/monetary-policy-summary-and-minutes-may-2023.pdf
+      \endverb
+    \endentry
+    \entry{calvo_1983_staggered}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=fc885233ab77bfb12503064c4e0094d0}{%
+           family={Calvo},
+           familyi={C\bibinitperiod},
+           given={Guillermo\bibnamedelima A.},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{fc885233ab77bfb12503064c4e0094d0}
+      \strng{fullhash}{fc885233ab77bfb12503064c4e0094d0}
+      \strng{bibnamehash}{fc885233ab77bfb12503064c4e0094d0}
+      \strng{authorbibnamehash}{fc885233ab77bfb12503064c4e0094d0}
+      \strng{authornamehash}{fc885233ab77bfb12503064c4e0094d0}
+      \strng{authorfullhash}{fc885233ab77bfb12503064c4e0094d0}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Monetary Economics}
+      \field{month}{09}
+      \field{title}{Staggered prices in a utility-maximizing framework}
+      \field{volume}{12}
+      \field{year}{1983}
+      \field{pages}{383\bibrangedash 398}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1016/0304-3932(83)90060-0
+      \endverb
+    \endentry
+    \entry{eskelinen_2021_monetary}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=e5099b04049e76bacbb73c2249f5e438}{%
+           family={Eskelinen},
+           familyi={E\bibinitperiod},
+           given={Maria},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e5099b04049e76bacbb73c2249f5e438}
+      \strng{fullhash}{e5099b04049e76bacbb73c2249f5e438}
+      \strng{bibnamehash}{e5099b04049e76bacbb73c2249f5e438}
+      \strng{authorbibnamehash}{e5099b04049e76bacbb73c2249f5e438}
+      \strng{authornamehash}{e5099b04049e76bacbb73c2249f5e438}
+      \strng{authorfullhash}{e5099b04049e76bacbb73c2249f5e438}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{SSRN Electronic Journal}
+      \field{title}{Monetary Policy, Agent Heterogeneity and Inequality: Insights from a Three-Agent New Keynesian Model}
+      \field{urlday}{13}
+      \field{urlmonth}{12}
+      \field{urlyear}{2021}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.2139/ssrn.3929824
       \endverb
     \endentry
     \entry{gali_2005_monetary}{article}{}
@@ -157,6 +301,50 @@
       \field{labeltitlesource}{title}
       \field{title}{Monetary policy, inflation, and the business cycle : an introduction to the new Keynesian framework and its applications}
       \field{year}{2015}
+    \endentry
+    \entry{jordigal_2005_understanding}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=9f86081942834923a86a56e2f4d2a7cd}{%
+           family={Galí},
+           familyi={G\bibinitperiod},
+           given={Jordi},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f19bbb84b71314647fa00b2b9e08429f}{%
+           family={López-Salido},
+           familyi={L\bibinithyphendelim S\bibinitperiod},
+           given={J.\bibnamedelimi David},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=29e9241f2e882fe10dd5a243f1b22f38}{%
+           family={Vallés},
+           familyi={V\bibinitperiod},
+           given={Javier},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4852cf9b099edc2168bcb3bd9f422f48}
+      \strng{fullhash}{4852cf9b099edc2168bcb3bd9f422f48}
+      \strng{bibnamehash}{4852cf9b099edc2168bcb3bd9f422f48}
+      \strng{authorbibnamehash}{4852cf9b099edc2168bcb3bd9f422f48}
+      \strng{authornamehash}{4852cf9b099edc2168bcb3bd9f422f48}
+      \strng{authorfullhash}{4852cf9b099edc2168bcb3bd9f422f48}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{08}
+      \field{title}{Understanding the Effects of Government Spending on Consumption}
+      \field{urlday}{22}
+      \field{urlmonth}{7}
+      \field{urlyear}{2023}
+      \field{year}{2005}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.3386/w11578
+      \endverb
     \endentry
     \entry{gals_2007_macroeconomic}{article}{}
       \name{author}{2}{}{%
@@ -232,6 +420,36 @@
       \range{pages}{1}
       \verb{doi}
       \verb 10.2307/1913386
+      \endverb
+    \endentry
+    \entry{oecd_2022_international}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=bdbed435a416a918aa494017fda4c7fb}{%
+           family={OECD},
+           familyi={O\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {https://data.oecd.org}%
+      }
+      \strng{namehash}{bdbed435a416a918aa494017fda4c7fb}
+      \strng{fullhash}{bdbed435a416a918aa494017fda4c7fb}
+      \strng{bibnamehash}{bdbed435a416a918aa494017fda4c7fb}
+      \strng{authorbibnamehash}{bdbed435a416a918aa494017fda4c7fb}
+      \strng{authornamehash}{bdbed435a416a918aa494017fda4c7fb}
+      \strng{authorfullhash}{bdbed435a416a918aa494017fda4c7fb}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{International trade - Terms of trade - OECD Data}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://data.oecd.org/trade/terms-of-trade.htm
+      \endverb
+      \verb{url}
+      \verb https://data.oecd.org/trade/terms-of-trade.htm
       \endverb
     \endentry
     \entry{prescott_1986_theory}{article}{}
@@ -393,6 +611,38 @@
       \endverb
       \verb{url}
       \verb https://www.jstor.org/stable/3182776
+      \endverb
+    \endentry
+    \entry{uhlig_1995_a}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=23c65b2fd3969e3b79f89556ae2384b8}{%
+           family={Uhlig},
+           familyi={U\bibinitperiod},
+           given={Harald},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{23c65b2fd3969e3b79f89556ae2384b8}
+      \strng{fullhash}{23c65b2fd3969e3b79f89556ae2384b8}
+      \strng{bibnamehash}{23c65b2fd3969e3b79f89556ae2384b8}
+      \strng{authorbibnamehash}{23c65b2fd3969e3b79f89556ae2384b8}
+      \strng{authornamehash}{23c65b2fd3969e3b79f89556ae2384b8}
+      \strng{authorfullhash}{23c65b2fd3969e3b79f89556ae2384b8}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{06}
+      \field{title}{A Toolkit for Analyzing Nonlinear Dynamic Stochastic Models Easily}
+      \field{urlday}{22}
+      \field{urlmonth}{7}
+      \field{urlyear}{2023}
+      \field{year}{1995}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.21034/dp.101
       \endverb
     \endentry
   \enddatalist
