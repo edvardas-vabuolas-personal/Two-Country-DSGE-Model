@@ -358,6 +358,10 @@ dissertation/
 
 *.aux
 *.fls
-*.synctex
+*.synctex.gz
 *.bbl
-*.run
+*.run.xml
+*.bcf
+*.blg
+*.fdb_latexmk
+main.pdf
