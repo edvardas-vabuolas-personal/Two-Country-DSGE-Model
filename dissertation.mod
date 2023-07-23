@@ -1,7 +1,7 @@
 % monetary_union: 0 - Standard NK Phillips Curves and Dynamic IS curves, 2 interest rates; 1 - Price passthrough and unified monetary authority
 @#define monetary_union = 1
 
-@#define scenario = 4
+@#define scenario = 3
 
 % no_of_govs: 1 - One government budget constraint; 2 - Two government budget constraints
 % labour_tax: 0 - Lump-Sum; 1 - Distortionary taxes (labour tax)
@@ -28,12 +28,12 @@
 
 
 % mcmc: 0 - do not estimate (use pre-defined parameters); 1 - estimate (use calibrated parameters)
-@#define mcmc = 0
+@#define mcmc = 1
 
 % shock_type: 1 - monetary; 2 - fiscal
 @#define shock_type = 2
 
-@#define enable_forloop = 1
+@#define enable_forloop = 0
 @#define enable_irfs_to_csv = 0
 
 var 

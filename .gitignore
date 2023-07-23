@@ -350,5 +350,8 @@ MigrationBackup/
 .ionide/
 .Rproj.user
 
+# Dynare
 dissertation/
 +dissertation/
+*.mat
+*.dat
