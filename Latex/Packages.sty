@@ -6,6 +6,7 @@
             top=1.5in,
             bottom=1.5in]{geometry}
 \usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
 \usepackage{import}
 \usepackage{setspace}
 \usepackage{amsmath, calc, amsfonts}
@@ -13,16 +14,41 @@
 \usepackage{tikz}
 \usepackage{xfrac}
 \usepackage[makeroom]{cancel}
-\usepackage[style=authoryear,sorting=nyt,natbib,backend=biber, url=false]{biblatex}
-\DefineBibliographyStrings{english}{%
-  page             = {},
-  pages            = {},
-} 
-\renewcommand{\postnotedelim}{\addcolon}
-% \addbibresource{DissertationDSGE.bib}
+\usepackage[style=authoryear-icomp,sorting=nyt,natbib,backend=biber, url=false, ibidpage=true]{biblatex}
+\renewcommand*{\mkibid}{\emph}
+% \DefineBibliographyStrings{english}{%
+%   page             = {},
+%   pages            = {},
+% } 
+% \renewcommand{\postnotedelim}{\addcolon}
+% \DeclareFieldFormat{postnote}{#1}
+% \DeclareFieldFormat{multipostnote}{#1}
+
+% In-text citation formatting
+\newtoggle{cbx:isibid}
+
+\AtEveryCitekey{\global\togglefalse{cbx:isibid}}
+
+\renewbibmacro*{cite:ibid}{%
+  \global\toggletrue{cbx:isibid}%
+  \printtext[bibhyperref]{\bibstring[\mkibid]{ibidem}}%
+  \ifloccit
+    {\global\booltrue{cbx:loccit}}
+    {}}
+
+\DeclareDelimFormat*{postnotedelim}{%
+  \iftoggle{cbx:isibid}
+    {\addcomma\space p.\space}
+    {\addcolon}%
+  }
+
+\DeclareFieldFormat{postnote}{\mknormrange{#1}}
+\DeclareFieldFormat{volcitepages}{\mknormrange{#1}}
+
 \usepackage{tabularx}
 \usepackage{pdflscape}
 \usepackage{makecell}
+\usepackage{multirow}
 
 \DeclareMathOperator{\E}{\mathbb{E}}
 

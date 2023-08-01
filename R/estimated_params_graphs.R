@@ -6,49 +6,258 @@ library(readxl)
 library(dplyr)
 library(stringr)
 
-df <- read.csv("~/Documents/University/Dissertation/Output/MCMC_SCOT_RUK_2023-07-16.csv")
-ndf <- df %>%
-  filter(row_number() %% 100 == 1)
+df_uk <-
+  read.csv("~/Documents/University/Dissertation/Output/MCMC_UK_300000_2023-07-25.csv")
+df <-
+  read.csv(
+    "~/Documents/University/Dissertation/Output/MCMC_SCOT_RUK_300000_2023-07-23.csv"
+  )
+df[c('phi_b_uk', 'phi_g_uk', 'rho_g_uk')] <- df_uk[c('phi_b_uk', 'phi_g_uk', 'rho_g_uk')]
+
+# Release memory
+rm(df_uk)
+
+# Drop Burn-in draws (33%)
+burn_in <- as.integer(0.33333333 * nrow(df))
+df <- df[(burn_in):nrow(df),]
+
+# Rendering 200.000 points occupies too much computer memory.
+# We take a representative sample. 
+# For line chart, every 1000th draw is used. 
+# For density function, every other draw is used (50% of all draws).
+lines_df <- df[seq(1, nrow(df), 1000), ]
+density_df <- df[seq(1, nrow(df), 2), ]
 
 latex_names <- c(
-  'phi_b'='$\\phi_b$',
-  'phi_g'='$\\phi_g$',
-  'phi_b_f'='$\\phi_b^*$',
-  'phi_g_f'='$\\phi_g^*$',
-  'phi_b_uk'='$\\phi_b^{UK}$',
-  'phi_g_uk'='$\\phi_g^{UK}$',
-  'rho_g'='$\\rho_g$',
-  'rho_g_f'='$\\rho_g^*$',
-  'rho_g_uk'='$\\rho_g^{UK}$'
+  'phi_b' = '$\\phi_b$',
+  'phi_g' = '$\\phi_g$',
+  'phi_b_f' = '$\\phi_b^*$',
+  'phi_g_f' = '$\\phi_g^*$',
+  'phi_b_uk' = '$\\phi_b^{UK}$',
+  'phi_g_uk' = '$\\phi_g^{UK}$',
+  'rho_g' = '$\\rho_g$',
+  'rho_g_f' = '$\\rho_g^*$',
+  'rho_g_uk' = '$\\rho_g^{UK}$'
 )
 
+# Beta distribution shape parameters alpha and beta were obtained using
+# [alpha, beta] = beta_specification(0.33, 0.20^2) Dynare function
+# alpha = 1.4941
+# beta = 3.0334
+density_params <- c()
+
+density_params$phi_b <- c(1.4941, 3.0334)
+density_params$phi_g <- c(3.5000, 31.5000)
+density_params$rho_g <- c(809.1000, 89.9000)
+
+density_params$phi_b_f <- c(1.4941, 3.0334)
+density_params$phi_g_f <- c(3.5000, 31.5000)
+density_params$rho_g_f <- c(809.1000, 89.9000)
+
+density_params$phi_b_uk <- c(1.4941, 3.0334)
+density_params$phi_g_uk <- c(3.5000, 31.5000)
+density_params$rho_g_uk <- c(809.1000, 89.9000)
+
 plotList <- c()
-for (i in 2:ncol(ndf)) {
+for (i in 2:ncol(df)) {
   variable <- colnames(df)[i]
-  if (grepl('_f', variable, fixed=TRUE)) {
-    post_mean <- round(mean(df[10000:nrow(df),variable]), 3)
-    plotList[[paste0("Line", i)]] <- ggplot(ndf) +
-      aes_string(x='X', y=variable) +
-      geom_line() +
+  if (grepl('_uk', variable, fixed = TRUE)) {
+    # Posterior mean: mean of all post-burn-in draws
+    post_mean <- round(mean(df[[variable]]), 3)
+    # Print posterior mean
+    print(mean(df[[variable]]))
+    
+    plotList[['_uk']][[paste0("Line_", i)]] <- ggplot(lines_df) +
+      aes_string(x = 'X', y = variable) +
+      geom_line(linewidth = 0.5) +
       theme_bw() +
-      scale_x_continuous(name="Draws") +
-      scale_y_continuous(name=element_blank()) +
+      scale_x_continuous(
+        name = "Draws",
+        labels = function(x)
+          format(x, scientific = FALSE)
+      ) +
+      scale_y_continuous(name = element_blank()) +
       ggtitle(paste0("Draws: ", latex_names[variable], ". Posterior mean = ", post_mean)) +
-      geom_hline(aes_string(yintercept=post_mean), color="black", linetype="dashed", linewidth=1.5)+
+      geom_hline(
+        aes_string(yintercept = post_mean),
+        color = "black",
+        linetype = "twodash",
+        linewidth = 1
+      ) +
       theme(plot.title = element_text(size = 10))
-    plotList[[paste0("Hist", i)]] <-
-      ggplot(ndf) +
-        aes_string(x=variable) +
-        geom_histogram(fill="white", color="black") +
-        theme_bw() +
-        scale_x_continuous(name="Value") +
-        scale_y_continuous(name=element_blank()) +
-        ggtitle("") +
-        geom_vline(aes_string(xintercept=post_mean), color="black", linetype="dashed", linewidth=1.5)+
-        theme(plot.title = element_text(size = 9))
+    
+    plotList[['_uk']][[paste0("Hist_", i)]] <-
+      ggplot(density_df, aes(x = as.numeric(.data[[variable]]))) +
+      stat_function(
+        aes(x = seq(
+          min(.data[[variable]]), max(.data[[variable]]), len = length(.data[[variable]])
+        ), y = ..y..),
+        fun = dbeta,
+        colour = "black",
+        linetype = "dashed",
+        n = 100,
+        args = list(shape1 = density_params[[variable]][1], shape2 = density_params[[variable]][2])
+      ) +
+      geom_density(alpha = 0, fill = "black") +
+      theme_bw() +
+      scale_x_continuous(name = "Value") +
+      scale_y_continuous(name = "Density") +
+      ggtitle("Prior (dashed) and Posterior (solid)") +
+      geom_vline(
+        aes_string(xintercept = post_mean),
+        color = "black",
+        linetype = "twodash",
+        linewidth = 1
+      ) +
+      theme(
+        plot.title = element_text(size = 9),
+        axis.ticks.y = element_blank(),
+        axis.text.y = element_blank()
+      )
+  } else if (grepl('_f', variable, fixed = TRUE)) {
+    # Posterior mean: mean of all post-burn-in draws
+    post_mean <- round(mean(df[[variable]]), 3)
+    # Print posterior mean
+    print(mean(df[[variable]]))
+    
+    plotList[['_f']][[paste0("Line_", i)]] <- ggplot(lines_df) +
+      aes_string(x = 'X', y = variable) +
+      geom_line(linewidth = 0.5) +
+      theme_bw() +
+      scale_x_continuous(
+        name = "Draws",
+        labels = function(x)
+          format(x, scientific = FALSE)
+      ) +
+      scale_y_continuous(name = element_blank()) +
+      ggtitle(paste0("Draws: ", latex_names[variable], ". Posterior mean = ", post_mean)) +
+      geom_hline(
+        aes_string(yintercept = post_mean),
+        color = "black",
+        linetype = "twodash",
+        linewidth = 1
+      ) +
+      theme(plot.title = element_text(size = 10))
+    
+    plotList[['_f']][[paste0("Hist_", i)]] <-
+      ggplot(density_df, aes(x = as.numeric(.data[[variable]]))) +
+      stat_function(
+        aes(x = seq(
+          min(.data[[variable]]), max(.data[[variable]]), len = length(.data[[variable]])
+        ), y = ..y..),
+        fun = dbeta,
+        colour = "black",
+        linetype = "dashed",
+        n = 100,
+        args = list(shape1 = density_params[[variable]][1], shape2 = density_params[[variable]][2])
+      ) +
+      geom_density(alpha = 0, fill = "black") +
+      theme_bw() +
+      scale_x_continuous(name = "Value") +
+      scale_y_continuous(name = "Density") +
+      ggtitle("Prior (dashed) and Posterior (solid)") +
+      geom_vline(
+        aes_string(xintercept = post_mean),
+        color = "black",
+        linetype = "twodash",
+        linewidth = 1
+      ) +
+      theme(
+        plot.title = element_text(size = 9),
+        axis.ticks.y = element_blank(),
+        axis.text.y = element_blank()
+      )
+  } else {
+    # Posterior mean: mean of all post-burn-in draws
+    post_mean <- round(mean(df[[variable]]), 3)
+    # Print posterior mean
+    print(mean(df[[variable]]))
+    
+    plotList[['_sct']][[paste0("Line_", i)]] <- ggplot(lines_df) +
+      aes_string(x = 'X', y = variable) +
+      geom_line(linewidth = 0.5) +
+      theme_bw() +
+      scale_x_continuous(
+        name = "Draws",
+        labels = function(x)
+          format(x, scientific = FALSE)
+      ) +
+      scale_y_continuous(name = element_blank()) +
+      ggtitle(paste0("Draws: ", latex_names[variable], ". Posterior mean = ", post_mean)) +
+      geom_hline(
+        aes_string(yintercept = post_mean),
+        color = "black",
+        linetype = "twodash",
+        linewidth = 1
+      ) +
+      theme(plot.title = element_text(size = 10))
+    
+    plotList[['_sct']][[paste0("Hist_", i)]] <-
+      ggplot(density_df, aes(x = as.numeric(.data[[variable]]))) +
+      stat_function(
+        aes(x = seq(
+          min(.data[[variable]]), max(.data[[variable]]), len = length(.data[[variable]])
+        ), y = ..y..),
+        fun = dbeta,
+        colour = "black",
+        linetype = "dashed",
+        n = 100,
+        args = list(shape1 = density_params[[variable]][1], shape2 = density_params[[variable]][2])
+      ) +
+      geom_density(alpha = 0, fill = "black") +
+      theme_bw() +
+      scale_x_continuous(name = "Value") +
+      scale_y_continuous(name = "Density") +
+      ggtitle("Prior (dashed) and Posterior (solid)") +
+      geom_vline(
+        aes_string(xintercept = post_mean),
+        color = "black",
+        linetype = "twodash",
+        linewidth = 1
+      ) +
+      theme(
+        plot.title = element_text(size = 9),
+        axis.ticks.y = element_blank(),
+        axis.text.y = element_blank()
+      )
   }
 }
 
-tikz('~/Documents/University/Dissertation/Latex2/Graphs/MCMC_rUK.tex', width = 6, height = 6)
-ggarrange(plotlist=plotList, nrow=3, ncol=2)
+tikz(
+  '~/Documents/University/Dissertation/Latex/Graphs/MCMC_SCOT.tex',
+  width = 6,
+  height = 8
+)
+ggarrange(
+  plotlist = plotList$`_sct`,
+  widths = c(1, 0.8),
+  nrow = 3,
+  ncol = 2
+)
+dev.off()
+
+tikz(
+  '~/Documents/University/Dissertation/Latex/Graphs/MCMC_RUK.tex',
+  width = 6,
+  height = 8
+)
+ggarrange(
+  plotlist = plotList$`_f`,
+  widths = c(1, 0.8),
+  nrow = 3,
+  ncol = 2
+)
+dev.off()
+
+tikz(
+  '~/Documents/University/Dissertation/Latex/Graphs/MCMC_UK.tex',
+  width = 6,
+  height = 8
+)
+ggarrange(
+  plotlist = plotList$`_uk`,
+  widths = c(1, 0.8),
+  nrow = 3,
+  ncol = 2
+)
 dev.off()

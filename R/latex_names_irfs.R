@@ -65,5 +65,8 @@ latex_names <- list(
   interest_uk = "${i^{UK}_t}$",                            # UK interest rate
   nu = "${\\nu_t}$",                                       # Scotland AR(1) monetary policy shock process
   nu_f = "${\\nu^*_t}$",                                   # rUK AR(1) monetary policy shock process
-  nu_uk = "${\\nu^{UK}_t}$"                                # UK AR(1) monetary policy shock process
+  nu_uk = "${\\nu^{UK}_t}$",                                # UK AR(1) monetary policy shock process
+  phi_b_uk = "${\\phi_b^{UK}}$",
+  phi_g_uk = "${\\phi_g^{UK}}$",
+  rho_g_uk = "${\\rho_g^{UK}}$"
 )

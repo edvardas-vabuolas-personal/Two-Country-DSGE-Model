@@ -5,10 +5,11 @@
 \addbibresource{Dissertation-5.bib}
 \usepackage{svg}
 \begin{document}
+\setlength{\abovecaptionskip}{0pt}
 \begin{sloppypar}
 \import{./Title Page/}{title_page.tex}
 \pagebreak
-\import{.}{structure.tex}
+\tableofcontents
 \pagebreak
 \setstretch{1.5}
 
@@ -16,7 +17,7 @@
 \import{./Introduction}{introduction.tex}
 \newpage
 
-\import{./Introduction}{literature_review.tex}
+\import{./Literature Review}{literature_review.tex}
 \newpage
 
 \section{Theoretical DSGE model}
@@ -31,14 +32,18 @@
 \import{./Results}{results.tex}
 \newpage
 
+\section{Limitations}
+\import{./Limitations}{limitations.tex}
+\newpage
+
 \section{Conclusion}
 \import{./Conclusion}{conclusion.tex}
 \newpage
-
+%TC:ignore
 \printbibliography
 \newpage
 
 \import{./Appendix}{appendix.tex}
-
+%TC:endignore
 \end{sloppypar}
 \end{document}

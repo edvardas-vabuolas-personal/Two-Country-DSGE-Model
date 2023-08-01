@@ -1,7 +1,7 @@
 % monetary_union: 0 - Standard NK Phillips Curves and Dynamic IS curves, 2 interest rates; 1 - Price passthrough and unified monetary authority
 @#define monetary_union = 1
 
-@#define scenario = 3
+@#define scenario = 4
 
 % no_of_govs: 1 - One government budget constraint; 2 - Two government budget constraints
 % labour_tax: 0 - Lump-Sum; 1 - Distortionary taxes (labour tax)
@@ -26,15 +26,27 @@
     @#endif
 @#endif
 
+% shock_type: 1 - monetary; 2 - fiscal
+@#define shock_type = 2
+
 
 % mcmc: 0 - do not estimate (use pre-defined parameters); 1 - estimate (use calibrated parameters)
 @#define mcmc = 1
 
-% shock_type: 1 - monetary; 2 - fiscal
-@#define shock_type = 2
-
+% This generates thousands of simulations of React application (interactive sensitivity analysis on browser)
 @#define enable_forloop = 0
+
+% Export IRFs to a CSV file
 @#define enable_irfs_to_csv = 0
+
+% Export IRFs for different sets of parameters (aka sensitivity analysis) to a CSV file
+@#define enable_sensitivity_analysis = 0
+
+@#if enable_irfs_to_csv == 0 && enable_forloop == 0 && enable_sensitivity_analysis == 0 && mcmc == 0
+    @#define show_irf_graphs = 1
+@#else
+    @#define show_irf_graphs = 0
+@#endif
 
 var 
 
@@ -95,8 +107,6 @@ tr_f            ${TR^*_t}$        (long_name='rUK Tax Revenue')
     g_f         ${g^*_t}$         (long_name='rUK Government Spending')
     b           ${b_t}$           (long_name='Scotland Government Bonds')
     b_f         ${b^*_t}$           (long_name='rUK Government Bonds')
-    debt        ${d_t}$           (long_name='rUK Government Debt')
-    debt_f      ${d^{*}_t}$       (long_name='rUK Government Debt')
     @#if labour_tax == 1
         tau     ${\tau_t}$        (long_name='Scotland Labour Tax')
         tau_f   ${\tau^*_t}$      (long_name='rUK Labour Tax')
@@ -105,7 +115,6 @@ tr_f            ${TR^*_t}$        (long_name='rUK Tax Revenue')
     g_uk        ${g^{UK}_t}$      (long_name='UK Government Spending')
     tr_uk       ${tr^{UK}_t}$     (long_name='UK Tax Revenue')
     b_uk        ${b^{UK}_t}$      (long_name='UK Government Bonds')
-    debt_uk     ${d^{UK}_t}$      (long_name='UK Government Debt')
     @#if labour_tax == 1
         tau_uk  ${\tau^{UK}_t}$   (long_name='UK Labour Tax')
     @#endif
@@ -128,15 +137,16 @@ interest_uk   ${i^{UK}_t}$      (long_name='UK Interest Rate')
     y_obs           ${y^{OBS}}$           (long_name='Observed Output')
     c_obs           ${c^{OBS}}$           (long_name='Observed Consumption')
     w_obs           ${w^{OBS}}$           (long_name='Observed Wage')
-    g_obs           ${g^{OBS}}$           (long_name='Observed Government spending')
-    pi_obs           ${\pi^{OBS}}$           (long_name='Observed Inflation')
     y_obs_ruk           ${y^{OBS, ruk}}$           (long_name='Observed Output (RUK)')
     c_obs_ruk           ${c^{OBS, ruk}}$           (long_name='Observed Consumption (RUK)')
     w_obs_ruk          ${w^{OBS, ruk}}$           (long_name='Observed Wage (RUK)')
-    g_obs_ruk          ${w^{OBS, ruk}}$           (long_name='Observed Government spending (RUK)')
-    pi_obs_ruk         ${\pi^{OBS, ruk}}$           (long_name='Observed Inflation (RUK)')
 
-    i_obs          ${i^{OBS, uk}}$           (long_name='Observed Interest Rate (UK)')
+    @#if no_of_govs == 2
+        g_obs           ${g^{OBS}}$           (long_name='Observed Government spending')
+        g_obs_ruk          ${w^{OBS, ruk}}$           (long_name='Observed Government spending (RUK)')
+    @#else
+        g_obs_uk
+    @#endif
 @#endif
 
 ;
@@ -180,15 +190,17 @@ p_star       ${p^*}$                 (long_name='world price level')
     y_obs_me       ${\varepsilon_y^{ME}}$     (long_name='Observed Output ME')
     c_obs_me       ${\varepsilon_c^{ME}}$     (long_name='Observed Consumption ME')
     w_obs_me       ${\varepsilon_w^{ME}}$     (long_name='Observed Wage ME')
-    g_obs_me       ${\varepsilon_g^{ME}}$     (long_name='Observed Government Expenditure ME')
-    g_obs_ruk_me       ${\varepsilon_g^{ME, RUK}}$     (long_name='Observed Government Expenditure ME (RUK)')
-    pi_obs_me       ${\varepsilon_{\pi}^{ME}}$     (long_name='Observed Inflation ME')
     y_obs_ruk_me       ${\varepsilon_y^{ME, RUK}}$     (long_name='Observed Output ME (RUK)')
     c_obs_ruk_me       ${\varepsilon_c^{ME, RUK}}$     (long_name='Observed Consumption ME (RUK)')
     w_obs_ruk_me       ${\varepsilon_w^{ME, RUK}}$     (long_name='Observed Wage ME (RUK)')
-    pi_obs_ruk_me       ${\varepsilon_{\pi}^{ME}}$     (long_name='Observed Inflation ME (RUK)')
     
-    i_obs_me       ${\varepsilon_i^{ME}}$     (long_name='Observed Interest Rate ME (UK)')
+    @#if no_of_govs == 2
+        g_obs_me       ${\varepsilon_g^{ME}}$     (long_name='Observed Government Expenditure ME')
+        g_obs_ruk_me       ${\varepsilon_g^{ME, RUK}}$     (long_name='Observed Government Expenditure ME (RUK)')
+    @#else
+        g_obs_uk_me       ${\varepsilon_g^{ME, UK}}$     (long_name='Observed Government Expenditure ME (UK)')
+    @#endif
+
 @#endif
 
 ;
@@ -255,11 +267,9 @@ G_C_SS_f
 % Shared parameters
 pop           ${pop}$    (long_name='Scottish population share in the UK')
 phi_pi          ${\phi_{\pi}}$  (long_name='inflation feedback Taylor Rule')
-phi_y           ${\phi_{y}}$    (long_name='output feedback Taylor Rule')
-rho_i           ${\rho_i}$    (long_name='AR(1) coefficient for Taylor Rule')
 phi_pi_f          ${\phi_{\pi}}$  (long_name='inflation feedback Taylor Rule')
+phi_y           ${\phi_{y}}$    (long_name='output feedback Taylor Rule')
 phi_y_f           ${\phi_{y}}$    (long_name='output feedback Taylor Rule')
-rho_i_f           ${\rho_i}$    (long_name='AR(1) coefficient for Taylor Rule')
 
 ;
 
@@ -298,22 +308,14 @@ pop = 0.08629;
 
 % Monetary Policy
 rho_nu  = 0.5;
-rho_i = 0;
-phi_pi  = 1.5;
-phi_y   = 0.5/4;
-
 rho_nu_f  = rho_nu;
-rho_i_f = rho_i;
+phi_pi  = 1.5;
 phi_pi_f  = phi_pi;
+phi_y   = 0.5/4;
 phi_y_f   = phi_y;
 
-@#if labour_tax == 1
-    G_Y_SS = 0.25682;
-    G_Y_SS_f = 0.18012;
-@#else
-    G_Y_SS = 0;
-    G_Y_SS_f = 0;
-@#endif
+G_Y_SS = 0.25682;
+G_Y_SS_f = 0.18012;
 
 C_Y_SS = 1 - G_Y_SS;
 C_Y_SS_f = 1 - G_Y_SS_f;
@@ -325,22 +327,25 @@ G_C_SS = Y_C_SS - 1;
 G_C_SS_f = Y_C_SS_f - 1;
 
 @#if no_of_govs == 2
-    rho_g = 0.898;
-    rho_g_f = 0.902;
+    /* Estimated values */
+    phi_b = 0.3615596;
+    phi_b_f = 0.4100886;
+    
+    phi_g = 0.1005927;
+    phi_g_f = 0.09843084;
 
-    phi_b = 0.352;
-    phi_g = 0.102;
-    phi_b_f = 0.341;
-    phi_g_f = 0.104;
+    rho_g = 0.9012821;
+    rho_g_f = 0.9037307;
 
     @#if labour_tax == 1
         tau_ss = G_Y_SS;
         tau_ss_f = G_Y_SS_f;
     @#endif
 @#else
-    rho_g_uk = 0.902;
-    phi_b_uk = 0.341;
-    phi_g_uk = 0.104;
+    /* Estimated values */
+    phi_b_uk = 0.4094919;
+    phi_g_uk = 0.1005139;
+    rho_g_uk = 0.90;
     @#if labour_tax == 1
         tau_ss_uk = pop * G_Y_SS + (1 - pop) * G_Y_SS_f;
     @#endif
@@ -555,14 +560,6 @@ y_star - y_star(-1) = rho_y_star * (y_star(-1) - y_star(-2)) + eps_y_star;
     g_uk = rho_g_uk * g_uk(-1) + eps_g_uk;
 @#endif
 
-@#if no_of_govs == 2
-    [name='Debt']
-    g - tr = debt;
-    g_f - tr_f = debt_f;
-@#else
-    [name='Debt']
-    g_uk - tr_uk = debt_uk;
-@#endif
 /* ###### END FISCAL POLICY BLOCK ###### */
 
 /* ###### DEFINITIONS ###### */
@@ -626,16 +623,21 @@ wp_f = w_f - p_f;
 /* ###### ESTIMATION ###### */
 @#if mcmc == 1
     y_obs = y - y(-1) + y_obs_me;
-    c_obs = c - c(-1) + c_obs_me;
-    w_obs = wp - wp(-1) + w_obs_me;
-    g_obs = g - g(-1) + g_obs_me;
-    pi_obs = pi + pi_obs_me;
     y_obs_ruk = y_f - y_f(-1) + y_obs_ruk_me;
+
+    c_obs = c - c(-1) + c_obs_me;
     c_obs_ruk = c_f - c_f(-1) + c_obs_ruk_me;
-    w_obs_ruk = wp_f - wp_f(-1) + w_obs_ruk_me;
-    g_obs_ruk = g_f - g_f(-1) + g_obs_ruk_me;
-    pi_obs_ruk = pi_f + pi_obs_ruk_me;
-    i_obs = interest_uk - interest_uk(-1) + i_obs_me;
+    
+    w_obs = w - w(-1) + w_obs_me;
+    w_obs_ruk = w_f - w_f(-1) + w_obs_ruk_me;
+
+    @#if no_of_govs == 2
+        g_obs = g - g(-1) + g_obs_me;
+        g_obs_ruk = g_f - g_f(-1) + g_obs_ruk_me;
+    @#else
+        g_obs_uk = g_uk - g_uk(-1) + g_obs_uk_me;
+    @#endif
+
 @#endif
 /* ###### ESTIMATION END ###### */
 
@@ -646,17 +648,9 @@ end;
 %---------------------------------------------------------------
 shocks;
 @#if mcmc == 0
-    /* var eps_a = 0.25^2; */
-    /* var eps_a_f = 0.25^2; */
-
-    /* var eps_z = 0.25^2; */
-    /* var eps_z_f = 0.25^2; */
-
-    /* var eps_y_star = 0.25^2; */
-    /* var p_star = 0.25^2; */
     @#if shock_type == 2
         @#if no_of_govs == 2
-            /* var eps_g = 0.25^2; */
+            var eps_g = 0.25^2;
             var eps_g_f = 0.25^2;
         @#else
             var eps_g_uk = 0.25^2;
@@ -678,56 +672,74 @@ shocks;
 
     var eps_y_star = 0.25^2;
     var p_star = 0.25^2;
-    /* var eps_g_uk = 0.25^2; */
-    var eps_g = 0.25^2;
-    var eps_g_f = 0.25^2;
+    
     var eps_nu_uk = 0.25^2;
+    
+    @#if no_of_govs == 2
+        var eps_g = 0.25^2;
+        var eps_g_f = 0.25^2;
+    @#else
+        var eps_g_uk = 0.25^2;
+    @#endif
 @#endif
 
 end;
 
 @#if mcmc == 1
     estimated_params;
-    stderr y_obs_me,inv_gamma_pdf,0.01,2;
-    stderr g_obs_me,inv_gamma_pdf,0.01,2;
     stderr c_obs_me,inv_gamma_pdf,0.01,2;
-    /* stderr w_obs_me,inv_gamma_pdf,0.01,2; */
-    /* stderr pi_obs_me,inv_gamma_pdf,0.01,2; */
-    stderr y_obs_ruk_me,inv_gamma_pdf,0.01,2;
-    stderr g_obs_ruk_me,inv_gamma_pdf,0.01,2;
     stderr c_obs_ruk_me,inv_gamma_pdf,0.01,2;
-    /* stderr w_obs_ruk_me,inv_gamma_pdf,0.01,2; */
-    /* stderr pi_obs_ruk_me,inv_gamma_pdf,0.01,2; */
-    /* stderr i_obs_me,inv_gamma_pdf,0.01,2; */
+    stderr y_obs_me,inv_gamma_pdf,0.01,2;
+    stderr y_obs_ruk_me,inv_gamma_pdf,0.01,2;
+
+    @#if no_of_govs == 2
+        stderr g_obs_me,inv_gamma_pdf,0.01,2;
+        stderr g_obs_ruk_me,inv_gamma_pdf,0.01,2;
+    @#else
+        stderr g_obs_uk_me,inv_gamma_pdf,0.01,2;
+    @#endif
     
     @#if no_of_govs == 2
-        phi_b, beta_pdf, 0.33, 0.165;
+        phi_b, beta_pdf, 0.33, 0.2;
         phi_g, beta_pdf, 0.1, 0.05;
-        phi_b_f, beta_pdf, 0.33, 0.165;
+        rho_g, beta_pdf, 0.9, 0.01;
+        
+        phi_b_f, beta_pdf, 0.33, 0.2;
         phi_g_f, beta_pdf, 0.1, 0.05;
-        rho_g, beta_pdf, 0.9, 0.05;
-        rho_g_f, beta_pdf, 0.9, 0.05;
+        rho_g_f, beta_pdf, 0.9, 0.01;
     @#else
-        phi_b_uk, beta_pdf, 0.30, 0.2;
+        /* Using Scenario 3 estimation results to inform Scenario 4 estimation of parameters */
+        phi_b_uk, beta_pdf, 0.33, 0.2;
         phi_g_uk, beta_pdf, 0.1, 0.05;
-        rho_g_uk, beta_pdf, 0.9, 0.0.5;
+        rho_g_uk, beta_pdf, 0.9, 0.01;
     @#endif
 
     end;
 
-    /* varobs y_obs c_obs w_obs y_obs_ruk c_obs_ruk w_obs_ruk; */
-    varobs y_obs c_obs w_obs y_obs_ruk c_obs_ruk w_obs_ruk g_obs g_obs_ruk;
-    /* varobs y_obs; */
+    @#if no_of_govs == 2
+        varobs y_obs c_obs w_obs y_obs_ruk c_obs_ruk w_obs_ruk g_obs g_obs_ruk;
+    @#else
+        varobs y_obs c_obs w_obs y_obs_ruk c_obs_ruk w_obs_ruk g_obs_uk;
+    @#endif
 
-    /* estimation(datafile=DynareData, mh_replic=20000, mh_nblocks=1, logdata, smoother, diffuse_filter, mh_jscale=1.2592); */
-    estimation(datafile=DynareData, mh_replic=50000, mh_nblocks=1, logdata, smoother, diffuse_filter, mh_jscale=0.6, mh_drop=0.333);
+    /* Notice that mh_jscale should be approx. 0.65 for Scenario 3 and 0.90 for Scenario 4 for acceptance criteria to be c. 23-25% */
+    @#if no_of_govs == 2
+        estimation(datafile=DynareData, mh_replic=300000, mh_nblocks=1, logdata, smoother, diffuse_filter, mh_jscale=0.65, mh_drop=0.333);
+    @#else
+        estimation(datafile=DynareData, mh_replic=300000, mh_nblocks=1, logdata, smoother, diffuse_filter, mh_jscale=0.90, mh_drop=0.333);
+    @#endif
 @#endif
 
 resid(1);
 steady;
 check;
 
-stoch_simul(irf=200, nograph);
+@#if show_irf_graphs == 1
+    stoch_simul(irf=200);
+@#else
+    stoch_simul(irf=200, nograph);
+@#endif
+
 
 @#if enable_irfs_to_csv == 1
     options_.nomoments=0;
@@ -739,10 +751,17 @@ stoch_simul(irf=200, nograph);
     [info, oo_, options_] = stoch_simul(M_, options_, oo_, var_list_);
     m_irfs = fieldnames(oo_.irfs);
     matrix_irfs = strings(0,0)
+
     for ii = 1:numel(m_irfs)
         matrix_irfs(end+1, 1) = m_irfs{ii};
         matrix_irfs(end, 2:201) = [oo_.irfs.(m_irfs{ii})];
     end
+
+    /* The for-loop will produce a matrix of the following form */
+    /* pi_h | 0.0175.. | ... | <IRF at t=200> |*/
+    /* y    | 0.0005.. | ... | <IRF at t=200> |*/
+    /* c    | -0.001.. | ... | <IRF at t=200> |*/
+    /* ... */
 
     @#if shock_type == 1
         dest = './IRFs/monetary_scenario_4.csv'
@@ -761,6 +780,52 @@ stoch_simul(irf=200, nograph);
             @#endif
         @#endif
     @#endif
+    writematrix(matrix_irfs, dest);
+@#endif
+
+@#if enable_sensitivity_analysis == 1
+    options_.nomoments=0;
+    options_.nofunctions=1;
+    options_.nograph=1;
+    options_.verbosity=0;
+    options_.noprint=1;
+    options_.TeX=0;
+    [info, oo_, options_] = stoch_simul(M_, options_, oo_, var_list_);
+
+    phi_b_grid = [0.33 0.50 0.99];
+    phi_g_grid = [0.10 0.50 0.99];
+    rho_g_grid = [0.90 0.60 0.10];
+
+    m_irfs = fieldnames(oo_.irfs);
+    matrix_irfs = strings(0,0)
+
+    for gg = 1:length(rho_g_grid)
+        for bb = 1:length(phi_b_grid)
+            for jj = 1:length(phi_g_grid)
+                set_param_value('phi_b_uk',phi_b_grid(bb))
+                set_param_value('phi_g_uk',phi_g_grid(jj))
+                set_param_value('rho_g_uk',rho_g_grid(gg))
+                [info, oo_, options_] = stoch_simul(M_, options_, oo_, var_list_);
+                for ii = 1:numel(m_irfs)
+                    matrix_irfs(end+1, 1) = m_irfs{ii};
+                    matrix_irfs(end, 2:204) = [phi_b_grid(bb) phi_g_grid(jj) rho_g_grid(gg) oo_.irfs.(m_irfs{ii})];
+                end
+            end
+        end
+    end
+
+    /* The three for-loops will produce a matrix of the following form */
+    /* pi_h | 0.33 | 0.10 | 0.95 | 0.0175.. | ... | <IRF at t=200> |*/
+    /* pi_h | 0.33 | 0.10 | 0.60 | 0.0175.. | ... | <IRF at t=200> |*/
+    /* pi_h | 0.33 | 0.10 | 0.10 | 0.0175.. | ... | <IRF at t=200> |*/
+    /* ... */
+    /* pi_h | 0.50 | 0.10 | 0.95 | 0.0175.. | ... | <IRF at t=200> |*/
+    /* pi_h | 0.99 | 0.10 | 0.95 | 0.0175.. | ... | <IRF at t=200> |*/
+    /* ... */
+    /* pi_h | 0.33 | 0.50 | 0.95 | 0.0175.. | ... | <IRF at t=200> |*/
+    /* pi_h | 0.33 | 0.99 | 0.95 | 0.0175.. | ... | <IRF at t=200> |*/
+    
+    dest = './IRFs_SensitivityAnalysis/sensitivity_analysis.csv'
     writematrix(matrix_irfs, dest);
 @#endif
 
@@ -808,13 +873,13 @@ stoch_simul(irf=200, nograph);
             end
         end
     end
-    writematrix(m_debt, './sim_output/debt.csv');
-    writematrix(m_b, './sim_output/b.csv');
-    writematrix(m_g, './sim_output/g.csv');
-    writematrix(m_tr, './sim_output/tr.csv');
-    writematrix(m_tau, './sim_output/tau.csv');
-    writematrix(m_c, './sim_output/c.csv');
-    writematrix(m_y, './sim_output/y.csv');
-    writematrix(m_wp, './sim_output/wp.csv');
-    writematrix(m_n, './sim_output/n.csv');
+    writematrix(m_debt, './ReactAppData/debt.csv');
+    writematrix(m_b, './ReactAppData/b.csv');
+    writematrix(m_g, './ReactAppData/g.csv');
+    writematrix(m_tr, './ReactAppData/tr.csv');
+    writematrix(m_tau, './ReactAppData/tau.csv');
+    writematrix(m_c, './ReactAppData/c.csv');
+    writematrix(m_y, './ReactAppData/y.csv');
+    writematrix(m_wp, './ReactAppData/wp.csv');
+    writematrix(m_n, './ReactAppData/n.csv');
 @#endif

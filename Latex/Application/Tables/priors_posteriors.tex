@@ -1,20 +1,19 @@
 \begin{table}[H]
     \centering
     \label{tab:priors_and_posteriors}
-    \begin{tabular}{cccccc}
-        \textbf{Variable} & \textbf{Distribution} & \textbf{Prior Variance} & \textbf{Prior Mean} & \textbf{Posterior Mean} \\
-        \hline
-        \multicolumn{5}{l}{\textit{For policy scenarios with multiple governments:}} \\
-        $\phi_b$ & Beta & 0.15 & 0.33 & 0.351\\
-        $\phi_g$ & Beta & 0.05 & 0.10 & 0.102\\
-        $\rho_g$ & Beta & 0.05 & 0.90 & 0.898\\
-        $\phi_b^*$ & Beta & 0.15 & 0.33 & 0.341\\
-        $\phi_g^*$ & Beta & 0.05 & 0.10 & 0.104\\
-        $\rho_g^*$ & Beta & 0.05 & 0.90 & 0.902\\
-        \multicolumn{5}{l}{\textit{For policy scenarios with a single government:}} \\
-        $\phi_b^{UK}$ & Beta & 0.15 & 0.33 & 0.341\\
-        $\phi_g^{UK}$ & Beta & 0.05 & 0.10 & 0.104\\
-        $\rho_g^{UK}$ & Beta & 0.05 & 0.90 & 0.902\\
+    \begin{tabular}{ccccccc}
+        \textbf{Variable} & \textbf{Distribution} & \textbf{Shape} & \textbf{Prior SD} & \textbf{Prior Mean} & \textbf{Post. Mean} \\        \hline
+        \multicolumn{6}{l}{\textit{For policy scenarios with multiple governments:}} \\
+        $\phi_b$ & $\mathcal{B}e(\alpha,\ \beta)$ & \makecell{$\alpha = 1.49$\\ $\beta = 3.03$} & 0.15 & 0.33 & \textbf{0.362}\\
+        $\phi_g$ & $\mathcal{B}e(\alpha,\ \beta)$ & \makecell{$\alpha = 3.50$\\ $\beta = 31.50$} & 0.05 & 0.10 & \textbf{0.101}\\
+        $\rho_g$ & $\mathcal{B}e(\alpha,\ \beta)$ & \makecell{$\alpha = 809.10$\\ $\beta = 89.90$} & 0.01 & 0.90 & \textbf{0.901}\\
+        $\phi_b^*$ & $\mathcal{B}e(\alpha,\ \beta)$ & \makecell{$\alpha = 1.49$\\ $\beta = 3.03$} & 0.15 & 0.33 & \textbf{0.410}\\
+        $\phi_g^*$ & $\mathcal{B}e(\alpha,\ \beta)$ & \makecell{$\alpha = 3.50$\\ $\beta = 31.50$} & 0.05 & 0.10 & \textbf{0.098}\\
+        $\rho_g^*$ & $\mathcal{B}e(\alpha,\ \beta)$ & \makecell{$\alpha = 809.10$\\ $\beta = 89.90$} & 0.01 & 0.90 & \textbf{0.904}\\
+        \multicolumn{6}{l}{\textit{For policy scenarios with a single government:}} \\
+        $\phi_b^{UK}$ & $\mathcal{B}e(\alpha,\ \beta)$ & \makecell{$\alpha = 1.49$\\ $\beta = 3.03$} & 0.15 & 0.33 & \textbf{0.335}\\
+        $\phi_g^{UK}$ & $\mathcal{B}e(\alpha,\ \beta)$ & \makecell{$\alpha = 3.50$\\ $\beta = 31.50$} & 0.05 & 0.10 & \textbf{0.100}\\
+        $\rho_g^{UK}$ & $\mathcal{B}e(\alpha,\ \beta)$ & \makecell{$\alpha = 809.10$\\ $\beta = 89.90$} & 0.01 & 0.90 & \textbf{0.900}\\
     \end{tabular}
     \caption{Model parameter estimation set-up and results.}
 \end{table}
