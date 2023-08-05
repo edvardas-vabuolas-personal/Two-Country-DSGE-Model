@@ -14,11 +14,13 @@ bold <- function(x) {
   paste('{\\textbf{', x, '}}', sep = '')
 }
 
+# 1 and 3, 2 and 4
 results_table <- data.frame()
 for (i in 1:length(vars_of_interest$f_three)) {
   variable <- vars_of_interest$f_three[[i]]
   variable_f <- paste0(variable, '_f')
-  
+  if (variable %in% c('g', 'g_uk'))
+    next
   print(variable)
   
   sum_f_one <-
@@ -30,7 +32,7 @@ for (i in 1:length(vars_of_interest$f_three)) {
   sum_f_three_f <-
     sum(datasets$f_three_f[datasets$f_three_f$Variable == variable_f,]$value)
   
-  results_table[i, c(
+  results_table[nrow(results_table) + 1, c(
     'Variable',
     'Scot., rUK (1)',
     'Diff. (1)',
@@ -54,7 +56,7 @@ print(
     results_table,
     type = "latex",
     align = c('c', 'c', 'c', 'c', 'c', 'c', 'c'),
-    caption = 'Scenarios 1 and 3: Expansionary fiscal policy cumulative 200-period effect. The ``$(\\tau$: 1 $-$ $\\tau$: 0)" column shows the difference in the effect of government spending with and without labour tax, i.e. $(\\left. y_t \\right|_{\\tau:1} - \\left. y_t \\right|_{\\tau:0}) + (\\left. y^*_t \\right|_{\\tau:1} - \\left. y^*_t \\right|_{\\tau:0})$.',
+    caption = 'Scenarios 1 and 3: Expansionary fiscal policy cumulative 200-period effect. The ``$(\\tau$: 1 $-$ $\\tau$: 0)" column shows the difference in the effect of government spending with and without labour tax across both countries, i.e. $(\\left. y_t \\right|_{\\tau:1} - \\left. y_t \\right|_{\\tau:0}) + (\\left. y^*_t \\right|_{\\tau:1} - \\left. y^*_t \\right|_{\\tau:0})$.',
     label = 'table:responses_one_three'
   ),
   file = filepath,
@@ -68,7 +70,8 @@ results_table <- data.frame()
 for (i in 1:length(vars_of_interest$f_four)) {
   variable <- vars_of_interest$f_four[[i]]
   variable_f <- paste0(variable, '_f')
-  
+  if (variable %in% c('g', 'g_uk'))
+    next
   print(variable)
   
   sum_f_two <-
@@ -81,7 +84,7 @@ for (i in 1:length(vars_of_interest$f_four)) {
     sum(datasets$f_four[datasets$f_four$Variable == variable_f,]$value)
   
   if (grepl('_uk', variable, fixed = TRUE)) {
-    results_table[i, c(
+    results_table[nrow(results_table) + 1, c(
       'Variable',
       'Scot., rUK (2)',
       'Diff. (2)',
@@ -98,7 +101,7 @@ for (i in 1:length(vars_of_interest$f_four)) {
         round(sum_f_four - sum_f_two, 3)
       )
   } else {
-    results_table[i, c(
+    results_table[nrow(results_table) + 1, c(
       'Variable',
       'Scot., rUK (2)',
       'Diff. (2)',
@@ -123,8 +126,168 @@ print(
     results_table,
     type = "latex",
     align = c('c', 'c', 'c', 'c', 'c', 'c', 'c'),
-    caption = 'Scenarios 2 and 4: Expansionary fiscal policy cumulative 200-period effect. A single value in ``Scot., rUK column" indicate a UK-wide variable. The ``$(\\tau$: 1 $-$ $\\tau$: 0)" column shows the difference in the effect of government spending with and without labour tax, i.e. $(\\left. y_t \\right|_{\\tau:1} - \\left. y_t \\right|_{\\tau:0}) + (\\left. y^*_t \\right|_{\\tau:1} - \\left. y^*_t \\right|_{\\tau:0})$.',
+    caption = 'Scenarios 2 and 4: Expansionary fiscal policy cumulative 200-period effect. A single value in ``Scot., rUK column" indicate a UK-wide variable. The ``$(\\tau$: 1 $-$ $\\tau$: 0)" column shows the difference in the effect of government spending with and without labour tax across both countries, i.e. $(\\left. y_t \\right|_{\\tau:1} - \\left. y_t \\right|_{\\tau:0}) + (\\left. y^*_t \\right|_{\\tau:1} - \\left. y^*_t \\right|_{\\tau:0})$.',
     label = 'table:responses_two_four'
+  ),
+  file = filepath,
+  sanitize.text.function = identity,
+  include.rownames = FALSE,
+  table.placement = "H",
+  sanitize.colnames.function = bold
+)
+
+
+# 1 and 2, 3 and 4
+results_table <- data.frame()
+for (i in 1:length(vars_of_interest$f_one)) {
+  variable <- vars_of_interest$f_one[[i]]
+  variable_f <- paste0(variable, '_f')
+  if (variable %in% c('g', 'g_uk', 's'))
+    next
+  print(variable)
+  
+  sum_f_one <-
+    sum(datasets$f_one[datasets$f_one$Variable == variable,]$value)
+  sum_f_one_f <-
+    sum(datasets$f_one_f[datasets$f_one_f$Variable == variable_f,]$value)
+  
+  if (variable %in% c('i', 'b', 'tr')) {
+    variable <- paste0(variable, '_uk')
+    sum_f_two <-
+      sum(datasets$f_two[datasets$f_two$Variable == variable,]$value)
+  } else {
+    sum_f_two <-
+      sum(datasets$f_two[datasets$f_two$Variable == variable,]$value)
+    sum_f_two_f <-
+      sum(datasets$f_two[datasets$f_two$Variable == variable_f,]$value)
+  }
+  
+  if (grepl('_uk', variable, fixed = TRUE)) {
+    variable <- vars_of_interest$f_one[[i]]
+    results_table[nrow(results_table) + 1, c(
+      'Variable',
+      'Scot., rUK (1)',
+      'Diff. (1)',
+      'Scot., rUK (2)',
+      'Diff. (2)',
+      '($G$: 1 $-$ $G$: 2)'
+    )] <-
+      c(
+        paste0(latex_names[[variable]], ', ', latex_names[[variable_f]]),
+        paste0(round(sum_f_one, 3), ', ', round(sum_f_one_f, 3)),
+        round(sum_f_one - sum_f_one_f, 3),
+        round(sum_f_two, 3),
+        0,
+        round((sum_f_two - sum_f_one) + (sum_f_two - sum_f_one_f), 3)
+      )
+  } else {
+    variable <- vars_of_interest$f_one[[i]]
+    results_table[nrow(results_table) + 1, c(
+      'Variable',
+      'Scot., rUK (1)',
+      'Diff. (1)',
+      'Scot., rUK (2)',
+      'Diff. (2)',
+      '($G$: 1 $-$ $G$: 2)'
+    )] <-
+      c(
+        paste0(latex_names[[variable]], ', ', latex_names[[variable_f]]),
+        paste0(round(sum_f_one, 3), ', ', round(sum_f_one_f, 3)),
+        round(sum_f_one - sum_f_one_f, 3),
+        paste0(round(sum_f_two, 3), ', ', round(sum_f_two_f, 3)),
+        round(sum_f_two - sum_f_two_f, 3),
+        round((sum_f_two - sum_f_one) + (sum_f_two_f - sum_f_one_f), 3)
+      )
+  }
+}
+filepath <-
+  '~/Documents/University/Dissertation/Latex/Results/Tables/results_one_two.tex'
+print(
+  xtable(
+    results_table,
+    type = "latex",
+    align = c('c', 'c', 'c', 'c', 'c', 'c', 'c'),
+    caption = 'Scenarios 1 and 2: Expansionary fiscal policy cumulative 200-period effect. The ``$(G$: 1 $-$ $G$: 2)" column shows the difference in the effect of government spending in and out of a fiscal union across both countries, i.e. $(\\left. y_t \\right|_{G:1} - \\left. y_t \\right|_{G:2}) + (\\left. y^*_t \\right|_{G:1} - \\left. y^*_t \\right|_{G:2})$.',
+    label = 'table:responses_one_two'
+  ),
+  file = filepath,
+  sanitize.text.function = identity,
+  include.rownames = FALSE,
+  table.placement = "H",
+  sanitize.colnames.function = bold
+)
+
+results_table <- data.frame()
+for (i in 1:length(vars_of_interest$f_three)) {
+  variable <- vars_of_interest$f_three[[i]]
+  variable_f <- paste0(variable, '_f')
+  if (variable %in% c('g', 'g_uk'))
+    next
+  print(variable)
+  
+  sum_f_three <-
+    sum(datasets$f_three[datasets$f_three$Variable == variable,]$value)
+  sum_f_three_f <-
+    sum(datasets$f_three_f[datasets$f_three_f$Variable == variable_f,]$value)
+  
+  if (variable %in% c('i', 'b', 'tr', 'tau')) {
+    variable <- paste0(variable, '_uk')
+    sum_f_four <-
+      sum(datasets$f_four[datasets$f_four$Variable == variable,]$value)
+  } else {
+    sum_f_four <-
+      sum(datasets$f_four[datasets$f_four$Variable == variable,]$value)
+    sum_f_four_f <-
+      sum(datasets$f_four[datasets$f_four$Variable == variable_f,]$value)
+  }
+  
+  if (grepl('_uk', variable, fixed = TRUE)) {
+    variable <- vars_of_interest$f_three[[i]]
+    results_table[nrow(results_table) + 1, c(
+      'Variable',
+      'Scot., rUK (3)',
+      'Diff. (3)',
+      'Scot., rUK (4)',
+      'Diff. (4)',
+      '($G$: 1 $-$ $G$: 2)'
+    )] <-
+      c(
+        paste0(latex_names[[variable]], ', ', latex_names[[variable_f]]),
+        paste0(round(sum_f_three, 3), ', ', round(sum_f_three_f, 3)),
+        round(sum_f_three - sum_f_three_f, 3),
+        round(sum_f_four, 3),
+        0,
+        round((sum_f_four - sum_f_three) + (sum_f_four - sum_f_three_f), 3)
+      )
+  } else {
+    variable <- vars_of_interest$f_three[[i]]
+    results_table[nrow(results_table) + 1, c(
+      'Variable',
+      'Scot., rUK (3)',
+      'Diff. (3)',
+      'Scot., rUK (4)',
+      'Diff. (4)',
+      '($G$: 1 $-$ $G$: 2)'
+    )] <-
+      c(
+        paste0(latex_names[[variable]], ', ', latex_names[[variable_f]]),
+        paste0(round(sum_f_three, 3), ', ', round(sum_f_three_f, 3)),
+        round(sum_f_three - sum_f_three_f, 3),
+        paste0(round(sum_f_four, 3), ', ', round(sum_f_four_f, 3)),
+        round(sum_f_four - sum_f_four_f, 3),
+        round((sum_f_four - sum_f_three) + (sum_f_four_f - sum_f_three_f), 3)
+      )
+  }
+}
+filepath <-
+  '~/Documents/University/Dissertation/Latex/Results/Tables/results_three_four.tex'
+print(
+  xtable(
+    results_table,
+    type = "latex",
+    align = c('c', 'c', 'c', 'c', 'c', 'c', 'c'),
+    caption = 'Scenarios 3 and 4: Expansionary fiscal policy cumulative 200-period effect. The ``$(G$: 1 $-$ $G$: 2)" column shows the difference in the effect of government spending in and out of a fiscal union across both countries, i.e. $(\\left. y_t \\right|_{G:1} - \\left. y_t \\right|_{G:2}) + (\\left. y^*_t \\right|_{G:1} - \\left. y^*_t \\right|_{G:2})$.',
+    label = 'table:responses_three_four'
   ),
   file = filepath,
   sanitize.text.function = identity,

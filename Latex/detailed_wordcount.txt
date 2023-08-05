@@ -1,13 +1,13 @@
 
-Sum count: 9220
-Words in text: 8476
+Sum count: 9896
+Words in text: 8914
 Words in headers: 14
-Words outside text (captions, etc.): 453
+Words outside text (captions, etc.): 667
 Number of headers: 11
-Number of floats/tables/figures: 22
-Number of math inlines: 217
+Number of floats/tables/figures: 26
+Number of math inlines: 241
 Number of math displayed: 60
-Files: 29
+Files: 33
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
   1+8+0 (6/0/0/0) File: main.tex
@@ -15,7 +15,7 @@ Subcounts:
   1328+2+105 (1/0/0/0) Included file: ././Literature Review/literature_review.tex
   503+0+89 (0/0/10/0) Included file: ././Theoretical DSGE model/model.tex
   800+0+54 (0/0/8/0) Included file: ././Application/application.tex
-  707+0+0 (0/0/7/0) Included file: ././Results/results.tex
+  1145+0+71 (0/0/15/0) Included file: ././Results/results.tex
   248+0+0 (0/0/0/0) Included file: ././Limitations/limitations.tex
   354+0+0 (0/0/1/0) Included file: ././Conclusion/conclusion.tex
   0+0+11 (0/1/0/0) Included file: ././Graphs/timeline.tex
@@ -33,6 +33,10 @@ Subcounts:
   0+0+10 (0/1/0/0) Included file: ././Graphs/IRFs/f_three.tex
   0+0+10 (0/1/0/0) Included file: ././Graphs/IRFs/f_three_f.tex
   0+0+12 (0/1/0/0) Included file: ././Graphs/IRFs/f_four.tex
+  0+0+32 (0/1/4/0) Included file: ././Results/Tables/results_one_three.tex
+  0+0+43 (0/1/4/0) Included file: ././Results/Tables/results_two_four.tex
+  0+0+34 (0/1/4/0) Included file: ././Results/Tables/results_one_two.tex
+  0+0+34 (0/1/4/0) Included file: ././Results/Tables/results_three_four.tex
   0+0+3 (0/1/2/0) Included file: ././Graphs/sensitivity_analysis_phi_b.tex
   0+0+3 (0/1/2/0) Included file: ././Graphs/sensitivity_analysis_phi_g.tex
   0+0+3 (0/1/2/0) Included file: ././Graphs/sensitivity_analysis_rho_g.tex
