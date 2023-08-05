@@ -120,7 +120,7 @@ vars_of_interest$f_four <-
        'tau_uk',
        'pi_h',
        'b_uk',
-       'tr',
+       'tr_uk',
        'y',
        'c',
        'n',

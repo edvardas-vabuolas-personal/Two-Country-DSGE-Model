@@ -647,6 +647,9 @@ end;
 %  define shock variances
 %---------------------------------------------------------------
 shocks;
+% Note: Variance of 0.25^2 means standard deviation of 0.25
+% Which is 25 basis points per quarter and 100 basis points per year
+% i.e. 1 percentage point annualised
 @#if mcmc == 0
     @#if shock_type == 2
         @#if no_of_govs == 2
