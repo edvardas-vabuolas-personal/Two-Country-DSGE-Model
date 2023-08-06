@@ -1,12 +1,12 @@
 \contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
 \contentsline {section}{\numberline {2}Literature Review}{4}{section.2}%
-\contentsline {section}{\numberline {3}Theoretical DSGE model}{9}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Households}{11}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Government}{22}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Firms}{25}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Equilibrium}{30}{subsection.3.4}%
-\contentsline {section}{\numberline {4}Application}{38}{section.4}%
-\contentsline {section}{\numberline {5}Results}{45}{section.5}%
+\contentsline {section}{\numberline {3}Theoretical DSGE model}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Households}{10}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Government}{21}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Firms}{24}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Equilibrium}{29}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Application}{37}{section.4}%
+\contentsline {section}{\numberline {5}Results}{44}{section.5}%
 \contentsline {section}{\numberline {6}Limitations}{61}{section.6}%
 \contentsline {section}{\numberline {7}Conclusion}{62}{section.7}%
 \contentsline {section}{\numberline {8}Appendix}{66}{section.8}%
