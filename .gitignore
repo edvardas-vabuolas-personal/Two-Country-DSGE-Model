@@ -365,3 +365,5 @@ dissertation/
 *.blg
 *.fdb_latexmk
 main.pdf
+.RData
+.Rhistory
