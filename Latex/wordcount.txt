@@ -42,8 +42,8 @@ Number of math displayed: 0
 
 Included file: ././Literature Review/literature_review.tex
 Encoding: ascii
-Sum count: 1435
-Words in text: 1328
+Sum count: 1276
+Words in text: 1169
 Words in headers: 2
 Words outside text (captions, etc.): 105
 Number of headers: 1
@@ -54,12 +54,12 @@ Number of math displayed: 0
 Included file: ././Theoretical DSGE model/model.tex
 Encoding: ascii
 Sum count: 602
-Words in text: 503
+Words in text: 505
 Words in headers: 0
-Words outside text (captions, etc.): 89
+Words outside text (captions, etc.): 86
 Number of headers: 0
 Number of floats/tables/figures: 0
-Number of math inlines: 10
+Number of math inlines: 11
 Number of math displayed: 0
 
 Included file: ././Application/application.tex
@@ -75,13 +75,13 @@ Number of math displayed: 0
 
 Included file: ././Results/results.tex
 Encoding: ascii
-Sum count: 1231
-Words in text: 1145
+Sum count: 1310
+Words in text: 1225
 Words in headers: 0
-Words outside text (captions, etc.): 71
+Words outside text (captions, etc.): 67
 Number of headers: 0
 Number of floats/tables/figures: 0
-Number of math inlines: 15
+Number of math inlines: 18
 Number of math displayed: 0
 
 Included file: ././Limitations/limitations.tex
@@ -218,10 +218,10 @@ Number of math displayed: 0
 
 Included file: ././Graphs/IRFs/f_one.tex
 Encoding: ascii
-Sum count: 10
+Sum count: 14
 Words in text: 0
 Words in headers: 0
-Words outside text (captions, etc.): 10
+Words outside text (captions, etc.): 14
 Number of headers: 0
 Number of floats/tables/figures: 1
 Number of math inlines: 0
@@ -229,10 +229,10 @@ Number of math displayed: 0
 
 Included file: ././Graphs/IRFs/f_one_f.tex
 Encoding: ascii
-Sum count: 10
+Sum count: 14
 Words in text: 0
 Words in headers: 0
-Words outside text (captions, etc.): 10
+Words outside text (captions, etc.): 14
 Number of headers: 0
 Number of floats/tables/figures: 1
 Number of math inlines: 0
@@ -240,10 +240,10 @@ Number of math displayed: 0
 
 Included file: ././Graphs/IRFs/f_two.tex
 Encoding: ascii
-Sum count: 12
+Sum count: 16
 Words in text: 0
 Words in headers: 0
-Words outside text (captions, etc.): 12
+Words outside text (captions, etc.): 16
 Number of headers: 0
 Number of floats/tables/figures: 1
 Number of math inlines: 0
@@ -251,10 +251,10 @@ Number of math displayed: 0
 
 Included file: ././Graphs/IRFs/f_three.tex
 Encoding: ascii
-Sum count: 10
+Sum count: 14
 Words in text: 0
 Words in headers: 0
-Words outside text (captions, etc.): 10
+Words outside text (captions, etc.): 14
 Number of headers: 0
 Number of floats/tables/figures: 1
 Number of math inlines: 0
@@ -262,10 +262,10 @@ Number of math displayed: 0
 
 Included file: ././Graphs/IRFs/f_three_f.tex
 Encoding: ascii
-Sum count: 10
+Sum count: 14
 Words in text: 0
 Words in headers: 0
-Words outside text (captions, etc.): 10
+Words outside text (captions, etc.): 14
 Number of headers: 0
 Number of floats/tables/figures: 1
 Number of math inlines: 0
@@ -273,10 +273,10 @@ Number of math displayed: 0
 
 Included file: ././Graphs/IRFs/f_four.tex
 Encoding: ascii
-Sum count: 12
+Sum count: 16
 Words in text: 0
 Words in headers: 0
-Words outside text (captions, etc.): 12
+Words outside text (captions, etc.): 16
 Number of headers: 0
 Number of floats/tables/figures: 1
 Number of math inlines: 0
@@ -372,23 +372,23 @@ Number of math displayed: 0
 
 Sum of files: main.tex
 File(s) total: main.tex
-Sum count: 9896
-Words in text: 8914
+Sum count: 9840
+Words in text: 8837
 Words in headers: 14
-Words outside text (captions, etc.): 667
+Words outside text (captions, etc.): 684
 Number of headers: 11
 Number of floats/tables/figures: 26
-Number of math inlines: 241
+Number of math inlines: 245
 Number of math displayed: 60
 Files: 33
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
   1+8+0 (6/0/0/0) File: main.tex
   594+0+0 (0/0/0/0) Included file: ././Introduction/introduction.tex
-  1328+2+105 (1/0/0/0) Included file: ././Literature Review/literature_review.tex
-  503+0+89 (0/0/10/0) Included file: ././Theoretical DSGE model/model.tex
+  1169+2+105 (1/0/0/0) Included file: ././Literature Review/literature_review.tex
+  505+0+86 (0/0/11/0) Included file: ././Theoretical DSGE model/model.tex
   800+0+54 (0/0/8/0) Included file: ././Application/application.tex
-  1145+0+71 (0/0/15/0) Included file: ././Results/results.tex
+  1225+0+67 (0/0/18/0) Included file: ././Results/results.tex
   248+0+0 (0/0/0/0) Included file: ././Limitations/limitations.tex
   354+0+0 (0/0/1/0) Included file: ././Conclusion/conclusion.tex
   0+0+11 (0/1/0/0) Included file: ././Graphs/timeline.tex
@@ -400,12 +400,12 @@ Subcounts:
   0+0+6 (0/1/0/0) Included file: ././Application/Tables/priors_posteriors.tex
   0+0+5 (0/1/0/0) Included file: ././Application/Tables/sources.tex
   0+0+12 (0/1/0/0) Included file: ././Graphs/IRFs/m_four.tex
-  0+0+10 (0/1/0/0) Included file: ././Graphs/IRFs/f_one.tex
-  0+0+10 (0/1/0/0) Included file: ././Graphs/IRFs/f_one_f.tex
-  0+0+12 (0/1/0/0) Included file: ././Graphs/IRFs/f_two.tex
-  0+0+10 (0/1/0/0) Included file: ././Graphs/IRFs/f_three.tex
-  0+0+10 (0/1/0/0) Included file: ././Graphs/IRFs/f_three_f.tex
-  0+0+12 (0/1/0/0) Included file: ././Graphs/IRFs/f_four.tex
+  0+0+14 (0/1/0/0) Included file: ././Graphs/IRFs/f_one.tex
+  0+0+14 (0/1/0/0) Included file: ././Graphs/IRFs/f_one_f.tex
+  0+0+16 (0/1/0/0) Included file: ././Graphs/IRFs/f_two.tex
+  0+0+14 (0/1/0/0) Included file: ././Graphs/IRFs/f_three.tex
+  0+0+14 (0/1/0/0) Included file: ././Graphs/IRFs/f_three_f.tex
+  0+0+16 (0/1/0/0) Included file: ././Graphs/IRFs/f_four.tex
   0+0+32 (0/1/4/0) Included file: ././Results/Tables/results_one_three.tex
   0+0+43 (0/1/4/0) Included file: ././Results/Tables/results_two_four.tex
   0+0+34 (0/1/4/0) Included file: ././Results/Tables/results_one_two.tex

@@ -1,30 +1,30 @@
 \begin{figure}[H] \centering 
     
 \begin{tikzpicture}[
-    epoch/.style={rectangle, draw, text width=3.5cm, align=center, minimum height=2cm},
+    epoch/.style={rectangle, draw, text width=4cm, align=center, minimum height=2cm},
     arrow/.style={->,>=stealth,thick},
-    title/.style={align=center}
+    title/.style={align=center,font=\bfseries}
 ]
 
-% % Epochs
-% \node[epoch] (exploration) at (0,0) {Monetary Theory\\Business Cycles};
-% \node[epoch] (integrated) [right=1.5cm of exploration] {IS-LM\\RBC\\New Keynesians};
-% \node[epoch] (exploration2) [right=1.5cm of integrated] {NK DSGE};
-
-% Titles
-\node[title] (title1) {Pre-1940\\Exploration};
-\node[title] (title2) [right=1.5cm of title1.east] {1940-1980\\Consolidation};
-\node[title] (title3) [right=1.5cm of title2.east] {Post-1980\\Imperfections};
-
-% Background boxes
-\node[fit=(title1), draw, dashed] (box1) {};
-\node[fit=(title2), draw, dashed] (box2) {};
-\node[fit=(title3), draw, dashed] (box3) {};
+% Epochs
+\node[epoch] (exploration) at (0,0) {Classical\\Keynesian};
+\node[epoch] (integrated) [right=1cm of exploration] {IS-LM\\RBC (DSGE)\\New Keynesian};
+\node[epoch] (exploration2) [right=1cm of integrated] {NK DSGE};
 
 % Arrows
-\draw[arrow] (box1) -- node[above] {} (box2);
-\draw[arrow] (box2) -- node[above] {} (box3);
+\draw[arrow] (exploration) -- node[above] {} (integrated);
+\draw[arrow] (integrated) -- node[above] {} (exploration2);
+
+% Titles
+\node[title] (title1) [above=0.5cm of exploration.north] {Pre-1940\\Exploration};
+\node[title] (title2) [above=0.6cm of integrated.north] {1940-1980\\Consolidation};
+\node[title] (title3) [above=0.5cm of exploration2.north] {Post-1980\\Imperfections};
+
+% Background boxes
+\node[fit=(exploration) (title1), draw, dashed] {};
+\node[fit=(integrated) (title2), draw, dashed] {};
+\node[fit=(exploration2) (title3), draw, dashed] {};
 
 \end{tikzpicture}
-\caption{Timeline of macroeconomic research, according to Blanchard (2000). Authors own illustration.}
+\caption{Timeline of macroeconomic research, according to \parencites{blanchard_2000_what}{snowdon_1994_a}. Authors own illustration.}
 \end{figure}
