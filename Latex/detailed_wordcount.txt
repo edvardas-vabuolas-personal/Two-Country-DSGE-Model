@@ -1,30 +1,31 @@
 
-Sum count: 10349
-Words in text: 9284
-Words in headers: 29
-Words outside text (captions, etc.): 731
-Number of headers: 15
-Number of floats/tables/figures: 26
-Number of math inlines: 245
-Number of math displayed: 60
+Sum count: 10437
+Words in text: 9364
+Words in headers: 38
+Words outside text (captions, etc.): 727
+Number of headers: 14
+Number of floats/tables/figures: 27
+Number of math inlines: 249
+Number of math displayed: 59
 Files: 33
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
-  1+8+0 (6/0/0/0) File: main.tex
-  594+0+0 (0/0/0/0) Included file: ././Introduction/introduction.tex
-  1616+17+145 (5/0/0/0) Included file: ././Literature Review/literature_review.tex
-  505+0+86 (0/0/11/0) Included file: ././Theoretical DSGE model/model.tex
-  800+0+54 (0/0/8/0) Included file: ././Application/application.tex
+  1+17+0 (6/0/0/0) File: main.tex
+  644+0+0 (0/0/0/0) Included file: ././Introduction/introduction.tex
+  1499+17+118 (4/0/0/0) Included file: ././Literature Review/literature_review.tex
+  513+0+86 (0/0/11/0) Included file: ././Theoretical DSGE model/model.tex
+  797+0+54 (0/0/5/0) Included file: ././Application/application.tex
   1225+0+67 (0/0/18/0) Included file: ././Results/results.tex
   248+0+0 (0/0/0/0) Included file: ././Limitations/limitations.tex
-  354+0+0 (0/0/1/0) Included file: ././Conclusion/conclusion.tex
+  468+0+0 (0/0/1/0) Included file: ././Conclusion/conclusion.tex
   0+0+18 (0/1/0/0) Included file: ././Graphs/timeline.tex
-  1697+1+0 (1/1/83/27) Included file: ././Theoretical DSGE model/households.tex
-  481+1+43 (1/5/21/1) Included file: ././Theoretical DSGE model/government.tex
-  879+1+21 (1/0/45/13) Included file: ././Theoretical DSGE model/firms.tex
-  884+1+7 (1/1/35/19) Included file: ././Theoretical DSGE model/equilibrium.tex
+  1680+1+13 (1/1/85/26) Included file: ././Theoretical DSGE model/households.tex
+  487+1+43 (1/5/26/1) Included file: ././Theoretical DSGE model/government.tex
+  875+1+21 (1/0/45/13) Included file: ././Theoretical DSGE model/firms.tex
+  927+1+7 (1/1/35/19) Included file: ././Theoretical DSGE model/equilibrium.tex
   0+0+11 (0/1/0/0) Included file: ././Application/Tables/model_parameters.tex
   0+0+6 (0/1/0/0) Included file: ././Application/Tables/priors_posteriors.tex
+  0+0+10 (0/1/0/0) Included file: ././Graphs/MCMC_SCOT.tex
   0+0+5 (0/1/0/0) Included file: ././Application/Tables/sources.tex
   0+0+12 (0/1/0/0) Included file: ././Graphs/IRFs/m_four.tex
   0+0+14 (0/1/0/0) Included file: ././Graphs/IRFs/f_one.tex

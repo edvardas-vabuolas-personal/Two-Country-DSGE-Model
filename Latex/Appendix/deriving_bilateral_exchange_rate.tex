@@ -2,7 +2,7 @@
 \subsubsection{Derivation of bilateral exchange rate}
 International Risk-Sharing Equation for country \textit{i} can be rewritten as:
 \begin{align}
-    \frac{V_{t,t+1}}{\mathcal{E}^i_tP^i_t}({C^{i}_{t}})^{-\sigma} = \xi_{t,t+1} \beta ({C^{i}_{t+1}})^{-\sigma} \frac{1}{\mathcal{E}^i_{t+1}P^{i}_{t+1}}
+    \frac{V_{t,t+1}}{\mathcal{E}^i_tP^i_t}({C^{i}_{t}})^{-\sigma} = \xi_{t,t+1} \beta ({C^{i}_{t+1}})^{-\sigma} \frac{1}{\mathcal{E}^i_{t+1}P^{i}_{t+1}} \label{eq:appendix_bilateral_start}
 \end{align}
 Given that:
 \begin{equation}
@@ -14,27 +14,28 @@ Given that:
 \end{align}
 Recall that:
 \begin{align}
-    \frac{\partial L}{\partial C_t} &= \beta^t C_t^{-\sigma} P_{t}^{-1} = \lambda_t \nonumber\\
-    \frac{\partial L}{\partial D_{t+1}} & = -\lambda_t \E_t[Q_{t,t+1}] = -\E_t[\lambda_{t+1}] \nonumber\\
+    \frac{\partial L}{\partial C_t} &= \beta^t C_t^{-\sigma} P_{t}^{-1} = \lambda_t \\
+    \frac{\partial L}{\partial D_{t+1}} & = -\lambda_t \E_t[Q_{t,t+1}] = -\E_t[\lambda_{t+1}] \\
     &=-\beta^t C_t^{-\sigma} P_{t}^{-1} \E_t[Q_{t,t+1}] = -\E_t[\lambda_{t+1}] \label{eq:derivative_c_t_home_country}
 \end{align}
 Which is symmetrical for country \textit{i}:
 \begin{align}
-    \frac{\partial L^i}{\partial C_t^i} &= \beta^t {(C^i_t)}^{-\sigma} (\mathcal{E}_{i,t}P^i_{t})^{-1} = \lambda^i_t \nonumber\\
-    \frac{\partial L^i}{\partial D_{t+1}^i} & = -\lambda^i_t \E_t[Q_{t,t+1}] = -\E_t[\lambda^i_{t+1}] \nonumber\\
+    \frac{\partial L^i}{\partial C_t^i} &= \beta^t {(C^i_t)}^{-\sigma} (\mathcal{E}_{i,t}P^i_{t})^{-1} = \lambda^i_t \\
+    \frac{\partial L^i}{\partial D_{t+1}^i} & = -\lambda^i_t \E_t[Q_{t,t+1}] = -\E_t[\lambda^i_{t+1}] \\
     &=-\beta^t {(C^i_t)}^{-\sigma} (\mathcal{E}_{i,t}P^i_{t})^{-1} \E_t[Q_{t,t+1}] = -\E_t[\lambda^i_{t+1}] \label{eq:derivative_c_t_i_country}
 \end{align}
-\begin{align*}
+\begin{align}
     \frac{\text{(\ref{eq:derivative_c_t_home_country})}}{\text{(\ref{eq:derivative_c_t_i_country})}}: \frac{-\beta^t C_t^{-\sigma} P_{t}^{-1} \E_t[Q_{t,t+1}]}{-\beta^t {(C^i_t)}^{-\sigma} (\mathcal{E}_{i,t}P^i_{t})^{-1} \E_t[Q_{t,t+1}]} &= \frac{-\E_t[\lambda_{t+1}]}{-\E_t[\lambda^i_{t+1}]}
-\end{align*} 
-\begin{align*}   
+\end{align} 
+\begin{align}   
     C_t^{-\sigma}{(C^i_t)}^{\sigma} \frac{\mathcal{E}_{i,t}P^i_{t}}{P_t} &= 1 \\
     C_t^{-\sigma}{(C^i_t)}^{\sigma} \mathcal{Q}_{i,t} &= 1 \\
     C_t^{-\sigma}{(C^i_t)}^{\sigma}  &= \frac{1}{\mathcal{Q}_{i,t}} \\
     C_t^{-\sigma}  &= \frac{1}{\mathcal{Q}_{i,t}}{(C^i_t)}^{-\sigma} \\
     C_t^{\sigma}  &= \mathcal{Q}_{i,t}{(C^i_t)}^{\sigma}
-\end{align*}
+\end{align}
 \begin{equation}
     \Rightarrow C_t  = {C^i_t}\mathcal{Q}_{i,t}^{\frac{1}{\sigma}}
+    \label{eq:appendix_bilateral_end}
 \end{equation}
 \newpage

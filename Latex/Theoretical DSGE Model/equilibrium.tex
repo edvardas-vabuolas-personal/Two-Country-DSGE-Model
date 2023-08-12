@@ -6,18 +6,18 @@ The goods market for a specific good $j$ clears when domestic firms produce just
     & =\upsilon\left( \frac{P_{H,t}}{\mathcal{E}_t \xbar{P}_{H,t}}\right)^{-\eta}Y^\star_t \label{eq:aggregate_exports}\\
     & = \upsilon \mathcal{S}_t^{\eta}Y^\star_t \label{eq:aggregate_exports_terms_of_trade}
 \end{align} 
-where (\ref{eq:index_of_aggregate_exports}) is the index of aggregate exports, (\ref{eq:aggregate_exports}) determines aggregate exports as a function of world output (the relationship is assumed to be given), and (\ref{eq:aggregate_exports_terms_of_trade}) is derived by substituting definition of the effective terms of trade. Differently than \textcite{jordigal_2015_monetary}, we introduce index of government purchasing:
+where (\ref{eq:index_of_aggregate_exports}) is the index of aggregate exports, (\ref{eq:aggregate_exports}) determines aggregate exports as a function of world output (the relationship is assumed to be given), and (\ref{eq:aggregate_exports_terms_of_trade}) is derived by substituting definition of the effective terms of trade. Differently than \citereset\textcite{jordigal_2015_monetary}, we introduce index of government purchasing:
 \begin{equation}
     G_t = \left( \int_{0}^{1} {G_t(j)}^{\frac{\epsilon-1}{\epsilon}} \, dj\right)^{\frac{\epsilon}{\epsilon-1}}
 \end{equation}
-so that the government demand of any good $j$ is defined as (derivation provided by Appendix A.xx-A.xx):
+so that the government demand of any good $j$ is defined as (derivation provided by \textcolor{red}{Appendix A.xx-A.xx}):
 \begin{equation}
     G_t(j) = \left( \frac{P_{H,t}(j)}{P_{H,t}} \right)^{-\epsilon} G_t
 \end{equation}
 Therefore, total demand for good $j$ is:
 \begin{align}
     Y_t(j) &= C_t(j) + X_t(j) + G_t(j) \label{eq:demand_for_one_good}\\
-    \vdots & \quad \text{(see Appendix A.xx-A.xx)} \\
+    \vdots & \quad \text{\textcolor{red}{(see Appendix A.xx-A.xx)}} \\
     Y_t(j) &= \left(\frac{P_{H,t}(j)}{P_{H,t}}^{-\varepsilon}\right) \left[ (1-\upsilon)\left(\frac{P_{H,t}}{P_t}\right)^{-\eta}C_t + \upsilon \mathcal{S}^\eta Y^\star_t + G_t\right]
 \end{align}
 which can be plugged in to definition of aggregate output $Y_t = \left( \int_{0}^{1} Y_t(j)^{\frac{\varepsilon-1}{\varepsilon}}\right)^{\frac{\varepsilon}{\varepsilon-1}}$ to yield:
@@ -40,7 +40,8 @@ Note that Equation (\ref{eq:demand_for_one_good}) and all subsequent derivations
             $Y^*_t(j) = C^*_t(j) + X^*_t(j) + (1-\varpi) G^{UK}_t(j)$
         }   
     \end{tabular}
-    \caption{Demand for good $j$ for different policy scenarios}
+    \vspace{0.5cm}
+    \caption{Demand for good $j$ under different policy scenarios}
 \end{table}
 That is, when there is a single government (Westminister), then we assume that Scotland's contribution towards covering government spending is equal to the population share in the UK. Equation (\ref{eq:demand_for_one_good}) can be loglinearised around a symmetric steady state to yield:
 \begin{align}
@@ -55,12 +56,12 @@ where $C_Y=\frac{C}{Y}$ and $G_Y = \frac{G}{Y}$ are the consumption-to-output an
     \vdots & \quad \text{(see Appendix \ref{eq:terms_of_trade_derivation_beginning} - \ref{eq:terms_of_trade_derivation_end})} \nonumber \\
     s_t &= \sigma_\upsilon(C_Y^{-1} y_t - y^*_t - C_G^{-1} g_t) - (1-\upsilon)\Phi z_t \label{eq:terms_of_trade_w_gov}
 \end{align}
-where $\varpi = \sigma \eta + (1-\upsilon)(\sigma \eta - 1)$, $\Phi = \frac{1}{1 + \upsilon (\varpi - 1)}$, $\sigma_\upsilon = \sigma \Phi$, and $C_G$ is the consumption-to-government spending ratio in the steady state. Notice that when $G=0,\ Y=C$, then $s_t = \sigma_\upsilon(y_t - y^*_t) - (1-\upsilon)\Phi z_t$, i.e. identical to \textcite{jordigal_2015_monetary}. Negative government term implies that (effective) trade of terms are decreasing in government spending. This is intuitive: the government is modelled to demand exclusively domestic goods, which induces inflationary pressure and makes home goods less competitive internationally. The opposite is true for the domestic-world output gap: if our firms produce relatively more than the rest of the world and is able to export relatively more, then terms of trade increase (the first term of (\ref{eq:terms_of_trade_w_gov}) is positive). However, $y_t > y^*_t$, does not \textit{automatically} imply $\Delta x_{t+1} > 0$ (an increase in exports), the terms to be explicitly linked. Following a similar approach to \textcite{jordigal_2015_monetary}, the net exports is denoted in terms of each GDP component as a share of their respective steady state values. The resulting expression can be combined with the aggregate resource constraint (\ref{eq:aggregate_rc}) and (\ref{eq:link_between_consumption_and_world_output}) to yield a link between terms of trade and net exports $NX_t$:
+where $\varpi = \sigma \eta + (1-\upsilon)(\sigma \eta - 1)$, $\Phi = \frac{1}{1 + \upsilon (\varpi - 1)}$, $\sigma_\upsilon = \sigma \Phi$, and $C_G$ is the consumption-to-government spending ratio in the steady state. Notice that when $G=0,\ Y=C$, then $s_t = \sigma_\upsilon(y_t - y^*_t) - (1-\upsilon)\Phi z_t$, i.e. identical to \textcite{jordigal_2015_monetary}. Negative government term implies that (effective) trade of terms are decreasing in government spending. This is intuitive: the government is modelled to demand exclusively domestic goods, which induces inflationary pressure and makes home goods less competitive internationally. The opposite is true for the domestic-world output gap: if our firms produce relatively more than the rest of the world and is able to export relatively more, then terms of trade increase (the first term of (\ref{eq:terms_of_trade_w_gov}) is positive). However, $y_t > y^*_t$, does not \textit{automatically} imply $\Delta x_{t+1} > 0$ (an increase in exports), the terms to be explicitly linked. Following a similar approach to \citereset\textcite{jordigal_2015_monetary}, the net exports is denoted in terms of each GDP component as a share of their respective steady state values. The resulting expression can be combined with the aggregate resource constraint (\ref{eq:aggregate_rc}) and (\ref{eq:link_between_consumption_and_world_output}) to yield a link between terms of trade and net exports $NX_t$:
 \begin{align}
     NX_t &= \frac{1}{Y} Y_t - \frac{1}{C}\left(\frac{P_t}{P_{H,t}}C_t\right) - \frac{1}{G}G_t \\
-    \vdots & \quad \text{(see Appendix A.xx-A.xx)} \nonumber \\
+    \vdots & \quad \text{\textcolor{red}{(see Appendix A.xx-A.xx)}} \nonumber \\
     nx_t &= y_t - c_t - \upsilon s_t - g_t \label{eq:trade_balance_w_consumption} \\
-    \vdots & \quad \text{(see Appendix A.xx-A.xx)} \nonumber \\
+    \vdots & \quad \text{\textcolor{red}{(see Appendix A.xx-A.xx)}} \nonumber \\
     nx_t&=C_Y\left[\upsilon \left(\frac{\varpi}{\sigma} - 1\right) s_t - \frac{\upsilon}{\sigma}z_t \right] \label{eq:trade_balance_wout_consumption}
 \end{align}
 Furthermore, the Euler equation in (\ref{eq:euler_equation}) is a function of CPI, but using (\ref{eq:cpi_inflation_tot}), it can be rewritten to be a function of domestic inflation and terms of trade:
@@ -131,7 +132,7 @@ When the prices are flexible, then each firm will choose the same optimal level 
     \hat{\mu}_t = \mu_t - \mu &= - \left( \sigma + \frac{\varphi + \alpha}{1-\alpha}\right) \tilde{y}_t + \upsilon(\varpi-1)\tilde{s}_t \\
      &= - \left( \sigma_\upsilon C_Y^{-1} + \frac{\varphi + \alpha}{1-\alpha}\right) \tilde{y}_t \label{eq:average_markup_gap_w_tildes}
 \end{align}
-where $\tilde{s}_t$ denote terms of trade gap, and Equation (\ref{eq:average_markup_gap_w_tildes}) uses $\tilde{s}_t=\sigma_\upsilon C_Y^{-1} \tilde{y}_t$ relationship implied by (\ref{eq:terms_of_trade_w_gov}). Finally, plugging (\ref{eq:average_markup_gap_w_tildes}) in a version of NKPC defined by Equation (\ref{eq:nkpc_a_version}), yields:
+where $\tilde{s}_t$ denote terms of trade gap, and Equation (\ref{eq:average_markup_gap_w_tildes}) uses $\tilde{s}_t=\sigma_\upsilon C_Y^{-1} \tilde{y}_t$ relationship implied by (\ref{eq:terms_of_trade_w_gov}). Finally, plugging (\ref{eq:average_markup_gap_w_tildes}) to a \textit{version} of NKPC defined by Equation (\ref{eq:nkpc_a_version}), yields the \textit{final} NKPC equation:
 \begin{equation}
     \pi_{H,t} = \beta \E_t \left[ \pi_{H,t+1}\right] + \kappa \tilde{y}_t
 \end{equation}
@@ -142,3 +143,5 @@ Finally, we have a path for output gap (implied by DIS), a path for inflation (i
     i_t = \phi_\pi \pi_{H,t}+ \phi_y \hat{y}_t + m_t
 \end{equation}
 where $m_t$ is a contractionary shock, which is assumed to follow an AR(1) process $m_t = \rho_m m_{t-1} + \varepsilon^m_{t},\ \varepsilon^m_{t} \sim \mathcal{N}(0,\sigma^2_m)$, and $\hat{y}_t = y_t - y$ is the deviation from the steady state output. The Taylor rule suggests that monetary authority will raise the interest rate whenever inflation increases or output exceeds the steady state output.
+
+The equations provided in this section outline the dynamic behaviour of the endogenous variables. For the model to be fully specified, each parameter within these equations needs to be estimated or calibrated. The following section describes these processes.

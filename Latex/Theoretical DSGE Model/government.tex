@@ -17,6 +17,7 @@ That is, government accrues revenue by collecting taxes in current prices $P_t T
     \makecell{Scen. 3 \& Scen. 4\\ G: 1, $\tau \in \{0, 1\}$} & UK & 
     $\E_t [{R^{UK-1}_{t}}B^{UK}_{t+1}] + P^{UK}_tT^{UK}_t = P^{UK}_tG^{UK}_t + B^{UK}_t$
     \end{tabular}
+    \vspace{0.5cm}
     \caption{Government budget constraints under different policy scenarios}
 \end{table}
 where $P^{UK}_t$ is a weighted sum of price levels in Scotland and the rest of the UK, i.e., $P^{UK}_t = \varpi P_t + (1-\varpi)P^*_t$. Similarly, a monetary union implies a single rate of gross return, which we define as $R^{UK}_t = \varpi R_t + (1-\varpi)R^*_t$. Also note the log-linearised government budget constraints in real terms (see Appendix \ref{eq:appendix_log_budget_constraint_derivation_beginning} - \ref{eq:appendix_log_budget_constraint_derivation_end} for derivation):
@@ -32,6 +33,7 @@ where $P^{UK}_t$ is a weighted sum of price levels in Scotland and the rest of t
     \makecell{Scen. 3 \& Scen. 4\\ G: 1, $\tau \in \{0, 1\}$} & UK & 
     $b^{UK}_{t+1} = (1 + \rho^{UK})(b^{UK}_t + g^{UK}_t - t^{UK}_t)$
     \end{tabular}
+    \vspace{0.5cm}
     \caption{(Log) Government budget constraints under different policy scenarios}
 \end{table}
 where $\rho = \beta^{-1} - 1$ pins down the steady state interest rate. In each of the scenarios, the government tax revenue is accrued either by imposing lump-sum taxes or a labour tax:
@@ -71,7 +73,7 @@ That is, in the case of lump-sum taxes, tax revenue simply equals government spe
     \end{tabular}
     \caption{Fiscal (debt-stabilising) rules for each of the policy scenarios}
 \end{table}
-where following \textcite{jordigal_2005_understanding}, we define $g_t = \frac{G_t-G}{Y}$, $b_t = \frac{(B_t/P_{t-1}) - (B/P)}{Y}$, and $t_t = \frac{T_t - T}{Y}$. The model assumes that in the steady state, the government's budget is balanced, i.e. $\frac{B}{Y} = 0$. Each fiscal policy rule states that tax revenue responds to changes in government spending and government debt, where the responses depend on $\phi_b \in [0,1]$ and $\phi_g \in [0,1]$. Intuitively, setting $\phi_b = 0$ would imply that the government cannot issue bonds/borrow, and taxpayers would have to absorb any shock in government spending. At the same time, $\phi_g = 0$ would make government fund its spending solely by issuing bonds. Plugging fiscal rules into the log linearised government budget constraints yields:
+where following \textcite{jordigal_2005_understanding}, we define $g_t = \frac{G_t-G}{Y}$, $b_t = \frac{(B_t/P_{t-1}) - (B/P)}{Y}$, and $t_t = \frac{T_t - T}{Y}$. The model assumes that in the steady state, the government's budget is balanced, i.e. $\frac{B}{Y} = 0$. Each fiscal policy rule states that tax revenue responds to changes in government spending and government debt, where the responses depend on $\phi_b \in [0,1]$ and $\phi_g \in [0,1]$. Intuitively, setting $\phi_b$ to a value close to 1, would imply that tax revenue (and tax rate) are highly responsive to debt ($b_t$). Similarly, a high $\phi_g$ value, suggests high responsiveness of tax revenue (and tax rate) to government spending ($g_t$). Plugging fiscal rules into the log linearised government budget constraints yields:
 \begin{table}[H]
     \renewcommand{\arraystretch}{2}
     \centering
@@ -86,4 +88,4 @@ where following \textcite{jordigal_2005_understanding}, we define $g_t = \frac{G
     \end{tabular}
     \caption{Future bonds are determined by government spending and current government debt}
 \end{table}
-These equations determine the equilibrium path for bond supply, with \linebreak $(1-\rho)(1-\phi_b) < 1$ to ensure stability (non-explosiveness). \textcolor{red}{This is equivalent to imposing a No-Ponzi condition, i.e. the government cannot have outstanding debt in period $T$.} Finally, note that $B_t$ is a predetermined (state) variable, meaning its value is determined in the previous period, while the initial $B_0$ value is assumed to have been determined ``historically'', a.k.a given.
+These equations determine the equilibrium path for bond supply, with \linebreak $(1-\rho)(1-\phi_b) < 1$ to ensure stability (non-explosiveness). Also, setting $\phi_g = 1$, would result in $b_t = 0$ for all $t$ and $\phi_b$, implying that government spending would have to be solely funded by lump-sum or labour taxes. Finally, note that $B_t$ is a predetermined (state) variable, meaning its value is determined in the previous period, while the initial $B_0$ value is assumed to have been determined ``historically'', a.k.a given.

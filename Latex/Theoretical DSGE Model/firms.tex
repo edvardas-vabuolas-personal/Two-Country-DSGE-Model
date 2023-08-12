@@ -12,7 +12,7 @@ which is increasing in technology level (increases labour productivity). Second 
     \max_{N_t(j)}             \quad & \mathcal{F} = P_{H,t}(j)Y_{t}(j) - W_t(j)N_{t}(j) \\
      & \text{s.t.} \quad  Y_t(j)    = A_t {N_t(j)}^{1-\alpha}     
 \end{align}
-which can be solved (see Appendix A.xx-A.xx) to yield an optimality condition:
+which can be solved to yield an optimality condition:
 \begin{equation}
     \frac{\partial \mathcal{F}}{\partial N_t(j)} \implies \frac{W_t}{P_t} = (1-\alpha)A_t N_t^{-\alpha} \label{eq:firm_optimality_condition}
 \end{equation}
@@ -37,10 +37,10 @@ Log-linearising (\ref{eq:price_dynamics_inflation}) around zero inflation steady
 \begin{align}
     \Pi_{H,t}^{1-\epsilon} &= \theta + (1-\theta)\left(\frac{\xbar{P}_{H,t}}{P_{H,t-1}}\right)^{1-\epsilon} \\
     \Pi_H \mathbf{e}^{(1-\epsilon)\pi_{H,t}} &= \theta + (1-\theta)\frac{\xbar{P_H}}{P_H}\mathbf{e}^{(1-\epsilon)(\bar{p}_{H,t} - p_{H,t})} \\
-    \vdots & \quad \text{(see Appendix A.xx - A.xx)} \\
+    \vdots & \quad \text{(see Appendix \ref{eq:appendix_domestic_inflation_new_price_start} - \ref{eq:appendix_domestic_inflation_new_price_end})} \nonumber \\
     \pi_{H,t} &= (1-\theta)(\bar{p}_{H,t} - p_{H,t}) \label{eq:domestic_inflation_new_price_relationship}
 \end{align}
-Intuitively, this means that log domestic inflation depends on two elements: the difference between the current and new domestic price levels, and the price stickiness parameter $\theta$. Consider two extreme cases when $\theta = 1$ and $\theta = 0$: when $\theta = 1$, then no firms would be permitted to update their prices and the domestic inflation would always be equal to zero (CPI would still vary due to terms of trade, assuming $\upsilon \ne 0$). When $\theta = 0$, then all firms immediately react to any changes in marginal cost of production and traditional RBC ``ineffective-money'' results would follow. Firms that get to update their prices, do so by maximising their \textit{discounted lifetime cash flow}:
+Intuitively, this means that log domestic inflation depends on two elements: the difference between the current and new domestic price levels, and the price stickiness parameter $\theta$. Consider two extreme cases when $\theta = 1$ and $\theta = 0$: when $\theta = 1$, then no firms would be permitted to update their prices and the domestic inflation would always be equal to zero (CPI would still vary due to terms of trade, assuming $\upsilon \ne 0$). When $\theta = 0$, then all firms \textit{immediately} react to any changes in marginal cost of production in line with Classical/RBC models. Firms that get to update their prices, do so by maximising their \textit{discounted lifetime cash flow}:
 \begin{align}
     \max_{\xbar{P}_{H,t}} \sum_{k=0}^{\infty} \theta^k \E_t \left[\Lambda_{t,t+k} \left( \underbrace{\xbar{P}_{H,t} Y_{t+k|t}}_{Revenue} - \underbrace{\mathcal{C}_{t+k}(Y_{t+k|t})}_{Cost} \right) / P_{H,t+k} \right] \label{eq:profit_maximisation_cash_flow}\\
     \text{s.t.} \quad Y_{t+k|t} = \left(\frac{\xbar{P}_{H,t}}{P_{H,t+k}}\right)^{-\epsilon} C_{t+k} \label{eq:profit_maximisation_demand_constraints}
@@ -48,14 +48,14 @@ Intuitively, this means that log domestic inflation depends on two elements: the
 where $\E_t \left[\Lambda_{t,t+k}\right]\ \forall k \geq 0$ is the expected stochastic discount factor used to discount profit (revenue less cost) in every period starting from current\footnote{Notice that we could write this as $\E_t \left[\Lambda_{t,t+k}\right]=\E_t \left[\frac{1}{R_{t, t+k}}\right]$ derived from the households' optimisation problem.}. $Y_{t+k|t}$ is the expected output in periods $t+k$ given output in period $t$, and $\mathcal{C}_{t+k}$ is the nominal cost of producting the expected output. The maximisation problem is subject to $k$ number of demand constraints (\ref{eq:profit_maximisation_demand_constraints}). Substituting the constraint into (\ref{eq:profit_maximisation_cash_flow}), taking first-order conditions, and log-linearising around zero-inflation steady state yields:
 \begin{align}
     \sum_{k=0}^{\infty} \theta^k \E_t &\left[\Lambda_{t,t+k} \left( \xbar{P}_{H,t} \left(\frac{\xbar{P}_{H,t}}{P_{H,t+k}}\right)^{-\epsilon} C_{t+k} - \mathcal{C}_{t+k}(Y_{t+k|t})\right) / P_{H,t+k} \right] \\
-    \vdots & \quad \text{(see Appendix A.xx-A.xx)} \nonumber \\
+    \vdots & \quad \text{\textcolor{red}{(see Appendix A.xx-A.xx)}} \nonumber \\
     \bar{p}_{H,t} &= \mu + (1-\beta \theta) \sum_{k=0}^{\infty} (\beta \theta)^{k} \E_t \left[ \psi_{t+k|t} \right] \label{eq:log_optimal_price_setting_condition}
 \end{align}
 where $\E_t \left[ \psi_{t+k|t} \right]$ and $\mu$ are the expected log marginal cost and desired\footnote{Markup that occurs under flexible or frictionless prices} markup, respectively. Equation (\ref{eq:log_optimal_price_setting_condition}) is known as the (log) \textit{optimal price setting condition} and presents firms as forward looking discounted profit maximisers. Note, that it is consistent with the previous exposition of the two extreme cases when $\theta = 0$ and $\theta = 1$, i.e. when $\theta = 1$, then $\pi_{H,t} = \bar{p}_{H,t} - \bar{p}_{H,t-1} = \mu - \mu = 0$. Furthermore, the earlier discussion on optimality condition noted that firms will hire labour up until the real wage is equal to the marginal product of labour. Given that the price (and, subsequently, real wage) changed, firms might choose a different level of labour compared to that of other firms. This allows us to derive a relationship between the average marginal cost and a marginal cost of a firm that just updated their price:
 % TODO
 \begin{align}
      \psi_{t+k|t} &=  \psi_{t+k} + \alpha(n_{t+k|t} - n_{t+k}) \\
-     \vdots & \quad \text{(see Appendix A.xx-A.xx)} \nonumber \\
+     \vdots & \quad \text{\textcolor{red}{(see Appendix A.xx-A.xx)}} \nonumber \\
      &=\psi_{t+k} - \frac{\alpha \epsilon}{1-\alpha} \label{eq:mc_to_avg_mcs}
 \end{align}
 Plugging (\ref{eq:mc_to_avg_mcs}) to (\ref{eq:log_optimal_price_setting_condition}) and rewritting as a recursive equation yields:
@@ -68,7 +68,7 @@ Plugging (\ref{eq:mc_to_avg_mcs}) to (\ref{eq:log_optimal_price_setting_conditio
 where $\mu_t = p_{H,t} - \psi_t$ is the average markup, $\hat{\mu}_t$ is the gap between the average and desired markups, and $\Theta = \frac{1-\alpha}{1-\alpha + \alpha \epsilon}$. Using (\ref{eq:domestic_inflation_new_price_relationship}), it is easy to transform (\ref{eq:dynamic_price_recursive}) into a version of New Keynesian Phillips Curve (NKPC):
 \begin{align}
     \bar{p}_{H,t} &= \beta \theta \E_t \left[ \bar{p}_{H,t+1} \right] + (1-\beta \theta)(p_{H,t} - \Theta \hat{\mu}_t) \\
-    \vdots & \quad \text{(see Appendix A.xx-A.xx)} \nonumber \\
+    \vdots & \quad \text{\textcolor{red}{(see Appendix A.xx-A.xx)}} \nonumber \\
     \pi_{H,t} &= \beta \E_t \left[ \pi_{H,t+1}\right] - \lambda \hat{\mu}_t \label{eq:nkpc_a_version}
 \end{align}
 where $\lambda = \frac{(1-\theta)(1-\beta \theta)}{\theta}\Theta$. Equation (\ref{eq:nkpc_a_version}) suggests that inflation will be increasing as long as $\mu > \mu_t$. That is, price-adjusting firms will continue raising prices until the difference between the marginal cost and the domestic price level is smaller than the desired markup, i.e. $p_{H,t} - \psi_t < \mu$. At $p_{H,t} - \psi_t = \mu$, the domestic inflation will (slowly) tend towards the steady state level of zero due to the discount factor $\beta \in (0,1)$. The next section will show that the markup gap can be expressed as a function of the natural output gap, which itself is a function of technology level, taxes, government spending, world output, and the preference shifter. Therefore, the resulting expression (NKPC) will pin the relationship between domestic inflation and all other real variables. This is why NKPC is regarded as one of the key (non-policy) equations in NK DSGE models.

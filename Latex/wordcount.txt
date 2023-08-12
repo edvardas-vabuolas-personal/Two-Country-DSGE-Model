@@ -1,8 +1,8 @@
 File: main.tex
 Encoding: ascii
-Sum count: 9
+Sum count: 18
 Words in text: 1
-Words in headers: 8
+Words in headers: 17
 Words outside text (captions, etc.): 0
 Number of headers: 6
 Number of floats/tables/figures: 0
@@ -12,10 +12,10 @@ Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
   1+0+0 (0/0/0/0) _top_
   0+1+0 (1/0/0/0) Section: Introduction
-  0+3+0 (1/0/0/0) Section: Theoretical DSGE model
-  0+1+0 (1/0/0/0) Section: Application} \label{application
-  0+1+0 (1/0/0/0) Section: Results
-  0+1+0 (1/0/0/0) Section: Limitations
+  0+5+0 (1/0/0/0) Section: Presentation of the DSGE Model
+  0+5+0 (1/0/0/0) Section: Estimating and Calibrating the Model} \label{application
+  0+2+0 (1/0/0/0) Section: Dynamic Responses
+  0+3+0 (1/0/0/0) Section: Limitations and Extensions
   0+1+0 (1/0/0/0) Section: Conclusion
 
 Included file: ././Title Page/title_page.tex
@@ -31,8 +31,8 @@ Number of math displayed: 0
 
 Included file: ././Introduction/introduction.tex
 Encoding: ascii
-Sum count: 594
-Words in text: 594
+Sum count: 644
+Words in text: 644
 Words in headers: 0
 Words outside text (captions, etc.): 0
 Number of headers: 0
@@ -42,26 +42,25 @@ Number of math displayed: 0
 
 Included file: ././Literature Review/literature_review.tex
 Encoding: ascii
-Sum count: 1778
-Words in text: 1616
+Sum count: 1634
+Words in text: 1499
 Words in headers: 17
-Words outside text (captions, etc.): 145
-Number of headers: 5
+Words outside text (captions, etc.): 118
+Number of headers: 4
 Number of floats/tables/figures: 0
 Number of math inlines: 0
 Number of math displayed: 0
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
-  0+2+0 (1/0/0/0) Section: Literature Review
-  291+4+0 (1/0/0/0) Subsection: Research that informs decision-makers
-  792+5+89 (1/0/0/0) Subsection: Pre-1940s, 1940s to 1980s, Post-1980s
-  204+2+0 (1/0/0/0) Subsection: DSGE applications
-  329+4+56 (1/0/0/0) Subsection: Fiscal Policy in DSGE
+  232+2+0 (1/0/0/0) Section: Literature Review
+  793+6+89 (1/0/0/0) Subsection: From Past Debates to Modern Frameworks
+  201+4+0 (1/0/0/0) Subsection: Application of DSGE Models
+  273+5+29 (1/0/0/0) Subsection: Fiscal Policy in DSGE Models
 
 Included file: ././Theoretical DSGE model/model.tex
 Encoding: ascii
-Sum count: 602
-Words in text: 505
+Sum count: 610
+Words in text: 513
 Words in headers: 0
 Words outside text (captions, etc.): 86
 Number of headers: 0
@@ -71,13 +70,13 @@ Number of math displayed: 0
 
 Included file: ././Application/application.tex
 Encoding: ascii
-Sum count: 862
-Words in text: 800
+Sum count: 856
+Words in text: 797
 Words in headers: 0
 Words outside text (captions, etc.): 54
 Number of headers: 0
 Number of floats/tables/figures: 0
-Number of math inlines: 8
+Number of math inlines: 5
 Number of math displayed: 0
 
 Included file: ././Results/results.tex
@@ -104,8 +103,8 @@ Number of math displayed: 0
 
 Included file: ././Conclusion/conclusion.tex
 Encoding: ascii
-Sum count: 355
-Words in text: 354
+Sum count: 469
+Words in text: 468
 Words in headers: 0
 Words outside text (captions, etc.): 0
 Number of headers: 0
@@ -126,30 +125,30 @@ Number of math displayed: 0
 
 Included file: ././Theoretical DSGE model/households.tex
 Encoding: ascii
-Sum count: 1808
-Words in text: 1697
+Sum count: 1805
+Words in text: 1680
 Words in headers: 1
-Words outside text (captions, etc.): 0
+Words outside text (captions, etc.): 13
 Number of headers: 1
 Number of floats/tables/figures: 1
-Number of math inlines: 83
-Number of math displayed: 27
+Number of math inlines: 85
+Number of math displayed: 26
 
 Included file: ././Theoretical DSGE model/government.tex
 Encoding: ascii
-Sum count: 547
-Words in text: 481
+Sum count: 558
+Words in text: 487
 Words in headers: 1
 Words outside text (captions, etc.): 43
 Number of headers: 1
 Number of floats/tables/figures: 5
-Number of math inlines: 21
+Number of math inlines: 26
 Number of math displayed: 1
 
 Included file: ././Theoretical DSGE model/firms.tex
 Encoding: ascii
-Sum count: 959
-Words in text: 879
+Sum count: 955
+Words in text: 875
 Words in headers: 1
 Words outside text (captions, etc.): 21
 Number of headers: 1
@@ -159,8 +158,8 @@ Number of math displayed: 13
 
 Included file: ././Theoretical DSGE model/equilibrium.tex
 Encoding: ascii
-Sum count: 946
-Words in text: 884
+Sum count: 989
+Words in text: 927
 Words in headers: 1
 Words outside text (captions, etc.): 7
 Number of headers: 1
@@ -190,14 +189,14 @@ Number of floats/tables/figures: 1
 Number of math inlines: 0
 Number of math displayed: 0
 
-Included file: ././Graphs/MCMC_Scot.tex
+Included file: ././Graphs/MCMC_SCOT.tex
 Encoding: ascii
-Sum count: 0
+Sum count: 10
 Words in text: 0
 Words in headers: 0
-Words outside text (captions, etc.): 0
+Words outside text (captions, etc.): 10
 Number of headers: 0
-Number of floats/tables/figures: 0
+Number of floats/tables/figures: 1
 Number of math inlines: 0
 Number of math displayed: 0
 
@@ -379,32 +378,33 @@ Number of math displayed: 0
 
 Sum of files: main.tex
 File(s) total: main.tex
-Sum count: 10349
-Words in text: 9284
-Words in headers: 29
-Words outside text (captions, etc.): 731
-Number of headers: 15
-Number of floats/tables/figures: 26
-Number of math inlines: 245
-Number of math displayed: 60
+Sum count: 10437
+Words in text: 9364
+Words in headers: 38
+Words outside text (captions, etc.): 727
+Number of headers: 14
+Number of floats/tables/figures: 27
+Number of math inlines: 249
+Number of math displayed: 59
 Files: 33
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
-  1+8+0 (6/0/0/0) File: main.tex
-  594+0+0 (0/0/0/0) Included file: ././Introduction/introduction.tex
-  1616+17+145 (5/0/0/0) Included file: ././Literature Review/literature_review.tex
-  505+0+86 (0/0/11/0) Included file: ././Theoretical DSGE model/model.tex
-  800+0+54 (0/0/8/0) Included file: ././Application/application.tex
+  1+17+0 (6/0/0/0) File: main.tex
+  644+0+0 (0/0/0/0) Included file: ././Introduction/introduction.tex
+  1499+17+118 (4/0/0/0) Included file: ././Literature Review/literature_review.tex
+  513+0+86 (0/0/11/0) Included file: ././Theoretical DSGE model/model.tex
+  797+0+54 (0/0/5/0) Included file: ././Application/application.tex
   1225+0+67 (0/0/18/0) Included file: ././Results/results.tex
   248+0+0 (0/0/0/0) Included file: ././Limitations/limitations.tex
-  354+0+0 (0/0/1/0) Included file: ././Conclusion/conclusion.tex
+  468+0+0 (0/0/1/0) Included file: ././Conclusion/conclusion.tex
   0+0+18 (0/1/0/0) Included file: ././Graphs/timeline.tex
-  1697+1+0 (1/1/83/27) Included file: ././Theoretical DSGE model/households.tex
-  481+1+43 (1/5/21/1) Included file: ././Theoretical DSGE model/government.tex
-  879+1+21 (1/0/45/13) Included file: ././Theoretical DSGE model/firms.tex
-  884+1+7 (1/1/35/19) Included file: ././Theoretical DSGE model/equilibrium.tex
+  1680+1+13 (1/1/85/26) Included file: ././Theoretical DSGE model/households.tex
+  487+1+43 (1/5/26/1) Included file: ././Theoretical DSGE model/government.tex
+  875+1+21 (1/0/45/13) Included file: ././Theoretical DSGE model/firms.tex
+  927+1+7 (1/1/35/19) Included file: ././Theoretical DSGE model/equilibrium.tex
   0+0+11 (0/1/0/0) Included file: ././Application/Tables/model_parameters.tex
   0+0+6 (0/1/0/0) Included file: ././Application/Tables/priors_posteriors.tex
+  0+0+10 (0/1/0/0) Included file: ././Graphs/MCMC_SCOT.tex
   0+0+5 (0/1/0/0) Included file: ././Application/Tables/sources.tex
   0+0+12 (0/1/0/0) Included file: ././Graphs/IRFs/m_four.tex
   0+0+14 (0/1/0/0) Included file: ././Graphs/IRFs/f_one.tex

@@ -1,31 +1,31 @@
 \contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
 \contentsline {section}{\numberline {2}Literature Review}{4}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Research that informs decision-makers}{4}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Pre-1940s, 1940s to 1980s, Post-1980s}{5}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}DSGE applications}{8}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Fiscal Policy in DSGE}{8}{subsection.2.4}%
-\contentsline {section}{\numberline {3}Theoretical DSGE model}{10}{section.3}%
+\contentsline {subsection}{\numberline {2.1}From Past Debates to Modern Frameworks}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Application of DSGE Models}{7}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Fiscal Policy in DSGE Models}{8}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Presentation of the DSGE Model}{10}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Households}{12}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Government}{23}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Firms}{26}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Equilibrium}{31}{subsection.3.4}%
-\contentsline {section}{\numberline {4}Application}{39}{section.4}%
-\contentsline {section}{\numberline {5}Results}{46}{section.5}%
-\contentsline {section}{\numberline {6}Limitations}{63}{section.6}%
+\contentsline {section}{\numberline {4}Estimating and Calibrating the Model}{39}{section.4}%
+\contentsline {section}{\numberline {5}Dynamic Responses}{46}{section.5}%
+\contentsline {section}{\numberline {6}Limitations and Extensions}{63}{section.6}%
 \contentsline {section}{\numberline {7}Conclusion}{64}{section.7}%
-\contentsline {section}{\numberline {8}Appendix}{68}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Figures}{68}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Derivations}{72}{subsection.8.2}%
-\contentsline {subsubsection}{\numberline {8.2.1}Derivation of loglinearised intratemporal condition}{72}{subsubsection.8.2.1}%
-\contentsline {subsubsection}{\numberline {8.2.2}Log linearising government budget constraint}{73}{subsubsection.8.2.2}%
-\contentsline {subsubsection}{\numberline {8.2.3}Derivation of loglinearised aggregate resource constraint}{75}{subsubsection.8.2.3}%
-\contentsline {subsubsection}{\numberline {8.2.4}Derivation of bilateral exchange rate}{76}{subsubsection.8.2.4}%
-\contentsline {subsubsection}{\numberline {8.2.5}Derivation of loglinearised terms of trade}{78}{subsubsection.8.2.5}%
-\contentsline {subsubsection}{\numberline {8.2.6}Derivation of (a version of) dynamic IS equation}{80}{subsubsection.8.2.6}%
-\contentsline {subsubsection}{\numberline {8.2.7}Derivation of (final) Dynamic IS}{82}{subsubsection.8.2.7}%
-\contentsline {subsubsection}{\numberline {8.2.8}Derivation of the average markup}{83}{subsubsection.8.2.8}%
-\contentsline {subsubsection}{\numberline {8.2.9}Derivation of the natural level of output}{85}{subsubsection.8.2.9}%
-\contentsline {subsubsection}{\numberline {8.2.10}Derivation of natural real interest rate}{88}{subsubsection.8.2.10}%
-\contentsline {subsubsection}{\numberline {8.2.11}Derivation of the trade balance}{89}{subsubsection.8.2.11}%
-\contentsline {subsubsection}{\numberline {8.2.12}Derivation of the Euler equation using Arrow securities}{90}{subsubsection.8.2.12}%
-\contentsline {subsubsection}{\numberline {8.2.13}Derivation of loglinearised tax revenue}{91}{subsubsection.8.2.13}%
+\contentsline {section}{\numberline {8}Appendix}{70}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Figures}{70}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Derivations}{74}{subsection.8.2}%
+\contentsline {subsubsection}{\numberline {8.2.1}Derivation of loglinearised intratemporal condition}{74}{subsubsection.8.2.1}%
+\contentsline {subsubsection}{\numberline {8.2.2}Log linearising government budget constraint}{75}{subsubsection.8.2.2}%
+\contentsline {subsubsection}{\numberline {8.2.3}Derivation of loglinearised aggregate resource constraint}{77}{subsubsection.8.2.3}%
+\contentsline {subsubsection}{\numberline {8.2.4}Derivation of bilateral exchange rate}{78}{subsubsection.8.2.4}%
+\contentsline {subsubsection}{\numberline {8.2.5}Derivation of loglinearised terms of trade}{80}{subsubsection.8.2.5}%
+\contentsline {subsubsection}{\numberline {8.2.6}Derivation of (a version of) dynamic IS equation}{82}{subsubsection.8.2.6}%
+\contentsline {subsubsection}{\numberline {8.2.7}Derivation of (final) Dynamic IS}{84}{subsubsection.8.2.7}%
+\contentsline {subsubsection}{\numberline {8.2.8}Derivation of the average markup}{85}{subsubsection.8.2.8}%
+\contentsline {subsubsection}{\numberline {8.2.9}Derivation of the natural level of output}{87}{subsubsection.8.2.9}%
+\contentsline {subsubsection}{\numberline {8.2.10}Derivation of natural real interest rate}{90}{subsubsection.8.2.10}%
+\contentsline {subsubsection}{\numberline {8.2.11}Derivation of the trade balance}{92}{subsubsection.8.2.11}%
+\contentsline {subsubsection}{\numberline {8.2.12}Derivation of the Euler equation using Arrow securities}{93}{subsubsection.8.2.12}%
+\contentsline {subsubsection}{\numberline {8.2.13}Derivation of loglinearised tax revenue}{94}{subsubsection.8.2.13}%
+\contentsline {subsubsection}{\numberline {8.2.14}Derivation of domestic inflation as a function of updated and non-updated price levels}{95}{subsubsection.8.2.14}%

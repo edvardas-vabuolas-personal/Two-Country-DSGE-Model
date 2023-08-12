@@ -14,17 +14,9 @@
 \usepackage{tikz}
 \usepackage{xfrac}
 \usepackage[makeroom]{cancel}
-\usepackage[style=authoryear-icomp,sorting=nyt,natbib,backend=biber, url=false, ibidpage=true]{biblatex}
+\usepackage[style=authoryear-icomp,sorting=nyt,natbib,backend=biber, url=false, ibidpage=true, uniquename=false]{biblatex}
 \renewcommand*{\mkibid}{\emph}
-% \DefineBibliographyStrings{english}{%
-%   page             = {},
-%   pages            = {},
-% } 
-% \renewcommand{\postnotedelim}{\addcolon}
-% \DeclareFieldFormat{postnote}{#1}
-% \DeclareFieldFormat{multipostnote}{#1}
 
-% In-text citation formatting
 \newtoggle{cbx:isibid}
 
 \AtEveryCitekey{\global\togglefalse{cbx:isibid}}
@@ -70,5 +62,22 @@
       }%
     }%
   }%
-} 
+}
+\usepackage{titlesec}
+\titleformat{\section}
+  {\large\scshape}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\scshape}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\scshape}{\thesubsubsection}{1em}{}
+
+\defbibenvironment{bibliography}
+{\enumerate{}
+{\setlength{\leftmargin}{\bibhang}%
+\setlength{\itemindent}{-\leftmargin}%
+\setlength{\itemsep}{\bibitemsep}%
+\setlength{\parsep}{\bibparsep}}}
+{\endenumerate}
+{\item}
+
 \endinput
