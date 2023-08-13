@@ -71,13 +71,10 @@
 \titleformat{\subsubsection}
   {\normalfont\scshape}{\thesubsubsection}{1em}{}
 
-\defbibenvironment{bibliography}
-{\enumerate{}
-{\setlength{\leftmargin}{\bibhang}%
-\setlength{\itemindent}{-\leftmargin}%
-\setlength{\itemsep}{\bibitemsep}%
-\setlength{\parsep}{\bibparsep}}}
-{\endenumerate}
-{\item}
+\usepackage[format=plain,
+            labelfont={bf,it},
+            textfont=it]{caption}
+
+\usepackage[bottom]{footmisc}
 
 \endinput

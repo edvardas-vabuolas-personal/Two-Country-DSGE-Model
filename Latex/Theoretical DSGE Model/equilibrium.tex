@@ -1,147 +1,147 @@
 \subsection{Equilibrium}
 The goods market for a specific good $j$ clears when domestic firms produce just enough of the good to satisfy the demand of home households, foreign households, and the home government. In line with \textcite{jordigal_2015_monetary}, the demand for exports of good $j$ is taken to be given as:
 \begin{align}
-    X_t(j) &= \left(\frac{P_{H,t(i)}}{P_{H,t}}\right)^{-\epsilon} X_t\\
-    \text{where} \quad X_t &= \left( \int_{0}^{1} X_t(j)^{\frac{\epsilon-1}{\epsilon}} \, dj\right)^{\frac{\epsilon}{\epsilon-1}} \label{eq:index_of_aggregate_exports}\\
-    & =\upsilon\left( \frac{P_{H,t}}{\mathcal{E}_t \xbar{P}_{H,t}}\right)^{-\eta}Y^\star_t \label{eq:aggregate_exports}\\
-    & = \upsilon \mathcal{S}_t^{\eta}Y^\star_t \label{eq:aggregate_exports_terms_of_trade}
+ X_t(j) &= \left(\frac{P_{H,t}(j)}{P_{H,t}}\right)^{-\epsilon} X_t\\
+ \text{where} \quad X_t &= \left( \int_{0}^{1} X_t(j)^{\frac{\epsilon-1}{\epsilon}} \, dj\right)^{\frac{\epsilon}{\epsilon-1}} \label{eq:index_of_aggregate_exports}\\
+ & =\upsilon\left( \frac{P_{H,t}}{\mathcal{E}_t \xbar{P}_{H,t}}\right)^{-\eta}Y^\star_t \label{eq:aggregate_exports}\\
+ & = \upsilon \mathcal{S}_t^{\eta}Y^\star_t \label{eq:aggregate_exports_terms_of_trade}
 \end{align} 
-where (\ref{eq:index_of_aggregate_exports}) is the index of aggregate exports, (\ref{eq:aggregate_exports}) determines aggregate exports as a function of world output (the relationship is assumed to be given), and (\ref{eq:aggregate_exports_terms_of_trade}) is derived by substituting definition of the effective terms of trade. Differently than \citereset\textcite{jordigal_2015_monetary}, we introduce index of government purchasing:
+where (\ref{eq:index_of_aggregate_exports}) is the index of aggregate exports, (\ref{eq:aggregate_exports}) determines aggregate exports as a function of world output (the relationship is assumed to be given), and (\ref{eq:aggregate_exports_terms_of_trade}) is derived by substituting the definition of the effective terms of trade. Differently than \citereset\textcite{jordigal_2015_monetary}, we introduce index of government-purchased goods:
 \begin{equation}
-    G_t = \left( \int_{0}^{1} {G_t(j)}^{\frac{\epsilon-1}{\epsilon}} \, dj\right)^{\frac{\epsilon}{\epsilon-1}}
+ G_t = \left( \int_{0}^{1} {G_t(j)}^{\frac{\epsilon-1}{\epsilon}} \, dj\right)^{\frac{\epsilon}{\epsilon-1}}
 \end{equation}
-so that the government demand of any good $j$ is defined as (derivation provided by \textcolor{red}{Appendix A.xx-A.xx}):
+so that the government demand of any home-produced good $j$ is defined as:\footnote{Derivation \textit{steps} are identical to those of Equation \ref{eq:demand_of_home_produced_good_j}}
 \begin{equation}
-    G_t(j) = \left( \frac{P_{H,t}(j)}{P_{H,t}} \right)^{-\epsilon} G_t
+ G_t(j) = \left( \frac{P_{H,t}(j)}{P_{H,t}} \right)^{-\epsilon} G_t
 \end{equation}
-Therefore, total demand for good $j$ is:
+Therefore, the total demand for good $j$ is:
 \begin{align}
-    Y_t(j) &= C_t(j) + X_t(j) + G_t(j) \label{eq:demand_for_one_good}\\
-    \vdots & \quad \text{\textcolor{red}{(see Appendix A.xx-A.xx)}} \\
-    Y_t(j) &= \left(\frac{P_{H,t}(j)}{P_{H,t}}^{-\varepsilon}\right) \left[ (1-\upsilon)\left(\frac{P_{H,t}}{P_t}\right)^{-\eta}C_t + \upsilon \mathcal{S}^\eta Y^\star_t + G_t\right]
+ Y_t(j) &= C_{H,t}(j) + X_t(j) + G_t(j) \label{eq:demand_for_one_good}\\
+ &= \left( \frac{P_{H,t}(j)}{P_{H,t}}\right)^{-\varepsilon}C_{H,t} + \left(\frac{P_{H,t}(j)}{P_{H,t}}\right)^{-\epsilon} X_t + \left( \frac{P_{H,t}(j)}{P_{H,t}} \right)^{-\epsilon} G_t \nonumber\\
+ &= \left(\frac{P_{H,t}(j)}{P_{H,t}}^{-\varepsilon}\right) \left[ C_{H,t} + X_t + G_t\right] \nonumber\\
+ &= \left(\frac{P_{H,t}(j)}{P_{H,t}}^{-\varepsilon}\right) \left[ (1-\upsilon)\left(\frac{P_{H,t}}{P_t}\right)^{-\eta}C_t + \upsilon \mathcal{S}^\eta Y^\star_t + G_t\right]
 \end{align}
 which can be plugged in to definition of aggregate output $Y_t = \left( \int_{0}^{1} Y_t(j)^{\frac{\varepsilon-1}{\varepsilon}}\right)^{\frac{\varepsilon}{\varepsilon-1}}$ to yield:
 \begin{equation}
-    Y_t = (1-\upsilon) \left(\frac{P_{H,t}}{P_t}\right)^{-\eta}C_t + \upsilon \mathcal{S}^\eta Y^\star_t + G_t
+ Y_t = (1-\upsilon) \left(\frac{P_{H,t}}{P_t}\right)^{-\eta}C_t + \upsilon \mathcal{S}^\eta Y^\star_t + G_t
 \end{equation}
 Note that Equation (\ref{eq:demand_for_one_good}) and all subsequent derivations (marginally) vary depending on the policy scenario in question:
 \begin{table}[H]
-    \renewcommand{\arraystretch}{2}
-    \centering
-    \begin{tabular}{l|l|c}
-    \makecell{Scen. 1 \& Scen. 3\\ G: 2, $\tau \in \{0, 1\}$} & \makecell{Scot. \\ rUK } & 
-        \makecell{
-            $Y_t(j) = C_t(j) + X_t(j) + G_t(j)$\\
-            $Y^*_t(j) = C^*_t(j) + X^*_t(j) + G^*_t(j)$
-        }  \\ 
-    \makecell{Scen. 3 \& Scen. 4\\ G: 1, $\tau \in \{0, 1\}$} & \makecell{Scot. \\ rUK } & 
-        \makecell{
-            $Y_t(j) = C_t(j) + X_t(j) + \varpi G^{UK}_t(j)$\\
-            $Y^*_t(j) = C^*_t(j) + X^*_t(j) + (1-\varpi) G^{UK}_t(j)$
-        }   
-    \end{tabular}
-    \vspace{0.5cm}
-    \caption{Demand for good $j$ under different policy scenarios}
+ \renewcommand{\arraystretch}{2}
+ \centering
+ \begin{tabular}{l|l|c}
+ \makecell{Scen. 1 \& Scen. 3\\ G: 2, $\tau \in \{0, 1\}$} & \makecell{Scot. \\ rUK } & 
+ \makecell{
+ $Y_t(j) = C_t(j) + X_t(j) + G_t(j)$\\
+ $Y^*_t(j) = C^*_t(j) + X^*_t(j) + G^*_t(j)$
+ } \\ 
+ \makecell{Scen. 3 \& Scen. 4\\ G: 1, $\tau \in \{0, 1\}$} & \makecell{Scot. \\ rUK } & 
+ \makecell{
+ $Y_t(j) = C_t(j) + X_t(j) + \chi G^{UK}_t(j)$\\
+ $Y^*_t(j) = C^*_t(j) + X^*_t(j) + (1-\chi) G^{UK}_t(j)$
+ } 
+ \end{tabular}
+ \vspace{0.5cm}
+ \caption{Demand for good $j$ under different policy scenarios}
 \end{table}
-That is, when there is a single government (Westminister), then we assume that Scotland's contribution towards covering government spending is equal to the population share in the UK. Equation (\ref{eq:demand_for_one_good}) can be loglinearised around a symmetric steady state to yield:
+That is when there is a single government (Westminister), then we assume that Scotland's contribution towards covering government spending is equal to the population share in the UK. Equation (\ref{eq:demand_for_one_good}) can be log-linearised around a symmetric steady state to yield:
 \begin{align}
-    Y_t &= (1-\upsilon)\left(\frac{P_{H,t}}{P_t}\right)^{-\eta}C_t + \upsilon \mathcal{S}_t^{\eta}Y_t^* + G_t\\
-    Y \mathbf{e}^{y_t} &= (1-\upsilon)\left(\frac{P}{P_{H}}\right)^{\eta}C \mathbf{e}^{-\eta p_{H,t} + \eta p_t + c_t}+ \upsilon S^{\eta} Y^* \mathbf{e}^{\eta s_t + y^*_t} + G \mathbf{e}^{g_t}\\
-    \vdots & \quad \text{(see Appendix \ref{eq:appendix_log_rc_beginning} - \ref{eq:appendix_log_rc_end})} \nonumber \\
-    y_t &= C_Y\left[(1-\upsilon)c_t + \upsilon (2-\upsilon)\eta s_t + \upsilon y^*_t\right] + G_Y g_t \label{eq:aggregate_rc}
+ Y_t &= (1-\upsilon)\left(\frac{P_{H,t}}{P_t}\right)^{-\eta}C_t + \upsilon \mathcal{S}_t^{\eta}Y_t^* + G_t\\
+ Y \mathbf{e}^{y_t} &= (1-\upsilon)\left(\frac{P}{P_{H}}\right)^{\eta}C \mathbf{e}^{-\eta p_{H,t} + \eta p_t + c_t}+ \upsilon S^{\eta} Y^* \mathbf{e}^{\eta s_t + y^*_t} + G \mathbf{e}^{g_t}\\
+ \vdots & \quad \text{(see Appendix \ref{eq:appendix_log_rc_beginning} - \ref{eq:appendix_log_rc_end})} \nonumber \\
+ y_t &= C_Y\left[(1-\upsilon)c_t + \upsilon (2-\upsilon)\eta s_t + \upsilon y^*_t\right] + G_Y g_t \label{eq:aggregate_rc}
 \end{align}
-where $C_Y=\frac{C}{Y}$ and $G_Y = \frac{G}{Y}$ are the consumption-to-output and the government spending-to-output ratios in the steady state, respectively. We can use Equation (\ref{eq:link_between_consumption_and_world_output}) that links domestic consumption to world output and previous equation (\ref{eq:aggregate_rc}) to express terms of trade as a function of domestic output, world output, preference shifter, and government spending:
+where $C_Y=\frac{C}{Y}$ and $G_Y = \frac{G}{Y}$ are the consumption-to-output and the government spending-to-output ratios in the steady state, respectively. We can use Equation (\ref{eq:link_between_consumption_and_world_output}) that links domestic consumption to world output and the previous equation (\ref{eq:aggregate_rc}) to express terms of trade as a function of domestic output, world output, preference shifter, and government spending:
 \begin{align}
-    y_t &= C_Y\left[(1-\upsilon)\left( y^*_t + \frac{1}{\sigma}z_t + \frac{1-\upsilon}{\sigma}s_t \right) + \upsilon (2-\upsilon)\eta s_t + \upsilon y^*_t\right] + G_Y g_t \\
-    \vdots & \quad \text{(see Appendix \ref{eq:terms_of_trade_derivation_beginning} - \ref{eq:terms_of_trade_derivation_end})} \nonumber \\
-    s_t &= \sigma_\upsilon(C_Y^{-1} y_t - y^*_t - C_G^{-1} g_t) - (1-\upsilon)\Phi z_t \label{eq:terms_of_trade_w_gov}
+ y_t &= C_Y\left[(1-\upsilon)\left( y^*_t + \frac{1}{\sigma}z_t + \frac{1-\upsilon}{\sigma}s_t \right) + \upsilon (2-\upsilon)\eta s_t + \upsilon y^*_t\right] + G_Y g_t \\
+ \vdots & \quad \text{(see Appendix \ref{eq:terms_of_trade_derivation_beginning} - \ref{eq:terms_of_trade_derivation_end})} \nonumber \\
+ s_t &= \sigma_\upsilon(C_Y^{-1} y_t - y^*_t - C_G^{-1} g_t) - (1-\upsilon)\Phi z_t \label{eq:terms_of_trade_w_gov}
 \end{align}
-where $\varpi = \sigma \eta + (1-\upsilon)(\sigma \eta - 1)$, $\Phi = \frac{1}{1 + \upsilon (\varpi - 1)}$, $\sigma_\upsilon = \sigma \Phi$, and $C_G$ is the consumption-to-government spending ratio in the steady state. Notice that when $G=0,\ Y=C$, then $s_t = \sigma_\upsilon(y_t - y^*_t) - (1-\upsilon)\Phi z_t$, i.e. identical to \textcite{jordigal_2015_monetary}. Negative government term implies that (effective) trade of terms are decreasing in government spending. This is intuitive: the government is modelled to demand exclusively domestic goods, which induces inflationary pressure and makes home goods less competitive internationally. The opposite is true for the domestic-world output gap: if our firms produce relatively more than the rest of the world and is able to export relatively more, then terms of trade increase (the first term of (\ref{eq:terms_of_trade_w_gov}) is positive). However, $y_t > y^*_t$, does not \textit{automatically} imply $\Delta x_{t+1} > 0$ (an increase in exports), the terms to be explicitly linked. Following a similar approach to \citereset\textcite{jordigal_2015_monetary}, the net exports is denoted in terms of each GDP component as a share of their respective steady state values. The resulting expression can be combined with the aggregate resource constraint (\ref{eq:aggregate_rc}) and (\ref{eq:link_between_consumption_and_world_output}) to yield a link between terms of trade and net exports $NX_t$:
+where $\varpi = \sigma \eta + (1-\upsilon)(\sigma \eta - 1)$, $\Phi = \frac{1}{1 + \upsilon (\varpi - 1)}$, $\sigma_\upsilon = \sigma \Phi$, and $C_G$ is the consumption-to-government spending ratio in the steady state. Notice that when $G=0,\ Y=C$, then $s_t = \sigma_\upsilon(y_t - y^*_t) - (1-\upsilon)\Phi z_t$, i.e. identical to \textcite[238]{jordigal_2015_monetary}. Negative government term implies that (effective) trade of terms is decreasing in government spending. This is intuitive: the government is modelled to demand exclusively domestic goods, which induces inflationary pressure and makes home goods less competitive internationally. The opposite is true for the domestic-world output gap: if our firms produce relatively more than the rest of the world and are able to export relatively more, then terms of trade increase (the first term of (\ref{eq:terms_of_trade_w_gov}) is positive). However, $y_t > y^W_t$ does not \textit{automatically} imply an increase in exports; the terms need to be explicitly linked. Following a similar approach to \citereset\textcite{jordigal_2015_monetary}, the net exports are denoted in terms of each GDP component as a share of their respective steady-state values. The resulting expression can be combined with the aggregate resource constraint (\ref{eq:aggregate_rc}) and (\ref{eq:link_between_consumption_and_world_output}) to yield a link between terms of trade and net exports $NX_t$:
 \begin{align}
-    NX_t &= \frac{1}{Y} Y_t - \frac{1}{C}\left(\frac{P_t}{P_{H,t}}C_t\right) - \frac{1}{G}G_t \\
-    \vdots & \quad \text{\textcolor{red}{(see Appendix A.xx-A.xx)}} \nonumber \\
-    nx_t &= y_t - c_t - \upsilon s_t - g_t \label{eq:trade_balance_w_consumption} \\
-    \vdots & \quad \text{\textcolor{red}{(see Appendix A.xx-A.xx)}} \nonumber \\
-    nx_t&=C_Y\left[\upsilon \left(\frac{\varpi}{\sigma} - 1\right) s_t - \frac{\upsilon}{\sigma}z_t \right] \label{eq:trade_balance_wout_consumption}
+ NX_t &= \frac{1}{Y} Y_t - \frac{1}{C}\left(\frac{P_t}{P_{H,t}}C_t\right) - \frac{1}{G}G_t \\
+ nx_t &= y_t - c_t - \upsilon s_t - g_t \label{eq:trade_balance_w_consumption} \\
+ \vdots & \quad \text{(see Appendix \ref{eq:appendix_trade_balance_derivation_beginning}-\ref{eq:appendix_trade_balance_derivation_end})} \nonumber \\
+ nx_t&=\upsilon \left(\frac{\varpi}{\sigma} - 1\right) s_t - \frac{\upsilon}{\sigma}z_t \label{eq:trade_balance_wout_consumption}
 \end{align}
-Furthermore, the Euler equation in (\ref{eq:euler_equation}) is a function of CPI, but using (\ref{eq:cpi_inflation_tot}), it can be rewritten to be a function of domestic inflation and terms of trade:
+Note that in scenarios 2 \& 4, $nx_t$ and $nx_t^*$ are scaled by $\chi$ and $(1-\chi)$, respectively, so that aggregate resources would be proportionally affected by government spending. Furthermore, the Euler equation in (\ref{eq:euler_equation}) is a function of CPI, but using (\ref{eq:cpi_inflation_tot}), it can be rewritten to be a function of domestic inflation and terms of trade:
 \begin{align}
-    c_t &= \E\{ c_{t+1}\} - \frac{1}{\sigma}(i_t - \E \{ \pi_{H,t+1}\} - \rho) + \frac{\upsilon}{\sigma}\E \{ \Delta s_{t+1} \} + \frac{1}{\sigma}(1-\rho_z)z_t \label{eq:euler_w_domestic_inflation}
+ c_t &= \E\{ c_{t+1}\} - \frac{1}{\sigma}(i_t - \E \{ \pi_{H,t+1}\} - \rho) + \frac{\upsilon}{\sigma}\E \{ \Delta s_{t+1} \} + \frac{1}{\sigma}(1-\rho_z)z_t \label{eq:euler_w_domestic_inflation}
 \end{align}
 Finally, aggregate resource constraint (\ref{eq:aggregate_rc}), terms of trade definition (\ref{eq:terms_of_trade_w_gov}), and new Euler equation (\ref{eq:euler_w_domestic_inflation}) can be combined to derive a version of dynamic IS equation:
 \begin{align}
-    c_t &= \E\{ c_{t+1}\} - \frac{1}{\sigma}(i_t - \E \{ \pi_{H,t+1}\} - \rho) + \frac{\upsilon}{\sigma}\E \{ \Delta s_{t+1} \} + \frac{1}{\sigma}(1-\rho_z)z_t \\
-    \vdots & \quad \text{(see Appendix \ref{eq:dynamic_is_beginning}-\ref{eq:dynamic_is_end})} \nonumber \\
-    y_t  &= \E_t \{y_{t+1}\} - C_Y\left[\frac{1}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - \rho) + \frac{1-\upsilon}{\sigma} (1-\rho_z)z_t + \upsilon (\varpi - 1)\E \{\Delta y_{t+1}^* \}\right] \nonumber \\ 
-    & - G_Y \E_t \{\Delta g_{t+1}\} \label{eq:a_version_of_dis}
+ c_t &= \E\{ c_{t+1}\} - \frac{1}{\sigma}(i_t - \E \{ \pi_{H,t+1}\} - \rho) + \frac{\upsilon}{\sigma}\E \{ \Delta s_{t+1} \} + \frac{1}{\sigma}(1-\rho_z)z_t \\
+ \vdots & \quad \text{(see Appendix \ref{eq:dynamic_is_beginning}-\ref{eq:dynamic_is_end})} \nonumber \\
+ y_t &= \E_t \{y_{t+1}\} - C_Y\left[\frac{1}{\sigma_\upsilon}(i_t - \E \{ \pi_{H,+1}\} - \rho) + \frac{1-\upsilon}{\sigma} (1-\rho_z)z_t + \upsilon (\varpi - 1)\E \{\Delta y_{t+1}^* \}\right] \nonumber \\ 
+ & - G_Y \E_t \{\Delta g_{t+1}\} \label{eq:a_version_of_dis}
 \end{align}
-which implies that output in current period depends not only on expected output, inflation, and change in world output, but it also depends on expected changes in government spending. Equation (\ref{eq:a_version_of_dis}) can be expressed in terms of output and real interest rate gaps:
+which implies that output in the current period depends not only on expected output, inflation, and change in world output, but it also depends on expected changes in government spending. Equation (\ref{eq:a_version_of_dis}) can be expressed in terms of output and real interest rate gaps:
 \begin{align}
-    y^n_t  &= \E_t \{y^n_{t+1}\} - C_Y\left[\frac{1}{\sigma_\upsilon}(r^n_t - \rho) + \upsilon (\varpi - 1)\E \{\Delta y_{t+1}^* \}  + \frac{1-\upsilon}{\sigma} (1-\rho_z)z_t\right] \nonumber \\
-    &- G_Y \E_t \{ \Delta g_{t+1} \}\\
-    \vdots & \quad \text{(see Appendix \ref{eq:final_dynamic_is_derivation_beginning} - \ref{eq:appendix_natural_rate_of_interest_dynamic_is})} \nonumber \\
-    r^n_t  &= \sigma_\upsilon C_Y^{-1} \E_t \{\Delta y^n_{t+1}\} + \rho + \sigma_\upsilon \upsilon (\varpi - 1)\E \{\Delta y_{t+1}^* \}  + \Phi (1-\upsilon)(1-\rho_z)z_t \nonumber \\ 
-    &+ \sigma_\upsilon C_G^{-1}\E_t \{ \Delta g_{t+1} \} \label{eq:natural_rate_of_interest_dynamic_is}\\
-    \vdots & \quad \text{(see Appendix \ref{eq:appendix_natural_rate_of_interest_dynamic_is} - \ref{eq:final_dynamic_is_derivation_end})} \nonumber \\
-    \tilde{y}_t &= \tilde{y}_{t+1} - \frac{1}{\sigma_\upsilon}C_Y(i_t - \E \{ \pi_{H,+1}\} - r^n_t) \label{eq:dynamic_is}
+ y^n_t &= \E_t \{y^n_{t+1}\} - C_Y\left[\frac{1}{\sigma_\upsilon}(r^n_t - \rho) + \upsilon (\varpi - 1)\E \{\Delta y_{t+1}^* \} + \frac{1-\upsilon}{\sigma} (1-\rho_z)z_t\right] \nonumber \\
+ &- G_Y \E_t \{ \Delta g_{t+1} \}\\
+ \vdots & \quad \text{(see Appendix \ref{eq:final_dynamic_is_derivation_beginning} - \ref{eq:appendix_natural_rate_of_interest_dynamic_is})} \nonumber \\
+ r^n_t &= \sigma_\upsilon C_Y^{-1} \E_t \{\Delta y^n_{t+1}\} + \rho + \sigma_\upsilon \upsilon (\varpi - 1)\E \{\Delta y_{t+1}^* \} + \Phi (1-\upsilon)(1-\rho_z)z_t \nonumber \\ 
+ &+ \sigma_\upsilon C_G^{-1}\E_t \{ \Delta g_{t+1} \} \label{eq:natural_rate_of_interest_dynamic_is}\\
+ \vdots & \quad \text{(see Appendix \ref{eq:appendix_natural_rate_of_interest_dynamic_is} - \ref{eq:final_dynamic_is_derivation_end})} \nonumber \\
+ \tilde{y}_t &= \tilde{y}_{t+1} - \frac{1}{\sigma_\upsilon}C_Y(i_t - \E \{ \pi_{H,+1}\} - r^n_t) \label{eq:dynamic_is}
 \end{align}
-where $y^n_{t}$ is the natural output, $\tilde{y}_t$ is the output gap, and Equation (\ref{eq:natural_rate_of_interest_dynamic_is}) defines the natural real rate of interest $r_t^n$. Equation (\ref{eq:dynamic_is}) is called Dynamic IS equation. It shows, that every period (hence, \textit{dynamic}), output gap is determined by the output gap ``tomorrow'' the real interest rate gap ``today''. It is one of the key equations in NK DSGE models. It sets a path for the output gap given a path for the real interest rate. The real interest rate gap path depends on inflation path, which was earlier given to be a function of the markup gap. However, for the model to yield a solution, the inflation path needs to be directly linked to the output gap. Firstly, average markup can be rewritten to yield:
+where $y^n_{t}$ is the natural output, $\tilde{y}_t$ is the output gap, and Equation (\ref{eq:natural_rate_of_interest_dynamic_is}) defines the natural real rate of interest $r_t^n$. Equation (\ref{eq:dynamic_is}) is called Dynamic IS equation. It shows that for every period (hence, \textit{dynamic}), the output gap is determined by the output gap ``tomorrow'' the real interest rate gap ``today''. It is one of the key equations in NK DSGE models. It sets a path for the output gap, given a path for the real interest rate. The real interest rate gap path depends on the inflation path, which was earlier given to be a function of the markup gap. However, for the model to yield a solution, the inflation path needs to be directly linked to the output gap. Firstly, the average markup can be rewritten to yield:
 \begin{align}
-    \mu_t &= p_{H,t} - \psi_t \\
-     &= p_{H,t} - (w_t - a_t + \alpha n_t) \nonumber \\
-    \vdots & \quad \text{(see Appendix \ref{eq:appendix_average_markup_beginning}-\ref{eq:appendix_average_markup_end})} \nonumber \\
-    \mu_t &= -\left(\sigma C_Y^{-1} + \frac{\varphi + \alpha}{1-\alpha}\right)y_t + \upsilon (\varpi - 1) s_t - \frac{\tau}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t \nonumber \\ 
-    &+ \sigma C_G^{-1} g_t  \label{eq:average_markup}
+ \mu_t &= p_{H,t} - \psi_t \\
+ &= p_{H,t} - (w_t - a_t + \alpha n_t) \nonumber \\
+ \vdots & \quad \text{(see Appendix \ref{eq:appendix_average_markup_beginning}-\ref{eq:appendix_average_markup_end})} \nonumber \\
+ \mu_t &= -\left(\sigma C_Y^{-1} + \frac{\varphi + \alpha}{1-\alpha}\right)y_t + \upsilon (\varpi - 1) s_t - \frac{\tau}{1-\tau}\tau_t + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t \nonumber \\ 
+ &+ \sigma C_G^{-1} g_t \label{eq:average_markup}
 \end{align}
 Evaluating (\ref{eq:average_markup}) at flexible prices $\theta=0$ and solving for the output term yields the expression for the natural level of output $y_t^n$:
 \begin{align}
-    \mu_t &= -\left(\sigma C_Y^{-1} + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t + \upsilon (\varpi - 1) s^n_t - \frac{\tau}{1-\tau}\tau_t  + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t \nonumber \\ 
-    &+ \sigma C_G^{-1} g_t \label{eq:average_markup_flexible_prices}\\
-    \vdots & \quad \text{(see Appendix \ref{eq:appendix_natural_level_of_output_beginning} - \ref{eq:appendix_natural_level_of_output_end})} \nonumber \\
-    y^n_t &= \Gamma_* y^*_t + \Gamma_z z_t + \Gamma_a a_t + \Gamma_\tau \tau_t + \Gamma_g g_t \label{eq:natural_output}
+ \mu_t &= -\left(\sigma C_Y^{-1} + \frac{\varphi + \alpha}{1-\alpha}\right)y^n_t + \upsilon (\varpi - 1) s^n_t - \frac{\tau}{1-\tau}\tau_t + \left(1 + \frac{\varphi + \alpha}{1-\alpha}\right)a_t - \upsilon z_t \nonumber \\ 
+ &+ \sigma C_G^{-1} g_t \label{eq:average_markup_flexible_prices}\\
+ \vdots & \quad \text{(see Appendix \ref{eq:appendix_natural_level_of_output_beginning} - \ref{eq:appendix_natural_level_of_output_end})} \nonumber \\
+ y^n_t &= \Gamma_* y^*_t + \Gamma_z z_t + \Gamma_a a_t + \Gamma_\tau \tau_t + \Gamma_g g_t \label{eq:natural_output}
 \end{align}
 where:
 \begin{align}
-    & \text{G $\ne$ 0, Y = C + G} & & \text{G = 0, Y = C \parencite{jordigal_2015_monetary}} \nonumber\\
-    \Gamma_* &= -\frac{\upsilon(\varpi - 1)\sigma_\upsilon(1-\alpha)}{\sigma_\upsilon C_Y^{-1} (1-\alpha) + \varphi + \alpha} & \Gamma_* & -\frac{\upsilon(\varpi - 1)\sigma_\upsilon(1-\alpha)}{\sigma_\upsilon (1-\alpha) + \varphi + \alpha}\\
-    \Gamma_z &= -\frac{\upsilon \varpi \Phi (1-\alpha)}{\sigma_\upsilon C_Y^{-1} (1-\alpha) + \varphi + \alpha} & \Gamma_z &= -\frac{\upsilon \varpi \Phi (1-\alpha)}{\sigma_\upsilon (1-\alpha) + \varphi + \alpha} \\
-    \Gamma_a &= \frac{1+\varpi}{\sigma_\upsilon C_Y^{-1} (1-\alpha) + \varphi + \alpha} & \Gamma_a &= \frac{1+\varpi}{\sigma_\upsilon (1-\alpha) + \varphi + \alpha} \\
-    \Gamma_g &= \frac{\sigma_\upsilon C_G^{-1} (1-\alpha)}{\sigma_\upsilon C_Y^{-1} (1-\alpha) + \varphi + \alpha} & \Gamma_g &= 0 \\
-    & \text{Scenarios 3 \& 4}& &\text{Scenarios 1 \& 2} \nonumber \\
-    \Gamma_\tau &= -\frac{\tau}{1-\tau} \frac{1-\alpha}{\sigma_\upsilon C_Y^{-1} (1-\alpha) + \varphi + \alpha } & \Gamma_\tau &= 0
+ & \text{G $\ne$ 0, Y = C + G} & & \text{G = 0, Y = C \parencite[238]{jordigal_2015_monetary}} \nonumber\\
+ \Gamma_* &= -\frac{\upsilon(\varpi - 1)\sigma_\upsilon(1-\alpha)}{\sigma_\upsilon C_Y^{-1} (1-\alpha) + \varphi + \alpha} & \Gamma_* & -\frac{\upsilon(\varpi - 1)\sigma_\upsilon(1-\alpha)}{\sigma_\upsilon (1-\alpha) + \varphi + \alpha}\\
+ \Gamma_z &= -\frac{\upsilon \varpi \Phi (1-\alpha)}{\sigma_\upsilon C_Y^{-1} (1-\alpha) + \varphi + \alpha} & \Gamma_z &= -\frac{\upsilon \varpi \Phi (1-\alpha)}{\sigma_\upsilon (1-\alpha) + \varphi + \alpha} \\
+ \Gamma_a &= \frac{1+\varpi}{\sigma_\upsilon C_Y^{-1} (1-\alpha) + \varphi + \alpha} & \Gamma_a &= \frac{1+\varpi}{\sigma_\upsilon (1-\alpha) + \varphi + \alpha} \\
+ \Gamma_g &= \frac{\sigma_\upsilon C_G^{-1} (1-\alpha)}{\sigma_\upsilon C_Y^{-1} (1-\alpha) + \varphi + \alpha} & \Gamma_g &= 0 \\
+ & \text{Scenarios 3 \& 4}& &\text{Scenarios 1 \& 2} \nonumber \\
+ \Gamma_\tau &= -\frac{\tau}{1-\tau} \frac{1-\alpha}{\sigma_\upsilon C_Y^{-1} (1-\alpha) + \varphi + \alpha } & \Gamma_\tau &= 0
 \end{align}
-Notice that the natural output is increasing in technology level and government spending, but decreasing in labour taxes, preference shifter, and world output. The expression for natural output can be used to update the expression for the natural rate of interest:
+Notice that the natural output is increasing in technology level and government spending but decreasing in labour taxes, preference shifter, and world output. The expression for natural output can be used to update the expression for the natural rate of interest:
 \begin{align}
-    r^n_t  &= \sigma_\upsilon C_Y^{-1} \E_t \{\Delta y^n_{t+1}\} + \rho + \sigma_\upsilon \upsilon (\varpi - 1)\E \{\Delta y_{t+1}^* \}  + \Phi (1-\upsilon)(1-\rho_z)z_t \nonumber \\ 
-    &+ \sigma_\upsilon C_G^{-1}\E_t \{ \Delta g_{t+1} \} \\
-    \vdots & \quad \text{see Appendix \ref{eq:appendix_natural_real_interest_rate_beginning}-\ref{eq:appendix_natural_real_interest_rate_end}} \nonumber \\
-    r^n_t  &= \rho - C_Y^{-1} \sigma_\upsilon \Gamma_a (1 - \rho_a)a_t + \Psi_* \E_t \{\Delta y^*_{t+1}\} + \Psi_z (1-\rho_z) z_t \nonumber \\ 
-    &- \Psi_g (1-\rho_g)g_t +\Psi_\tau \E_t \{ \Delta \tau_{t+1}\}
+ r^n_t &= \sigma_\upsilon C_Y^{-1} \E_t \{\Delta y^n_{t+1}\} + \rho + \sigma_\upsilon \upsilon (\varpi - 1)\E \{\Delta y_{t+1}^* \} + \Phi (1-\upsilon)(1-\rho_z)z_t \nonumber \\ 
+ &+ \sigma_\upsilon C_G^{-1}\E_t \{ \Delta g_{t+1} \} \\
+ \vdots & \quad \text{see Appendix \ref{eq:appendix_natural_real_interest_rate_beginning}-\ref{eq:appendix_natural_real_interest_rate_end}} \nonumber \\
+ r^n_t &= \rho - C_Y^{-1} \sigma_\upsilon \Gamma_a (1 - \rho_a)a_t + \Psi_* \E_t \{\Delta y^*_{t+1}\} + \Psi_z (1-\rho_z) z_t \nonumber \\ 
+ &- \Psi_g (1-\rho_g)g_t +\Psi_\tau \E_t \{ \Delta \tau_{t+1}\}
 \end{align}
 where:
 \begin{align}
-    & \text{G $\ne$ 0, Y = C + G} & & \text{G = 0, Y = C \parencite{jordigal_2015_monetary}} \nonumber\\
-    \Psi_* &= \sigma_\upsilon(C_Y^{-1} \Gamma_* + \upsilon(\varpi-1)) & \Psi_* &= \sigma_\upsilon(\Gamma_* + \upsilon(\varpi-1)) \\
-    \Psi_z &= (1-\upsilon)\Phi - C_Y^{-1} \sigma_\upsilon \Gamma_z & \Psi_z &= (1-\upsilon)\Phi - \sigma_\upsilon \Gamma_z \\
-    \Psi_g &= \sigma_\upsilon \left( C_Y^{-1} \Gamma_g + C_G^{-1} \right) & \Psi_g &= 0\\
-    & \text{Scenarios 3 \& 4}& &\text{Scenarios 1 \& 2} \nonumber \\
-    \Psi_\tau &= \sigma_\upsilon C_Y^{-1} \Gamma_\tau & \Psi_\tau &= 0
+ & \text{G $\ne$ 0, Y = C + G} & & \text{G = 0, Y = C \parencite[239]{jordigal_2015_monetary}} \nonumber\\
+ \Psi_* &= \sigma_\upsilon(C_Y^{-1} \Gamma_* + \upsilon(\varpi-1)) & \Psi_* &= \sigma_\upsilon(\Gamma_* + \upsilon(\varpi-1)) \\
+ \Psi_z &= (1-\upsilon)\Phi - C_Y^{-1} \sigma_\upsilon \Gamma_z & \Psi_z &= (1-\upsilon)\Phi - \sigma_\upsilon \Gamma_z \\
+ \Psi_g &= \sigma_\upsilon \left( C_Y^{-1} \Gamma_g + C_G^{-1} \right) & \Psi_g &= 0\\
+ & \text{Scenarios 3 \& 4}& &\text{Scenarios 1 \& 2} \nonumber \\
+ \Psi_\tau &= \sigma_\upsilon C_Y^{-1} \Gamma_\tau & \Psi_\tau &= 0
 \end{align}
 When the prices are flexible, then each firm will choose the same optimal level of labour, implying constant average markup $\mu_t = \mu$. Subtracting $\mu_t$ definition (\ref{eq:average_markup}) from $\mu$ definition (\ref{eq:average_markup_flexible_prices}) yields:
 \begin{align}
-    \hat{\mu}_t = \mu_t - \mu &= - \left( \sigma + \frac{\varphi + \alpha}{1-\alpha}\right) \tilde{y}_t + \upsilon(\varpi-1)\tilde{s}_t \\
-     &= - \left( \sigma_\upsilon C_Y^{-1} + \frac{\varphi + \alpha}{1-\alpha}\right) \tilde{y}_t \label{eq:average_markup_gap_w_tildes}
+ \hat{\mu}_t = \mu_t - \mu &= - \left( \sigma + \frac{\varphi + \alpha}{1-\alpha}\right) \tilde{y}_t + \upsilon(\varpi-1)\tilde{s}_t \\
+ &= - \left( \sigma_\upsilon C_Y^{-1} + \frac{\varphi + \alpha}{1-\alpha}\right) \tilde{y}_t \label{eq:average_markup_gap_w_tildes}
 \end{align}
 where $\tilde{s}_t$ denote terms of trade gap, and Equation (\ref{eq:average_markup_gap_w_tildes}) uses $\tilde{s}_t=\sigma_\upsilon C_Y^{-1} \tilde{y}_t$ relationship implied by (\ref{eq:terms_of_trade_w_gov}). Finally, plugging (\ref{eq:average_markup_gap_w_tildes}) to a \textit{version} of NKPC defined by Equation (\ref{eq:nkpc_a_version}), yields the \textit{final} NKPC equation:
 \begin{equation}
-    \pi_{H,t} = \beta \E_t \left[ \pi_{H,t+1}\right] + \kappa \tilde{y}_t
+ \pi_{H,t} = \beta \E_t \left[ \pi_{H,t+1}\right] + \kappa \tilde{y}_t
 \end{equation}
-where $\kappa=\lambda\left( \sigma_\upsilon C_Y^{-1} + \frac{\varphi + \alpha}{1-\alpha}\right)$. That is, whenever output is greater than that implied by the natural level of output ($\tilde{y}_t > 0$), inflation increases, which subsequently reduces demand and brings output closer to the natural level of output. The opposite is also true, i.e. whenever economy is under-producing goods ($\tilde{y}_t < 0$), then inflation decreases to induce demand and bring output level to that under flexible prices. If prices were fully flexible ($\theta = 0$), then economy would always be producing $y_t = y^n_t$, suggesting a zero inflation steady state.
+where $\kappa=\lambda\left( \sigma_\upsilon C_Y^{-1} + \frac{\varphi + \alpha}{1-\alpha}\right)$. That is, whenever output is greater than that implied by the natural level of output ($\tilde{y}_t > 0$), inflation increases, which subsequently reduces demand and brings output closer to the natural level of output. The opposite is also true, i.e. whenever the economy is under-producing goods ($\tilde{y}_t < 0$), then inflation decreases to induce demand and bring output level to that under flexible prices. If prices were fully flexible ($\theta = 0$), then the economy would always be producing $y_t = y^n_t$, suggesting a zero inflation steady state.
 
-Finally, we have a path for output gap (implied by DIS), a path for inflation (implied by NKPC), the only remaining path to ``close'' the model is that for the interest rate. Here, the monetary authority is assumed to set interest rate following a Taylor rule:
+Finally, we have a path for the output gap (implied by DIS) and a path for inflation (implied by NKPC); the only remaining path to ``close'' the model is that for the interest rate. Here, the monetary authority is assumed to set the interest rate following a Taylor rule:
 \begin{equation}
-    i_t = \phi_\pi \pi_{H,t}+ \phi_y \hat{y}_t + m_t
+ i_t = \phi_\pi \pi_{H,t}+ \phi_y \hat{y}_t + m_t
 \end{equation}
-where $m_t$ is a contractionary shock, which is assumed to follow an AR(1) process $m_t = \rho_m m_{t-1} + \varepsilon^m_{t},\ \varepsilon^m_{t} \sim \mathcal{N}(0,\sigma^2_m)$, and $\hat{y}_t = y_t - y$ is the deviation from the steady state output. The Taylor rule suggests that monetary authority will raise the interest rate whenever inflation increases or output exceeds the steady state output.
+where $m_t$ is an exogenous monetary policy shock, which is assumed to follow an AR(1) process $m_t = \rho_m m_{t-1} + \varepsilon^m_{t},\ \varepsilon^m_{t} \sim \mathcal{N}(0,\sigma^2_m)$, and $\hat{y}_t$ is the deviation from the steady state output. The Taylor rule suggests that monetary authority will raise the interest rate whenever inflation increases or output exceeds the steady-state output.
 
-The equations provided in this section outline the dynamic behaviour of the endogenous variables. For the model to be fully specified, each parameter within these equations needs to be estimated or calibrated. The following section describes these processes.
+The equations provided in this section outline the dynamic behaviour of the endogenous variables. For the model to be fully specified, each parameter within these equations must be estimated or calibrated. The following section describes these processes.

@@ -1,74 +1,66 @@
 \subsection{Firms}
 In line with the literature, we assume a continuum of infinitesimally small firms, each producing a single good $j$ over which they have monopolistic power. Given the monopolistic nature of the market for each good, the firms are allowed to adjust their prices to maximise profits but, following \textcite{calvo_1983_staggered}, we assume that only a fraction $\theta \in [0,1]$ of them actually do. The firms are assumed to be owned by households, implying that our budget constraint should have a $\Pi_t$ (dividend) term. However, as all households own all firms and take profit/dividends as given, it does not affect first-order conditions/optimal behaviour and, as such, is not considered. The firm's production function is given by: 
 \begin{align}
-    Y_t(j)   & = A_t {N_t(j)}^{1-\alpha}                         
+ Y_t(j) & = A_t {N_t(j)}^{1-\alpha} 
 \end{align}
 where $A_t$ is the technology level shifter common to all firms and is assumed to evolve exogenously as an AR(1) process in log terms: $\ln A_t = \rho_a \ln A_{t-1} + \varepsilon^a_t$. Notice that the marginal product of labour is
 \begin{equation}
-    \frac{\partial Y_t(j)}{\partial N_t(j)} = (1-\alpha)A_t {N_t(j)}^{-\alpha}
+ \frac{\partial Y_t(j)}{\partial N_t(j)} = (1-\alpha)A_t {N_t(j)}^{-\alpha}
 \end{equation}
-which is increasing in technology level (increases labour productivity). Second order derivate with respect to hours worked indicates, that the production function exhibits decreasing returns to scale. Knowing this, the firm maximises their profit by choosing the optimal amount of labour:
+which is increasing in technology level (increases labour productivity). Second-order derivate with respect to hours worked indicates that the production function exhibits decreasing returns to scale. Knowing this, the firm maximises its profit by choosing the optimal amount of labour:
 \begin{align}
-    \max_{N_t(j)}             \quad & \mathcal{F} = P_{H,t}(j)Y_{t}(j) - W_t(j)N_{t}(j) \\
-     & \text{s.t.} \quad  Y_t(j)    = A_t {N_t(j)}^{1-\alpha}     
+ \max_{N_t(j)} \quad & \mathcal{F} = P_{H,t}(j)Y_{t}(j) - W_t(j)N_{t}(j) \\
+ & \text{s.t.} \quad Y_t(j) = A_t {N_t(j)}^{1-\alpha} 
 \end{align}
 which can be solved to yield an optimality condition:
 \begin{equation}
-    \frac{\partial \mathcal{F}}{\partial N_t(j)} \implies \frac{W_t}{P_t} = (1-\alpha)A_t N_t^{-\alpha} \label{eq:firm_optimality_condition}
+ \frac{\partial \mathcal{F}}{\partial N_t(j)} \implies \frac{W_t}{P_t} = (1-\alpha)A_t N_t^{-\alpha} \label{eq:firm_optimality_condition}
 \end{equation}
-Suggesting that firm will hire workers up until the marginal product of labour is equal to the real wage. The optimality condition also acts as a link between real wage ($w_t - p_t$), labour and technology. Moreover, given that the marginal cost $\Psi_t$ needs to equal domestic price level, rearranging Equation (\ref{eq:firm_optimality_condition}) yields: 
+Suggesting that the firm will hire workers until the marginal product of labour is equal to the real wage. The optimality condition also acts as a link between real wage ($w_t - p_t$), labour and technology. Moreover, given that the marginal cost $\Psi_t$ needs to equal domestic price level, rearranging Equation (\ref{eq:firm_optimality_condition}) yields: 
 \begin{align}
-    \Psi_t &= \frac{W_t}{(1-\alpha)A_t N_t^{-\alpha}} & \text{Marginal cost}\\
-    \psi_t &= w_t - (a_t - \alpha n_t + log(1-\alpha)) & \text{(Log) Marginal cost} \label{eq:log_average_marginal_cost}
+ \Psi_t &= \frac{W_t}{(1-\alpha)A_t N_t^{-\alpha}} & \text{Marginal cost}\\
+ \psi_t &= w_t - (a_t - \alpha n_t + log(1-\alpha)) & \text{(Log) Marginal cost} \label{eq:log_average_marginal_cost}
 \end{align}
-Unsurprisingly, the marginal cost is increasing in wages and decreasing in marginal product of labour. It is important to emphasise that definition above is an \textit{average} marginal cost across all firms producing goods $j$. The marginal cost varies across firms due to different existing levels of labour. 
+Unsurprisingly, the marginal cost is increasing in wages and decreasing in the marginal product of labour. It is important to emphasise that definition above is an \textit{average} marginal cost across all firms producing goods $j$. The marginal cost varies across firms due to different existing levels of labour. 
 
-As mentioned earlier, the price stickiness is introduced by assuming that firms update their prices with probability $(1-\theta)$. The newly set price is denoted as $\xbar{P}_{H,t}(j)$. Following a similar proof offered by \textcite{jordigal_2015_monetary} for a closed-economy NK DSGE, note that if all firms are symmetrical, then they will choose the same price, i.e. $\xbar{P}_{H,t}(j) = \xbar{P}_{H,t}$. Thus, the domestic price index from Equation (\ref{eq:domestic_price_index}) can be rewritten as:
+As mentioned earlier, price stickiness is introduced by assuming that firms update their prices with probability $(1-\theta)$. The newly set price is denoted as $\xbar{P}_{H,t}(j)$. Following a similar proof offered by \textcite{jordigal_2015_monetary} for a closed-economy NK DSGE, note that if all firms are symmetrical, then they will choose the same price, i.e. $\xbar{P}_{H,t}(j) = \xbar{P}_{H,t}$. Thus, the domestic price index from Equation (\ref{eq:domestic_price_index}) can be rewritten as:
 \begin{align}
-    P_{H,t} &= \left[ \int_{0}^{1} (P_{H,t}(j))^{1-\epsilon} \, dj\right]^{\frac{1}{1-\epsilon}} \\
-     &= \left[ \int_{S(t)}^{1} {P_{H,t}(j)}^{1-\epsilon} \, dj + \int_{0}^{S(t)}{P_{H,t}(j)}^{1-\epsilon} \, dj\right]^{\frac{1}{1-\epsilon}} \\
-     &= \left[ \theta (P_{H,t-1})^{1-\epsilon} + (1-\theta)(\xbar{P}_{H,t})^{1-\epsilon} \right]^{\frac{1}{1-\epsilon}} \label{eq:price_dynamics_final_step}
+ P_{H,t} &= \left[ \int_{0}^{1} (P_{H,t}(j))^{1-\epsilon} \, dj\right]^{\frac{1}{1-\epsilon}} \\
+ &= \left[ \int_{S(t)}^{1} {P_{H,t}(j)}^{1-\epsilon} \, dj + \int_{0}^{S(t)}{P_{H,t}(j)}^{1-\epsilon} \, dj\right]^{\frac{1}{1-\epsilon}} \\
+ &= \left[ \theta (P_{H,t-1})^{1-\epsilon} + (1-\theta)(\xbar{P}_{H,t})^{1-\epsilon} \right]^{\frac{1}{1-\epsilon}} \label{eq:price_dynamics_final_step}
 \end{align}
 where $S(t)$ is a subset of firms that do not update their prices, and Equation (\ref{eq:price_dynamics_final_step}) ``follows from the fact that the distribution of prices among firms not adjusting in period $t$ corresponds to the distribution of effective prices in period $t-1$, though with total mass reduced to $\theta$'' \parencite[84]{jordigal_2015_monetary}; similarly, the total mass of firms with prices $\xbar{P}_{H,t}$ will be equal to $(1-\theta)$. Dividing (\ref{eq:price_dynamics_final_step}) by $(P_{H,t-1})^{1-\epsilon}$ yields:
 \begin{equation}
-    \Pi_{H,t}^{1-\epsilon} = \theta + (1-\theta)\left(\frac{\xbar{P}_{H,t}}{P_{H,t-1}}\right)^{1-\epsilon} \label{eq:price_dynamics_inflation}
+ \Pi_{H,t}^{1-\epsilon} = \theta + (1-\theta)\left(\frac{\xbar{P}_{H,t}}{P_{H,t-1}}\right)^{1-\epsilon} \label{eq:price_dynamics_inflation}
 \end{equation}
 Log-linearising (\ref{eq:price_dynamics_inflation}) around zero inflation steady state yields:
 \begin{align}
-    \Pi_{H,t}^{1-\epsilon} &= \theta + (1-\theta)\left(\frac{\xbar{P}_{H,t}}{P_{H,t-1}}\right)^{1-\epsilon} \\
-    \Pi_H \mathbf{e}^{(1-\epsilon)\pi_{H,t}} &= \theta + (1-\theta)\frac{\xbar{P_H}}{P_H}\mathbf{e}^{(1-\epsilon)(\bar{p}_{H,t} - p_{H,t})} \\
-    \vdots & \quad \text{(see Appendix \ref{eq:appendix_domestic_inflation_new_price_start} - \ref{eq:appendix_domestic_inflation_new_price_end})} \nonumber \\
-    \pi_{H,t} &= (1-\theta)(\bar{p}_{H,t} - p_{H,t}) \label{eq:domestic_inflation_new_price_relationship}
+ \Pi_{H,t}^{1-\epsilon} &= \theta + (1-\theta)\left(\frac{\xbar{P}_{H,t}}{P_{H,t-1}}\right)^{1-\epsilon} \\
+ \Pi_H \mathbf{e}^{(1-\epsilon)\pi_{H,t}} &= \theta + (1-\theta)\frac{\xbar{P_H}}{P_H}\mathbf{e}^{(1-\epsilon)(\bar{p}_{H,t} - p_{H,t})} \\
+ \vdots & \quad \text{(see Appendix \ref{eq:appendix_domestic_inflation_new_price_start} - \ref{eq:appendix_domestic_inflation_new_price_end})} \nonumber \\
+ \pi_{H,t} &= (1-\theta)(\bar{p}_{H,t} - p_{H,t}) \label{eq:domestic_inflation_new_price_relationship}
 \end{align}
-Intuitively, this means that log domestic inflation depends on two elements: the difference between the current and new domestic price levels, and the price stickiness parameter $\theta$. Consider two extreme cases when $\theta = 1$ and $\theta = 0$: when $\theta = 1$, then no firms would be permitted to update their prices and the domestic inflation would always be equal to zero (CPI would still vary due to terms of trade, assuming $\upsilon \ne 0$). When $\theta = 0$, then all firms \textit{immediately} react to any changes in marginal cost of production in line with Classical/RBC models. Firms that get to update their prices, do so by maximising their \textit{discounted lifetime cash flow}:
+Intuitively, this means that log domestic inflation depends on two elements: the difference between the current and new domestic price levels, and the price stickiness parameter $\theta$. Consider two extreme cases when $\theta = 1$ and $\theta = 0$: when $\theta = 1$, then no firms would be permitted to update their prices and the domestic inflation would always be equal to zero (CPI would still vary due to terms of trade, assuming $\upsilon \ne 0$). When $\theta = 0$, then all firms \textit{immediately} react to any changes in the marginal cost of production in line with Classical/RBC models. Firms that get to update their prices do so by maximising their \textit{discounted lifetime cash flow}:
 \begin{align}
-    \max_{\xbar{P}_{H,t}} \sum_{k=0}^{\infty} \theta^k \E_t \left[\Lambda_{t,t+k} \left( \underbrace{\xbar{P}_{H,t} Y_{t+k|t}}_{Revenue} - \underbrace{\mathcal{C}_{t+k}(Y_{t+k|t})}_{Cost} \right) / P_{H,t+k} \right] \label{eq:profit_maximisation_cash_flow}\\
-    \text{s.t.} \quad Y_{t+k|t} = \left(\frac{\xbar{P}_{H,t}}{P_{H,t+k}}\right)^{-\epsilon} C_{t+k} \label{eq:profit_maximisation_demand_constraints}
+ \max_{\xbar{P}_{H,t}} \sum_{k=0}^{\infty} \theta^k \E_t \left[\Lambda_{t,t+k} \left( \underbrace{\xbar{P}_{H,t} Y_{t+k|t}}_{Revenue} - \underbrace{\mathcal{C}_{t+k}(Y_{t+k|t})}_{Cost} \right) / P_{H,t+k} \right] \label{eq:profit_maximisation_cash_flow}\\
+ \text{s.t.} \quad Y_{t+k|t} = \left(\frac{\xbar{P}_{H,t}}{P_{H,t+k}}\right)^{-\epsilon} C_{t+k} \label{eq:profit_maximisation_demand_constraints}
 \end{align}
-where $\E_t \left[\Lambda_{t,t+k}\right]\ \forall k \geq 0$ is the expected stochastic discount factor used to discount profit (revenue less cost) in every period starting from current\footnote{Notice that we could write this as $\E_t \left[\Lambda_{t,t+k}\right]=\E_t \left[\frac{1}{R_{t, t+k}}\right]$ derived from the households' optimisation problem.}. $Y_{t+k|t}$ is the expected output in periods $t+k$ given output in period $t$, and $\mathcal{C}_{t+k}$ is the nominal cost of producting the expected output. The maximisation problem is subject to $k$ number of demand constraints (\ref{eq:profit_maximisation_demand_constraints}). Substituting the constraint into (\ref{eq:profit_maximisation_cash_flow}), taking first-order conditions, and log-linearising around zero-inflation steady state yields:
+where $\E_t \left[\Lambda_{t,t+k}\right]\ \forall k \geq 0$ is the expected stochastic discount factor used to discount profit (revenue less cost) in every period starting from current. $Y_{t+k|t}$ is the expected output in periods $t+k$ given output in period $t$, and $\mathcal{C}_{t+k}$ is the nominal cost of producting the expected output. The maximisation problem is subject to $k$ number of demand constraints (\ref{eq:profit_maximisation_demand_constraints}). Substituting the constraint into (\ref{eq:profit_maximisation_cash_flow}), taking first-order conditions, and log-linearising around perfect-foresight zero-inflation steady state yields:\footnote{As none of the fiscal terms ($g_t, \tau_t, t_t, b_t$) enter optimal price setting equation, derivations are standard and as such are not provided in the Appendix. }
 \begin{align}
-    \sum_{k=0}^{\infty} \theta^k \E_t &\left[\Lambda_{t,t+k} \left( \xbar{P}_{H,t} \left(\frac{\xbar{P}_{H,t}}{P_{H,t+k}}\right)^{-\epsilon} C_{t+k} - \mathcal{C}_{t+k}(Y_{t+k|t})\right) / P_{H,t+k} \right] \\
-    \vdots & \quad \text{\textcolor{red}{(see Appendix A.xx-A.xx)}} \nonumber \\
-    \bar{p}_{H,t} &= \mu + (1-\beta \theta) \sum_{k=0}^{\infty} (\beta \theta)^{k} \E_t \left[ \psi_{t+k|t} \right] \label{eq:log_optimal_price_setting_condition}
+\bar{p}_{H,t} &= \mu + (1-\beta \theta) \sum_{k=0}^{\infty} (\beta \theta)^{k} \E_t \left[ \psi_{t+k|t} \right] \label{eq:log_optimal_price_setting_condition}
 \end{align}
-where $\E_t \left[ \psi_{t+k|t} \right]$ and $\mu$ are the expected log marginal cost and desired\footnote{Markup that occurs under flexible or frictionless prices} markup, respectively. Equation (\ref{eq:log_optimal_price_setting_condition}) is known as the (log) \textit{optimal price setting condition} and presents firms as forward looking discounted profit maximisers. Note, that it is consistent with the previous exposition of the two extreme cases when $\theta = 0$ and $\theta = 1$, i.e. when $\theta = 1$, then $\pi_{H,t} = \bar{p}_{H,t} - \bar{p}_{H,t-1} = \mu - \mu = 0$. Furthermore, the earlier discussion on optimality condition noted that firms will hire labour up until the real wage is equal to the marginal product of labour. Given that the price (and, subsequently, real wage) changed, firms might choose a different level of labour compared to that of other firms. This allows us to derive a relationship between the average marginal cost and a marginal cost of a firm that just updated their price:
-% TODO
+where $\E_t \left[ \psi_{t+k|t} \right]$ and $\mu$ are the expected log marginal cost and desired\footnote{Markup that occurs under flexible or frictionless prices} markup, respectively. Equation (\ref{eq:log_optimal_price_setting_condition}) is known as the (log) \textit{optimal price setting condition} and presents firms as forward-looking discounted profit maximisers. Note that it is consistent with the previous exposition of the two extreme cases when $\theta = 0$ and $\theta = 1$, i.e. when $\theta = 1$, then $\pi_{H,t} = \bar{p}_{H,t} - \bar{p}_{H,t-1} = \mu - \mu = 0$. Furthermore, the earlier discussion on optimality condition noted that firms would hire labour until the real wage equals the marginal product of labour. Given that the price (and, subsequently, real wage) changed, firms might choose a different level of labour compared to that of other firms. This allows us to derive a relationship between the average marginal cost and a marginal cost of a firm that just updated its price:
 \begin{align}
-     \psi_{t+k|t} &=  \psi_{t+k} + \alpha(n_{t+k|t} - n_{t+k}) \\
-     \vdots & \quad \text{\textcolor{red}{(see Appendix A.xx-A.xx)}} \nonumber \\
-     &=\psi_{t+k} - \frac{\alpha \epsilon}{1-\alpha} \label{eq:mc_to_avg_mcs}
+ \psi_{t+k|t} &= \psi_{t+k} + \alpha(n_{t+k|t} - n_{t+k}) \\
+ &= \psi_{t+k} + \frac{\alpha}{1-\alpha}(n_{t+k|t} - n_{t+k}) \\
+ &=\psi_{t+k} - \frac{\alpha \epsilon}{1-\alpha}(\bar{p}_{H,t} - p_{t+k}) \label{eq:mc_to_avg_mcs}
 \end{align}
 Plugging (\ref{eq:mc_to_avg_mcs}) to (\ref{eq:log_optimal_price_setting_condition}) and rewritting as a recursive equation yields:
-% TODO
 \begin{align}
-    \bar{p}_{H,t} &= \mu + (1-\beta \theta) \sum_{k=0}^{\infty} (\beta \theta)^{k} \E_t \left[ \psi_{t+k} - \frac{\alpha \epsilon}{1-\alpha} \right]\\
-    \vdots & \quad \text{(see Appendix A.xx - A.xx)} \nonumber \\
-    \bar{p}_{H,t} &= \beta \theta \E_t \left[ \bar{p}_{H,t+1} \right] + (1-\beta \theta)(p_{H,t} - \Theta \hat{\mu}_t) \label{eq:dynamic_price_recursive}
+ \bar{p}_{H,t} &= \beta \theta \E_t \left[ \bar{p}_{H,t+1} \right] + (1-\beta \theta)(p_{H,t} - \Theta \hat{\mu}_t) \label{eq:dynamic_price_recursive}
 \end{align}
-where $\mu_t = p_{H,t} - \psi_t$ is the average markup, $\hat{\mu}_t$ is the gap between the average and desired markups, and $\Theta = \frac{1-\alpha}{1-\alpha + \alpha \epsilon}$. Using (\ref{eq:domestic_inflation_new_price_relationship}), it is easy to transform (\ref{eq:dynamic_price_recursive}) into a version of New Keynesian Phillips Curve (NKPC):
+where $\mu_t = p_{H,t} - \psi_t$ is the average markup, $\hat{\mu}_t$ is the gap between the average and desired markups, and $\Theta = \frac{1-\alpha}{1-\alpha + \alpha \epsilon}$. Using (\ref{eq:domestic_inflation_new_price_relationship}), it is easy to transform (\ref{eq:dynamic_price_recursive}) into a version of the New Keynesian Phillips Curve (NKPC):
 \begin{align}
-    \bar{p}_{H,t} &= \beta \theta \E_t \left[ \bar{p}_{H,t+1} \right] + (1-\beta \theta)(p_{H,t} - \Theta \hat{\mu}_t) \\
-    \vdots & \quad \text{\textcolor{red}{(see Appendix A.xx-A.xx)}} \nonumber \\
-    \pi_{H,t} &= \beta \E_t \left[ \pi_{H,t+1}\right] - \lambda \hat{\mu}_t \label{eq:nkpc_a_version}
+ \pi_{H,t} &= \beta \E_t \left[ \pi_{H,t+1}\right] - \lambda \hat{\mu}_t \label{eq:nkpc_a_version}
 \end{align}
 where $\lambda = \frac{(1-\theta)(1-\beta \theta)}{\theta}\Theta$. Equation (\ref{eq:nkpc_a_version}) suggests that inflation will be increasing as long as $\mu > \mu_t$. That is, price-adjusting firms will continue raising prices until the difference between the marginal cost and the domestic price level is smaller than the desired markup, i.e. $p_{H,t} - \psi_t < \mu$. At $p_{H,t} - \psi_t = \mu$, the domestic inflation will (slowly) tend towards the steady state level of zero due to the discount factor $\beta \in (0,1)$. The next section will show that the markup gap can be expressed as a function of the natural output gap, which itself is a function of technology level, taxes, government spending, world output, and the preference shifter. Therefore, the resulting expression (NKPC) will pin the relationship between domestic inflation and all other real variables. This is why NKPC is regarded as one of the key (non-policy) equations in NK DSGE models.

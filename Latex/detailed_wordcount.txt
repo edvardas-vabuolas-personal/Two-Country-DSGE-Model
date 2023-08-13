@@ -1,45 +1,45 @@
 
-Sum count: 10437
-Words in text: 9364
+Sum count: 10477
+Words in text: 9355
 Words in headers: 38
-Words outside text (captions, etc.): 727
+Words outside text (captions, etc.): 771
 Number of headers: 14
 Number of floats/tables/figures: 27
-Number of math inlines: 249
-Number of math displayed: 59
+Number of math inlines: 253
+Number of math displayed: 60
 Files: 33
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
   1+17+0 (6/0/0/0) File: main.tex
-  644+0+0 (0/0/0/0) Included file: ././Introduction/introduction.tex
-  1499+17+118 (4/0/0/0) Included file: ././Literature Review/literature_review.tex
-  513+0+86 (0/0/11/0) Included file: ././Theoretical DSGE model/model.tex
-  797+0+54 (0/0/5/0) Included file: ././Application/application.tex
-  1225+0+67 (0/0/18/0) Included file: ././Results/results.tex
+  636+0+0 (0/0/0/0) Included file: ././Introduction/introduction.tex
+  1536+17+118 (4/0/0/0) Included file: ././Literature Review/literature_review.tex
+  507+0+85 (0/0/11/0) Included file: ././Theoretical DSGE model/model.tex
+  842+0+53 (0/0/5/0) Included file: ././Application/application.tex
+  1246+0+67 (0/0/18/0) Included file: ././Results/results.tex
   248+0+0 (0/0/0/0) Included file: ././Limitations/limitations.tex
-  468+0+0 (0/0/1/0) Included file: ././Conclusion/conclusion.tex
+  405+0+0 (0/0/1/0) Included file: ././Conclusion/conclusion.tex
   0+0+18 (0/1/0/0) Included file: ././Graphs/timeline.tex
-  1680+1+13 (1/1/85/26) Included file: ././Theoretical DSGE model/households.tex
-  487+1+43 (1/5/26/1) Included file: ././Theoretical DSGE model/government.tex
-  875+1+21 (1/0/45/13) Included file: ././Theoretical DSGE model/firms.tex
-  927+1+7 (1/1/35/19) Included file: ././Theoretical DSGE model/equilibrium.tex
-  0+0+11 (0/1/0/0) Included file: ././Application/Tables/model_parameters.tex
+  1618+1+21 (1/1/86/27) Included file: ././Theoretical DSGE model/households.tex
+  485+1+42 (1/5/26/1) Included file: ././Theoretical DSGE model/government.tex
+  873+1+31 (1/0/45/13) Included file: ././Theoretical DSGE model/firms.tex
+  958+1+15 (1/1/38/19) Included file: ././Theoretical DSGE model/equilibrium.tex
+  0+0+32 (0/1/0/0) Included file: ././Application/Tables/model_parameters.tex
   0+0+6 (0/1/0/0) Included file: ././Application/Tables/priors_posteriors.tex
   0+0+10 (0/1/0/0) Included file: ././Graphs/MCMC_SCOT.tex
   0+0+5 (0/1/0/0) Included file: ././Application/Tables/sources.tex
   0+0+12 (0/1/0/0) Included file: ././Graphs/IRFs/m_four.tex
-  0+0+14 (0/1/0/0) Included file: ././Graphs/IRFs/f_one.tex
-  0+0+14 (0/1/0/0) Included file: ././Graphs/IRFs/f_one_f.tex
-  0+0+16 (0/1/0/0) Included file: ././Graphs/IRFs/f_two.tex
-  0+0+14 (0/1/0/0) Included file: ././Graphs/IRFs/f_three.tex
-  0+0+14 (0/1/0/0) Included file: ././Graphs/IRFs/f_three_f.tex
-  0+0+16 (0/1/0/0) Included file: ././Graphs/IRFs/f_four.tex
+  0+0+14 (0/1/0/0) Included file: ././Graphs/f_one.tex
+  0+0+14 (0/1/0/0) Included file: ././Graphs/f_one_f.tex
+  0+0+16 (0/1/0/0) Included file: ././Graphs/f_two.tex
+  0+0+14 (0/1/0/0) Included file: ././Graphs/f_three.tex
+  0+0+14 (0/1/0/0) Included file: ././Graphs/f_three_f.tex
+  0+0+16 (0/1/0/0) Included file: ././Graphs/f_four.tex
   0+0+32 (0/1/4/0) Included file: ././Results/Tables/results_one_three.tex
   0+0+43 (0/1/4/0) Included file: ././Results/Tables/results_two_four.tex
   0+0+34 (0/1/4/0) Included file: ././Results/Tables/results_one_two.tex
   0+0+34 (0/1/4/0) Included file: ././Results/Tables/results_three_four.tex
-  0+0+3 (0/1/2/0) Included file: ././Graphs/sensitivity_analysis_phi_b.tex
-  0+0+3 (0/1/2/0) Included file: ././Graphs/sensitivity_analysis_phi_g.tex
-  0+0+3 (0/1/2/0) Included file: ././Graphs/sensitivity_analysis_rho_g.tex
+  0+0+3 (0/1/2/0) Included file: ././Graphs/sensitivity_analysis_phi_b_test.tex
+  0+0+3 (0/1/2/0) Included file: ././Graphs/sensitivity_analysis_phi_g_test.tex
+  0+0+3 (0/1/2/0) Included file: ././Graphs/sensitivity_analysis_rho_g_test.tex
   0+0+16 (0/1/1/0) Included file: ././Graphs/sigma_varphi.tex
 

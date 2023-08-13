@@ -31,8 +31,8 @@ Number of math displayed: 0
 
 Included file: ././Introduction/introduction.tex
 Encoding: ascii
-Sum count: 644
-Words in text: 644
+Sum count: 636
+Words in text: 636
 Words in headers: 0
 Words outside text (captions, etc.): 0
 Number of headers: 0
@@ -42,8 +42,8 @@ Number of math displayed: 0
 
 Included file: ././Literature Review/literature_review.tex
 Encoding: ascii
-Sum count: 1634
-Words in text: 1499
+Sum count: 1671
+Words in text: 1536
 Words in headers: 17
 Words outside text (captions, etc.): 118
 Number of headers: 4
@@ -52,17 +52,17 @@ Number of math inlines: 0
 Number of math displayed: 0
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
-  232+2+0 (1/0/0/0) Section: Literature Review
-  793+6+89 (1/0/0/0) Subsection: From Past Debates to Modern Frameworks
-  201+4+0 (1/0/0/0) Subsection: Application of DSGE Models
-  273+5+29 (1/0/0/0) Subsection: Fiscal Policy in DSGE Models
+  236+2+0 (1/0/0/0) Section: Literature Review
+  794+6+89 (1/0/0/0) Subsection: From Past Debates to Modern Frameworks
+  230+4+0 (1/0/0/0) Subsection: Application of DSGE Models
+  276+5+29 (1/0/0/0) Subsection: Fiscal Policy in DSGE Models
 
 Included file: ././Theoretical DSGE model/model.tex
 Encoding: ascii
-Sum count: 610
-Words in text: 513
+Sum count: 603
+Words in text: 507
 Words in headers: 0
-Words outside text (captions, etc.): 86
+Words outside text (captions, etc.): 85
 Number of headers: 0
 Number of floats/tables/figures: 0
 Number of math inlines: 11
@@ -70,10 +70,10 @@ Number of math displayed: 0
 
 Included file: ././Application/application.tex
 Encoding: ascii
-Sum count: 856
-Words in text: 797
+Sum count: 900
+Words in text: 842
 Words in headers: 0
-Words outside text (captions, etc.): 54
+Words outside text (captions, etc.): 53
 Number of headers: 0
 Number of floats/tables/figures: 0
 Number of math inlines: 5
@@ -81,8 +81,8 @@ Number of math displayed: 0
 
 Included file: ././Results/results.tex
 Encoding: ascii
-Sum count: 1310
-Words in text: 1225
+Sum count: 1331
+Words in text: 1246
 Words in headers: 0
 Words outside text (captions, etc.): 67
 Number of headers: 0
@@ -103,8 +103,8 @@ Number of math displayed: 0
 
 Included file: ././Conclusion/conclusion.tex
 Encoding: ascii
-Sum count: 469
-Words in text: 468
+Sum count: 406
+Words in text: 405
 Words in headers: 0
 Words outside text (captions, etc.): 0
 Number of headers: 0
@@ -125,21 +125,21 @@ Number of math displayed: 0
 
 Included file: ././Theoretical DSGE model/households.tex
 Encoding: ascii
-Sum count: 1805
-Words in text: 1680
+Sum count: 1753
+Words in text: 1618
 Words in headers: 1
-Words outside text (captions, etc.): 13
+Words outside text (captions, etc.): 21
 Number of headers: 1
 Number of floats/tables/figures: 1
-Number of math inlines: 85
-Number of math displayed: 26
+Number of math inlines: 86
+Number of math displayed: 27
 
 Included file: ././Theoretical DSGE model/government.tex
 Encoding: ascii
-Sum count: 558
-Words in text: 487
+Sum count: 555
+Words in text: 485
 Words in headers: 1
-Words outside text (captions, etc.): 43
+Words outside text (captions, etc.): 42
 Number of headers: 1
 Number of floats/tables/figures: 5
 Number of math inlines: 26
@@ -147,10 +147,10 @@ Number of math displayed: 1
 
 Included file: ././Theoretical DSGE model/firms.tex
 Encoding: ascii
-Sum count: 955
-Words in text: 875
+Sum count: 963
+Words in text: 873
 Words in headers: 1
-Words outside text (captions, etc.): 21
+Words outside text (captions, etc.): 31
 Number of headers: 1
 Number of floats/tables/figures: 0
 Number of math inlines: 45
@@ -158,21 +158,21 @@ Number of math displayed: 13
 
 Included file: ././Theoretical DSGE model/equilibrium.tex
 Encoding: ascii
-Sum count: 989
-Words in text: 927
+Sum count: 1031
+Words in text: 958
 Words in headers: 1
-Words outside text (captions, etc.): 7
+Words outside text (captions, etc.): 15
 Number of headers: 1
 Number of floats/tables/figures: 1
-Number of math inlines: 35
+Number of math inlines: 38
 Number of math displayed: 19
 
 Included file: ././Application/Tables/model_parameters.tex
 Encoding: ascii
-Sum count: 11
+Sum count: 32
 Words in text: 0
 Words in headers: 0
-Words outside text (captions, etc.): 11
+Words outside text (captions, etc.): 32
 Number of headers: 0
 Number of floats/tables/figures: 1
 Number of math inlines: 0
@@ -222,7 +222,7 @@ Number of floats/tables/figures: 1
 Number of math inlines: 0
 Number of math displayed: 0
 
-Included file: ././Graphs/IRFs/f_one.tex
+Included file: ././Graphs/f_one.tex
 Encoding: ascii
 Sum count: 14
 Words in text: 0
@@ -233,7 +233,7 @@ Number of floats/tables/figures: 1
 Number of math inlines: 0
 Number of math displayed: 0
 
-Included file: ././Graphs/IRFs/f_one_f.tex
+Included file: ././Graphs/f_one_f.tex
 Encoding: ascii
 Sum count: 14
 Words in text: 0
@@ -244,7 +244,7 @@ Number of floats/tables/figures: 1
 Number of math inlines: 0
 Number of math displayed: 0
 
-Included file: ././Graphs/IRFs/f_two.tex
+Included file: ././Graphs/f_two.tex
 Encoding: ascii
 Sum count: 16
 Words in text: 0
@@ -255,7 +255,7 @@ Number of floats/tables/figures: 1
 Number of math inlines: 0
 Number of math displayed: 0
 
-Included file: ././Graphs/IRFs/f_three.tex
+Included file: ././Graphs/f_three.tex
 Encoding: ascii
 Sum count: 14
 Words in text: 0
@@ -266,7 +266,7 @@ Number of floats/tables/figures: 1
 Number of math inlines: 0
 Number of math displayed: 0
 
-Included file: ././Graphs/IRFs/f_three_f.tex
+Included file: ././Graphs/f_three_f.tex
 Encoding: ascii
 Sum count: 14
 Words in text: 0
@@ -277,7 +277,7 @@ Number of floats/tables/figures: 1
 Number of math inlines: 0
 Number of math displayed: 0
 
-Included file: ././Graphs/IRFs/f_four.tex
+Included file: ././Graphs/f_four.tex
 Encoding: ascii
 Sum count: 16
 Words in text: 0
@@ -332,7 +332,7 @@ Number of floats/tables/figures: 1
 Number of math inlines: 4
 Number of math displayed: 0
 
-Included file: ././Graphs/sensitivity_analysis_phi_b.tex
+Included file: ././Graphs/sensitivity_analysis_phi_b_test.tex
 Encoding: ascii
 Sum count: 5
 Words in text: 0
@@ -343,7 +343,7 @@ Number of floats/tables/figures: 1
 Number of math inlines: 2
 Number of math displayed: 0
 
-Included file: ././Graphs/sensitivity_analysis_phi_g.tex
+Included file: ././Graphs/sensitivity_analysis_phi_g_test.tex
 Encoding: ascii
 Sum count: 5
 Words in text: 0
@@ -354,7 +354,7 @@ Number of floats/tables/figures: 1
 Number of math inlines: 2
 Number of math displayed: 0
 
-Included file: ././Graphs/sensitivity_analysis_rho_g.tex
+Included file: ././Graphs/sensitivity_analysis_rho_g_test.tex
 Encoding: ascii
 Sum count: 5
 Words in text: 0
@@ -378,47 +378,47 @@ Number of math displayed: 0
 
 Sum of files: main.tex
 File(s) total: main.tex
-Sum count: 10437
-Words in text: 9364
+Sum count: 10477
+Words in text: 9355
 Words in headers: 38
-Words outside text (captions, etc.): 727
+Words outside text (captions, etc.): 771
 Number of headers: 14
 Number of floats/tables/figures: 27
-Number of math inlines: 249
-Number of math displayed: 59
+Number of math inlines: 253
+Number of math displayed: 60
 Files: 33
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
   1+17+0 (6/0/0/0) File: main.tex
-  644+0+0 (0/0/0/0) Included file: ././Introduction/introduction.tex
-  1499+17+118 (4/0/0/0) Included file: ././Literature Review/literature_review.tex
-  513+0+86 (0/0/11/0) Included file: ././Theoretical DSGE model/model.tex
-  797+0+54 (0/0/5/0) Included file: ././Application/application.tex
-  1225+0+67 (0/0/18/0) Included file: ././Results/results.tex
+  636+0+0 (0/0/0/0) Included file: ././Introduction/introduction.tex
+  1536+17+118 (4/0/0/0) Included file: ././Literature Review/literature_review.tex
+  507+0+85 (0/0/11/0) Included file: ././Theoretical DSGE model/model.tex
+  842+0+53 (0/0/5/0) Included file: ././Application/application.tex
+  1246+0+67 (0/0/18/0) Included file: ././Results/results.tex
   248+0+0 (0/0/0/0) Included file: ././Limitations/limitations.tex
-  468+0+0 (0/0/1/0) Included file: ././Conclusion/conclusion.tex
+  405+0+0 (0/0/1/0) Included file: ././Conclusion/conclusion.tex
   0+0+18 (0/1/0/0) Included file: ././Graphs/timeline.tex
-  1680+1+13 (1/1/85/26) Included file: ././Theoretical DSGE model/households.tex
-  487+1+43 (1/5/26/1) Included file: ././Theoretical DSGE model/government.tex
-  875+1+21 (1/0/45/13) Included file: ././Theoretical DSGE model/firms.tex
-  927+1+7 (1/1/35/19) Included file: ././Theoretical DSGE model/equilibrium.tex
-  0+0+11 (0/1/0/0) Included file: ././Application/Tables/model_parameters.tex
+  1618+1+21 (1/1/86/27) Included file: ././Theoretical DSGE model/households.tex
+  485+1+42 (1/5/26/1) Included file: ././Theoretical DSGE model/government.tex
+  873+1+31 (1/0/45/13) Included file: ././Theoretical DSGE model/firms.tex
+  958+1+15 (1/1/38/19) Included file: ././Theoretical DSGE model/equilibrium.tex
+  0+0+32 (0/1/0/0) Included file: ././Application/Tables/model_parameters.tex
   0+0+6 (0/1/0/0) Included file: ././Application/Tables/priors_posteriors.tex
   0+0+10 (0/1/0/0) Included file: ././Graphs/MCMC_SCOT.tex
   0+0+5 (0/1/0/0) Included file: ././Application/Tables/sources.tex
   0+0+12 (0/1/0/0) Included file: ././Graphs/IRFs/m_four.tex
-  0+0+14 (0/1/0/0) Included file: ././Graphs/IRFs/f_one.tex
-  0+0+14 (0/1/0/0) Included file: ././Graphs/IRFs/f_one_f.tex
-  0+0+16 (0/1/0/0) Included file: ././Graphs/IRFs/f_two.tex
-  0+0+14 (0/1/0/0) Included file: ././Graphs/IRFs/f_three.tex
-  0+0+14 (0/1/0/0) Included file: ././Graphs/IRFs/f_three_f.tex
-  0+0+16 (0/1/0/0) Included file: ././Graphs/IRFs/f_four.tex
+  0+0+14 (0/1/0/0) Included file: ././Graphs/f_one.tex
+  0+0+14 (0/1/0/0) Included file: ././Graphs/f_one_f.tex
+  0+0+16 (0/1/0/0) Included file: ././Graphs/f_two.tex
+  0+0+14 (0/1/0/0) Included file: ././Graphs/f_three.tex
+  0+0+14 (0/1/0/0) Included file: ././Graphs/f_three_f.tex
+  0+0+16 (0/1/0/0) Included file: ././Graphs/f_four.tex
   0+0+32 (0/1/4/0) Included file: ././Results/Tables/results_one_three.tex
   0+0+43 (0/1/4/0) Included file: ././Results/Tables/results_two_four.tex
   0+0+34 (0/1/4/0) Included file: ././Results/Tables/results_one_two.tex
   0+0+34 (0/1/4/0) Included file: ././Results/Tables/results_three_four.tex
-  0+0+3 (0/1/2/0) Included file: ././Graphs/sensitivity_analysis_phi_b.tex
-  0+0+3 (0/1/2/0) Included file: ././Graphs/sensitivity_analysis_phi_g.tex
-  0+0+3 (0/1/2/0) Included file: ././Graphs/sensitivity_analysis_rho_g.tex
+  0+0+3 (0/1/2/0) Included file: ././Graphs/sensitivity_analysis_phi_b_test.tex
+  0+0+3 (0/1/2/0) Included file: ././Graphs/sensitivity_analysis_phi_g_test.tex
+  0+0+3 (0/1/2/0) Included file: ././Graphs/sensitivity_analysis_rho_g_test.tex
   0+0+16 (0/1/1/0) Included file: ././Graphs/sigma_varphi.tex
 

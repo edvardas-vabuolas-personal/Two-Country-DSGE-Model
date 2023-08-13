@@ -31,16 +31,16 @@
 
 
 % mcmc: 0 - do not estimate (use pre-defined parameters); 1 - estimate (use calibrated parameters)
-@#define mcmc = 1
+@#define mcmc = 0
 
-% This generates thousands of simulations of React application (interactive sensitivity analysis on browser)
+% This generates thousands of simulations for React application (interactive sensitivity analysis on browser). NOT covered in the dissertation
 @#define enable_forloop = 0
 
 % Export IRFs to a CSV file
 @#define enable_irfs_to_csv = 0
 
 % Export IRFs for different sets of parameters (aka sensitivity analysis) to a CSV file
-@#define enable_sensitivity_analysis = 0
+@#define enable_sensitivity_analysis = 1
 
 @#if enable_irfs_to_csv == 0 && enable_forloop == 0 && enable_sensitivity_analysis == 0 && mcmc == 0
     @#define show_irf_graphs = 1
@@ -100,9 +100,9 @@ wp_f          ${wp^*_t}$          (long_name='rUK Real Wage')
 p_h_uk
 
 % Fiscal Policy
-tr              ${tr_t}$          (long_name='Scotland Tax Revenue')    
-tr_f            ${TR^*_t}$        (long_name='rUK Tax Revenue')  
 @#if no_of_govs == 2
+    tr              ${tr_t}$          (long_name='Scotland Tax Revenue')    
+    tr_f            ${TR^*_t}$        (long_name='rUK Tax Revenue')  
     g           ${g_t}$           (long_name='Scotland Government Spending')
     g_f         ${g^*_t}$         (long_name='rUK Government Spending')
     b           ${b_t}$           (long_name='Scotland Government Bonds')
@@ -116,6 +116,8 @@ tr_f            ${TR^*_t}$        (long_name='rUK Tax Revenue')
     tr_uk       ${tr^{UK}_t}$     (long_name='UK Tax Revenue')
     b_uk        ${b^{UK}_t}$      (long_name='UK Government Bonds')
     @#if labour_tax == 1
+        tr              ${tr_t}$          (long_name='Scotland Tax Revenue')    
+        tr_f            ${tr^*_t}$        (long_name='rUK Tax Revenue')  
         tau_uk  ${\tau^{UK}_t}$   (long_name='UK Labour Tax')
     @#endif
 @#endif
@@ -207,32 +209,32 @@ p_star       ${p^*}$                 (long_name='world price level')
 
 parameters 
 % Home country
-siggma          ${\sigma}$      (long_name='inverse EIS')
-betta           ${\beta}$       (long_name='discount factor')
-varphi          ${\varphi}$     (long_name='inverse Frisch elasticity')
-alppha          ${\alpha}$      (long_name='capital share')
-epsilon         ${\epsilon}$    (long_name='demand elasticity')
-theta           ${\theta}$      (long_name='Calvo parameter')
-upsilon         ${\upsilon}$    (long_name='openness parameter')
-eta             ${\eta}$        (long_name='substitutability foreign/domestic goods')    
-rho_a           ${\rho_a}$      (long_name='autocorrelation technology shock')
-rho_nu          ${\rho_{\nu}}$  (long_name='autocorrelation monetary policy shock')
-rho_y_star      ${\rho_{y^*}}$  (long_name='autocorrelation world output growth shock')
-rho_z           ${\rho_{z}}$    (long_name='autocorrelation preference shock')
+siggma          ${\sigma}$      (long_name='Inverse E.O.S')
+betta           ${\beta}$       (long_name='Discount factor')
+varphi          ${\varphi}$     (long_name='Labour supply elasticity')
+alppha          ${\alpha}$      (long_name='Capital share')
+epsilon         ${\epsilon}$    (long_name='Demand elasticity')
+theta           ${\theta}$      (long_name='Calvo price-stickiness')
+upsilon         ${\upsilon}$    (long_name='Openness parameter')
+eta             ${\eta}$        (long_name='Substitutability foreign/domestic goods')    
+rho_a           ${\rho_a}$      (long_name='Autocorrelation technology shock')
+rho_nu          ${\rho_{\nu}}$  (long_name='Autocorrelation monetary policy shock')
+rho_y_star      ${\rho_{y^*}}$  (long_name='Autocorrelation world output growth shock')
+rho_z           ${\rho_{z}}$    (long_name='Autocorrelation preference shock')
 
 % Foreign country
-siggma_f          ${\sigma}$      (long_name='inverse EIS')
-betta_f           ${\beta}$       (long_name='discount factor')
-varphi_f          ${\varphi}$     (long_name='inverse Frisch elasticity')
-alppha_f          ${\alpha}$      (long_name='capital share')
-epsilon_f         ${\epsilon}$    (long_name='demand elasticity')
-theta_f           ${\theta}$      (long_name='Calvo parameter')
-upsilon_f         ${\upsilon}$    (long_name='openness parameter')
-eta_f             ${\eta}$        (long_name='substitutability foreign/domestic goods')    
-rho_a_f           ${\rho_a}$      (long_name='autocorrelation technology shock')
-rho_nu_f
-rho_y_star_f      ${\rho_{y^*}}$  (long_name='autocorrelation world output growth shock')
-rho_z_f           ${\rho_{z}}$    (long_name='autocorrelation preference shock')
+siggma_f          ${\sigma^*}$      (long_name='inverse EIS')
+betta_f           ${\beta^*}$       (long_name='Discount factor')
+varphi_f          ${\varphi^*}$     (long_name='Labour supply elasticity')
+alppha_f          ${\alpha^*}$      (long_name='Capital share')
+epsilon_f         ${\epsilon^*}$    (long_name='Demand price-stickiness')
+theta_f           ${\theta^*}$      (long_name='Calvo parameter')
+upsilon_f         ${\upsilon^*}$    (long_name='Openness parameter')
+eta_f             ${\eta^*}$        (long_name='Substitutability foreign/domestic goods')    
+rho_a_f           ${\rho_a^*}$      (long_name='Autocorrelation technology shock')
+rho_nu_f          ${\rho^*_{\nu}}$  (long_name='Autocorrelation monetary policy shock')
+rho_y_star_f      ${\rho_{y^*}}$  (long_name='Autocorrelation world output growth shock')
+rho_z_f           ${\rho^*_{z}}$    (long_name='Autocorrelation preference shock')
 
 % Fiscal Policy
 G_Y_SS
@@ -280,13 +282,13 @@ phi_y_f           ${\phi_{y}}$    (long_name='output feedback Taylor Rule')
 % Home country
 
 betta   = 0.99;
-siggma  = 1;
-varphi  = 6;
+siggma  = 0.44;
+varphi  = 2.2;
 alppha  = 1/3;
-epsilon = 6;
+epsilon = 9.67;
 theta   = 3/4;
-upsilon = 0.6;
-rho_a   = 0.5;
+upsilon = 0.4;
+rho_a   = 0.89;
 rho_y_star  = 0.5;
 eta     = 1;
 rho_z   = 0.5;
@@ -314,8 +316,8 @@ phi_pi_f  = phi_pi;
 phi_y   = 0.5/4;
 phi_y_f   = phi_y;
 
-G_Y_SS = 0.25682;
-G_Y_SS_f = 0.18012;
+G_Y_SS = 0.256313;
+G_Y_SS_f = 0.179667;
 
 C_Y_SS = 1 - G_Y_SS;
 C_Y_SS_f = 1 - G_Y_SS_f;
@@ -506,20 +508,6 @@ y_star - y_star(-1) = rho_y_star * (y_star(-1) - y_star(-2)) + eps_y_star;
     wp_f = siggma_f * c_f + varphi_f * n_f;
 @#endif
 
-@#if no_of_govs == 2
-    [name='Consumption determined by resource constraint']
-    nx = y - c - g - upsilon * s;
-    nx_f = y_f - c_f - g_f - upsilon_f * s_f;
-    nx = upsilon * (omega / siggma - 1) * s - upsilon / siggma * z;
-    nx_f = upsilon_f * (omega_f / siggma_f - 1) * s_f - upsilon_f / siggma_f * z_f;
-@#else
-    [name='Consumption determined by resource constraint']
-    1/pop * nx = y - c - g_uk - upsilon * s;
-    1/(1-pop) * nx_f = y_f - c_f - g_uk - upsilon_f * s_f;
-    nx = upsilon * (omega / siggma - 1) * s - upsilon / siggma * z;
-    nx_f = upsilon_f * (omega_f / siggma_f - 1) * s_f - upsilon_f / siggma_f * z_f;
-@#endif
-
 @#if labour_tax == 1
     @#if no_of_govs == 2
         [name='Tax Revenue']
@@ -566,6 +554,20 @@ y_star - y_star(-1) = rho_y_star * (y_star(-1) - y_star(-2)) + eps_y_star;
 [name='Terms of trade gap']
 s_gap = siggma_upsilon * Y_C_SS * y_gap;
 s_gap_f = siggma_upsilon_f * Y_C_SS_f * y_gap_f;
+
+@#if no_of_govs == 2
+    [name='Trade balance']
+    nx = y - c - g - upsilon * s;
+    nx_f = y_f - c_f - g_f - upsilon_f * s_f;
+    nx = upsilon * (omega / siggma - 1) * s - upsilon / siggma * z;
+    nx_f = upsilon_f * (omega_f / siggma_f - 1) * s_f - upsilon_f / siggma_f * z_f;
+@#else
+    [name='Trade balance']
+    1/pop * nx = y - c - g_uk - upsilon * s;
+    1/(1-pop) * nx_f = y_f - c_f - g_uk - upsilon_f * s_f;
+    nx = upsilon * (omega / siggma - 1) * s - upsilon / siggma * z;
+    nx_f = upsilon_f * (omega_f / siggma_f - 1) * s_f - upsilon_f / siggma_f * z_f;
+@#endif
 
 [name='Output']
 y_gap = y - y_nat;

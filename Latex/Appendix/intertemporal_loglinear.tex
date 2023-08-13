@@ -1,0 +1,14 @@
+\subsubsection{Derivation of log-linearised intertemporal optimality condition}
+\begin{align}\label{eq:appendix_intertemporal_loglinear_start}
+    \beta\E_t\left[\left(\frac{C_{t+1}}{C_{t}}\right)^{-\sigma} \left(\frac{Z_{t+1}}{Z_t}\right) \left(\frac{P_{t}}{ P_{t+1}}\right)\right]                 &= \E_t \left[\frac{1}{R_{t+1}}\right] \\
+    \ln\beta - \E_t[\sigma c_{t+1}] + \sigma c_t + \E_t[z_{t+1}] - z_t + p_t - \E_t [p_{t+1}] &= -\ln R_{t+1}                                                \\
+    \ln\beta - \E_t[\sigma c_{t+1}] + \sigma c_t + \E_t[\rho_z z_t + \varepsilon^z_t] - z_t + p_t - \E_t [p_{t+1}] &= -\ln R_{t+1}                                                \\
+    \ln\beta - \E_t[\sigma c_{t+1}] + \sigma c_t + \rho_z z_t - z_t + \E_t[\varepsilon^z_t] + p_t - \E_t [p_{t+1}] &= -\ln R_{t+1}                                                \\
+    \ln\beta - \E_t[\sigma c_{t+1}] + \sigma c_t + (\rho_z-1)z_t + p_t - \E_t [p_{t+1}] &= -\ln R_{t+1}                                                \\
+    \ln\beta - \E_t[\sigma c_{t+1}] + \sigma c_t - (1-\rho_z)z_t + p_t - \E_t [p_{t+1}] &= -\ln R_{t+1}                                                \\
+    \sigma c_t  = -\ln R_{t+1} - \ln \beta + \E_t[\sigma c_{t+1}] - p_t + \E_t [p_{t+1}] - (1-\rho_z)z_t                                   \\
+    c_t =  \E_t[c_{t+1}] - \frac{1}{\sigma}( \ln R_{t+1} - \rho - \E_t [\pi_{t+1}]   )   - \frac{1}{\sigma}(1-\rho_z)z_t                                            \\
+    c_t =  \E_t[c_{t+1}] - \frac{1}{\sigma}( i_t  - \E_t [\pi_{t+1}] - \rho  )         - \frac{1}{\sigma}(1-\rho_z)z_t    
+    \label{eq:appendix_intertemporal_loglinear_end}                                                       
+\end{align}
+\newpage

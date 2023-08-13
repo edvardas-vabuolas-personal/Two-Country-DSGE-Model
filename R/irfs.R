@@ -98,7 +98,7 @@ for (dataset in c('f_one',
 }
 
 tikz(
-'~/Documents/University/Dissertation/Latex/Graphs/f_one_t.tex',
+'~/Documents/University/Dissertation/Latex/Graphs/f_one.tex',
 width = 6,
 height = HEIGHT
 )
@@ -107,13 +107,13 @@ plot <- ggarrange(plotlist = plotList$f_one,
                   nrow = 5,
                   ncol = 2)
 annotate_figure(plot,
-                top = text_grob("Fiscal (Scenario 1)",
+                top = text_grob("Policy Scenario 1: Scotland",
                                 color = "black",
                                 size = 12))
 dev.off()
 
 tikz(
-  '~/Documents/University/Dissertation/Latex/Graphs/f_one_f_t.tex',
+  '~/Documents/University/Dissertation/Latex/Graphs/f_one_f.tex',
   width = 6,
   height = HEIGHT
 )
@@ -121,13 +121,13 @@ plot <- ggarrange(plotlist = plotList$f_one_f,
                   nrow = 5,
                   ncol = 2)
 annotate_figure(plot,
-                top = text_grob("Fiscal (Scenario 1)",
+                top = text_grob("Policy Scenario 1: rUK",
                                 color = "black",
                                 size = 12))
 dev.off()
 
 tikz(
-  '~/Documents/University/Dissertation/Latex/Graphs/f_two_t.tex',
+  '~/Documents/University/Dissertation/Latex/Graphs/f_two.tex',
   width = 6,
   height = HEIGHT
 )
@@ -135,13 +135,13 @@ plot <- ggarrange(plotlist = plotList$f_two,
                   nrow = 5,
                   ncol = 2)
 annotate_figure(plot,
-                top = text_grob("Fiscal (Scenario 2)",
+                top = text_grob("Policy Scenario 2: Scotland and rUK",
                                 color = "black",
                                 size = 12))
 dev.off()
 
 tikz(
-  '~/Documents/University/Dissertation/Latex/Graphs/f_three_t.tex',
+  '~/Documents/University/Dissertation/Latex/Graphs/f_three.tex',
   width = 6,
   height = HEIGHT
 )
@@ -149,13 +149,13 @@ plot <- ggarrange(plotlist = plotList$f_three,
                   nrow = 5,
                   ncol = 2)
 annotate_figure(plot,
-                top = text_grob("Fiscal (Scenario 3)",
+                top = text_grob("Policy Scenario 3: Scotland",
                                 color = "black",
                                 size = 12))
 dev.off()
 
 tikz(
-  '~/Documents/University/Dissertation/Latex/Graphs/f_three_f_t.tex',
+  '~/Documents/University/Dissertation/Latex/Graphs/f_three_f.tex',
   width = 6,
   height = HEIGHT
 )
@@ -163,13 +163,13 @@ plot <- ggarrange(plotlist = plotList$f_three_f,
                   nrow = 5,
                   ncol = 2)
 annotate_figure(plot,
-                top = text_grob("Fiscal (Scenario 3)",
+                top = text_grob("Policy Scenario 3: rUK",
                                 color = "black",
                                 size = 12))
 dev.off()
 
 tikz(
-  '~/Documents/University/Dissertation/Latex/Graphs/f_four_t.tex',
+  '~/Documents/University/Dissertation/Latex/Graphs/f_four.tex',
   width = 6,
   height = HEIGHT
 )
@@ -177,13 +177,13 @@ plot <- ggarrange(plotlist = plotList$f_four,
                   nrow = 5,
                   ncol = 2)
 annotate_figure(plot,
-                top = text_grob("Fiscal (Scenario 4)",
+                top = text_grob("Policy Scenario 4: Scotland and rUK",
                                 color = "black",
                                 size = 12))
 dev.off()
 
 tikz(
-  '~/Documents/University/Dissertation/Latex/Graphs/m_four_t.tex',
+  '~/Documents/University/Dissertation/Latex/Graphs/m_four.tex',
   width = 6,
   height = HEIGHT
 )
@@ -192,7 +192,7 @@ plot <- ggarrange(plotlist = plotList$m_four,
                   ncol = 2)
 annotate_figure(plot,
                 top = text_grob(
-                  "Monetary (Scenario 4)",
+                  "Monetary Policy Shock (Scenario 4)",
                   color = "black",
                   size = 12
                 ))
